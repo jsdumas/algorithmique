@@ -2,7 +2,7 @@ package array.stack;
 
 import java.util.NoSuchElementException;
 
-import array.resizablearray.ResizableArray;
+import test.array.resizablearray.ResizableArray;
 
 // Structure de pile
 public class Stack implements intf.Stack {

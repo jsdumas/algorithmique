@@ -2,7 +2,7 @@ package heap;
 
 import java.util.NoSuchElementException;
 
-import array.resizablearray.ResizableArray;
+import test.array.resizablearray.ResizableArray;
 
 // structure de tas, avec tableau redimensionnable
 

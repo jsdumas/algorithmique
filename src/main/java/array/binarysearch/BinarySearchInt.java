@@ -1,4 +1,4 @@
-package main.java.array.binarysearch;
+package array.binarysearch;
 
 // Recherche dichotomique dans un tableau trié
 public class BinarySearchInt {

@@ -1,4 +1,4 @@
-package main.java.array.binarysearch;
+package array.binarysearch;
 
 public class BinarySearchE<E extends Comparable<E>> {
 
