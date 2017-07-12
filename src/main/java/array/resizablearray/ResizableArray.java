@@ -30,31 +30,31 @@ public class ResizableArray {
 		this.tableau[i] = v;
 	}
 
-	public void setSize(int len) {
+	public void setSize(int newTableauLength) {
 		int tableauLength = this.tableau.length;
-		if (len > tableauLength) {
-			int[] a = new int[Math.max(len, 2 * tableauLength)];
+		if (newTableauLength > tableauLength) {
+			int[] tanleauWithNewLength = new int[Math.max(newTableauLength, 2 * tableauLength)];
 			for (int i = 0; i < this.length; i++)
-				a[i] = this.tableau[i];
-			this.tableau = a;
+				tanleauWithNewLength[i] = this.tableau[i];
+			this.tableau = tanleauWithNewLength;
 			// note : on peut remplacer les quatre lignes ci-dessus par
 			// this.data = Arrays.copyOfRange(this.data, 0, Math.max(len, 2 * n));
-		} else if (4 * len < tableauLength)
+		} else if (4 * newTableauLength < tableauLength)
 			this.tableau = Arrays.copyOfRange(this.tableau, 0, tableauLength / 2);
-		this.length = len;
+		this.length = newTableauLength;
 	}
 
-	public void append(int v) {
-		int n = this.length;
-		this.setSize(n + 1);
-		this.tableau[n] = v;
+	public void append(int newValueItem) {
+		int tableauLength = this.length;
+		this.setSize(tableauLength + 1);
+		this.tableau[tableauLength] = newValueItem;
 	}
 
-	public void append(int a[]) {
-		int n = this.length;
-		this.setSize(n + a.length);
-		for (int v : a)
-			this.tableau[n++] = v;
+	public void appendNewTableau(int[] tableauToInsert) {
+		int tableauLength = this.length;
+		this.setSize(tableauLength + tableauToInsert.length);
+		for (int itemValue : tableauToInsert)
+			this.tableau[tableauLength++] = itemValue;
 	}
 
 	public int[] toArray() {

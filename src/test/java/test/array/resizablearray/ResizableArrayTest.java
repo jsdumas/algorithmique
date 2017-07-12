@@ -39,14 +39,14 @@ public class ResizableArrayTest {
 		RESIZABLE_ARRAY.setItemsValue(7, 28);
 		shouldGetRightcontent("(14)[0, 42, 0, 17, 0, 0, 0, 28]");
 
-		RESIZABLE_ARRAY.append(new int[] { 1, 2, 3 });
+		RESIZABLE_ARRAY.appendNewTableau(new int[] { 1, 2, 3 });
 		shouldGetRightSize(11);
 		shouldGetRightcontent("(14)[0, 42, 0, 17, 0, 0, 0, 28, 1, 2, 3]");
 
-		RESIZABLE_ARRAY.append(new int[] {});
+		RESIZABLE_ARRAY.appendNewTableau(new int[] {});
 		shouldGetRightSize(11);
 
-		RESIZABLE_ARRAY.append(new int[] { 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 });
+		RESIZABLE_ARRAY.appendNewTableau(new int[] { 4, 5, 6, 7, 8, 9, 10, 11, 12, 13 });
 		shouldGetRightSize(21);
 		shouldGetRightcontent("(28)[0, 42, 0, 17, 0, 0, 0, 28, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]");
 	}
