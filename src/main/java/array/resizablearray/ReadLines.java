@@ -7,17 +7,17 @@ import java.io.IOException;
 public class ReadLines {
 
 	public static void main(String[] args) throws IOException {
-		ResizableArray r = new ResizableArray(0);
-		BufferedReader f = new BufferedReader(new FileReader("numbers.txt"));
+		ResizableArray resizableArray = new ResizableArray(0);
+		BufferedReader bufferedReader = new BufferedReader(new FileReader("numbers.txt"));
 		while (true) {
-			String s = f.readLine();
-			if (s == null)
+			String line = bufferedReader.readLine();
+			if (line == null)
 				break;
-			System.out.println(s);
-			r.append(Integer.parseInt(s));
+			System.out.println(line);
+			resizableArray.appendNewItemValue(Integer.parseInt(line));
 		}
-		System.out.println(r.getSize() + " lines");
-		f.close();
+		System.out.println(resizableArray.getSize() + " lines");
+		bufferedReader.close();
 	}
 
 }
