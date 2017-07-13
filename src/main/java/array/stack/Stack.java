@@ -25,19 +25,19 @@ public class Stack implements IStack {
 		this.resizableArray.setSize(0);
 	}
 
-	public void push(int x) {
+	public void push(int value) {
 		int arrayLength = this.resizableArray.getSize();
 		this.resizableArray.setSize(arrayLength + 1);
-		this.resizableArray.setItemsValue(arrayLength, x);
+		this.resizableArray.setItemsValue(arrayLength, value);
 	}
 
 	public int pop() {
 		int arrayLength = this.resizableArray.getSize();
 		if (arrayLength == 0)
 			throw new NoSuchElementException();
-		int e = this.resizableArray.getItemsValue(arrayLength - 1);
+		int value = this.resizableArray.getItemsValue(arrayLength - 1);
 		this.resizableArray.setSize(arrayLength - 1);
-		return e;
+		return value;
 	}
 
 	public int top() {
@@ -51,9 +51,9 @@ public class Stack implements IStack {
 		int arrayLength = this.resizableArray.getSize();
 		if (arrayLength <= 1)
 			throw new IllegalArgumentException();
-		int tmp = this.resizableArray.getItemsValue(arrayLength - 1);
+		int tmpValue = this.resizableArray.getItemsValue(arrayLength - 1);
 		this.resizableArray.setItemsValue(arrayLength - 1, this.resizableArray.getItemsValue(arrayLength - 2));
-		this.resizableArray.setItemsValue(arrayLength - 2, tmp);
+		this.resizableArray.setItemsValue(arrayLength - 2, tmpValue);
 	}
 
 }
