@@ -1,21 +1,17 @@
 package backtracking;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
-
 public class Sudoku {
 
 	private final int[] grid; // 0..80 (9 * row + col)
 
-	Sudoku() {
+	public Sudoku() {
 		this.grid = new int[81];
 	}
 
-	Sudoku(String s) {
+	public Sudoku(String string) {
 		this.grid = new int[81];
 		for (int i = 0; i < 81; i++)
-			this.grid[i] = s.charAt(i) - '0';
+			this.grid[i] = string.charAt(i) - '0';
 	}
 
 	int row(int c) {
@@ -30,12 +26,12 @@ public class Sudoku {
 		return 3 * (row(c) / 3) + col(c) / 3;
 	}
 
-	boolean sameZone(int c1, int c2) {
+	public boolean sameZone(int c1, int c2) {
 		return row(c1) == row(c2) || col(c1) == col(c2) || group(c1) == group(c2);
 	}
 
 	// vérifie que la valeur dans p est compatible avec les autres cases
-	boolean check(int p) {
+	public boolean check(int p) {
 		for (int c = 0; c < 81; c++)
 			if (c != p && sameZone(p, c) && this.grid[p] == this.grid[c])
 				return false;
@@ -43,7 +39,7 @@ public class Sudoku {
 	}
 
 	// essaye de résoudre la grille courante et renvoie un booléen indiquant le succès
-	boolean solve() {
+	public boolean solve() {
 		for (int c = 0; c < 81; c++)
 			if (this.grid[c] == 0) {
 				for (int v = 1; v < 10; v++) {
@@ -57,7 +53,7 @@ public class Sudoku {
 		return true;
 	}
 
-	void print() {
+	public void print() {
 		for (int i = 0; i < 9; i++) {
 			if (i % 3 == 0)
 				System.out.println("+---+---+---+");
@@ -71,24 +67,6 @@ public class Sudoku {
 		System.out.println("+---+---+---+");
 	}
 
-	public static void main(String[] args) throws FileNotFoundException {
-		Scanner sc = new Scanner(new File("puzzles.sdk"));
-		double start = System.currentTimeMillis();
-		while (sc.hasNext()) {
-			String s = sc.nextLine();
-			System.out.println("s = " + s);
-			Sudoku sk = new Sudoku(s);
-			sk.print();
-			System.out.println();
-			if (sk.solve())
-				sk.print();
-			else
-				System.out.println("pas de solution");
-			System.out.println();
-		}
-		sc.close();
-		System.out.println((System.currentTimeMillis() - start) / 1000);
-	}
 }
 
 /*
