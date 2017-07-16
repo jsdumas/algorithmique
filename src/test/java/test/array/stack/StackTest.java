@@ -1,7 +1,5 @@
 package test.array.stack;
 
-import org.hamcrest.Matcher;
-import org.hamcrest.core.IsEqual;
 import org.junit.Test;
 
 import array.stack.Stack;
@@ -12,10 +10,10 @@ public class StackTest {
 	@Test
 	public void test() {
 		Stack stack = new Stack();
-		assertThat(stack.isEmpty(), is(true));
+		assertThat(stack.isEmpty(), true);
 		stack.push(1);
 //		assert (!stack.isEmpty());
-		assertThat(stack.isEmpty(), is(false));
+		assertThat(stack.isEmpty(), false);
 		stack.push(2);
 		assertThat(stack.top(), is(2);
 //		assert (stack.top() == 2);
@@ -59,11 +57,7 @@ public class StackTest {
 
 		System.out.println("TestStack OK");
 	}
-	
-	private void assertThat(boolean empty, Matcher<Boolean> matcher) {
-		// TODO Auto-generated method stub
-		
-	}
+
 
 	private void swap(Stack s) {
 		if (s.size() <= 1)
