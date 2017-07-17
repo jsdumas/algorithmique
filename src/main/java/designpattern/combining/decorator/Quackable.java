@@ -1,4 +1,4 @@
-package headfirst.combining.decorator;
+package designpattern.combining.decorator;
 
 public interface Quackable {
 	public void quack();

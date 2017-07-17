@@ -1,4 +1,4 @@
-package headfirst.combining.factory;
+package designpattern.combining.factory;
 
 public interface Quackable {
 	public void quack();

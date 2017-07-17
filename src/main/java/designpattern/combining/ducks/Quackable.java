@@ -1,4 +1,4 @@
-package headfirst.combining.ducks;
+package designpattern.combining.ducks;
 
 public interface Quackable {
 	public void quack();

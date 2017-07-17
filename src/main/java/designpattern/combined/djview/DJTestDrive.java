@@ -1,9 +1,9 @@
-package headfirst.combined.djview;
-  
+package designpattern.combined.djview;
+
 public class DJTestDrive {
 
-    public static void main (String[] args) {
-        BeatModelInterface model = new BeatModel();
+	public static void main(String[] args) {
+		BeatModelInterface model = new BeatModel();
 		ControllerInterface controller = new BeatController(model);
-    }
+	}
 }

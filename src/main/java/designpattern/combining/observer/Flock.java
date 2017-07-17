@@ -1,33 +1,38 @@
-package headfirst.combining.observer;
+package designpattern.combining.observer;
 
-import java.util.Iterator;
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class Flock implements Quackable {
 	ArrayList ducks = new ArrayList();
-  
+
 	public void add(Quackable duck) {
 		ducks.add(duck);
 	}
-  
+
+	@Override
 	public void quack() {
 		Iterator iterator = ducks.iterator();
 		while (iterator.hasNext()) {
-			Quackable duck = (Quackable)iterator.next();
+			Quackable duck = (Quackable) iterator.next();
 			duck.quack();
 		}
 	}
-   
+
+	@Override
 	public void registerObserver(Observer observer) {
 		Iterator iterator = ducks.iterator();
 		while (iterator.hasNext()) {
-			Quackable duck = (Quackable)iterator.next();
+			Quackable duck = (Quackable) iterator.next();
 			duck.registerObserver(observer);
 		}
 	}
-  
-	public void notifyObservers() { }
-  
+
+	@Override
+	public void notifyObservers() {
+	}
+
+	@Override
 	public String toString() {
 		return "Flock of Ducks";
 	}

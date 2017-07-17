@@ -1,4 +1,4 @@
-package headfirst.combining.adapter;
+package designpattern.combining.adapter;
 
 public class Goose {
 	public void honk() {

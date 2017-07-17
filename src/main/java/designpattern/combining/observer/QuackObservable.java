@@ -1,6 +1,7 @@
-package headfirst.combining.observer;
+package designpattern.combining.observer;
 
 public interface QuackObservable {
 	public void registerObserver(Observer observer);
+
 	public void notifyObservers();
 }

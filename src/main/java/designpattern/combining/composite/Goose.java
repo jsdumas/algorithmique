@@ -1,10 +1,11 @@
-package headfirst.combining.composite;
+package designpattern.combining.composite;
 
 public class Goose {
 	public void honk() {
 		System.out.println("Honk");
 	}
 
+	@Override
 	public String toString() {
 		return "Goose";
 	}

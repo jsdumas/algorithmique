@@ -1,4 +1,4 @@
-package headfirst.combining.decorator;
+package designpattern.combining.decorator;
 
 public class DuckSimulator {
 	public static void main(String[] args) {
@@ -21,8 +21,7 @@ public class DuckSimulator {
 		simulate(rubberDuck);
 		simulate(gooseDuck);
 
-		System.out.println("The ducks quacked " + 
-		                   QuackCounter.getQuacks() + " times");
+		System.out.println("The ducks quacked " + QuackCounter.getQuacks() + " times");
 	}
 
 	void simulate(Quackable duck) {

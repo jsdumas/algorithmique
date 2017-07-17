@@ -1,4 +1,4 @@
-package headfirst.combining.observer;
+package designpattern.combining.observer;
 
 public class Goose {
 
@@ -6,6 +6,7 @@ public class Goose {
 		System.out.println("Honk");
 	}
 
+	@Override
 	public String toString() {
 		return "Goose";
 	}
