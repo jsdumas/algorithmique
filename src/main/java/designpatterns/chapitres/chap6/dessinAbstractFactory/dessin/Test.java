@@ -1,4 +1,4 @@
-﻿package dessin;
+﻿package designpatterns.chapitres.chap6.dessinAbstractFactory.dessin;
 
 import dessin.formesGraphiques.Triangle;
 

@@ -1,4 +1,4 @@
-﻿package singleton;
+﻿package designpatterns.chapitres.chap7.singleton;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

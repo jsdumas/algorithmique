@@ -1,4 +1,4 @@
-﻿package voter;
+﻿package designpatterns.chapitres.chap4.voter.voter;
 
 public class ElecteurCoordonnee implements Electeur {
     protected String attributModifie;

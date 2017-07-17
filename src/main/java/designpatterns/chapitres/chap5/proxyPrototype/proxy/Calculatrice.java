@@ -1,4 +1,4 @@
-﻿package proxy;
+﻿package designpatterns.chapitres.chap5.proxyPrototype.proxy;
 
 public class Calculatrice {
 	protected int valeur = 0;

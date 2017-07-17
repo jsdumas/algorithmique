@@ -1,4 +1,4 @@
-﻿package observer;
+﻿package designpatterns.chapitres.chap7.observer;
 
 public class Personne extends Sujet {
     protected String nom;

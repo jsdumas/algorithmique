@@ -1,4 +1,4 @@
-﻿package stateClassesInternes;
+﻿package designpatterns.chapitres.chap7.stateClassesInternes;
 
 public class Pile {
     public class accesInterneTest {

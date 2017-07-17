@@ -1,4 +1,4 @@
-﻿package voter;
+﻿package designpatterns.chapitres.chap4.voter.voter;
 
 public class Point extends Sujet {
     protected int x, y;

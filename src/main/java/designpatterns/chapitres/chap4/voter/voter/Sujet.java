@@ -1,4 +1,4 @@
-﻿package voter;
+﻿package designpatterns.chapitres.chap4.voter.voter;
 
 import java.util.ArrayList;
 import java.util.List;

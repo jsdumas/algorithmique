@@ -1,4 +1,4 @@
-﻿package observer;
+﻿package designpatterns.chapitres.chap4.voter.observer;
 
 public class ObservateurCoordonnee implements Observateur {
 

@@ -1,4 +1,4 @@
-﻿package observer;
+﻿package designpatterns.chapitres.chap7.observer;
 
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;

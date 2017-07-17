@@ -1,4 +1,4 @@
-﻿package strategy;
+﻿package designpatterns.chapitres.chap4.stategyClasseGenerique.strategy;
 
 public class Test {
 

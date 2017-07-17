@@ -1,4 +1,4 @@
-﻿package proxy;
+﻿package designpatterns.chapitres.chap5.proxyPrototype.proxy;
 
 import java.util.HashSet;
 import java.util.Set;

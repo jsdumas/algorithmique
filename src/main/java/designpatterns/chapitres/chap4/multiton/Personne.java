@@ -1,4 +1,4 @@
-﻿package multiton;
+﻿package designpatterns.chapitres.chap4.multiton;
 
 import java.util.HashMap;
 import java.util.Map;

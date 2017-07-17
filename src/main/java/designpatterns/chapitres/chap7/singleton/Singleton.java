@@ -1,4 +1,4 @@
-﻿package singleton;
+﻿package designpatterns.chapitres.chap7.singleton;
 
 public class Singleton {
 

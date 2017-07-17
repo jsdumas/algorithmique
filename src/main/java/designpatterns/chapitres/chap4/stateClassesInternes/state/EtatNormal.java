@@ -1,4 +1,4 @@
-﻿package state;
+﻿package designpatterns.chapitres.chap4.stateClassesInternes.state;
 
 class EtatNormal extends EtatPile {
 

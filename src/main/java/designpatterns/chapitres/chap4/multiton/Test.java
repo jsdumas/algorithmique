@@ -1,4 +1,4 @@
-﻿package multiton;
+﻿package designpatterns.chapitres.chap4.multiton;
 
 public class Test {
 

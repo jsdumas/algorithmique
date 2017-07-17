@@ -1,4 +1,4 @@
-﻿package observer;
+﻿package designpatterns.chapitres.chap7.observer;
 
 import java.util.ArrayList;
 import java.util.List;
