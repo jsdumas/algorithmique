@@ -1,11 +1,11 @@
-package test.algorithme.array.binarysearch;
+package test.algorithmes.array.binarysearch;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 import org.junit.Test;
 
-import algorithme.array.binarysearch.BinarySearchInt;
+import algorithmes.array.binarysearch.BinarySearchInt;
 
 public class BinarySearchIntTest {
 

@@ -1,4 +1,4 @@
-package algorithme.array.binarysearch;
+package algorithmes.array.binarysearch;
 
 public class BinarySearchE<E extends Comparable<E>> {
 

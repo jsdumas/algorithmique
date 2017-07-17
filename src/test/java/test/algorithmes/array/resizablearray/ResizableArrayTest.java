@@ -1,11 +1,11 @@
-package test.algorithme.array.resizablearray;
+package test.algorithmes.array.resizablearray;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
 import org.junit.Test;
 
-import algorithme.array.resizablearray.ResizableArray;
+import algorithmes.array.resizablearray.ResizableArray;
 
 public class ResizableArrayTest {
 

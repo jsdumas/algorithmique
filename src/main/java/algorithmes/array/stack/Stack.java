@@ -1,8 +1,8 @@
-package algorithme.array.stack;
+package algorithmes.array.stack;
 
 import java.util.NoSuchElementException;
 
-import algorithme.array.resizablearray.ResizableArray;
+import algorithmes.array.resizablearray.ResizableArray;
 
 // Structure de pile
 public class Stack implements IStack {
@@ -13,24 +13,29 @@ public class Stack implements IStack {
 		this.resizableArray = new ResizableArray(0);
 	}
 
+	@Override
 	public boolean isEmpty() {
 		return this.resizableArray.getSize() == 0;
 	}
 
+	@Override
 	public int size() {
 		return this.resizableArray.getSize();
 	}
 
+	@Override
 	public void clear() {
 		this.resizableArray.setSize(0);
 	}
 
+	@Override
 	public void push(int value) {
 		int arrayLength = this.resizableArray.getSize();
 		this.resizableArray.setSize(arrayLength + 1);
 		this.resizableArray.setItemsValue(arrayLength, value);
 	}
 
+	@Override
 	public int pop() {
 		int arrayLength = this.resizableArray.getSize();
 		if (arrayLength == 0)
@@ -40,6 +45,7 @@ public class Stack implements IStack {
 		return value;
 	}
 
+	@Override
 	public int top() {
 		int arrayLength = this.resizableArray.getSize();
 		if (arrayLength == 0)
@@ -47,6 +53,7 @@ public class Stack implements IStack {
 		return this.resizableArray.getItemsValue(arrayLength - 1);
 	}
 
+	@Override
 	public void swap() {
 		int arrayLength = this.resizableArray.getSize();
 		if (arrayLength <= 1)

@@ -1,4 +1,4 @@
-package algorithme.array.resizablearray;
+package algorithmes.array.resizablearray;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

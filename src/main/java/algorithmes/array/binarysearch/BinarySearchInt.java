@@ -1,4 +1,4 @@
-package algorithme.array.binarysearch;
+package algorithmes.array.binarysearch;
 
 // Recherche dichotomique dans un tableau trié
 public class BinarySearchInt {
