@@ -3,10 +3,10 @@
 import java.util.ArrayList;
 import java.util.List;
 
-import dessin.BibliothequeGraphique.Point;
-import dessin.BibliothequeGraphique.Point2D;
-import dessin.BibliothequeGraphique.Point3D;
-import dessin.BibliothequeGraphique.Point3DCouleur;
+import designpatterns.chapitres.chap6.dessinAbstractFactory.dessin.bibliothequegraphique.Point;
+import designpatterns.chapitres.chap6.dessinAbstractFactory.dessin.bibliothequegraphique.Point2D;
+import designpatterns.chapitres.chap6.dessinAbstractFactory.dessin.bibliothequegraphique.Point3D;
+import designpatterns.chapitres.chap6.dessinAbstractFactory.dessin.bibliothequegraphique.Point3DCouleur;
 
 public abstract class FormeGraphiquePlane {
     protected List<Point> points = new ArrayList<Point>();

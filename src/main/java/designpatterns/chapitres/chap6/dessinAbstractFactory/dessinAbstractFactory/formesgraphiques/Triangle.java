@@ -1,11 +1,11 @@
 ﻿package designpatterns.chapitres.chap6.dessinAbstractFactory.dessinAbstractFactory.formesgraphiques;
 
-import dessinAbstractFactory.BibliothequeGraphique.FabriqueGraphique;
+import designpatterns.chapitres.chap6.dessinAbstractFactory.dessinAbstractFactory.bibliothequegraphique.FabriqueGraphique;
+
 
 public class Triangle extends FormeGraphiquePlane {
 
-    public Triangle(FabriqueGraphique fabriquePoint,
-            int x0, int y0, int x1, int y1, int x2, int y2) {
+    public Triangle(FabriqueGraphique fabriquePoint, int x0, int y0, int x1, int y1, int x2, int y2) {
         super(fabriquePoint);
         ajoutePoint(x0, y0);
         ajoutePoint(x1, y1);

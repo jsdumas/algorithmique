@@ -4,7 +4,9 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import stateClassesInternes.Pile;
+import designpatterns.chapitres.chap4.stateClassesInternes.stateclassesinternes.Pile;
+
+//import stateClassesInternes.Pile;
 
 public class PileTest {
 

@@ -1,6 +1,6 @@
 ﻿package designpatterns.chapitres.chap6.dessinAbstractFactory.dessin;
 
-import dessin.formesGraphiques.Triangle;
+import designpatterns.chapitres.chap6.dessinAbstractFactory.dessin.formesgraphiques.Triangle;
 
 public class Test {
 

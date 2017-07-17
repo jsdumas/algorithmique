@@ -1,6 +1,6 @@
 ﻿package designpatterns.chapitres.chap6.dessinAbstractFactory.dessinAbstractFactory.formesgraphiques;
 
-import dessinAbstractFactory.BibliothequeGraphique.FabriqueGraphique;
+import designpatterns.chapitres.chap6.dessinAbstractFactory.dessinAbstractFactory.bibliothequegraphique.FabriqueGraphique;
 
 public class Ligne extends FormeGraphiquePlane {
 

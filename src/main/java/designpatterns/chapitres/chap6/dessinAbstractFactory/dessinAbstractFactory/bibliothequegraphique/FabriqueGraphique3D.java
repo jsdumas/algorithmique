@@ -1,7 +1,6 @@
 ﻿package designpatterns.chapitres.chap6.dessinAbstractFactory.dessinAbstractFactory.bibliothequegraphique;
 
-public class FabriqueGraphique3D implements
-        FabriqueGraphique {
+public class FabriqueGraphique3D implements FabriqueGraphique {
 
     protected int zPoint;
 
