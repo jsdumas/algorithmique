@@ -12,7 +12,7 @@ Raccourci d'eclipse							                                    :	Ctrl + Shift + l
 
 Rechercher une chaîne de charactère dans le fichier			            :	Ctrl + h
 
-Importer une méthode statique					                              :	Ctrl + Shift + M
+Importer une méthode statique					                              :	Ctrl + Shift + m
 
 Rechercher un fichier						                                    :	Ctrl + Shift + r
 
