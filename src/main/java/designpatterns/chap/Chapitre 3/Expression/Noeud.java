@@ -1,1 +1,0 @@
-﻿import java.util.*;public interface Noeud {    void ajouteNoeud(Noeud subnode);    public List<Noeud> getEnfants();    public void accepteVisiteur(VisiteurExpression v);}
