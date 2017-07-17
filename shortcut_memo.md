@@ -1,6 +1,7 @@
 # shortcut memo
 
 Call hierarchy 							:	Ctrl + Alt + h
+
 Appelant d'une méthode 						:	Ctrl + Shift + g
 Liste des méthodes d'une classe 					:	Ctrl + o
 Inspecter une méthode en mode débug (après selection de la méthode) :	Ctrl + Shift + i
