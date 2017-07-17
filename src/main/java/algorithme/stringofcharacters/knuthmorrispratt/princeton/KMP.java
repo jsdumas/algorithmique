@@ -1,4 +1,4 @@
-package knuthmorrispratt.princeton;
+package algorithme.stringofcharacters.knuthmorrispratt.princeton;
 
 public class KMP {
 	private final int R; // the radix
