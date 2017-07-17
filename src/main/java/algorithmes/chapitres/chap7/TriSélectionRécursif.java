@@ -1,3 +1,5 @@
+package algorithmes.chapitres.chap7;
+
 public class TriSélectionRécursif {
 
 	public static void triSélection(int[] tableau, int position) {

@@ -1,3 +1,5 @@
+package algorithmes.chapitres.chap4;
+
 import java.util.Scanner;
 
 public class TestCalculatrice {
@@ -10,16 +12,25 @@ public class TestCalculatrice {
 
 	public static void main(String[] args) {
 		int réponse;
-		Calculatrice calc = new Calculatrice(0);	
+		Calculatrice calc = new Calculatrice(0);
 		do {
-			System.out.println("La valeur de la calculatrice est : "+calc.getValeur());
+			System.out.println("La valeur de la calculatrice est : " + calc.getValeur());
 			System.out.print("1. ajouter 2. multiplier : ");
 			System.out.print("3. diviser un nombre 4. quitter : ");
 			réponse = reader.nextInt();
-			switch(réponse) {
-			case 1: {calc.ajoute(lireArgument());break;}
-			case 2: {calc.multiplie(lireArgument());break;}
-			case 3: {calc.divise(lireArgument());break;}
+			switch (réponse) {
+				case 1: {
+					calc.ajoute(lireArgument());
+					break;
+				}
+				case 2: {
+					calc.multiplie(lireArgument());
+					break;
+				}
+				case 3: {
+					calc.divise(lireArgument());
+					break;
+				}
 			}
 		} while (réponse != 4);
 	}

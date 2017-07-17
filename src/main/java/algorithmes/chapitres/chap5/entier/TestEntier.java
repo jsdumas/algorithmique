@@ -1,6 +1,7 @@
-package entier;
+package algorithmes.chapitres.chap5.entier;
 
 import java.util.Scanner;
+
 public class TestEntier {
 
 	public static void main(String[] args) {

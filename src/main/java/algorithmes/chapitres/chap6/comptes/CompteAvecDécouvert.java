@@ -1,4 +1,4 @@
-package comptes;
+package algorithmes.chapitres.chap6.comptes;
 
 public class CompteAvecDécouvert extends Compte {
 	long découvertAutorisé;
@@ -15,6 +15,7 @@ public class CompteAvecDécouvert extends Compte {
 		this.découvertAutorisé = découvertAutorisé;
 	}
 
+	@Override
 	public boolean retire(long montant) {
 		if (montant <= solde + découvertAutorisé) {
 			solde -= montant;

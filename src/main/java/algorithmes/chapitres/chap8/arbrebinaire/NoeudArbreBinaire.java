@@ -1,4 +1,4 @@
-package arbreBinaire;
+package algorithmes.chapitres.chap8.arbrebinaire;
 
 public class NoeudArbreBinaire {
 	Donnée donnée;

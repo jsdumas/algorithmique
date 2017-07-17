@@ -1,4 +1,7 @@
+package algorithmes.chapitres.chap3;
+
 import java.util.Scanner;
+
 public class RechercheValeurTableau3 {
 	// déclaration de la constante taille
 	final static int taille = 10;
@@ -12,7 +15,7 @@ public class RechercheValeurTableau3 {
 	public static void remplitTableau() {
 		int i;
 		for (i = 0; i < taille; i++)
-			tableau[i] = généreNombreAléatoire(1,10);
+			tableau[i] = généreNombreAléatoire(1, 10);
 	}
 
 	public static void afficheTableau(boolean modeUneLigne) {
@@ -24,7 +27,8 @@ public class RechercheValeurTableau3 {
 			else
 				System.out.println();
 		}
-		if (modeUneLigne) System.out.println();
+		if (modeUneLigne)
+			System.out.println();
 	}
 
 	public static void main(String[] args) {
@@ -39,7 +43,7 @@ public class RechercheValeurTableau3 {
 		System.out.println(" 2) en affichant un élément par ligne");
 		System.out.print(" choix : ");
 		choix = reader.nextInt();
-		afficheTableau(choix==1);
+		afficheTableau(choix == 1);
 
 		System.out.print("Entrez la valeur à rechercher : ");
 		valeur = reader.nextInt();

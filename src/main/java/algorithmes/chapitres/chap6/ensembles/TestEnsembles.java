@@ -1,6 +1,7 @@
-package ensembles;
+package algorithmes.chapitres.chap6.ensembles;
 
 import java.util.Scanner;
+
 public class TestEnsembles {
 
 	public static void main(String[] args) {

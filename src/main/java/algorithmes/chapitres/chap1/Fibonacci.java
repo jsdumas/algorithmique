@@ -1,5 +1,7 @@
-package chapitre_1;
+package algorithmes.chapitres.chap1;
+
 import java.util.Scanner;
+
 public class Fibonacci {
 
 	public static void main(String[] args) {
@@ -11,22 +13,21 @@ public class Fibonacci {
 			n = reader.nextInt();
 		} while (n < 1);
 		switch (n) {
-		case 1:
-		case 2: {
-			System.out.println("Le résultat vaut 1");
-			break;
-		}
-		default: {
-			termePrécédent = 1;
-			terme = 1;
-			for (i = 3; i <= n; i++) {
-				somme = terme + termePrécédent;
-				termePrécédent = terme;
-				terme = somme;
+			case 1:
+			case 2: {
+				System.out.println("Le résultat vaut 1");
+				break;
 			}
-			System.out.println("Le résultat de la suite de Fibonacci pour" + n
-					+ " vaut : " + terme);
-		}
+			default: {
+				termePrécédent = 1;
+				terme = 1;
+				for (i = 3; i <= n; i++) {
+					somme = terme + termePrécédent;
+					termePrécédent = terme;
+					terme = somme;
+				}
+				System.out.println("Le résultat de la suite de Fibonacci pour" + n + " vaut : " + terme);
+			}
 		}
 	}
 }

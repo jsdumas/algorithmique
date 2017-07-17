@@ -1,4 +1,4 @@
-package courseAutomobile;
+package algorithmes.chapitres.chap6.courseAutomobile;
 
 public class Circuit1 {
 

@@ -1,5 +1,7 @@
+package algorithmes.chapitres.chap4;
+
 public class Rectangle2 {
-	float xmin,xmax,ymin,ymax;
+	float xmin, xmax, ymin, ymax;
 
 	public Rectangle2(float xmin, float xmax, float ymin, float ymax) {
 		this.xmin = xmin;
@@ -39,15 +41,15 @@ public class Rectangle2 {
 	public void setYmax(float ymax) {
 		this.ymax = ymax;
 	}
-	
+
 	public Rectangle2 intersection(Rectangle2 rect) {
-		float newXmin,newXmax,newYmin,newYmax;
-		if ((xmax<rect.getXmin())||(xmin>rect.getXmax())||(ymax<rect.getYmin())||(ymin>rect.getYmax()))
-			return new Rectangle2(0,0,0,0);
+		float newXmin, newXmax, newYmin, newYmax;
+		if ((xmax < rect.getXmin()) || (xmin > rect.getXmax()) || (ymax < rect.getYmin()) || (ymin > rect.getYmax()))
+			return new Rectangle2(0, 0, 0, 0);
 		newXmin = Math.max(xmin, rect.getXmin());
 		newXmax = Math.min(xmax, rect.getXmax());
 		newYmin = Math.max(ymin, rect.getYmin());
 		newYmax = Math.min(ymax, rect.getYmax());
-		return new Rectangle2(newXmin,newXmax,newYmin,newYmax);
+		return new Rectangle2(newXmin, newXmax, newYmin, newYmax);
 	}
-}	
+}

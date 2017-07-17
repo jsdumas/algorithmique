@@ -1,4 +1,4 @@
-package composite;
+package algorithmes.chapitres.chap7.composite;
 
 public interface Noeud {
 	long nombreFichiers();

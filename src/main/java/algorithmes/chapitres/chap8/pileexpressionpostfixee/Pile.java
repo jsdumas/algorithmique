@@ -1,4 +1,4 @@
-package pileExpressionPostfixée;
+package algorithmes.chapitres.chap8.pileexpressionpostfixee;
 
 public class Pile {
 	String[] tableau;
@@ -17,12 +17,12 @@ public class Pile {
 		} else
 			return false;
 	}
-	
+
 	public String dépile() {
-		if (sommet>0) {
+		if (sommet > 0) {
 			sommet--;
 			return tableau[sommet];
 		}
-		return null;			
+		return null;
 	}
 }

@@ -1,4 +1,7 @@
+package algorithmes.chapitres.chap3;
+
 import java.util.Scanner;
+
 public class RechercheValeurTableauDeuxDim {
 
 	public static int[] rechercheValeurTableauDeuxDim(int valeur, int[][] tab) {
@@ -58,8 +61,7 @@ public class RechercheValeurTableauDeuxDim {
 		// recherche dans le tableau
 		résultatRecherche = rechercheValeurTableauDeuxDim(valeur, tableau);
 		if (résultatRecherche[0] != -1)
-			System.out.println("Valeur trouvée aux indices : "
-					+ résultatRecherche[0] + ", " + résultatRecherche[1]);
+			System.out.println("Valeur trouvée aux indices : " + résultatRecherche[0] + ", " + résultatRecherche[1]);
 		else
 			System.out.println("Valeur non trouvée dans le tableau ");
 	}

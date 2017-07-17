@@ -1,4 +1,5 @@
-package chapitre_22;
+package algorithmes.chapitres.chap2;
+
 public class ComparaisonTableauxCaractères {
 
 	public static void main(String[] args) {
@@ -8,8 +9,7 @@ public class ComparaisonTableauxCaractères {
 		// comparaison des chaînes de caractères
 		int i = 0;
 		// calcul du nombre de caractères communs
-		while ((i < tableau1.length) && (i < tableau2.length)
-				&& (tableau1[i] == tableau2[i]))
+		while ((i < tableau1.length) && (i < tableau2.length) && (tableau1[i] == tableau2[i]))
 			i++;
 
 		if ((i == tableau1.length) || (i == tableau2.length)) {

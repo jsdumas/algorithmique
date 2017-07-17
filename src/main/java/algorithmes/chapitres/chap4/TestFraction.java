@@ -1,4 +1,7 @@
+package algorithmes.chapitres.chap4;
+
 import java.util.Scanner;
+
 public class TestFraction {
 
 	public static void main(String[] args) {
@@ -9,8 +12,7 @@ public class TestFraction {
 		a = reader.nextInt();
 		b = reader.nextInt();
 		Fraction frac1 = new Fraction(a, b);
-		System.out.println("La valeur réelle de la première fraction est : "
-				+ frac1.réel());
+		System.out.println("La valeur réelle de la première fraction est : " + frac1.réel());
 		System.out.println("Seconde fraction :");
 		System.out.println("Entrez le numérateur puis le dénominateur : ");
 		a = reader.nextInt();

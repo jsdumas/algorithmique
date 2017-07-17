@@ -1,4 +1,7 @@
+package algorithmes.chapitres.chap7;
+
 import java.util.Scanner;
+
 public class CalculPGCDRécursif {
 
 	public static int pgcd(int a, int b) {

@@ -1,15 +1,15 @@
-package pileExpressionPostfixée;
+package algorithmes.chapitres.chap8.pileexpressionpostfixee;
 
 public class ExpressionPostfixée {
 	final int taille = 5;
 	Pile pile = new Pile(taille);
-	
+
 	public boolean empileValeur(int valeur) {
 		return pile.empile(Integer.toString(valeur));
 	}
 
 	public void add() {
-		int a,b;
+		int a, b;
 		String valeur = pile.dépile();
 		if (valeur != null)
 			a = Integer.parseInt(valeur);
@@ -20,11 +20,11 @@ public class ExpressionPostfixée {
 			b = Integer.parseInt(valeur);
 		else
 			b = 0;
-		pile.empile(Integer.toString(a+b));
+		pile.empile(Integer.toString(a + b));
 	}
 
 	public void mult() {
-		int a,b;
+		int a, b;
 		String valeur = pile.dépile();
 		if (valeur != null)
 			a = Integer.parseInt(valeur);
@@ -35,9 +35,9 @@ public class ExpressionPostfixée {
 			b = Integer.parseInt(valeur);
 		else
 			b = 0;
-		pile.empile(Integer.toString(a*b));
+		pile.empile(Integer.toString(a * b));
 	}
-	
+
 	public int résultat() {
 		String valeur = pile.dépile();
 		if (valeur != null)

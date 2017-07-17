@@ -1,3 +1,5 @@
+package algorithmes.chapitres.chap4;
+
 public class Complexe {
 	double réel, imaginaire;
 
@@ -21,15 +23,15 @@ public class Complexe {
 		this.réel = réel;
 		this.imaginaire = imaginaire;
 	}
-	
+
 	public double module() {
-		return Math.sqrt(réel*réel+imaginaire*imaginaire);
+		return Math.sqrt(réel * réel + imaginaire * imaginaire);
 	}
-	
+
 	public void ajouteRéel(double argument) {
 		réel = réel + argument;
 	}
-	
+
 	public void multiplieRéel(double argument) {
 		réel = réel * argument;
 		imaginaire = imaginaire * argument;

@@ -1,6 +1,7 @@
-package pileExpressionPostfixée;
+package algorithmes.chapitres.chap8.pileexpressionpostfixee;
 
 import java.util.Scanner;
+
 public class TestPile {
 
 	public static void main(String[] args) {
@@ -13,6 +14,6 @@ public class TestPile {
 			valeur = reader.nextLine();
 		} while ((valeur.length() > 0) && (pile.empile(valeur)));
 		while ((valeur = pile.dépile()) != null)
-			System.out.println("Chaîne dépilée : "+valeur);
+			System.out.println("Chaîne dépilée : " + valeur);
 	}
 }

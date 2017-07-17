@@ -1,9 +1,11 @@
+package algorithmes.chapitres.chap4;
+
 public class Ensemble {
 	int tailleEnsemble;
 	int[] ensemble;
-	
+
 	public Ensemble(int tailleMaximaleEnsemble) {
-	    tailleEnsemble = 0;
+		tailleEnsemble = 0;
 		ensemble = new int[tailleMaximaleEnsemble];
 	}
 
@@ -33,10 +35,10 @@ public class Ensemble {
 		}
 		return false;
 	}
-	
+
 	public void affiche() {
 		for (int i = 0; i < tailleEnsemble; i++)
 			System.out.print(ensemble[i] + " ");
-		System.out.println();		
+		System.out.println();
 	}
 }

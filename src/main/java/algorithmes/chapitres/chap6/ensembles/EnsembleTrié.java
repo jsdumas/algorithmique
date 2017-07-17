@@ -1,18 +1,19 @@
-package ensembles;
+package algorithmes.chapitres.chap6.ensembles;
 
 public class EnsembleTrié implements InterfaceEnsemble {
 	int tailleEnsemble;
 	int[] ensemble;
-	
+
 	public EnsembleTrié(int tailleMaximaleEnsemble) {
-	    tailleEnsemble = 0;
+		tailleEnsemble = 0;
 		ensemble = new int[tailleMaximaleEnsemble];
 	}
 
+	@Override
 	public boolean insére(int valeur) {
 		int borneGauche, borneDroite, milieu;
 		boolean trouvé;
-		
+
 		borneGauche = 0;
 		borneDroite = tailleEnsemble - 1;
 		trouvé = false;
@@ -39,10 +40,11 @@ public class EnsembleTrié implements InterfaceEnsemble {
 		return true;
 	}
 
+	@Override
 	public boolean supprime(int valeur) {
 		int borneGauche, borneDroite, milieu;
 		boolean trouvé;
-		
+
 		borneGauche = 0;
 		borneDroite = tailleEnsemble - 1;
 		trouvé = false;
@@ -67,10 +69,11 @@ public class EnsembleTrié implements InterfaceEnsemble {
 		}
 		return false;
 	}
-	
+
+	@Override
 	public void affiche() {
 		for (int i = 0; i < tailleEnsemble; i++)
 			System.out.print(ensemble[i] + " ");
-		System.out.println();		
+		System.out.println();
 	}
 }

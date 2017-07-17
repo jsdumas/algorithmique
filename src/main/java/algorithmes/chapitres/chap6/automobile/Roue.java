@@ -1,4 +1,4 @@
-package automobile;
+package algorithmes.chapitres.chap6.automobile;
 
 public class Roue {
 	String nom;
@@ -6,7 +6,8 @@ public class Roue {
 	public Roue(String nom) {
 		this.nom = nom;
 	}
+
 	public void tourne() {
-		System.out.println(nom+" tourne.");
+		System.out.println(nom + " tourne.");
 	}
 }

@@ -1,4 +1,7 @@
+package algorithmes.chapitres.chap4;
+
 import java.util.Scanner;
+
 public class TestMatrice {
 
 	public static void main(String[] args) {

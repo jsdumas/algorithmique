@@ -1,4 +1,5 @@
-package chapitre_22;
+package algorithmes.chapitres.chap2;
+
 public class ValeursCommunes2 {
 
 	public static void main(String[] args) {
@@ -14,10 +15,10 @@ public class ValeursCommunes2 {
 			tableau2[i] = (int) (Math.random() * 10) + 1;
 		}
 		// affichage des deux tableaux
-		for (i = 0; i < taille; i++) 
-			System.out.println("tableau["+i+"]="+tableau[i]);
-		for (i = 0; i < taille; i++) 
-			System.out.println("tableau2["+i+"]="+tableau2[i]);
+		for (i = 0; i < taille; i++)
+			System.out.println("tableau[" + i + "]=" + tableau[i]);
+		for (i = 0; i < taille; i++)
+			System.out.println("tableau2[" + i + "]=" + tableau2[i]);
 		// recherche du nombre de valeurs communes
 		nbrValeursCommunes = 0;
 		for (i = 0; i < taille; i++) {
@@ -34,8 +35,6 @@ public class ValeursCommunes2 {
 					nbrValeursCommunes++;
 			}
 		}
-		System.out
-				.println("Nombre de valeurs communes entre les deux tableaux "
-						+ nbrValeursCommunes);
+		System.out.println("Nombre de valeurs communes entre les deux tableaux " + nbrValeursCommunes);
 	}
 }

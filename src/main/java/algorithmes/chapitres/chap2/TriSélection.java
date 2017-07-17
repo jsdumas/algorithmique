@@ -1,4 +1,5 @@
-package chapitre_22;
+package algorithmes.chapitres.chap2;
+
 public class TriSélection {
 
 	public static void main(String[] args) {

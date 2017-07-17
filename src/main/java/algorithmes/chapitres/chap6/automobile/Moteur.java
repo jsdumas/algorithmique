@@ -1,4 +1,4 @@
-package automobile;
+package algorithmes.chapitres.chap6.automobile;
 
 public class Moteur {
 	Roue roueGauche, roueDroite;
@@ -6,14 +6,14 @@ public class Moteur {
 
 	public Moteur(String nom) {
 		this.nom = nom;
-		roueGauche = new Roue("roue gauche du "+nom);
-		roueDroite = new Roue("roue droite du "+nom);
+		roueGauche = new Roue("roue gauche du " + nom);
+		roueDroite = new Roue("roue droite du " + nom);
 	}
-	
+
 	public void démarre() {
-		System.out.println(nom+" a commencé à démarrer.");
+		System.out.println(nom + " a commencé à démarrer.");
 		roueGauche.tourne();
 		roueDroite.tourne();
-		System.out.println(nom+" a terminé de démarrer.");
+		System.out.println(nom + " a terminé de démarrer.");
 	}
 }

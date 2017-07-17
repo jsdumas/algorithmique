@@ -1,4 +1,4 @@
-package composite;
+package algorithmes.chapitres.chap7.composite;
 
 public class SystèmeFichiers {
 
@@ -14,7 +14,7 @@ public class SystèmeFichiers {
 		système.ajouteNoeud(répertoire1);
 		système.ajouteNoeud(répertoire2);
 		système.ajouteNoeud(new Fichier());
-		System.out.println(" Nombre de fichiers dans le système : "+système.nombreFichiers());
-		System.out.println(" Nombre de répertoire dans le système : "+système.nombreRépertoires());
+		System.out.println(" Nombre de fichiers dans le système : " + système.nombreFichiers());
+		System.out.println(" Nombre de répertoire dans le système : " + système.nombreRépertoires());
 	}
 }

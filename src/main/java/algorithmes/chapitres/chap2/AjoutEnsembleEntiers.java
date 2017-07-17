@@ -1,5 +1,7 @@
-package chapitre_22;
+package algorithmes.chapitres.chap2;
+
 import java.util.Scanner;
+
 public class AjoutEnsembleEntiers {
 
 	public static void main(String[] args) {
@@ -24,8 +26,8 @@ public class AjoutEnsembleEntiers {
 			}
 		}
 		// affichage de l’ensemble
-		for (int i=0;i<tailleEnsemble;i++)
-			System.out.print(ensemble[i]+" ");
+		for (int i = 0; i < tailleEnsemble; i++)
+			System.out.print(ensemble[i] + " ");
 		System.out.println();
 	}
 }

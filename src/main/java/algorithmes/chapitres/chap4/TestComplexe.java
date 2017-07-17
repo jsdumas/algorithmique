@@ -1,4 +1,7 @@
+package algorithmes.chapitres.chap4;
+
 import java.util.Scanner;
+
 public class TestComplexe {
 
 	public static void main(String[] args) {
@@ -9,14 +12,14 @@ public class TestComplexe {
 		System.out.print("Entrez la valeur imaginaire du nombre complexe : ");
 		imaginaire = reader.nextDouble();
 		Complexe nombreComplexe = new Complexe(réel, imaginaire);
-		System.out.println("Le module du nombre complexe est : "+nombreComplexe.module());
+		System.out.println("Le module du nombre complexe est : " + nombreComplexe.module());
 		System.out.print("Entrez un nombre réel à ajouter au nombre complexe : ");
 		nombreComplexe.ajouteRéel(reader.nextDouble());
 		System.out.println("Le nombre complexe vaut maintenant : ");
-		System.out.println("Partie réelle : "+nombreComplexe.getRéel()+" partie imaginaire : "+nombreComplexe.getImaginaire());
+		System.out.println("Partie réelle : " + nombreComplexe.getRéel() + " partie imaginaire : " + nombreComplexe.getImaginaire());
 		System.out.print("Entrez un nombre réel à multiplier au nombre complexe : ");
 		nombreComplexe.multiplieRéel(reader.nextDouble());
 		System.out.println("Le nombre complexe vaut maintenant : ");
-		System.out.println("Partie réelle : "+nombreComplexe.getRéel()+" partie imaginaire : "+nombreComplexe.getImaginaire());
+		System.out.println("Partie réelle : " + nombreComplexe.getRéel() + " partie imaginaire : " + nombreComplexe.getImaginaire());
 	}
 }

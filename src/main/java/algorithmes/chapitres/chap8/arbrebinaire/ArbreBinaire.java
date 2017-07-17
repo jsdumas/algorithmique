@@ -1,4 +1,4 @@
-package chapitre_8.arbreBinaire;
+package algorithmes.chapitres.chap8.arbrebinaire;
 
 public class ArbreBinaire {
 	NoeudArbreBinaire racine;

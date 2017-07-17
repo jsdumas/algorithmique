@@ -1,5 +1,7 @@
-package chapitre_22;
+package algorithmes.chapitres.chap2;
+
 import java.util.Scanner;
+
 public class RechercheValeur {
 
 	public static void main(String[] args) {
@@ -14,8 +16,7 @@ public class RechercheValeur {
 			tableau[i] = (int) (Math.random() * 10) + 1;
 		// impression du tableau
 		for (i = 0; i < taille; i++)
-			System.out.println(" valeur du tableau à l'indice : " + i + " "
-					+ tableau[i]);
+			System.out.println(" valeur du tableau à l'indice : " + i + " " + tableau[i]);
 
 		System.out.print("Entrez la valeur à rechercher : ");
 		valeur = reader.nextInt();
@@ -29,6 +30,6 @@ public class RechercheValeur {
 		if (nbrValeursTrouvées == 0)
 			System.out.println("Valeur non trouvée dans le tableau ");
 		else
-			System.out.println("Nombre d’occurrences : "+ nbrValeursTrouvées);
+			System.out.println("Nombre d’occurrences : " + nbrValeursTrouvées);
 	}
 }

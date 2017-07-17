@@ -1,5 +1,7 @@
-package chapitre_22;
+package algorithmes.chapitres.chap2;
+
 import java.util.Scanner;
+
 public class SuppressionEnsembleTriéEntiers {
 
 	public static void main(String[] args) {

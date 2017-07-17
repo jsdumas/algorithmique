@@ -1,4 +1,7 @@
+package algorithmes.chapitres.chap3;
+
 import java.util.Scanner;
+
 public class GénérationAléatoire {
 
 	public static int généreNombreAléatoire(int borneInf, int borneSup) {
@@ -14,7 +17,6 @@ public class GénérationAléatoire {
 		System.out.print("Entrez la borne supérieure : ");
 		borneSup = reader.nextInt();
 		nombreAléatoire = généreNombreAléatoire(borneInf, borneSup);
-		System.out.println("Le nombre aléatoire généré est : "
-				+ nombreAléatoire);
+		System.out.println("Le nombre aléatoire généré est : " + nombreAléatoire);
 	}
 }

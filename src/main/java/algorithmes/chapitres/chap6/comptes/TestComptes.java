@@ -1,6 +1,7 @@
-package comptes;
+package algorithmes.chapitres.chap6.comptes;
 
 import java.util.Scanner;
+
 public class TestComptes {
 
 	public static void main(String[] args) {
@@ -26,7 +27,6 @@ public class TestComptes {
 			System.out.println("Retrait autorisé");
 		else
 			System.out.println("Retrait non autorisé");
-		System.out
-				.println("Nouvelle valeur du solde : " + monCompte.getSolde());
+		System.out.println("Nouvelle valeur du solde : " + monCompte.getSolde());
 	}
 }

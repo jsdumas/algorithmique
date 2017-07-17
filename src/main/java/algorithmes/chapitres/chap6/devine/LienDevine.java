@@ -1,4 +1,4 @@
-package devine;
+package algorithmes.chapitres.chap6.devine;
 
 public class LienDevine {
 	Devine2 nombreDevine;
@@ -12,15 +12,15 @@ public class LienDevine {
 		System.out.println("Tentative : " + tentative);
 		résultat = nombreDevine.propose(tentative);
 		switch (résultat) {
-		case -1:
-			System.out.println("Le nombre à deviner est supérieur à la tentative.");
-			break;
-		case 0:
-			System.out.println("Nombre trouvé");
-			break;
-		case 1:
-			System.out.println("Le nombre à deviner est inférieur à la tentative.");
-			break;
+			case -1:
+				System.out.println("Le nombre à deviner est supérieur à la tentative.");
+				break;
+			case 0:
+				System.out.println("Nombre trouvé");
+				break;
+			case 1:
+				System.out.println("Le nombre à deviner est inférieur à la tentative.");
+				break;
 		}
 		return résultat;
 	}

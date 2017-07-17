@@ -1,5 +1,7 @@
-package chapitre_22;
+package algorithmes.chapitres.chap2;
+
 import java.util.Scanner;
+
 public class Variance {
 
 	public static void main(String[] args) {
@@ -29,8 +31,7 @@ public class Variance {
 		// calcul et affichage de la variance et de l'écart type
 		sommeDifférencesCarré = 0;
 		for (i = 0; i < taille; i++)
-			sommeDifférencesCarré += (tableau[i] - moyenne)
-					* (tableau[i] - moyenne);
+			sommeDifférencesCarré += (tableau[i] - moyenne) * (tableau[i] - moyenne);
 		variance = (double) sommeDifférencesCarré / taille;
 		écartType = Math.sqrt(variance);
 		System.out.println("La variance vaut : " + variance);

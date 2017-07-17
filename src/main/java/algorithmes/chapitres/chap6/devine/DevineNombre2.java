@@ -1,9 +1,9 @@
-package devine;
+package algorithmes.chapitres.chap6.devine;
 
-public class DevineNombre2{
+public class DevineNombre2 {
 	LienDevine lien;
 	NombreAléatoire nbrAléatoire;
-	
+
 	public DevineNombre2(NombreAléatoire nbrAléatoire) {
 		this.nbrAléatoire = nbrAléatoire;
 		this.lien = new LienDevine(nbrAléatoire);
@@ -15,7 +15,7 @@ public class DevineNombre2{
 		int milieu, réponse;
 		lien.initialise();
 		do {
-			milieu = (borneInf + borneSup) / 2;			
+			milieu = (borneInf + borneSup) / 2;
 			réponse = lien.propose(milieu);
 			if (réponse == 1)
 				borneSup = milieu - 1;

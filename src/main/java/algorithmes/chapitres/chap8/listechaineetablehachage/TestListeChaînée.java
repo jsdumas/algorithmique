@@ -1,6 +1,7 @@
-package listeChaînéeTableHachage;
+package algorithmes.chapitres.chap8.listechaineetablehachage;
 
 import java.util.Scanner;
+
 public class TestListeChaînée {
 
 	public static void main(String[] args) {
@@ -13,8 +14,7 @@ public class TestListeChaînée {
 		liste.insère(90, "90");
 		liste.affiche();
 		do {
-			System.out
-					.print("Entrez une valeur à insérer (-100 pour terminer) : ");
+			System.out.print("Entrez une valeur à insérer (-100 pour terminer) : ");
 			valeur = reader.nextInt();
 			if (valeur != -100) {
 				liste.insère(valeur, Integer.toString(valeur));
@@ -22,8 +22,7 @@ public class TestListeChaînée {
 			}
 		} while (valeur != -100);
 		do {
-			System.out
-					.print("Entrez une clef à rechercher (-100 pour terminer) : ");
+			System.out.print("Entrez une clef à rechercher (-100 pour terminer) : ");
 			valeur = reader.nextInt();
 			if (valeur != -100) {
 				Donnée résultat = liste.recherche(valeur);

@@ -1,3 +1,5 @@
+package algorithmes.chapitres.chap3;
+
 import java.util.Scanner;
 
 public class RechercheValeurTableau2 {
@@ -21,7 +23,8 @@ public class RechercheValeurTableau2 {
 			else
 				System.out.println();
 		}
-		if (modeUneLigne) System.out.println();
+		if (modeUneLigne)
+			System.out.println();
 	}
 
 	public static void main(String[] args) {
@@ -36,7 +39,7 @@ public class RechercheValeurTableau2 {
 		System.out.println(" 2) en affichant un élément par ligne");
 		System.out.print(" choix : ");
 		choix = reader.nextInt();
-		afficheTableau(choix==1);
+		afficheTableau(choix == 1);
 
 		System.out.print("Entrez la valeur à rechercher : ");
 		valeur = reader.nextInt();

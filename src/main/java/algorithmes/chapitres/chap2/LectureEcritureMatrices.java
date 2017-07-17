@@ -1,5 +1,7 @@
-package chapitre_22;
+package algorithmes.chapitres.chap2;
+
 import java.util.Scanner;
+
 public class LectureEcritureMatrices {
 
 	public static void main(String[] args) {
@@ -16,7 +18,6 @@ public class LectureEcritureMatrices {
 		// écriture de la matrice
 		for (int i = 0; i < taille; i++)
 			for (int j = 0; j < taille; j++)
-				System.out.println("matrice[" + i + "][" + j + "] = "
-						+ matrice[i][j]);
+				System.out.println("matrice[" + i + "][" + j + "] = " + matrice[i][j]);
 	}
 }

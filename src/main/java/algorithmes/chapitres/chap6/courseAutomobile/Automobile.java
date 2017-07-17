@@ -1,4 +1,4 @@
-package courseAutomobile;
+package algorithmes.chapitres.chap6.courseAutomobile;
 
 public class Automobile {
 	NombreAléatoireCourse nombreAléa;
@@ -21,7 +21,6 @@ public class Automobile {
 	}
 
 	public boolean aDépassé(Automobile auto) {
-		return (positionAprès > auto.positionAprès)
-				&& (positionAvant <= auto.positionAvant);
+		return (positionAprès > auto.positionAprès) && (positionAvant <= auto.positionAvant);
 	}
 }

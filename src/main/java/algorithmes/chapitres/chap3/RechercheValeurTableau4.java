@@ -1,4 +1,7 @@
+package algorithmes.chapitres.chap3;
+
 import java.util.Scanner;
+
 public class RechercheValeurTableau4 {
 	// déclaration de la constante taille
 	final static int taille = 10;
@@ -9,9 +12,9 @@ public class RechercheValeurTableau4 {
 		return (int) ((borneSup - borneInf + 1) * Math.random()) + borneInf;
 	}
 
-	public static void remplitTableauAléatoire(int[] t,int borneInf, int borneSup) {
-		for (int i=0;i<t.length;i++)
-			t[i]=généreNombreAléatoire(borneInf,borneSup);
+	public static void remplitTableauAléatoire(int[] t, int borneInf, int borneSup) {
+		for (int i = 0; i < t.length; i++)
+			t[i] = généreNombreAléatoire(borneInf, borneSup);
 	}
 
 	public static void afficheTableau(boolean modeUneLigne) {
@@ -23,7 +26,8 @@ public class RechercheValeurTableau4 {
 			else
 				System.out.println();
 		}
-		if (modeUneLigne) System.out.println();
+		if (modeUneLigne)
+			System.out.println();
 	}
 
 	public static void main(String[] args) {
@@ -31,14 +35,14 @@ public class RechercheValeurTableau4 {
 		int i, valeur;
 		int choix;
 		// remplissage du tableau
-		remplitTableauAléatoire(tableau,1,10);
+		remplitTableauAléatoire(tableau, 1, 10);
 		// impression du tableau
 		System.out.println("Voulez-vous afficher le tableau");
 		System.out.println(" 1) sur une seule ligne");
 		System.out.println(" 2) en affichant un élément par ligne");
 		System.out.print(" choix : ");
 		choix = reader.nextInt();
-		afficheTableau(choix==1);
+		afficheTableau(choix == 1);
 
 		System.out.print("Entrez la valeur à rechercher : ");
 		valeur = reader.nextInt();

@@ -1,4 +1,4 @@
-package devine;
+package algorithmes.chapitres.chap6.devine;
 
 public class TestDevineNombre {
 
@@ -6,6 +6,6 @@ public class TestDevineNombre {
 		DevineNombre devineNombre = new DevineNombre();
 		int nombreTentatives;
 		nombreTentatives = devineNombre.devine(1, 20);
-		System.out.println("gagné en " + nombreTentatives + " coups");		
+		System.out.println("gagné en " + nombreTentatives + " coups");
 	}
 }

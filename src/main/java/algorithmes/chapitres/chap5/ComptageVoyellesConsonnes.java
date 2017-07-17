@@ -1,4 +1,4 @@
-package chapitre_5;
+package algorithmes.chapitres.chap5;
 
 import java.util.Scanner;
 

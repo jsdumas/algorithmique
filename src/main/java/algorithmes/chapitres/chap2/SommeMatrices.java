@@ -1,4 +1,5 @@
-package chapitre_22;
+package algorithmes.chapitres.chap2;
+
 import java.util.Scanner;
 
 public class SommeMatrices {
@@ -28,7 +29,6 @@ public class SommeMatrices {
 		// écriture de la matrice résultat
 		for (int i = 0; i < taille; i++)
 			for (int j = 0; j < taille; j++)
-				System.out.println("matrice somme[" + i + "][" + j + "] = "
-						+ matrice3[i][j]);
+				System.out.println("matrice somme[" + i + "][" + j + "] = " + matrice3[i][j]);
 	}
 }

@@ -1,9 +1,9 @@
-package expression;
+package algorithmes.chapitres.chap7.expression;
 
 public class TestExpression {
 
 	public static void main(String[] args) {
-		Expression expression=new Expression();
-		System.out.println("Résultat : "+expression.évalue());
+		Expression expression = new Expression();
+		System.out.println("Résultat : " + expression.évalue());
 	}
 }

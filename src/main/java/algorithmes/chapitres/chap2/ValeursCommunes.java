@@ -1,4 +1,5 @@
-package chapitre_22;
+package algorithmes.chapitres.chap2;
+
 public class ValeursCommunes {
 
 	public static void main(String[] args) {
@@ -28,8 +29,6 @@ public class ValeursCommunes {
 			if (j < taille)
 				nbrValeursCommunes++;
 		}
-		System.out
-				.println("Nombre de valeurs communes entre les deux tableaux "
-						+ nbrValeursCommunes);
+		System.out.println("Nombre de valeurs communes entre les deux tableaux " + nbrValeursCommunes);
 	}
 }

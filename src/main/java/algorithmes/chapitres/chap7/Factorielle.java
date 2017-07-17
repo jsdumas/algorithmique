@@ -1,4 +1,7 @@
+package algorithmes.chapitres.chap7;
+
 import java.util.Scanner;
+
 public class Factorielle {
 
 	public static long fact(int n) {
@@ -12,6 +15,6 @@ public class Factorielle {
 		Scanner reader = new Scanner(System.in);
 		System.out.print("Entrez n : ");
 		int n = reader.nextInt();
-		System.out.println(n+"! = "+fact(n));
+		System.out.println(n + "! = " + fact(n));
 	}
 }

@@ -1,6 +1,7 @@
-package courseAutomobile;
+package algorithmes.chapitres.chap6.courseAutomobile;
 
 import java.util.Random;
+
 public class NombreAléatoireCourse {
 	Random r = new Random();
 

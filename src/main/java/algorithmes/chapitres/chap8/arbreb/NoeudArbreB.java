@@ -1,4 +1,4 @@
-package arbreB;
+package algorithmes.chapitres.chap8.arbreb;
 
 public class NoeudArbreB {
 	Donnée données[];
@@ -24,8 +24,7 @@ public class NoeudArbreB {
 		if (i == nbrDonnées) {
 			if (enfants[nbrDonnées] != null) {
 				noeudDroitNouvelleDonnée = new NoeudArbreB(ordre);
-				nouvelleDonnée = enfants[nbrDonnées].insère(nouvelleDonnée,
-						noeudDroitNouvelleDonnée);
+				nouvelleDonnée = enfants[nbrDonnées].insère(nouvelleDonnée, noeudDroitNouvelleDonnée);
 			}
 		} else {
 			if (données[i].clef == nouvelleDonnée.clef) {
@@ -34,8 +33,7 @@ public class NoeudArbreB {
 				return null;
 			} else if (enfants[i] != null) {
 				noeudDroitNouvelleDonnée = new NoeudArbreB(ordre);
-				nouvelleDonnée = enfants[i].insère(nouvelleDonnée,
-						noeudDroitNouvelleDonnée);
+				nouvelleDonnée = enfants[i].insère(nouvelleDonnée, noeudDroitNouvelleDonnée);
 			}
 		}
 		if (nouvelleDonnée == null)

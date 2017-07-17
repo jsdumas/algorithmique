@@ -1,4 +1,4 @@
-package entier;
+package algorithmes.chapitres.chap5.entier;
 
 public class Entier {
 	int valeur;
@@ -45,7 +45,7 @@ public class Entier {
 				if ((i == 0) && (c == '-'))
 					signe = -1;
 				else if ((c >= '0') && (c <= '9'))
-					valeurTemp = 10 * valeurTemp + (int) c - 48;
+					valeurTemp = 10 * valeurTemp + c - 48;
 				else
 					return; // chaîne incorrecte
 			}

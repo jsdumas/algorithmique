@@ -1,4 +1,4 @@
-package chapitre_1;
+package algorithmes.chapitres.chap1;
 
 public class QuatreTiers {
 

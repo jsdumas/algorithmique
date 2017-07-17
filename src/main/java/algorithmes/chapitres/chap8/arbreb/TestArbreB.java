@@ -1,20 +1,16 @@
-package arbreBinaire;
+package algorithmes.chapitres.chap8.arbreb;
 
 import java.util.Scanner;
-public class TestArbreBinaire {
+
+public class TestArbreB {
 
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
-		ArbreBinaire arbre = new ArbreBinaire();
+		ArbreB arbre = new ArbreB(2);
 		int valeur;
-		/*
-		 * arbre.insère(20,"20"); arbre.insère(50,"50"); arbre.insère(70,"70");
-		 * arbre.insère(90,"90");
-		 */
 		arbre.affiche();
 		do {
-			System.out
-					.print("Entrez une valeur à insérer (-100 pour terminer) : ");
+			System.out.print("Entrez une valeur à insérer (-100 pour terminer) : ");
 			valeur = reader.nextInt();
 			if (valeur != -100) {
 				arbre.insère(valeur, Integer.toString(valeur));
@@ -22,8 +18,7 @@ public class TestArbreBinaire {
 			}
 		} while (valeur != -100);
 		do {
-			System.out
-					.print("Entrez une clef à rechercher (-100 pour terminer) : ");
+			System.out.print("Entrez une clef à rechercher (-100 pour terminer) : ");
 			valeur = reader.nextInt();
 			if (valeur != -100) {
 				Donnée résultat = arbre.recherche(valeur);

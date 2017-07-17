@@ -1,3 +1,5 @@
+package algorithmes.chapitres.chap4;
+
 public class Complexe2 {
 	double réel, imaginaire;
 
@@ -42,10 +44,8 @@ public class Complexe2 {
 
 	public void multiplieComplexe(Complexe2 argument) {
 		double tempRéel;
-		tempRéel = réel * argument.getRéel() - imaginaire
-				* argument.getImaginaire();
-		imaginaire = réel * argument.getImaginaire() + imaginaire
-				* argument.getRéel();
+		tempRéel = réel * argument.getRéel() - imaginaire * argument.getImaginaire();
+		imaginaire = réel * argument.getImaginaire() + imaginaire * argument.getRéel();
 		réel = tempRéel;
 	}
 }

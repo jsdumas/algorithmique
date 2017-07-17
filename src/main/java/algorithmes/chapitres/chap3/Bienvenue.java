@@ -1,4 +1,4 @@
-package chapitre_3;
+package algorithmes.chapitres.chap3;
 
 public class Bienvenue {
 	public static void afficheBannière() {

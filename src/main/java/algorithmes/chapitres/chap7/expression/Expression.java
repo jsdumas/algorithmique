@@ -1,4 +1,4 @@
-package expression;
+package algorithmes.chapitres.chap7.expression;
 
 import java.util.Scanner;
 

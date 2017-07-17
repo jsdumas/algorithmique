@@ -1,6 +1,7 @@
-package pileExpressionPostfixée;
+package algorithmes.chapitres.chap8.pileexpressionpostfixee;
 
 import java.util.Scanner;
+
 public class TestExpressionPostfixée {
 
 	public static void main(String[] args) {
@@ -14,8 +15,7 @@ public class TestExpressionPostfixée {
 		entrée = reader.nextLine();
 		expression.empileValeur(Integer.parseInt(entrée));
 		do {
-			System.out
-					.print("Entrez une valeur ou un opérateur ou rien pour terminer : ");
+			System.out.print("Entrez une valeur ou un opérateur ou rien pour terminer : ");
 			entrée = reader.nextLine();
 			if (entrée.equals("+"))
 				expression.add();
@@ -25,6 +25,6 @@ public class TestExpressionPostfixée {
 				if (!expression.empileValeur(Integer.parseInt(entrée)))
 					System.out.println("Dépassement de capacité !");
 		} while (entrée.length() > 0);
-		System.out.println("Résultat : "+expression.résultat());
+		System.out.println("Résultat : " + expression.résultat());
 	}
 }

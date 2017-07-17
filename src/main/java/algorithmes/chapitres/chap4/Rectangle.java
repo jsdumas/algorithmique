@@ -1,3 +1,5 @@
+package algorithmes.chapitres.chap4;
+
 public class Rectangle {
 	int largeur, hauteur;
 

@@ -1,3 +1,5 @@
+package algorithmes.chapitres.chap3;
+
 import java.util.Scanner;
 
 public class SommeMatricesModulaire {
@@ -23,8 +25,7 @@ public class SommeMatricesModulaire {
 	public static void écrireMatrice(int[][] matrice) {
 		for (int i = 0; i < matrice.length; i++)
 			for (int j = 0; j < matrice[i].length; j++)
-				System.out.println("matrice[" + i + "][" + j + "] = "
-						+ matrice[i][j]);
+				System.out.println("matrice[" + i + "][" + j + "] = " + matrice[i][j]);
 	}
 
 	public static void main(String[] args) {

@@ -1,3 +1,5 @@
+package algorithmes.chapitres.chap4;
+
 import java.util.Scanner;
 
 public class TestAngle {
@@ -11,24 +13,21 @@ public class TestAngle {
 		System.out.print("Entrez la valeur de l'angle dans l'unité choisie : ");
 		double valeur = reader.nextDouble();
 		switch (choix) {
-		case 1: {
-			angle.setValeurDegrés(valeur);
-			break;
+			case 1: {
+				angle.setValeurDegrés(valeur);
+				break;
+			}
+			case 2: {
+				angle.setValeurRadians(valeur);
+				break;
+			}
+			case 3: {
+				angle.setValeurGrades(valeur);
+				break;
+			}
 		}
-		case 2: {
-			angle.setValeurRadians(valeur);
-			break;
-		}
-		case 3: {
-			angle.setValeurGrades(valeur);
-			break;
-		}
-		}
-		System.out.println("La valeur de l'angle en degrés est : "
-				+ angle.getValeurDegrés());
-		System.out.println("La valeur de l'angle en radians est : "
-				+ angle.getValeurRadians());
-		System.out.println("La valeur de l'angle en grades est : "
-				+ angle.getValeurGrades());
+		System.out.println("La valeur de l'angle en degrés est : " + angle.getValeurDegrés());
+		System.out.println("La valeur de l'angle en radians est : " + angle.getValeurRadians());
+		System.out.println("La valeur de l'angle en grades est : " + angle.getValeurGrades());
 	}
 }

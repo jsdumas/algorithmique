@@ -1,4 +1,4 @@
-package devine;
+package algorithmes.chapitres.chap6.devine;
 
 public class TestDevine2 {
 

@@ -1,3 +1,5 @@
+package algorithmes.chapitres.chap4;
+
 public class Fraction {
 	int numérateur, dénominateur;
 
@@ -34,8 +36,7 @@ public class Fraction {
 	}
 
 	public Fraction addition(Fraction uneFraction) {
-		Fraction résultat = new Fraction(numérateur * uneFraction.dénominateur
-				+ uneFraction.numérateur * dénominateur, dénominateur
+		Fraction résultat = new Fraction(numérateur * uneFraction.dénominateur + uneFraction.numérateur * dénominateur, dénominateur
 				* uneFraction.dénominateur);
 		résultat.réduit();
 		return résultat;

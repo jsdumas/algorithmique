@@ -1,7 +1,8 @@
-package entier;
+package algorithmes.chapitres.chap5.entier;
 
 import java.util.Scanner;
-public class TestEntier2{
+
+public class TestEntier2 {
 
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);

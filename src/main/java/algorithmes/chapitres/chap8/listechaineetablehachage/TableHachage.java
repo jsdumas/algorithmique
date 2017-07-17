@@ -1,4 +1,4 @@
-package listeChaînéeTableHachage;
+package algorithmes.chapitres.chap8.listechaineetablehachage;
 
 public class TableHachage {
 	final int tailleTable = 10;

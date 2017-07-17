@@ -1,4 +1,4 @@
-package automobile;
+package algorithmes.chapitres.chap6.automobile;
 
 public class TestAutomobile {
 

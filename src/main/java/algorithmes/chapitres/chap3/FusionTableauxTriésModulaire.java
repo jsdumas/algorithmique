@@ -1,14 +1,16 @@
+package algorithmes.chapitres.chap3;
+
 public class FusionTableauxTriésModulaire {
-	
+
 	public static int généreNombreAléatoire(int borneInf, int borneSup) {
 		return (int) ((borneSup - borneInf + 1) * Math.random()) + borneInf;
 	}
 
-	public static void remplitTableauAléatoire(int[] t,int borneInf, int borneSup) {
-		for (int i=0;i<t.length;i++)
-			t[i]=généreNombreAléatoire(borneInf,borneSup);
+	public static void remplitTableauAléatoire(int[] t, int borneInf, int borneSup) {
+		for (int i = 0; i < t.length; i++)
+			t[i] = généreNombreAléatoire(borneInf, borneSup);
 	}
-	
+
 	public static void triBulle(int[] t) {
 		int temp;
 		boolean permuté;
@@ -23,10 +25,10 @@ public class FusionTableauxTriésModulaire {
 					permuté = true;
 				}
 			}
-		} while (permuté);	
+		} while (permuté);
 	}
-	
-	public static int[] fusion(int[] t1,int[] t2) {
+
+	public static int[] fusion(int[] t1, int[] t2) {
 		// déclaration et création du résultat
 		int taille3 = t1.length + t2.length;
 		int[] t3 = new int[taille3];
@@ -56,9 +58,9 @@ public class FusionTableauxTriésModulaire {
 		}
 		return t3;
 	}
-	
+
 	public static void écrireTableau(int[] t) {
-		for (int i=0;i<t.length;i++)
+		for (int i = 0; i < t.length; i++)
 			System.out.print(t[i] + " ");
 		System.out.println();
 	}
@@ -70,8 +72,8 @@ public class FusionTableauxTriésModulaire {
 		int[] t1 = new int[taille1];
 		int[] t2 = new int[taille2];
 		// remplissage des deux tableaux
-		remplitTableauAléatoire(t1,0,100);
-		remplitTableauAléatoire(t2,0,100);
+		remplitTableauAléatoire(t1, 0, 100);
+		remplitTableauAléatoire(t2, 0, 100);
 		// tri bulle de t1
 		triBulle(t1);
 		// tri bulle de t2
@@ -82,7 +84,7 @@ public class FusionTableauxTriésModulaire {
 		System.out.println("Tableau t2 trié");
 		écrireTableau(t2);
 		// fusion des deux tableaux
-		int[] t3 = fusion(t1,t2);
+		int[] t3 = fusion(t1, t2);
 		System.out.println("Résultat de la fusion : ");
 		écrireTableau(t3);
 	}

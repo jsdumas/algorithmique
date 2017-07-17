@@ -1,4 +1,7 @@
+package algorithmes.chapitres.chap4;
+
 import java.util.Scanner;
+
 public class TestEnsemble {
 
 	public static void main(String[] args) {
@@ -15,7 +18,7 @@ public class TestEnsemble {
 			System.out.println("La valeur faisait bien partie de l'ensemble.");
 		else
 			System.out.println("La valeur ne fait pas partie de l'ensemble.");
-		System.out.println ("Affichage de l'ensemble");
+		System.out.println("Affichage de l'ensemble");
 		ensemble.affiche();
 	}
 }
