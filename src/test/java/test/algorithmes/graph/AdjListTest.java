@@ -1,6 +1,6 @@
-package test.algorithme.graph;
+package test.algorithmes.graph;
 
-import algorithme.graph.AdjList;
+import algorithmes.graph.AdjList;
 
 public class AdjListTest {
 

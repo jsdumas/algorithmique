@@ -1,6 +1,6 @@
-package pattern.facade.main;
+package designpatterns.practice.facade.main;
 
-import pattern.facade.ShapeMaker;
+import designpatterns.practice.facade.ShapeMaker;
 
 public class FacadePatternDemo {
 

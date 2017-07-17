@@ -1,7 +1,7 @@
-package pattern.proxy.main;
+package designpatterns.practice.proxy.main;
 
-import pattern.proxy.ProxyImage;
-import pattern.proxy.contrat.Image;
+import designpatterns.practice.proxy.ProxyImage;
+import designpatterns.practice.proxy.contrat.Image;
 
 public class ProxyPatternDemo {
 

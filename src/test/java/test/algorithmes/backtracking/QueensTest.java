@@ -1,4 +1,4 @@
-package test.algorithme.backtracking;
+package test.algorithmes.backtracking;
 
 import org.junit.Test;
 

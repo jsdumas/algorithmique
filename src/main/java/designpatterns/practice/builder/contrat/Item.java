@@ -1,4 +1,4 @@
-package pattern.builder.contrat;
+package designpatterns.practice.builder.contrat;
 
 public interface Item {
 

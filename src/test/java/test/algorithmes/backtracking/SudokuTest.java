@@ -1,16 +1,17 @@
-package test.algorithme.backtracking;
+package test.algorithmes.backtracking;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 import org.junit.Test;
 
-import algorithme.backtracking.Sudoku;
+import algorithmes.backtracking.Sudoku;
 
 public class SudokuTest {
 
 	@Test
-	public void test() {
+	public void test() throws FileNotFoundException {
 		Scanner sc = new Scanner(new File("puzzles.sdk"));
 		double start = System.currentTimeMillis();
 		while (sc.hasNext()) {

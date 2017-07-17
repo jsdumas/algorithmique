@@ -1,6 +1,6 @@
-package pattern.builder;
+package designpatterns.practice.builder;
 
-import pattern.builder.contrat.ColdDrink;
+import designpatterns.practice.builder.contrat.ColdDrink;
 
 public class Pepsi extends ColdDrink {
 

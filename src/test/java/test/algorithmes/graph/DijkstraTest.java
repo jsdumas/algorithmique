@@ -1,8 +1,8 @@
-package test.algorithme.graph;
+package test.algorithmes.graph;
 
 import org.junit.Test;
 
-import algorithme.graph.Dijkstra;
+import algorithmes.graph.Dijkstra;
 
 public class DijkstraTest {
 

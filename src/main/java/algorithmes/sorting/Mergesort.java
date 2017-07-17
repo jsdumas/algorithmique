@@ -45,7 +45,7 @@ public class Mergesort {
 			merge(a, tmp, l, m, r);
 	}
 
-	static void mergesort2(int[] a) {
+	public static void mergesort2(int[] a) {
 		mergesort2rec(a, Arrays.copyOf(a, a.length), 0, a.length, true);
 	}
 
@@ -72,7 +72,7 @@ public class Mergesort {
 		return lo;
 	}
 
-	static void naturalMergesort(int[] a) {
+	public static void naturalMergesort(int[] a) {
 		int n = a.length;
 		if (n <= 1)
 			return;

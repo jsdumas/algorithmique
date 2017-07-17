@@ -1,10 +1,10 @@
-package test.algorithme.memo;
+package test.algorithmes.memo;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Test;
 
-import algorithme.memo.Fib;
+import algorithmes.memo.Fib;
 
 public class FibTest {
 

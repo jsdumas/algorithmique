@@ -1,6 +1,6 @@
-package pattern.adaptater.main;
+package designpatterns.practice.adaptater.main;
 
-import pattern.adaptater.AudioPlayer;
+import designpatterns.practice.adaptater.AudioPlayer;
 
 public class AdapterPatternDemo {
 

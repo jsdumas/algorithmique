@@ -1,6 +1,6 @@
-package pattern.builder.contrat;
+package designpatterns.practice.builder.contrat;
 
-import pattern.builder.Bottle;
+import designpatterns.practice.builder.Bottle;
 
 public abstract class ColdDrink implements Item {
 

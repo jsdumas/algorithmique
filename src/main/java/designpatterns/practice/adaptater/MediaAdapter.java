@@ -1,7 +1,7 @@
-package pattern.adaptater;
+package designpatterns.practice.adaptater;
 
-import pattern.adaptater.contrat.AdvancedMediaPlayer;
-import pattern.adaptater.contrat.MediaPlayer;
+import designpatterns.practice.adaptater.contrat.AdvancedMediaPlayer;
+import designpatterns.practice.adaptater.contrat.MediaPlayer;
 
 public class MediaAdapter implements MediaPlayer {
 

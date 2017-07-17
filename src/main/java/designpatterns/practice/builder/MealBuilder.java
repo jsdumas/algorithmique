@@ -1,4 +1,4 @@
-package pattern.builder;
+package designpatterns.practice.builder;
 
 public class MealBuilder {
 

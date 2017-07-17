@@ -1,6 +1,6 @@
-package pattern.adaptater;
+package designpatterns.practice.adaptater;
 
-import pattern.adaptater.contrat.AdvancedMediaPlayer;
+import designpatterns.practice.adaptater.contrat.AdvancedMediaPlayer;
 
 public class VlcPlayer implements AdvancedMediaPlayer {
 

@@ -1,7 +1,7 @@
-package pattern.builder.main;
+package designpatterns.practice.builder.main;
 
-import pattern.builder.Meal;
-import pattern.builder.MealBuilder;
+import designpatterns.practice.builder.Meal;
+import designpatterns.practice.builder.MealBuilder;
 
 public class BuilderPatternDemo {
 

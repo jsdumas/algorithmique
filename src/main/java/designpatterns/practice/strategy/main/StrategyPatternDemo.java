@@ -1,9 +1,9 @@
-package pattern.strategy.main;
+package designpatterns.practice.strategy.main;
 
-import pattern.strategy.Context;
-import pattern.strategy.OperationAdd;
-import pattern.strategy.OperationMultiply;
-import pattern.strategy.OperationSubstract;
+import designpatterns.practice.strategy.Context;
+import designpatterns.practice.strategy.OperationAdd;
+import designpatterns.practice.strategy.OperationMultiply;
+import designpatterns.practice.strategy.OperationSubstract;
 
 public class StrategyPatternDemo {
 	public static void main(String[] args) {

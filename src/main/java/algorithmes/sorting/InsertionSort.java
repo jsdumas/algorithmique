@@ -4,7 +4,7 @@ package algorithme.sorting;
 
 public class InsertionSort {
 
-	static void insertionSort(int[] a) {
+	public static void insertionSort(int[] a) {
 		for (int i = 1; i < a.length; i++) {
 			int v = a[i], j = i;
 			for (; 0 < j && v < a[j - 1]; j--)

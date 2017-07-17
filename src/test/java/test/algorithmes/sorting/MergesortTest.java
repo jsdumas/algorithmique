@@ -1,6 +1,6 @@
-package test.algorithme.sorting;
+package test.algorithmes.sorting;
 
-import algorithme.sorting.Mergesort;
+import algorithmes.sorting.Mergesort;
 
 public class MergesortTest {
 

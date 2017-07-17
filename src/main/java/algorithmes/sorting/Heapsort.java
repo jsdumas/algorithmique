@@ -36,7 +36,7 @@ public class Heapsort {
 		a[i] = x;
 	}
 
-	static void heapsort(int[] a) {
+	public static void heapsort(int[] a) {
 		int n = a.length;
 		for (int k = n / 2 - 1; k >= 0; k--)
 			moveDown(a, k, a[k], n);

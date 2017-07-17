@@ -1,6 +1,6 @@
-package pattern.strategy;
+package designpatterns.practice.strategy;
 
-import pattern.strategy.contrat.Strategy;
+import designpatterns.practice.strategy.contrat.Strategy;
 
 public class OperationMultiply implements Strategy {
 

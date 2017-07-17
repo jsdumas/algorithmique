@@ -10,7 +10,7 @@ public class Quicksort {
 		a[j] = tmp;
 	}
 
-	static int partition(int[] a, int l, int r) {
+	public static int partition(int[] a, int l, int r) {
 		// on suppose l < r i.e. au moins un élément
 		int p = a[l], m = l;
 		for (int i = l + 1; i < r; i++)
@@ -79,7 +79,7 @@ public class Quicksort {
 		quickrec3(a, hi, r);
 	}
 
-	static void quicksort3(int[] a) {
+	public static void quicksort3(int[] a) {
 		KnuthShuffle.shuffle(a);
 		quickrec3(a, 0, a.length);
 	}
@@ -119,7 +119,7 @@ public class Quicksort {
 		}
 	}
 
-	static void quicksort4(int[] a) {
+	public static void quicksort4(int[] a) {
 		KnuthShuffle.shuffle(a);
 		quickrec4(a, 0, a.length);
 	}

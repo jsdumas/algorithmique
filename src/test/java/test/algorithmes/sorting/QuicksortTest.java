@@ -1,6 +1,6 @@
-package test.algorithme.sorting;
+package test.algorithmes.sorting;
 
-import algorithme.sorting.Quicksort;
+import algorithmes.sorting.Quicksort;
 
 public class QuicksortTest {
 

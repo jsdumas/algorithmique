@@ -1,4 +1,4 @@
-package pattern.adaptater.contrat;
+package designpatterns.practice.adaptater.contrat;
 
 public interface AdvancedMediaPlayer {
 

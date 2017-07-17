@@ -1,6 +1,6 @@
-package pattern.builder;
+package designpatterns.practice.builder;
 
-import pattern.builder.contrat.Burger;
+import designpatterns.practice.builder.contrat.Burger;
 
 public class ChickenBurger extends Burger {
 

@@ -1,9 +1,9 @@
-package pattern.builder;
+package designpatterns.practice.builder;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import pattern.builder.contrat.Item;
+import designpatterns.practice.builder.contrat.Item;
 
 public class Meal {
 	private final List<Item> items = new ArrayList<Item>();

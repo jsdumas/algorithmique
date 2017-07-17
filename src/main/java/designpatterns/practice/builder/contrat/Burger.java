@@ -1,6 +1,6 @@
-package pattern.builder.contrat;
+package designpatterns.practice.builder.contrat;
 
-import pattern.builder.Wrapper;
+import designpatterns.practice.builder.Wrapper;
 
 public abstract class Burger implements Item {
 

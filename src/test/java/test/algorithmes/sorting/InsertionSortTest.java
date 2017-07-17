@@ -1,6 +1,6 @@
-package test.algorithme.sorting;
+package test.algorithmes.sorting;
 
-import algorithme.sorting.InsertionSort;
+import algorithmes.sorting.InsertionSort;
 
 public class InsertionSortTest {
 

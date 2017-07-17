@@ -1,6 +1,6 @@
-package pattern.facade;
+package designpatterns.practice.facade;
 
-import pattern.facade.contrat.Shape;
+import designpatterns.practice.facade.contrat.Shape;
 
 public class ShapeMaker {
 	private final Shape circle;

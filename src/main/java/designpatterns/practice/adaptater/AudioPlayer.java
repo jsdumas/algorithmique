@@ -1,6 +1,6 @@
-package pattern.adaptater;
+package designpatterns.practice.adaptater;
 
-import pattern.adaptater.contrat.MediaPlayer;
+import designpatterns.practice.adaptater.contrat.MediaPlayer;
 
 public class AudioPlayer implements MediaPlayer {
 

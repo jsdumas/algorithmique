@@ -1,4 +1,4 @@
-package pattern.proxy.contrat;
+package designpatterns.practice.proxy.contrat;
 
 public interface Image {
 

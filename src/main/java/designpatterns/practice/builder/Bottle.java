@@ -1,6 +1,6 @@
-package pattern.builder;
+package designpatterns.practice.builder;
 
-import pattern.builder.contrat.Packing;
+import designpatterns.practice.builder.contrat.Packing;
 
 public class Bottle implements Packing {
 

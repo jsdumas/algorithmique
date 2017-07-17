@@ -1,6 +1,6 @@
-package test.algorithme.sorting;
+package test.algorithmes.sorting;
 
-import algorithme.sorting.Heapsort;
+import algorithmes.sorting.Heapsort;
 
 public class HeapsortTest {
 

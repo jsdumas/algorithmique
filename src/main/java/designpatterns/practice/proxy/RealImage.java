@@ -1,6 +1,6 @@
-package pattern.proxy;
+package designpatterns.practice.proxy;
 
-import pattern.proxy.contrat.Image;
+import designpatterns.practice.proxy.contrat.Image;
 
 public class RealImage implements Image {
 
