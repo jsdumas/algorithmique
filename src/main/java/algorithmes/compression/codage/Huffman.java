@@ -1,4 +1,4 @@
-package algorithme.compression.codage;
+package algorithmes.compression.codage;
 
 // codage de Huffman
 

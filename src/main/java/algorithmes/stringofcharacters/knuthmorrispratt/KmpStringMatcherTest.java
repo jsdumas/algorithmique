@@ -1,4 +1,4 @@
-package algorithme.stringofcharacters.knuthmorrispratt;
+package algorithmes.stringofcharacters.knuthmorrispratt;
 
 import static org.junit.Assert.assertEquals;
 

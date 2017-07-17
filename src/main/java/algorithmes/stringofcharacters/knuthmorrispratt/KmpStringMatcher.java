@@ -1,4 +1,4 @@
-package algorithme.stringofcharacters.knuthmorrispratt;
+package algorithmes.stringofcharacters.knuthmorrispratt;
 
 public final class KmpStringMatcher {
 

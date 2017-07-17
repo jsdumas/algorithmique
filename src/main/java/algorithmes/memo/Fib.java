@@ -1,4 +1,4 @@
-package algorithme.memo;
+package algorithmes.memo;
 
 import java.util.HashMap;
 

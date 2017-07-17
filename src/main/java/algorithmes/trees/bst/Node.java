@@ -1,4 +1,5 @@
-package com.balazsholczer.bst;
+//com.balazsholczer.bst;
+package algorithmes.trees.bst;
 
 public class Node<T> {
 

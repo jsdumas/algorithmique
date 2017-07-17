@@ -1,4 +1,4 @@
-package algorithme.list;
+package algorithmes.list;
 
 // listes doublement chaînées
 

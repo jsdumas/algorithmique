@@ -1,4 +1,4 @@
-package algorithme.uf;
+package algorithmes.uf;
 
 public class UnionFind {
 

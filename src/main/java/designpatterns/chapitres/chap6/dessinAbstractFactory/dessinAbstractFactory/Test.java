@@ -1,6 +1,6 @@
 ﻿package designpatterns.chapitres.chap6.dessinAbstractFactory.dessinAbstractFactory;
 
-import designpatterns.chapitres.chap6.dessinAbstractFactory.dessin.formesgraphiques.Triangle;
+import designpatterns.chapitres.chap6.dessinAbstractFactory.dessinAbstractFactory.formesgraphiques.Triangle;
 import designpatterns.chapitres.chap6.dessinAbstractFactory.dessinAbstractFactory.bibliothequegraphique.FabriqueGraphique3D;
 //import dessinAbstractFactory.BibliothequeGraphique.FabriqueGraphique3D;
 //import dessinAbstractFactory.formesGraphiques.Triangle;

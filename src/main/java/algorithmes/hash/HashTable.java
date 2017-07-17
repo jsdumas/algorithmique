@@ -1,4 +1,4 @@
-package algorithme.hash;
+package algorithmes.hash;
 
 import java.util.Arrays;
 

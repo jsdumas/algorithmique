@@ -1,4 +1,4 @@
-package algorithme.arith;
+package algorithmes.arith;
 
 import java.util.Arrays;
 import java.util.BitSet;

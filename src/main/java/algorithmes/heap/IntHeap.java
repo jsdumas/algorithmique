@@ -1,4 +1,4 @@
-package algorithme.heap;
+package algorithmes.heap;
 
 import java.util.NoSuchElementException;
 

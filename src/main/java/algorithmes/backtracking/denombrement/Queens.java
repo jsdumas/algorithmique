@@ -1,4 +1,4 @@
-package algorithme.backtracking.denombrement;
+package algorithmes.backtracking.denombrement;
 
 // le problème des N reines
 

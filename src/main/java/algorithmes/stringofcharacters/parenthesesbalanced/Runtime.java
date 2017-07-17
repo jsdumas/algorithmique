@@ -1,4 +1,4 @@
-package algorithme.stringofcharacters.parenthesesbalanced;
+package algorithmes.stringofcharacters.parenthesesbalanced;
 
 public class Runtime {
 

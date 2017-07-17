@@ -1,4 +1,4 @@
-package algorithme.stringofcharacters.parenthesesbalanced;
+package algorithmes.stringofcharacters.parenthesesbalanced;
 
 import java.util.ArrayList;
 import java.util.List;

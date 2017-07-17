@@ -1,4 +1,4 @@
-package algorithme.graph;
+package algorithmes.graph;
 
 // graphes par listes d'adjacence
 

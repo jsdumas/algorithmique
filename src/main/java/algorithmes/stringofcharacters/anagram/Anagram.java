@@ -1,4 +1,4 @@
-package algorithme.stringofcharacters.anagram;
+package algorithmes.stringofcharacters.anagram;
 
 import java.util.ArrayList;
 import java.util.Arrays;

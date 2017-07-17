@@ -1,4 +1,4 @@
-package algorithme.trees;
+package algorithmes.trees;
 
 import java.util.LinkedList;
 import java.util.List;

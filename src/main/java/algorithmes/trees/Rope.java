@@ -1,4 +1,4 @@
-package algorithme.trees;
+package algorithmes.trees;
 
 // cordes
 

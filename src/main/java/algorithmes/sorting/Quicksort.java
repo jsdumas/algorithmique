@@ -1,4 +1,4 @@
-package algorithme.sorting;
+package algorithmes.sorting;
 
 // tri rapide
 

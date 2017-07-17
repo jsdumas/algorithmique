@@ -1,4 +1,4 @@
-package algorithme.list.aleatoire;
+package algorithmes.list.aleatoire;
 
 // listes simplement chaînées
 

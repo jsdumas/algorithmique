@@ -1,4 +1,4 @@
-package algorithme.arith;
+package algorithmes.arith;
 
 // algorithme d'Euclide
 

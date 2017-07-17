@@ -1,4 +1,4 @@
-package algorithme.list;
+package algorithmes.list;
 
 // le problème de Josephus
 

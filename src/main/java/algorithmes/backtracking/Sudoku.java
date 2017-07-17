@@ -1,4 +1,4 @@
-package algorithme.backtracking;
+package algorithmes.backtracking;
 
 public class Sudoku {
 

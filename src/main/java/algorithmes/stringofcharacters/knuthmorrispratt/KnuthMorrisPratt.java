@@ -1,4 +1,4 @@
-package algorithme.stringofcharacters.knuthmorrispratt;
+package algorithmes.stringofcharacters.knuthmorrispratt;
 
 import java.io.BufferedReader;
 import java.io.IOException;

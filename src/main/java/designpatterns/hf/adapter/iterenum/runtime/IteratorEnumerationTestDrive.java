@@ -1,8 +1,10 @@
-package designpatterns.hf.adapter.iterenum;
+package designpatterns.hf.adapter.iterenum.runtime;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Enumeration;
+
+import designpatterns.hf.adapter.iterenum.IteratorEnumeration;
 
 public class IteratorEnumerationTestDrive {
 	public static void main(String args[]) {

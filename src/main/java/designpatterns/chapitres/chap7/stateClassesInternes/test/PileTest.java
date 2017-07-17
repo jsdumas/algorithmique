@@ -4,7 +4,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import designpatterns.chapitres.chap4.stateClassesInternes.stateclassesinternes.Pile;
+import designpatterns.chapitres.chap7.stateClassesInternes.Pile;
 
 //import stateClassesInternes.Pile;
 

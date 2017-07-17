@@ -1,4 +1,4 @@
-package algorithme.list.floyd;
+package algorithmes.list.floyd;
 
 // listes simplement chaînées
 
