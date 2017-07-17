@@ -1,12 +1,12 @@
-package fr.treeptik.designpattern.initobjet;
+package designpatterns.practice.treeptik.initobjet;
 
 import java.util.Date;
 
-public class Voiture implements Deplacer{
+public class Voiture implements Deplacer {
 	private String marque;
 	private String modele;
 	private Date dateMiseEnCirculation;
-	
+
 	public Voiture() {
 		super();
 	}
@@ -17,12 +17,12 @@ public class Voiture implements Deplacer{
 		this.modele = modele;
 		this.dateMiseEnCirculation = dateMiseEnCirculation;
 	}
-	
+
 	@Override
 	public void avancer() {
 		// TODO Auto-generated method stub
-		System.out.println("Voiture avancer");		
-		
+		System.out.println("Voiture avancer");
+
 	}
 
 	@Override
@@ -54,11 +54,11 @@ public class Voiture implements Deplacer{
 	public void setDateMiseEnCirculation(Date dateMiseEnCirculation) {
 		this.dateMiseEnCirculation = dateMiseEnCirculation;
 	}
-	
-	 @Override
+
+	@Override
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString();
 	}
-	
+
 }

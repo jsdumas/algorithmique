@@ -1,9 +1,8 @@
-package fr.treeptik.designpattern.strategy;
+package designpatterns.practice.treeptik.strategy;
 
-import fr.treeptik.designpattern.strategy.Personnage;
 
 public class Troll extends Personnage {
-	
+
 	public Troll() {
 		super(new Gourdin());
 		// TODO Auto-generated constructor stub
@@ -12,7 +11,7 @@ public class Troll extends Personnage {
 	@Override
 	public void attaquer() {
 		super.attaquer();
-		
+
 	}
 
 	@Override
@@ -24,7 +23,7 @@ public class Troll extends Personnage {
 	@Override
 	public void setNbVie(int i) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

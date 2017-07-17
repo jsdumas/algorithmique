@@ -1,4 +1,4 @@
-package fr.treeptik.designpattern.proxy;
+package designpatterns.practice.treeptik.proxy;
 
 import java.util.List;
 
@@ -6,9 +6,9 @@ public class FileDescription {
 
 	private String nom;
 	private String path;
-	
+
 	private List<String> lines;
-	
+
 	public FileDescription(String name, String path) {
 		nom = name;
 		lines = new ProxyList(path);

@@ -1,14 +1,14 @@
-package fr.treeptik.designpattern.strategy;
+package designpatterns.practice.treeptik.strategy;
 
 public class AttaquerDecorateur implements Attaquer {
-	
-	private Attaquer attaquer;
+
+	private final Attaquer attaquer;
 
 	public AttaquerDecorateur(Attaquer attaquer) {
 		this.attaquer = attaquer;
-		this.attaquer.setNbVie(attaquer.getNbVie()+1);
+		this.attaquer.setNbVie(attaquer.getNbVie() + 1);
 	}
-	
+
 	@Override
 	public void attaquer() {
 		// TODO Auto-generated method stub
@@ -24,7 +24,7 @@ public class AttaquerDecorateur implements Attaquer {
 	@Override
 	public void setNbVie(int i) {
 		attaquer.setNbVie(i);
-		
+
 	}
 
 }

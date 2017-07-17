@@ -1,17 +1,15 @@
-package fr.treeptik.designpattern.initobjet;
+package designpatterns.practice.treeptik.initobjet;
 
 public class Palladin extends Chevalier {
 
 	private static final long serialVersionUID = 1L;
-	
+
 	public Palladin() {
 	}
 
 	@Override
 	public void avancer() {
-		//super.super.avancer();
+		// super.super.avancer();
 	}
-	
-	
 
 }

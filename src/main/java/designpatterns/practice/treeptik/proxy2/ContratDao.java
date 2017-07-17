@@ -1,9 +1,11 @@
-package fr.treeptik.designpattern.proxy2;
+package designpatterns.practice.treeptik.proxy2;
 
-public interface ContratDao extends Dao{
-	
+public interface ContratDao extends Dao {
+
+	@Override
 	void save();
-	
+
+	@Override
 	void remove();
 
 }

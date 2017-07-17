@@ -1,4 +1,4 @@
-package fr.treeptik.designpattern.proxy;
+package designpatterns.practice.treeptik.proxy;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -9,16 +9,16 @@ import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 public class ProxyList extends AbstractList {
-	
+
 	private ArrayList<String> list;
-	private String filePath;
+	private final String filePath;
 	private Long nbLine;
-	
+
 	public ProxyList(String path) {
 		this.filePath = path;
-		
+
 		Path path2 = Paths.get(filePath);
-		
+
 		try {
 			nbLine = Files.lines(path2).count();
 		} catch (IOException e) {
@@ -29,11 +29,10 @@ public class ProxyList extends AbstractList {
 
 	@Override
 	public Object get(int index) {
-		
-		if(list ==null)
-		{
+
+		if (list == null) {
 			Path path2 = Paths.get(filePath);
-			
+
 			try {
 				list = new ArrayList<String>(Files.lines(path2).collect(Collectors.toList()));
 			} catch (IOException e) {

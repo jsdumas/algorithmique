@@ -1,4 +1,4 @@
-package fr.treeptik.designpattern.initobjet;
+package designpatterns.practice.treeptik.initobjet;
 
 public class Chevalier extends Personnage {
 
@@ -8,15 +8,15 @@ public class Chevalier extends Personnage {
 		// TODO Auto-generated constructor stub
 		this.nom = "chevalier1";
 	}
-	
+
 	@Override
 	public void avancer() {
 		// TODO Auto-generated method stub
-		System.out.println("Chevalier avancer");		
+		System.out.println("Chevalier avancer");
 	}
-	
+
 	public void avancer(int val) {
 		// TODO Auto-generated method stub
-		System.out.println("Chevalier avancer de "+val+" pas");		
+		System.out.println("Chevalier avancer de " + val + " pas");
 	}
 }

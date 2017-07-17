@@ -1,12 +1,12 @@
-package fr.treeptik.designpattern.strategy;
+package designpatterns.practice.treeptik.strategy;
 
 public class Gourdin implements Attaquer {
 
 	protected Integer nbVies = 1;
-	
+
 	@Override
 	public void attaquer() {
-		System.out.println("Attaque au gourdin : enlève "+nbVies+" vies");
+		System.out.println("Attaque au gourdin : enlève " + nbVies + " vies");
 
 	}
 
@@ -19,7 +19,7 @@ public class Gourdin implements Attaquer {
 	@Override
 	public void setNbVie(int i) {
 		this.nbVies = i;
-		
+
 	}
 
 }

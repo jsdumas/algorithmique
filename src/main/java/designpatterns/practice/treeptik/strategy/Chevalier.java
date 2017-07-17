@@ -1,6 +1,5 @@
-package fr.treeptik.designpattern.strategy;
+package designpatterns.practice.treeptik.strategy;
 
-import fr.treeptik.designpattern.strategy.Personnage;
 
 public class Chevalier extends Personnage {
 
@@ -12,7 +11,7 @@ public class Chevalier extends Personnage {
 	@Override
 	public void attaquer() {
 		super.attaquer();
-		
+
 	}
 
 	@Override
@@ -24,7 +23,7 @@ public class Chevalier extends Personnage {
 	@Override
 	public void setNbVie(int i) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 }

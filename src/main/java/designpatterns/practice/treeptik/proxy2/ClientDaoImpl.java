@@ -1,4 +1,4 @@
-package fr.treeptik.designpattern.proxy2;
+package designpatterns.practice.treeptik.proxy2;
 
 public class ClientDaoImpl implements ClientDao {
 

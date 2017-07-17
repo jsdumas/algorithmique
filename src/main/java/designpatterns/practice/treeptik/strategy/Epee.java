@@ -1,4 +1,4 @@
-package fr.treeptik.designpattern.strategy;
+package designpatterns.practice.treeptik.strategy;
 
 public class Epee implements Attaquer {
 
@@ -18,8 +18,8 @@ public class Epee implements Attaquer {
 
 	@Override
 	public void setNbVie(int i) {
-		this.nbVies  = i;
-		
+		this.nbVies = i;
+
 	}
 
 }
