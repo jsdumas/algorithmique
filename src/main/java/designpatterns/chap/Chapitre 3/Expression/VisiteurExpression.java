@@ -1,0 +1,1 @@
+﻿public interface VisiteurExpression {    void visite(NoeudValeur c);    void visite(NoeudPlus c);    void visite(NoeudMoins c);}

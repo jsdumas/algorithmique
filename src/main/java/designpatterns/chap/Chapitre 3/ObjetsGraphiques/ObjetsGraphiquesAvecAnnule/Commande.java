@@ -1,0 +1,1 @@
+﻿public interface Commande {    public void lance();    public void annule();}

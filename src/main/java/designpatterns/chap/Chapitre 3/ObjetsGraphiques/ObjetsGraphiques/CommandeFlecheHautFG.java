@@ -1,0 +1,1 @@
+﻿public class CommandeFlecheHautFG implements Commande {    protected FormeGraphique recepteur;    public CommandeFlecheHautFG(FormeGraphique r) {        this.recepteur = r;    }    public void lance() {        int y = recepteur.getY();        if (y < FormeGraphique.YMAX)            recepteur.setY(y + 1);    }}
