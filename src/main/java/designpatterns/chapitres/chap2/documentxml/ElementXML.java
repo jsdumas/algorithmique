@@ -1,17 +1,19 @@
-﻿public abstract class ElementXML {
-    protected String tag;
+﻿package designpatterns.chapitres.chap2.documentxml;
 
-    public ElementXML(String tag) {
-        this.tag = tag;
-    }
+public abstract class ElementXML {
+	protected String tag;
 
-    public String getTag() {
-        return tag;
-    }
+	public ElementXML(String tag) {
+		this.tag = tag;
+	}
 
-    public abstract void setValeur(String valeur);
+	public String getTag() {
+		return tag;
+	}
 
-    public abstract String getValeur();
+	public abstract void setValeur(String valeur);
 
-    public abstract void ajouteEnfant(ElementXML enfant);
+	public abstract String getValeur();
+
+	public abstract void ajouteEnfant(ElementXML enfant);
 }

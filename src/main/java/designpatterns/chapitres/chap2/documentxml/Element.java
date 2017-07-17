@@ -1,7 +1,9 @@
-﻿public interface Element {
-    int getNombreEnfants();
+﻿package designpatterns.chapitres.chap2.documentxml;
 
-    ElementXML getEnfant(int index);
+public interface Element {
+	int getNombreEnfants();
 
-    ElementXML getPremierEnfantAvecTag(String tag);
+	ElementXML getEnfant(int index);
+
+	ElementXML getPremierEnfantAvecTag(String tag);
 }

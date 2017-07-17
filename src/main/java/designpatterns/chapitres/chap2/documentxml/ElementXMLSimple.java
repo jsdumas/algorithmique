@@ -1,21 +1,23 @@
-﻿public class ElementXMLSimple extends ElementXML {
-    protected String valeur;
+﻿package designpatterns.chapitres.chap2.documentxml;
 
-    public ElementXMLSimple(String tag) {
-        super(tag);
-    }
+public class ElementXMLSimple extends ElementXML {
+	protected String valeur;
 
-    @Override
-    public void setValeur(String valeur) {
-        this.valeur = valeur;
-    }
+	public ElementXMLSimple(String tag) {
+		super(tag);
+	}
 
-    @Override
-    public String getValeur() {
-        return valeur;
-    }
+	@Override
+	public void setValeur(String valeur) {
+		this.valeur = valeur;
+	}
 
-    @Override
-    public void ajouteEnfant(ElementXML enfant) {
-    };
+	@Override
+	public String getValeur() {
+		return valeur;
+	}
+
+	@Override
+	public void ajouteEnfant(ElementXML enfant) {
+	};
 }

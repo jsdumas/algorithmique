@@ -36,6 +36,8 @@ public class CalculatriceTest {
 		return new TotalMatcher(expected);
 	}
 
+	// Toujours partir de l'appelant (du besoin) pour ensuite implémenter le fonctionnel.
+	// Ctrl+1 : outil pour choisir l'implémentation.
 	@Test
 	public void unPlusDeuxEqualsTrois() {
 		assertThat(Calculatrice.initCalcul(1).add(2), total(3));
