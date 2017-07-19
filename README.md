@@ -1,15 +1,36 @@
-# java-dev-practice
+# JAVA DEV PRACTICE
 
 
 ## Don't forget
 
 Tell, don't Ask
 
+## Abstraction
+
 ### DRY
 Don't Repeat Yourself
 
+### Encapsulation
+
 ### KISS
 Keep it Stupid-Simple
+
+### Loi de Déméter
+
+### Méthode Moscow
+
+### Polymorphisme
+
+### SOLID
+Single Responsibility Principle : une classe, une fonction ou une méthode doit avoir une et une seule responsabilité
+
+Open/closed principle : une classe doit être ouverte à l'extension, mais fermée à la modification
+
+Liskov substitution Principle : une instance de type T doit pouvoir être remplacée par une instance de type G, tel que G sous-type de T, sans que cela ne modifie la cohérence du programme
+
+Interface segregation principle : préférer plusieurs interfaces spécifiques pour chaque client plutôt qu'une seule interface générale
+
+Dependency Inversion Principle
 
 ### YAGNI
 You Ain't Gonna Need It
