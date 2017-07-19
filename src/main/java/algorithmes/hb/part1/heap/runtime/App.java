@@ -1,4 +1,6 @@
-package algorithmes.hb.part1.heap;
+package algorithmes.hb.part1.heap.runtime;
+
+import algorithmes.hb.part1.heap.Heap;
 
 public class App {
 	public static void main(String[] args) {
