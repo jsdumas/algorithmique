@@ -1,4 +1,7 @@
-package algorithmes.hb.part1.avl.generic;
+package algorithmes.hb.part1.avl.generic.runtime;
+
+import algorithmes.hb.part1.avl.generic.AvlTree;
+import algorithmes.hb.part1.avl.generic.Tree;
 
 public class App {
 
