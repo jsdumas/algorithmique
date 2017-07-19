@@ -1,4 +1,7 @@
-package algorithmes.hb.part1.binarysearchtree;
+package algorithmes.hb.part1.binarysearchtree.runtime;
+
+import algorithmes.hb.part1.binarysearchtree.BinarySearchTree;
+import algorithmes.hb.part1.binarysearchtree.Tree;
 
 public class App {
 

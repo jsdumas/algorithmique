@@ -1,4 +1,4 @@
-package algorithmes.hb.part1.binarysearchtree;
+package algorithmes.hb.part1.binarysearchtree.runtime;
 
 public class Person implements Comparable<Person> {
 
