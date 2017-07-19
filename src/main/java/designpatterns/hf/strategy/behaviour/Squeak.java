@@ -1,4 +1,5 @@
-package designpatterns.hf.strategy;
+package designpatterns.hf.strategy.behaviour;
+
 
 public class Squeak implements QuackBehavior {
 	public void quack() {

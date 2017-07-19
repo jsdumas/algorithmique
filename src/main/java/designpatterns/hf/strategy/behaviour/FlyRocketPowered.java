@@ -1,4 +1,4 @@
-package designpatterns.hf.strategy;
+package designpatterns.hf.strategy.behaviour;
 
 public class FlyRocketPowered implements FlyBehavior {
 	public void fly() {

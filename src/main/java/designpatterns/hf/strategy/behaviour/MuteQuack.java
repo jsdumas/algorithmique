@@ -1,4 +1,4 @@
-package designpatterns.hf.strategy;
+package designpatterns.hf.strategy.behaviour;
 
 public class MuteQuack implements QuackBehavior {
 	public void quack() {

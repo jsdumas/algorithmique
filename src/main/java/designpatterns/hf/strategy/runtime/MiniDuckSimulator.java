@@ -1,4 +1,10 @@
-package designpatterns.hf.strategy;
+package designpatterns.hf.strategy.runtime;
+
+import designpatterns.hf.strategy.DecoyDuck;
+import designpatterns.hf.strategy.MallardDuck;
+import designpatterns.hf.strategy.ModelDuck;
+import designpatterns.hf.strategy.RubberDuck;
+import designpatterns.hf.strategy.behaviour.FlyRocketPowered;
 
 public class MiniDuckSimulator {
  

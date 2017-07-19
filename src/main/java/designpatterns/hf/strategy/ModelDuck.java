@@ -1,5 +1,8 @@
 package designpatterns.hf.strategy;
 
+import designpatterns.hf.strategy.behaviour.FlyNoWay;
+import designpatterns.hf.strategy.behaviour.Quack;
+
 public class ModelDuck extends Duck {
 	public ModelDuck() {
 		flyBehavior = new FlyNoWay();

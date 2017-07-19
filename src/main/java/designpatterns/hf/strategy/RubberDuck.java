@@ -1,5 +1,8 @@
 package designpatterns.hf.strategy;
 
+import designpatterns.hf.strategy.behaviour.FlyNoWay;
+import designpatterns.hf.strategy.behaviour.Squeak;
+
 public class RubberDuck extends Duck {
  
 	public RubberDuck() {

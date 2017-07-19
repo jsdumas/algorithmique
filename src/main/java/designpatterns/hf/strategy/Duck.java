@@ -1,5 +1,8 @@
 package designpatterns.hf.strategy;
 
+import designpatterns.hf.strategy.behaviour.FlyBehavior;
+import designpatterns.hf.strategy.behaviour.QuackBehavior;
+
 public abstract class Duck {
 	FlyBehavior flyBehavior;
 	QuackBehavior quackBehavior;
