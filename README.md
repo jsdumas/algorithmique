@@ -16,6 +16,7 @@ Don't Repeat Yourself
 Keep it Stupid-Simple
 
 ### Loi de Déméter
+On ne fait confiance qu'à ses amis, pas aux amis de ses amis.
 
 ### Méthode Moscow
 
