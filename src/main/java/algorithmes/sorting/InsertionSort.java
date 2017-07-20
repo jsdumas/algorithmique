@@ -8,12 +8,17 @@ public class InsertionSort {
 		for (int i = 1; i < tableau.length; i++) {
 			int value = tableau[i];
 			int currentIndex = i;
-			for (; 0 < currentIndex && value < tableau[currentIndex - 1]; currentIndex--)
+//			for (; 0 < currentIndex && value < tableau[currentIndex - 1]; currentIndex--)
+//				tableau[currentIndex] = tableau[currentIndex - 1];
+			while (currentIndex > 0 && tableau[currentIndex - 1] > value) {
 				tableau[currentIndex] = tableau[currentIndex - 1];
+				currentIndex--;
+			}
 			tableau[currentIndex] = value;
 		}
 	}
-
+	
+	
 	// trie a[l..r[
 	public void insertionSort(int[] tableau, int l, int r) {
 		for (int i = l + 1; i < r; i++) {

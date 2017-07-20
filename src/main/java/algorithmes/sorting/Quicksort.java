@@ -4,13 +4,15 @@ package algorithmes.sorting;
 
 public class Quicksort {
 
-	static void swap(int[] a, int i, int j) {
+	private static final int CUTOFF = 5;
+
+	private void swap(int[] a, int i, int j) {
 		int tmp = a[i];
 		a[i] = a[j];
 		a[j] = tmp;
 	}
 
-	public static int partition(int[] a, int l, int r) {
+	private int partition(int[] a, int l, int r) {
 		// on suppose l < r i.e. au moins un élément
 		int p = a[l], m = l;
 		for (int i = l + 1; i < r; i++)
@@ -20,7 +22,7 @@ public class Quicksort {
 		return m;
 	}
 
-	static void quickrec(int[] a, int l, int r) {
+	private void quickrec(int[] a, int l, int r) {
 		if (l >= r - 1)
 			return;
 		int m = partition(a, l, r);
@@ -28,7 +30,7 @@ public class Quicksort {
 		quickrec(a, m + 1, r);
 	}
 
-	static void quicksort(int[] a) {
+	public void quicksort(int[] a) {
 		quickrec(a, 0, a.length);
 	}
 
@@ -36,7 +38,7 @@ public class Quicksort {
 	 * améliorations (en exercices) - un des deux appels récursifs remplacé par une boucle - un mélange avant de commencer
 	 */
 
-	static void quickrec2(int[] a, int l, int r) {
+	public void quickrec2(int[] a, int l, int r) {
 		while (l < r - 1) {
 			int m = partition(a, l, r);
 			if (m - l < r - m - 1) {
@@ -49,7 +51,7 @@ public class Quicksort {
 		}
 	}
 
-	static void quicksort2(int[] a) {
+	public void quicksort2(int[] a) {
 		KnuthShuffle.shuffle(a);
 		quickrec2(a, 0, a.length);
 	}
@@ -61,7 +63,7 @@ public class Quicksort {
 	 * l lo i hi r +------+-------+-------+-----+ | < v | = v | ????? | > v | +------+-------+-------+-----+
 	 */
 
-	static void quickrec3(int[] a, int l, int r) {
+	public void quickrec3(int[] a, int l, int r) {
 		if (l >= r - 1)
 			return;
 		int p = a[l], lo = l, hi = r;
@@ -79,18 +81,17 @@ public class Quicksort {
 		quickrec3(a, hi, r);
 	}
 
-	public static void quicksort3(int[] a) {
+	public void quicksort3(int[] a) {
 		KnuthShuffle.shuffle(a);
 		quickrec3(a, 0, a.length);
 	}
 
 	// - tri par insertion sur les petits tableaux
 
-	private static final int cutoff = 5;
 
-	static void quickrec4(int[] a, int l, int r) {
+	public void quickrec4(int[] a, int l, int r) {
 		while (l < r - 1) {
-			if (r - l < cutoff) {
+			if (r - l < CUTOFF) {
 				InsertionSort.insertionSort(a, l, r);
 				return;
 			}
