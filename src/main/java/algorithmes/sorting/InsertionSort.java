@@ -4,22 +4,23 @@ package algorithmes.sorting;
 
 public class InsertionSort {
 
-	public static void insertionSort(int[] a) {
-		for (int i = 1; i < a.length; i++) {
-			int v = a[i], j = i;
-			for (; 0 < j && v < a[j - 1]; j--)
-				a[j] = a[j - 1];
-			a[j] = v;
+	public void insertionSort(int[] tableau) {
+		for (int i = 1; i < tableau.length; i++) {
+			int value = tableau[i];
+			int currentIndex = i;
+			for (; 0 < currentIndex && value < tableau[currentIndex - 1]; currentIndex--)
+				tableau[currentIndex] = tableau[currentIndex - 1];
+			tableau[currentIndex] = value;
 		}
 	}
 
 	// trie a[l..r[
-	static void insertionSort(int[] a, int l, int r) {
+	public void insertionSort(int[] tableau, int l, int r) {
 		for (int i = l + 1; i < r; i++) {
-			int v = a[i], j = i;
-			for (; l < j && v < a[j - 1]; j--)
-				a[j] = a[j - 1];
-			a[j] = v;
+			int v = tableau[i], j = i;
+			for (; l < j && v < tableau[j - 1]; j--)
+				tableau[j] = tableau[j - 1];
+			tableau[j] = v;
 		}
 	}
 

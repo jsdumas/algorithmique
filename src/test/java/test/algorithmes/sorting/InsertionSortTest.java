@@ -1,68 +1,98 @@
 package test.algorithmes.sorting;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.is;
+
+import org.junit.Test;
+
 import algorithmes.sorting.InsertionSort;
 
 public class InsertionSortTest {
 
-	static boolean is_sorted(int[] a) {
-		for (int i = 1; i < a.length; i++)
-			if (!(a[i - 1] <= a[i]))
+	private static final int LENGTH = 10;
+
+	@Test
+	public void shouldInsertValueInArray() {
+		// System.out.println("test de insertionSort");
+		for (int len = 0; len < 10; len++)
+			for (int j = 0; j <= len; j++)
+				test(random_array(len));
+		System.out.println("SUCCÈS");
+	}
+
+	@Test
+	public void shouldNotBeSorted() {
+		int[] array = initArray();
+		assertThat(isSorted(array), is(false));
+	}
+
+	private boolean isSorted(int[] array) {
+		for (int i = 1; i < array.length; i++)
+			if (!(array[i - 1] <= array[i]))
 				return false;
 		return true;
 	}
 
-	static final int M = 10; // les éléments sont dans 0..M-1
-
-	static int[] occurrences(int[] a) {
-		int[] occ = new int[M];
+	private int[] occurrences(int[] a) {
+		int[] occ = new int[LENGTH];
 		for (int i = 0; i < a.length; i++)
 			occ[a[i]]++;
 		return occ;
 	}
 
-	static boolean is_permut(int[] occ1, int[] occ2) {
-		for (int i = 0; i < M; i++)
+	private boolean isPermut(int[] occ1, int[] occ2) {
+		for (int i = 0; i < LENGTH; i++)
 			if (occ1[i] != occ2[i])
 				return false;
 		return true;
 	}
 
-	static String print(int[] a) {
+	private String print(int[] a) {
 		String s = "[";
 		for (int i = 0; i < a.length; i++)
 			s += (i == 0 ? "" : ", ") + a[i];
 		return s + "]";
 	}
 
-	static int[] random_array(int len) {
-		int[] a = new int[len];
-		for (int i = 0; i < len; i++)
-			a[i] = (int) (M * Math.random());
-		return a;
-	}
-
-	static void test(int[] a) {
-		System.out.println("  test avec       a = " + print(a));
-		int[] occ1 = occurrences(a);
-		InsertionSort.insertionSort(a);
-		int[] occ2 = occurrences(a);
-		System.out.println("  insertionSort(a) => a = " + print(a));
-		if (!is_sorted(a)) {
+	private void test(int[] tableau) {
+		InsertionSort insertionSort = new InsertionSort();
+		System.out.println("  test avec       a = " + print(tableau));
+		int[] occ1 = occurrences(tableau);
+		insertionSort.insertionSort(tableau);
+		int[] occ2 = occurrences(tableau);
+		System.out.println("  insertionSort(a) => a = " + print(tableau));
+		if (!isSorted(tableau)) {
 			System.out.println("ÉCHEC : le résultat n'est pas trié");
 			System.exit(1);
 		}
-		if (!is_permut(occ1, occ2)) {
+		if (!isPermut(occ1, occ2)) {
 			System.out.println("ÉCHEC : les éléments diffèrent");
 			System.exit(1);
 		}
 	}
 
-	public static void main(String[] args) {
-		System.out.println("test de insertionSort");
-		for (int len = 0; len < 10; len++)
-			for (int j = 0; j <= len; j++)
-				test(random_array(len));
-		System.out.println("SUCCÈS");
+	private int[] random_array(int len) {
+		int[] a = new int[len];
+		for (int i = 0; i < len; i++)
+			a[i] = (int) (LENGTH * Math.random());
+		return a;
+	}
+
+	/*****************************************/
+
+	private int[] initArray() {
+		int[] array = new int[LENGTH];
+		array[0] = 10;
+		array[1] = 5;
+		array[2] = 7;
+		array[3] = 20;
+		array[4] = 19;
+		array[5] = 45;
+		array[6] = 3;
+		array[7] = 11;
+		array[8] = 188;
+		array[9] = 36;
+		return array;
 	}
 
 }
