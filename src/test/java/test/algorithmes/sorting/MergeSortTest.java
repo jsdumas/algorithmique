@@ -1,8 +1,8 @@
 package test.algorithmes.sorting;
 
-import algorithmes.sorting.Heapsort;
+import algorithmes.sorting.MergeSort;
 
-public class HeapsortTest {
+public class MergeSortTest {
 
 	static boolean is_sorted(int[] a) {
 		for (int i = 1; i < a.length; i++)
@@ -42,27 +42,36 @@ public class HeapsortTest {
 	}
 
 	static void test(int[] a) {
-		System.out.println("  test avec       a = " + print(a));
+		System.out.println("  test with       a = " + print(a));
 		int[] occ1 = occurrences(a);
-		Heapsort.heapsort(a);
+		MergeSort.mergesort2(a);
 		int[] occ2 = occurrences(a);
-		System.out.println("  heapsort(a) => a = " + print(a));
+		System.out.println("  mergesort(a) => a = " + print(a));
 		if (!is_sorted(a)) {
-			System.out.println("ÉCHEC : le résultat n'est pas trié");
+			System.out.println("FAILURE: not sorted");
 			System.exit(1);
 		}
 		if (!is_permut(occ1, occ2)) {
-			System.out.println("ÉCHEC : les éléments diffèrent");
+			System.out.println("FAILURE: elements are different");
 			System.exit(1);
 		}
 	}
 
 	public static void main(String[] args) {
-		System.out.println("test de mergesort");
+		System.out.println("testing mergesort");
 		for (int len = 0; len < 10; len++)
 			for (int j = 0; j <= len; j++)
 				test(random_array(len));
-		System.out.println("SUCCÈS TestHeapsort");
+		System.out.println("SUCCESS");
+
+		int[] a = new int[50000000];
+		// for (int i = 0; i < a.length; i++) a[i] = (5003 * i) % 1000007;
+		for (int i = 0; i < a.length; i++)
+			a[i] = -i;
+		double start = System.currentTimeMillis();
+		MergeSort.naturalMergesort(a);
+		System.out.println("BIG");
+		System.out.println(System.currentTimeMillis() - start);
 	}
 
 }

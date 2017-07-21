@@ -2,7 +2,7 @@ package algorithmes.sorting;
 
 // tri rapide
 
-public class Quicksort extends SortingTool {
+public class QuickSort extends SortingTool {
 
 	private static final int CUTOFF = 5;
 

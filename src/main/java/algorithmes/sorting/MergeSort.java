@@ -2,10 +2,10 @@ package algorithmes.sorting;
 
 import java.util.Arrays;
 
-public class Mergesort {
+public class MergeSort {
 
 	// merge a1[l..m[ and a1[m..r[ into a2[l..r[
-	static void merge(int[] a1, int[] a2, int l, int m, int r) {
+	private void merge(int[] a1, int[] a2, int l, int m, int r) {
 		int i = l, j = m;
 		for (int k = l; k < r; k++)
 			if (i < m && (j == r || a1[i] <= a1[j]))
@@ -15,7 +15,7 @@ public class Mergesort {
 	}
 
 	// recursive, top-down mergesort
-	static void mergesortrec(int[] a, int[] tmp, int l, int r) {
+	public void mergesortrec(int[] a, int[] tmp, int l, int r) {
 		if (l >= r - 1)
 			return;
 		int m = l + (r - l) / 2;
@@ -28,12 +28,12 @@ public class Mergesort {
 		merge(tmp, a, l, m, r);
 	}
 
-	static void mergesort(int[] a) {
+	public void mergesort(int[] a) {
 		mergesortrec(a, new int[a.length], 0, a.length);
 	}
 
 	// exercice : éviter la copie de a vers tmp
-	static void mergesort2rec(int[] a, int[] tmp, int l, int r, boolean inplace) {
+	public void mergesort2rec(int[] a, int[] tmp, int l, int r, boolean inplace) {
 		if (l >= r - 1)
 			return;
 		int m = l + (r - l) / 2;
@@ -45,12 +45,12 @@ public class Mergesort {
 			merge(a, tmp, l, m, r);
 	}
 
-	public static void mergesort2(int[] a) {
+	public void mergesort2(int[] a) {
 		mergesort2rec(a, Arrays.copyOf(a, a.length), 0, a.length, true);
 	}
 
 	// bottom-up mergesort
-	static void bottomUpMergesort(int[] a) {
+	public void bottomUpMergesort(int[] a) {
 		int n = a.length;
 		int[] tmp = new int[n];
 		for (int len = 1; len < n; len *= 2)
@@ -66,13 +66,13 @@ public class Mergesort {
 	// natural mergesort
 
 	// returns hi such that a[lo..hi[ is sorted
-	static int findRun(int[] a, int lo) {
+	public int findRun(int[] a, int lo) {
 		while (++lo < a.length && a[lo - 1] <= a[lo])
 			;
 		return lo;
 	}
 
-	public static void naturalMergesort(int[] a) {
+	public void naturalMergesort(int[] a) {
 		int n = a.length;
 		if (n <= 1)
 			return;
@@ -97,13 +97,13 @@ public class Mergesort {
 		}
 	}
 
-	static void merge2(int[] tmp, int[] a, int lo, int mid, int hi) {
+	public void merge2(int[] tmp, int[] a, int lo, int mid, int hi) {
 		for (int i = lo; i < hi; i++)
 			tmp[i] = a[i];
 		merge(tmp, a, lo, mid, hi);
 	}
 
-	static void naturalMergeSort(int[] t) {
+	public void naturalMergeSort(int[] t) {
 		if (t.length < 2)
 			return;
 

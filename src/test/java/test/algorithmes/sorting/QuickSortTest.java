@@ -1,8 +1,8 @@
 package test.algorithmes.sorting;
 
-import algorithmes.sorting.Quicksort;
+import algorithmes.sorting.QuickSort;
 
-public class QuicksortTest {
+public class QuickSortTest {
 
 	static boolean is_sorted(int[] a) {
 		for (int i = 1; i < a.length; i++)
@@ -45,7 +45,7 @@ public class QuicksortTest {
 		int v = a[l];
 		System.out.println("  test avec      a = " + print(a) + " v = " + v);
 		int[] occ1 = occurrences(a);
-		int m = Quicksort.partition(a, l, r);
+		int m = QuickSort.partition(a, l, r);
 		System.out.println("  partition(a," + l + "," + r + ") = " + print(a) + " m = " + m);
 		int[] occ2 = occurrences(a);
 		if (!is_permut(occ1, occ2)) {
@@ -62,7 +62,7 @@ public class QuicksortTest {
 	static void test(int[] a) {
 		System.out.println("  test avec       a = " + print(a));
 		int[] occ1 = occurrences(a);
-		Quicksort.quicksort3(a);
+		QuickSort.quicksort3(a);
 		int[] occ2 = occurrences(a);
 		System.out.println("  quicksort(a) => a = " + print(a));
 		if (!is_sorted(a)) {
@@ -89,7 +89,7 @@ public class QuicksortTest {
 
 		double start = System.currentTimeMillis();
 		int[] large = random_array(100000000);
-		Quicksort.quicksort4(large);
+		QuickSort.quicksort4(large);
 		System.out.println("time = " + (System.currentTimeMillis() - start));
 		assert is_sorted(large);
 	}
