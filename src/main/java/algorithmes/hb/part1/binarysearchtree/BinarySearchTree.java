@@ -1,6 +1,12 @@
 package algorithmes.hb.part1.binarysearchtree;
 
 // Tree can become unbalanced and operation can become slower and slower
+// Tree is always balanced
+// Algorithm __Average ______Worst Case
+// Space ______O(n) _________O(n)
+// Search _____O(log n) _____O(n)
+// Insert _____O(log n) _____O(n)
+// Delete _____O(log n) _____O(n)
 public class BinarySearchTree<T extends Comparable<T>> implements Tree<T> {
 
 	private Node<T> root;

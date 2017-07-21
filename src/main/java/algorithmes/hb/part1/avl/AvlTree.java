@@ -1,6 +1,11 @@
 package algorithmes.hb.part1.avl;
 
 // Tree is always balanced
+// Algorithm __Average ______Worst Case
+// Space ______O(n) _________O(n)
+// Search _____O(log n) _____O(log n)
+// Insert _____O(log n) _____O(log n)
+// Delete _____O(log n) _____O(log n)
 public class AvlTree implements Tree {
 
 	private Node root;
