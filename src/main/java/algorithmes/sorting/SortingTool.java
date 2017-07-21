@@ -2,6 +2,9 @@ package algorithmes.sorting;
 
 public abstract class SortingTool {
 
+	protected long start = 0;
+	protected long end = 0;
+
 	protected void swap(int[] array, int currentIndice) {
 		int tmp = array[currentIndice - 1];
 		array[currentIndice - 1] = array[currentIndice];
@@ -12,6 +15,10 @@ public abstract class SortingTool {
 		int tmp = array[currentIndice];
 		array[currentIndice] = array[nextIndice];
 		array[nextIndice] = tmp;
+	}
+
+	public String getTimeExec() {
+		return "Algorithm takes time to finish: " + (end - start) + "ms";
 	}
 
 }

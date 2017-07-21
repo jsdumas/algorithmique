@@ -5,45 +5,45 @@ package algorithmes.sorting;
 public class Heapsort {
 
 	// recursive version of moveDown
-	static void moveDownRec(int[] a, int k, int v, int n) {
+	public void moveDownRec(int[] array, int k, int v, int n) {
 		int r = 2 * k + 1;
 		if (r >= n)
-			a[k] = v;
+			array[k] = v;
 		else {
-			if (r + 1 < n && a[r] < a[r + 1])
+			if (r + 1 < n && array[r] < array[r + 1])
 				r++;
-			if (a[r] <= v)
-				a[k] = v;
+			if (array[r] <= v)
+				array[k] = v;
 			else {
-				a[k] = a[r];
-				moveDownRec(a, r, v, n);
+				array[k] = array[r];
+				moveDownRec(array, r, v, n);
 			}
 		}
 	}
 
-	static void moveDown(int[] a, int i, int x, int n) {
+	public void moveDown(int[] array, int i, int x, int n) {
 		while (true) {
 			int j = 2 * i + 1;
 			if (j >= n)
 				break;
-			if (j + 1 < n && a[j] < a[j + 1])
+			if (j + 1 < n && array[j] < array[j + 1])
 				j++;
-			if (a[j] <= x)
+			if (array[j] <= x)
 				break;
-			a[i] = a[j];
+			array[i] = array[j];
 			i = j;
 		}
-		a[i] = x;
+		array[i] = x;
 	}
 
-	public static void heapsort(int[] a) {
-		int n = a.length;
+	public void heapsort(int[] array) {
+		int n = array.length;
 		for (int k = n / 2 - 1; k >= 0; k--)
-			moveDown(a, k, a[k], n);
+			moveDown(array, k, array[k], n);
 		for (int k = n - 1; k >= 1; k--) {
-			int v = a[k];
-			a[k] = a[0];
-			moveDown(a, 0, v, k);
+			int v = array[k];
+			array[k] = array[0];
+			moveDown(array, 0, v, k);
 		}
 	}
 

@@ -2,9 +2,10 @@ package algorithmes.sorting;
 
 // tri par insertion
 // pire des cas : O(n2)
-public class InsertionSort {
+public class InsertionSort extends SortingTool {
 
 	public void insertionSort(int[] tableau) {
+		super.start = System.currentTimeMillis();
 		for (int i = 1; i < tableau.length; i++) {
 			int value = tableau[i];
 			int currentIndex = i;
@@ -16,6 +17,7 @@ public class InsertionSort {
 			}
 			tableau[currentIndex] = value;
 		}
+		super.end = System.currentTimeMillis();
 	}
 
 	// trie a[l..r[
