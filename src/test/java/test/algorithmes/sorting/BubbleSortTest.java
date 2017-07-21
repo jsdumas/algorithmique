@@ -3,13 +3,15 @@ package test.algorithmes.sorting;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
+import java.util.Random;
+
 import org.junit.Test;
 
-import algorithmes.sorting.InsertionSort;
+import algorithmes.sorting.BubbleSort;
 
-public class InsertionSortTest {
+public class BubbleSortTest {
 
-	private static final int LENGTH = 10;
+	private static final int LENGTH = 30000;
 
 	@Test
 	public void shouldNotBeSorted() {
@@ -19,8 +21,8 @@ public class InsertionSortTest {
 	@Test
 	public void shouldBeSorted() {
 		int[] array = initArray();
-		InsertionSort insertionSort = new InsertionSort();
-		insertionSort.insertionSort(array);
+		BubbleSort bubbleSort = new BubbleSort();
+		bubbleSort.bubbleSort(array);
 		isSorted(array, true);
 	}
 
@@ -34,17 +36,10 @@ public class InsertionSortTest {
 	}
 
 	private int[] initArray() {
+		Random random = new Random();
 		int[] array = new int[LENGTH];
-		array[0] = 10;
-		array[1] = 5;
-		array[2] = 7;
-		array[3] = 20;
-		array[4] = 19;
-		array[5] = 45;
-		array[6] = 3;
-		array[7] = 11;
-		array[8] = 188;
-		array[9] = 36;
+		for (int i = 0; i < LENGTH; i++)
+			array[i] = random.nextInt(100);
 		return array;
 	}
 
