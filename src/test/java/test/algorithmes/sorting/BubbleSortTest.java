@@ -8,12 +8,12 @@ public class BubbleSortTest extends ArrayTest {
 
 	@Test
 	public void shouldNotBeSorted() {
-		isSorted(initArray(), false);
+		isSorted(super.array, false);
 	}
 
 	@Test
 	public void shouldBeSorted() {
-		int[] array = initArray();
+		int[] array = super.array;
 		BubbleSort bubbleSort = new BubbleSort();
 		bubbleSort.bubbleSort(array);
 		isSorted(array, true);
@@ -22,7 +22,7 @@ public class BubbleSortTest extends ArrayTest {
 
 	@Test
 	public void shouldBeSortedWithWhile() {
-		int[] array = initArray();
+		int[] array = super.array;
 		BubbleSort bubbleSort = new BubbleSort();
 		bubbleSort.bubbleSortWhile(array);
 		isSorted(array, true);

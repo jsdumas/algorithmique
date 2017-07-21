@@ -8,15 +8,14 @@ public class InsertionSortTest extends ArrayTest {
 
 	@Test
 	public void shouldNotBeSorted() {
-		isSorted(initArray(), false);
+		isSorted(super.array, false);
 	}
 
 	@Test
 	public void shouldBeSorted() {
-		int[] array = initArray();
 		InsertionSort insertionSort = new InsertionSort();
 		insertionSort.insertionSort(array);
-		isSorted(array, true);
+		isSorted(super.array, true);
 		System.out.print(insertionSort.getTimeExec());
 	}
 

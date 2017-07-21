@@ -8,8 +8,9 @@ import java.util.Random;
 public abstract class ArrayTest {
 
 	protected static final int LENGTH = 30000;
+	protected int[] array = initArray();
 
-	protected int[] initArray() {
+	private int[] initArray() {
 		Random random = new Random();
 		int[] array = new int[LENGTH];
 		for (int i = 0; i < LENGTH; i++)

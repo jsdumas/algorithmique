@@ -8,12 +8,12 @@ public class SelectionSortTest extends ArrayTest {
 
 	@Test
 	public void shouldNotBeSorted() {
-		isSorted(initArray(), false);
+		isSorted(super.array, false);
 	}
 
 	@Test
 	public void shouldBeSorted() {
-		int[] array = initArray();
+		int[] array = super.array;
 		SelectionSort selectionSort = new SelectionSort();
 		selectionSort.triSelection(array);
 		isSorted(array, true);
