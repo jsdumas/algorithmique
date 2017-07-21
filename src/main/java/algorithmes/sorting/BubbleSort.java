@@ -1,37 +1,32 @@
-package com.balazsholczer.linear;
+package algorithmes.sorting;
 
 import java.util.Random;
 
-public class BubbleSort {
+// pire des cas : O(n2)
+public class BubbleSort extends SortingTool {
 
-	public static void main(String[] args) {
+	private long start = 0;
+	private long end = 0;
 
+	public void bubbleSort() {
 		Random random = new Random();
-
-		int[] nums = new int[30000];
+		int[] array = new int[30000];
 		for (int i = 0; i < 30000; i++)
-			nums[i] = random.nextInt(100);
-
-		long start = System.currentTimeMillis();
-
-		for (int i = 0; i < nums.length; i++) {
-			for (int j = 1; j < (nums.length - i); j++) {
-
-				if (nums[j - 1] > nums[j]) {
+			array[i] = random.nextInt(100);
+		start = System.currentTimeMillis();
+		for (int i = 0; i < array.length; i++) {
+			for (int j = 1; j < (array.length - i); j++) {
+				if (array[j - 1] > array[j]) {
 					// swap the elements!
-					int temp = nums[j - 1];
-					nums[j - 1] = nums[j];
-					nums[j] = temp;
+					swap(array, j);
 				}
-
 			}
 		}
+		end = System.currentTimeMillis();
+		// O(N*N) N = 10 000 2 -> 2*2 = 4 3 -> 3*3=9
+	}
 
-		// O(N*N)  N = 10 000		2 -> 2*2 = 4    3 -> 3*3=9
-		// 
-		
-		long end = System.currentTimeMillis();
-		System.out.println("Algorithm takes time to finish: " + (end - start) + "ms");
-
+	public String getTimeExec() {
+		return "Algorithm takes time to finish: " + (end - start) + "ms";
 	}
 }

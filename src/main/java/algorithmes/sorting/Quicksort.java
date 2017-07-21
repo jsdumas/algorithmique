@@ -2,15 +2,9 @@ package algorithmes.sorting;
 
 // tri rapide
 
-public class Quicksort {
+public class Quicksort extends SortingTool {
 
 	private static final int CUTOFF = 5;
-
-	private void swap(int[] a, int i, int j) {
-		int tmp = a[i];
-		a[i] = a[j];
-		a[j] = tmp;
-	}
 
 	private int partition(int[] a, int l, int r) {
 		// on suppose l < r i.e. au moins un élément
@@ -87,7 +81,6 @@ public class Quicksort {
 	}
 
 	// - tri par insertion sur les petits tableaux
-
 
 	public void quickrec4(int[] a, int l, int r) {
 		while (l < r - 1) {

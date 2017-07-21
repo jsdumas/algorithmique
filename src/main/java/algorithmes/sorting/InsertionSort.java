@@ -1,15 +1,15 @@
 package algorithmes.sorting;
 
 // tri par insertion
-
+// pire des cas : O(n2)
 public class InsertionSort {
 
 	public void insertionSort(int[] tableau) {
 		for (int i = 1; i < tableau.length; i++) {
 			int value = tableau[i];
 			int currentIndex = i;
-//			for (; 0 < currentIndex && value < tableau[currentIndex - 1]; currentIndex--)
-//				tableau[currentIndex] = tableau[currentIndex - 1];
+			// for (; 0 < currentIndex && value < tableau[currentIndex - 1]; currentIndex--)
+			// tableau[currentIndex] = tableau[currentIndex - 1];
 			while (currentIndex > 0 && tableau[currentIndex - 1] > value) {
 				tableau[currentIndex] = tableau[currentIndex - 1];
 				currentIndex--;
@@ -17,8 +17,7 @@ public class InsertionSort {
 			tableau[currentIndex] = value;
 		}
 	}
-	
-	
+
 	// trie a[l..r[
 	public void insertionSort(int[] tableau, int l, int r) {
 		for (int i = l + 1; i < r; i++) {
