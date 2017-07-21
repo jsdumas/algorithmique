@@ -1,7 +1,7 @@
 package algorithmes.sorting;
 
 // tri rapide
-
+// O(n2)
 public class QuickSort extends SortingTool {
 
 	private static final int CUTOFF = 5;
@@ -45,10 +45,10 @@ public class QuickSort extends SortingTool {
 		}
 	}
 
-	public void quicksort2(int[] a) {
-		KnuthShuffle.shuffle(a);
-		quickrec2(a, 0, a.length);
-	}
+	// public void quicksort2(int[] a) {
+	// KnuthShuffle.shuffle(a);
+	// quickrec2(a, 0, a.length);
+	// }
 
 	// deux améliorations de plus (en exercices)
 	// - 3-way partition
@@ -75,47 +75,47 @@ public class QuickSort extends SortingTool {
 		quickrec3(a, hi, r);
 	}
 
-	public void quicksort3(int[] a) {
-		KnuthShuffle.shuffle(a);
-		quickrec3(a, 0, a.length);
-	}
+	// public void quicksort3(int[] a) {
+	// KnuthShuffle.shuffle(a);
+	// quickrec3(a, 0, a.length);
+	// }
+	//
+	// // - tri par insertion sur les petits tableaux
+	//
+	// public void quickrec4(int[] a, int l, int r) {
+	// while (l < r - 1) {
+	// if (r - l < CUTOFF) {
+	// InsertionSort.insertionSort(a, l, r);
+	// return;
+	// }
+	// // on partitionne a[l..r[ en trois
+	// // (c'est le drapeau hollandais)
+	// int p = a[l], lo = l, hi = r;
+	// // lo i hi
+	// // ..<p.. ..=p.. ..?.. ..>p..
+	// for (int i = l + 1; i < hi;) {
+	// if (a[i] == p)
+	// i++;
+	// else if (a[i] < p)
+	// swap(a, i++, lo++);
+	// else
+	// // p < a[i]
+	// swap(a, i, --hi);
+	// }
+	// // il faut maintenant trier a[l..lo[ et a[hi..r[
+	// if (lo - l < r - hi) {
+	// quickrec4(a, l, lo);
+	// l = hi;
+	// } else {
+	// quickrec4(a, hi, r);
+	// r = lo;
+	// }
+	// }
+	// }
 
-	// - tri par insertion sur les petits tableaux
-
-	public void quickrec4(int[] a, int l, int r) {
-		while (l < r - 1) {
-			if (r - l < CUTOFF) {
-				InsertionSort.insertionSort(a, l, r);
-				return;
-			}
-			// on partitionne a[l..r[ en trois
-			// (c'est le drapeau hollandais)
-			int p = a[l], lo = l, hi = r;
-			// lo i hi
-			// ..<p.. ..=p.. ..?.. ..>p..
-			for (int i = l + 1; i < hi;) {
-				if (a[i] == p)
-					i++;
-				else if (a[i] < p)
-					swap(a, i++, lo++);
-				else
-					// p < a[i]
-					swap(a, i, --hi);
-			}
-			// il faut maintenant trier a[l..lo[ et a[hi..r[
-			if (lo - l < r - hi) {
-				quickrec4(a, l, lo);
-				l = hi;
-			} else {
-				quickrec4(a, hi, r);
-				r = lo;
-			}
-		}
-	}
-
-	public static void quicksort4(int[] a) {
-		KnuthShuffle.shuffle(a);
-		quickrec4(a, 0, a.length);
-	}
+	// public static void quicksort4(int[] a) {
+	// KnuthShuffle.shuffle(a);
+	// quickrec4(a, 0, a.length);
+	// }
 
 }

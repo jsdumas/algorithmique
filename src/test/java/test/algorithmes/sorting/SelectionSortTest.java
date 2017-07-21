@@ -15,7 +15,7 @@ public class SelectionSortTest extends ArrayTest {
 	public void shouldBeSorted() {
 		int[] array = super.array;
 		SelectionSort selectionSort = new SelectionSort();
-		selectionSort.triSelection(array);
+		selectionSort.selectionSort(array);
 		isSorted(array, true);
 		System.out.print(selectionSort.getTimeExec());
 	}
