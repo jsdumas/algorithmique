@@ -2,7 +2,7 @@ package algorithmes.sorting;
 
 // tri par insertion
 // pire des cas : O(n2)
-public class InsertionSort extends SortingTool {
+public class InsertionSort extends Sorting {
 
 	public void insertionSort(int[] tableau) {
 		super.start = System.currentTimeMillis();

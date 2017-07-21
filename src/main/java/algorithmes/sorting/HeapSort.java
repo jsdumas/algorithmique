@@ -2,7 +2,7 @@ package algorithmes.sorting;
 
 // tri par tas
 // O(n log n)
-public class HeapSort extends SortingTool {
+public class HeapSort extends Sorting {
 
 	// recursive version of moveDown
 	private void moveDownRec(int[] array, int k, int v, int n) {

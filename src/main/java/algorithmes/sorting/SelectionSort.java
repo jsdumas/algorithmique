@@ -1,7 +1,7 @@
 package algorithmes.sorting;
 
 // complexity : O(n2)
-public class SelectionSort extends SortingTool {
+public class SelectionSort extends Sorting {
 
 	public void selectionSort(int[] array) {
 		super.start = System.currentTimeMillis();

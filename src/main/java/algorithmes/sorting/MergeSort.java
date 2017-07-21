@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 // Tri fusion
 // Complexity : O(n log n)
-public class MergeSort extends SortingTool {
+public class MergeSort extends Sorting {
 
 	// merge a1[l..m[ and a1[m..r[ into a2[l..r[
 	private void merge(int[] a1, int[] a2, int l, int m, int r) {

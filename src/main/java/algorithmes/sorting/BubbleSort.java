@@ -1,7 +1,7 @@
 package algorithmes.sorting;
 
 // pire des cas : O(n2)
-public class BubbleSort extends SortingTool {
+public class BubbleSort extends Sorting {
 
 	public void bubbleSort(int[] array) {
 		super.start = System.currentTimeMillis();

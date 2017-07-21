@@ -1,6 +1,6 @@
 package algorithmes.sorting;
 
-public abstract class SortingTool {
+public abstract class Sorting {
 
 	protected long start = 0;
 	protected long end = 0;
