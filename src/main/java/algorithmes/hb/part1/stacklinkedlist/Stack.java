@@ -1,31 +1,32 @@
 package algorithmes.hb.part1.stacklinkedlist;
 
+// LIFO datastructure
 public class Stack<T extends Comparable<T>> {
 
 	private Node<T> root;
 	private int count;
-	
+
 	// O(1) constant time
-	public void push(T newData){
-		
+	public void push(T newData) {
+
 		this.count++;
-		
-		if( this.root == null ){
+
+		if (this.root == null) {
 			this.root = new Node<>(newData);
-		}else{
+		} else {
 			Node<T> oldRoot = this.root;
 			this.root = new Node<>(newData);
 			this.root.setNextNode(oldRoot);
 		}
 	}
-	
+
 	// O(1)
-	public int size(){
+	public int size() {
 		return this.count;
 	}
-	
+
 	// O(1)
-	public T pop(){
+	public T pop() {
 		T itemToPop = this.root.getData();
 		this.root = this.root.getNextNode();
 		this.count--;
@@ -33,7 +34,7 @@ public class Stack<T extends Comparable<T>> {
 	}
 
 	// O(1) constant time
-	public boolean isEmpty(){
+	public boolean isEmpty() {
 		return this.root == null;
 	}
 }
