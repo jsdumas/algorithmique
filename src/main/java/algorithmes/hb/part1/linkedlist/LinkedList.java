@@ -49,6 +49,22 @@ public class LinkedList<T extends Comparable<T>> implements List<T> {
 		}
 	}
 
+	public String traverseListToString() {
+		String res = "";
+		if (this.root == null) {
+			return res;
+		}
+
+		Node<T> node = this.root;
+
+		while (node != null) {
+			res += node + " ";
+			node = node.getNextNode();
+		}
+
+		return res;
+	}
+
 	// O(1) constant time complexity, update the references
 	private void insertDataBeginning(T data) {
 
