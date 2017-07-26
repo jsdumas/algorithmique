@@ -1,5 +1,6 @@
-#PATTERN PROXY
+# PATTERN PROXY
 
+## Wraps an object to control acces to it.
 
 In proxy pattern, a class represents functionality of another class. This type of design pattern comes under structural pattern.
 

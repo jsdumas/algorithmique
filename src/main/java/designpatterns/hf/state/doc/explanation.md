@@ -1,4 +1,6 @@
-#STATE PATTERN
+# STATE PATTERN
+
+## Encapsulates state-based behaviors and uses delegation to switch between behaviours.
 
 In State pattern a class behavior changes based on its state. This type of design pattern comes under behavior pattern.
 
