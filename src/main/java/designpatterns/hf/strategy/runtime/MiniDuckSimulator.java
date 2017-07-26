@@ -7,21 +7,23 @@ import designpatterns.hf.strategy.RubberDuck;
 import designpatterns.hf.strategy.behaviour.FlyRocketPowered;
 
 public class MiniDuckSimulator {
- 
+
 	public static void main(String[] args) {
- 
-		MallardDuck	mallard = new MallardDuck();
-		RubberDuck	rubberDuckie = new RubberDuck();
-		DecoyDuck	decoy = new DecoyDuck();
- 
-		ModelDuck	model = new ModelDuck();
+
+		MallardDuck mallard = new MallardDuck();
+		RubberDuck rubberDuckie = new RubberDuck();
+		DecoyDuck decoy = new DecoyDuck();
+
+		ModelDuck model = new ModelDuck();
 
 		mallard.performQuack();
 		rubberDuckie.performQuack();
 		decoy.performQuack();
-   
-		model.performFly();	
+
+		model.performFly();
+		// Inject a new FlyBehaviour
 		model.setFlyBehavior(new FlyRocketPowered());
+		// Now FlyBehaviour of ModelDuck is different
 		model.performFly();
 	}
 }
