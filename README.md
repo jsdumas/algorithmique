@@ -15,12 +15,12 @@ Don't Repeat Yourself
 ### KISS
 Keep it Stupid-Simple
 
-### Loi de Déméter
+### Law of Demeter
 On ne fait confiance qu'à ses amis, pas aux amis de ses amis.
 
-### Méthode Moscow
+### MoSCcoW Method
 
-### Polymorphisme
+### Polymorphism
 
 ### SOLID
 Single Responsibility Principle : une classe, une fonction ou une méthode doit avoir une et une seule responsabilité
