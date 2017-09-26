@@ -1,16 +1,16 @@
 package designpatterns.hf.facade.hometheater;
 
 public class PopcornPopper {
-	String description;
-	
+	private final String description;
+
 	public PopcornPopper(String description) {
 		this.description = description;
 	}
- 
+
 	public void on() {
 		System.out.println(description + " on");
 	}
- 
+
 	public void off() {
 		System.out.println(description + " off");
 	}
@@ -18,9 +18,9 @@ public class PopcornPopper {
 	public void pop() {
 		System.out.println(description + " popping popcorn!");
 	}
- 
-  
-        public String toString() {
-                return description;
-        }
+
+	@Override
+	public String toString() {
+		return description;
+	}
 }
