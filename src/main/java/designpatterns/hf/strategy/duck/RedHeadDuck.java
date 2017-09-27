@@ -1,18 +1,18 @@
-package designpatterns.hf.strategy;
+package designpatterns.hf.strategy.duck;
 
 import designpatterns.hf.strategy.behaviour.FlyWithWings;
 import designpatterns.hf.strategy.behaviour.Quack;
 
-public class MallardDuck extends Duck {
+public class RedHeadDuck extends Duck {
 
 	// Constructor assign a behaviour implemented to behaviour interfaced in extended Class Duck
-	public MallardDuck() {
-		quackBehavior = new Quack();
+	public RedHeadDuck() {
 		flyBehavior = new FlyWithWings();
+		quackBehavior = new Quack();
 	}
 
 	@Override
 	public void display() {
-		System.out.println("I'm a real Mallard duck");
+		System.out.println("I'm a real Red Headed duck");
 	}
 }

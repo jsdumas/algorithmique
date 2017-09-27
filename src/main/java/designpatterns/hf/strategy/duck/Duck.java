@@ -1,4 +1,4 @@
-package designpatterns.hf.strategy;
+package designpatterns.hf.strategy.duck;
 
 import designpatterns.hf.strategy.behaviour.FlyBehavior;
 import designpatterns.hf.strategy.behaviour.QuackBehavior;
