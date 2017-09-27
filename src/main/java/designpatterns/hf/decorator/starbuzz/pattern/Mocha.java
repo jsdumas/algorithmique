@@ -1,4 +1,6 @@
-package designpatterns.hf.decorator.starbuzz;
+package designpatterns.hf.decorator.starbuzz.pattern;
+
+import designpatterns.hf.decorator.starbuzz.beverage.Beverage;
 
 public class Mocha extends CondimentDecorator {
 	Beverage beverage;

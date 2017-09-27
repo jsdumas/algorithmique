@@ -1,4 +1,12 @@
-package designpatterns.hf.decorator.starbuzz;
+package designpatterns.hf.decorator.starbuzz.app;
+
+import designpatterns.hf.decorator.starbuzz.beverage.Beverage;
+import designpatterns.hf.decorator.starbuzz.beverage.DarkRoast;
+import designpatterns.hf.decorator.starbuzz.beverage.Espresso;
+import designpatterns.hf.decorator.starbuzz.beverage.HouseBlend;
+import designpatterns.hf.decorator.starbuzz.pattern.Mocha;
+import designpatterns.hf.decorator.starbuzz.pattern.Soy;
+import designpatterns.hf.decorator.starbuzz.pattern.Whip;
 
 public class StarbuzzCoffee {
  

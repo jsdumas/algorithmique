@@ -1,4 +1,4 @@
-package designpatterns.hf.decorator.starbuzz;
+package designpatterns.hf.decorator.starbuzz.beverage;
 
 public abstract class Beverage {
 	String description = "Unknown Beverage";

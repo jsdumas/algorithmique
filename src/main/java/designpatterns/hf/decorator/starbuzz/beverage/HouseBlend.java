@@ -1,4 +1,5 @@
-package designpatterns.hf.decorator.starbuzz;
+package designpatterns.hf.decorator.starbuzz.beverage;
+
 
 public class HouseBlend extends Beverage {
 	public HouseBlend() {

@@ -1,4 +1,5 @@
-package designpatterns.hf.decorator.starbuzz;
+package designpatterns.hf.decorator.starbuzz.beverage;
+
 
 public class DarkRoast extends Beverage {
 	public DarkRoast() {
