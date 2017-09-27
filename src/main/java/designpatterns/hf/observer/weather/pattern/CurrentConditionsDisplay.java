@@ -1,4 +1,5 @@
-package designpatterns.hf.observer.weather;
+package designpatterns.hf.observer.weather.pattern;
+
 	
 public class CurrentConditionsDisplay implements Observer, DisplayElement {
 	private float temperature;

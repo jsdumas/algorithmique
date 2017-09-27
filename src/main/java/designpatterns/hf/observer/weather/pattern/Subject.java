@@ -1,4 +1,5 @@
-package designpatterns.hf.observer.weather;
+package designpatterns.hf.observer.weather.pattern;
+
 
 public interface Subject {
 	public void registerObserver(Observer o);

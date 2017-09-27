@@ -1,6 +1,11 @@
-package designpatterns.hf.observer.weather;
+package designpatterns.hf.observer.weather.app;
 
 import java.util.*;
+
+import designpatterns.hf.observer.weather.pattern.CurrentConditionsDisplay;
+import designpatterns.hf.observer.weather.pattern.ForecastDisplay;
+import designpatterns.hf.observer.weather.pattern.StatisticsDisplay;
+import designpatterns.hf.observer.weather.pattern.WeatherData;
 
 public class WeatherStation {
 

@@ -1,4 +1,4 @@
-package designpatterns.hf.observer.weatherobservable;
+package designpatterns.hf.observer.weatherobservable.pattern;
 
 import java.util.Observable;
 import java.util.Observer;
