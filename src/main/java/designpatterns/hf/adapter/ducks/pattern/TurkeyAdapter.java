@@ -1,4 +1,7 @@
-package designpatterns.hf.adapter.ducks;
+package designpatterns.hf.adapter.ducks.pattern;
+
+import designpatterns.hf.adapter.ducks.bird.Duck;
+import designpatterns.hf.adapter.ducks.bird.Turkey;
 
 public class TurkeyAdapter implements Duck {
 	Turkey turkey;

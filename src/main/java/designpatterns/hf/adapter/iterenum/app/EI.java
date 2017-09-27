@@ -1,4 +1,4 @@
-package designpatterns.hf.adapter.iterenum;
+package designpatterns.hf.adapter.iterenum.app;
 
 import java.util.Arrays;
 import java.util.Enumeration;

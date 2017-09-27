@@ -1,4 +1,4 @@
-package designpatterns.hf.adapter.ducks;
+package designpatterns.hf.adapter.ducks.bird;
 
 public interface Duck {
 	public void quack();

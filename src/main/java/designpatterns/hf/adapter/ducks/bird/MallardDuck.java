@@ -1,4 +1,4 @@
-package designpatterns.hf.adapter.ducks;
+package designpatterns.hf.adapter.ducks.bird;
 
 public class MallardDuck implements Duck {
 	@Override

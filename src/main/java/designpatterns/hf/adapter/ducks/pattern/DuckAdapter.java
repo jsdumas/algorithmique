@@ -1,6 +1,9 @@
-package designpatterns.hf.adapter.ducks;
+package designpatterns.hf.adapter.ducks.pattern;
 
 import java.util.Random;
+
+import designpatterns.hf.adapter.ducks.bird.Duck;
+import designpatterns.hf.adapter.ducks.bird.Turkey;
 
 public class DuckAdapter implements Turkey {
 	Duck duck;

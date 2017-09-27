@@ -1,8 +1,8 @@
-package designpatterns.hf.adapter.ducks.runtime;
+package designpatterns.hf.adapter.ducks.app;
 
-import designpatterns.hf.adapter.ducks.DuckAdapter;
-import designpatterns.hf.adapter.ducks.MallardDuck;
-import designpatterns.hf.adapter.ducks.Turkey;
+import designpatterns.hf.adapter.ducks.bird.MallardDuck;
+import designpatterns.hf.adapter.ducks.bird.Turkey;
+import designpatterns.hf.adapter.ducks.pattern.DuckAdapter;
 
 public class TurkeyTestDrive {
 	public static void main(String[] args) {
