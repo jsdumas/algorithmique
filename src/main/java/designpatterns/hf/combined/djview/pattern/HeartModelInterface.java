@@ -1,4 +1,5 @@
-package designpatterns.hf.combined.djview;
+package designpatterns.hf.combined.djview.pattern;
+
 
 public interface HeartModelInterface {
 	int getHeartRate();

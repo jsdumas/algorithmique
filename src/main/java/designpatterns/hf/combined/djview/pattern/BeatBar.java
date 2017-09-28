@@ -1,4 +1,4 @@
-package designpatterns.hf.combined.djview;
+package designpatterns.hf.combined.djview.pattern;
 
 import javax.swing.JProgressBar;
 
