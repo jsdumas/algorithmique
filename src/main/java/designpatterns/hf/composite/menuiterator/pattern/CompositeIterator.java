@@ -1,28 +1,30 @@
-package designpatterns.hf.composite.menuiterator;
+package designpatterns.hf.composite.menuiterator.pattern;
 
- 
-import java.util.*;
-  
+import java.util.Iterator;
+import java.util.Stack;
+
 public class CompositeIterator implements Iterator {
 	Stack stack = new Stack();
-   
+
 	public CompositeIterator(Iterator iterator) {
 		stack.push(iterator);
 	}
-   
+
+	@Override
 	public Object next() {
 		if (hasNext()) {
 			Iterator iterator = (Iterator) stack.peek();
 			MenuComponent component = (MenuComponent) iterator.next();
 			if (component instanceof Menu) {
 				stack.push(component.createIterator());
-			} 
+			}
 			return component;
 		} else {
 			return null;
 		}
 	}
-  
+
+	@Override
 	public boolean hasNext() {
 		if (stack.empty()) {
 			return false;
@@ -36,10 +38,9 @@ public class CompositeIterator implements Iterator {
 			}
 		}
 	}
-   
+
+	@Override
 	public void remove() {
 		throw new UnsupportedOperationException();
 	}
 }
-
-

@@ -1,4 +1,4 @@
-package designpatterns.hf.composite.menuiterator;
+package designpatterns.hf.composite.menuiterator.pattern;
 
 import java.util.*;
 
