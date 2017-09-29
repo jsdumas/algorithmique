@@ -1,4 +1,6 @@
-package designpatterns.hf.state.gumballstate;
+package designpatterns.hf.state.gumballstate.app;
+
+import designpatterns.hf.state.gumballstate.pattern.GumballMachine;
 
 public class GumballMachineTestDrive {
 
