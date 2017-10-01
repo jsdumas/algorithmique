@@ -2,8 +2,8 @@ package algorithms.hb.problems.recursiveproblems.addingnumbers;
 
 public class Algorithm {
 
-	//Slower than iteration because recursion use system stack
-	//recursive stack information then unstack information 
+	//Slower than iteration because recursion use operating system stack memory
+	//recursive push information first and then pop information from  stack
 	public int sumRecursive(int N){
 		if( N == 1 ) return 1;
 		return N + sumRecursive(N-1);
