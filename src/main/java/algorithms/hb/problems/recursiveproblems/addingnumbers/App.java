@@ -5,7 +5,7 @@ public class App {
 	public static void main(String[] args) {
 		
 		AddingNumbers algorithm = new AddingNumbers();
-		System.out.println(algorithm.sumRecursive(5)); 
+		System.out.println(algorithm.runFast(5)); 
 		
 	}
 }

@@ -1,9 +1,11 @@
 package algorithms.hb.problems.recursiveproblems.housebuilding;
 
-public class HouseBuilding {
+import algorithms.hb.problems.recursiveproblems.Algorithm;
+
+public class HouseBuilding implements Algorithm{
 
 	//Head recursion uses operating system stack memory
-	public void buildHeadRecursionLayers(int height){
+	private void buildHeadRecursionLayers(int height){
 		if( height == 0 ) return;
 		buildHeadRecursionLayers(height-1);
 		System.out.println(height);	
@@ -11,10 +13,24 @@ public class HouseBuilding {
 	
 	
 	//Tail recursion runs like an iterative loop
-	public void buildTailRecursionLayers(int height){
+	private void buildTailRecursionLayers(int height){
 		if( height == 0 ) return;
 		System.out.println(height);	
 		buildTailRecursionLayers(height-1);
+	}
+
+
+	@Override
+	public int runFast(int number) {
+		buildTailRecursionLayers(number);
+		return 0;
+	}
+
+
+	@Override
+	public int runSlow(int number) {
+		buildHeadRecursionLayers(number);
+		return 0;
 	}
 	
 

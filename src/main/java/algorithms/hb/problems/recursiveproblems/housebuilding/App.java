@@ -4,10 +4,10 @@ public class App {
 
 	public static void main(String[] args) {
 		HouseBuilding algorithm = new HouseBuilding();
-		algorithm.buildHeadRecursionLayers(4);
+		algorithm.runSlow(4);
 		System.out.println("");
 		System.out.println("#");
 		System.out.println("");
-		algorithm.buildTailRecursionLayers(4);
+		algorithm.runFast(4);
 	}
 }

@@ -5,7 +5,7 @@ public class App {
 	public static void main(String[] args) {
 		
 		Factorial algorithm = new Factorial();
-		System.out.println(algorithm.factorial(8));
+		System.out.println(algorithm.runFast((8)));
 		
 	}
 }

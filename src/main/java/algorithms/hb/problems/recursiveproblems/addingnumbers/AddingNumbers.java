@@ -1,19 +1,31 @@
 package algorithms.hb.problems.recursiveproblems.addingnumbers;
 
-public class AddingNumbers {
+import algorithms.hb.problems.recursiveproblems.Algorithm;
+
+public class AddingNumbers implements Algorithm {
 
 	//Slower than iteration because recursion use operating system stack memory
 	//recursive push information first and then pop information from  stack
-	public int sumRecursive(int N){
-		if( N == 1 ) return 1;
-		return N + sumRecursive(N-1);
+	private int sumRecursive(int number){
+		if( number == 1 ) return 1;
+		return number + sumRecursive(number-1);
 	}
 	
-	public int sumIterative(int N){
+	private int sumIterative(int number){
 		int result = 0;
-		for(int i=1;i<=N;++i){
+		for(int i=1;i<=number;++i){
 			result += i;
 		}
 		return result;
+	}
+
+	@Override
+	public int runFast(int number) {
+		return sumIterative(number);
+	}
+
+	@Override
+	public int runSlow(int number) {
+		return sumRecursive(number);
 	}
 }
