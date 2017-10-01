@@ -1,6 +1,6 @@
 package algorithms.hb.problems.recursiveproblems.towersofhanoi;
 
-public class Algorithm {
+public class TowerOfHanoi {
 
 	public void solveHanoiProblem(int n, char rodFrom, char middleRod, char rodTo){
 		

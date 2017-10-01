@@ -7,11 +7,11 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
 import org.junit.Test;
 
-import algorithms.hb.problems.recursiveproblems.addingnumbers.Algorithm;
+import algorithms.hb.problems.recursiveproblems.addingnumbers.AddingNumbers;
 
 public class AlgorithmTest {
 	
-	private final static Algorithm ALGO = new Algorithm();
+	private final static AddingNumbers ALGO = new AddingNumbers();
 	
 	@Test
 	public void shouldRecursionReturn6(){

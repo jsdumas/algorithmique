@@ -5,11 +5,11 @@ import static org.hamcrest.Matchers.greaterThan;
 
 import org.junit.Test;
 
-import algorithms.hb.problems.recursiveproblems.housebuilding.Algorithm;
+import algorithms.hb.problems.recursiveproblems.housebuilding.HouseBuilding;
 
 public class AlgorithmTest {
 	
-	private final static Algorithm ALGO = new Algorithm();
+	private final static HouseBuilding ALGO = new HouseBuilding();
 	
 	@Test
 	public void headRecursionShouldBeSlowerThanTailRecursion(){

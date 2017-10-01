@@ -1,10 +1,10 @@
 package algorithms.hb.problems.recursiveproblems.binarysearch;
 
-public class Algorithm {
+public class BinarySearch {
 
 	private int[] array;
 	
-	public Algorithm(int[] array){
+	public BinarySearch(int[] array){
 		this.array = array;
 	}
 	

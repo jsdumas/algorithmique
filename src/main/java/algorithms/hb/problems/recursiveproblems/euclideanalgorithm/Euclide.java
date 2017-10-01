@@ -1,6 +1,6 @@
 package algorithms.hb.problems.recursiveproblems.euclideanalgorithm;
 
-public class Algorithm {
+public class Euclide {
 
 	public int gcdIterative(int num1, int num2){
 		

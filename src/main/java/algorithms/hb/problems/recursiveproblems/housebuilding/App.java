@@ -3,7 +3,7 @@ package algorithms.hb.problems.recursiveproblems.housebuilding;
 public class App {
 
 	public static void main(String[] args) {
-		Algorithm algorithm = new Algorithm();
+		HouseBuilding algorithm = new HouseBuilding();
 		algorithm.buildHeadRecursionLayers(4);
 		System.out.println("");
 		System.out.println("#");

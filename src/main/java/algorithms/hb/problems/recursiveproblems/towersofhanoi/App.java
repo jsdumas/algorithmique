@@ -4,7 +4,7 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		Algorithm algorithm = new Algorithm();
+		TowerOfHanoi algorithm = new TowerOfHanoi();
 		algorithm.solveHanoiProblem(3, 'A', 'B', 'C');
 		
 	}

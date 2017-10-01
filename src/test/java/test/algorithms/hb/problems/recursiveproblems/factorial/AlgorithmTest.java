@@ -6,11 +6,11 @@ import static org.hamcrest.Matchers.greaterThan;
 
 import org.junit.Test;
 
-import algorithms.hb.problems.recursiveproblems.factorial.Algorithm;
+import algorithms.hb.problems.recursiveproblems.factorial.Factorial;
 
 public class AlgorithmTest {
 	
-	private final static Algorithm ALGO = new Algorithm();
+	private final static Factorial ALGO = new Factorial();
 	
 	@Test
 	public void factorialWithMemoizationShouldReturn24(){

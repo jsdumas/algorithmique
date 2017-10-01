@@ -4,7 +4,7 @@ public class App {
 
 	public static void main(String[] args) {
 		
-		Algorithm algorithm = new Algorithm();
+		AddingNumbers algorithm = new AddingNumbers();
 		System.out.println(algorithm.sumRecursive(5)); 
 		
 	}

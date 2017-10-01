@@ -1,6 +1,6 @@
 package algorithms.hb.problems.recursiveproblems.housebuilding;
 
-public class Algorithm {
+public class HouseBuilding {
 
 	//Head recursion uses operating system stack memory
 	public void buildHeadRecursionLayers(int height){

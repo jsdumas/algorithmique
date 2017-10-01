@@ -38,7 +38,7 @@ public class App {
 		
 		int[] array = {1,5,6,8,13,22,26,40,50,57,60};
 		
-		Algorithm algorithm = new Algorithm(array);
+		BinarySearch algorithm = new BinarySearch(array);
 		System.out.println(algorithm.binarySearch(5));
 		
 	}

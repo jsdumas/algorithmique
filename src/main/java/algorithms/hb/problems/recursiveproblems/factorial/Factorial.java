@@ -1,6 +1,6 @@
 package algorithms.hb.problems.recursiveproblems.factorial;
 
-public class Algorithm {
+public class Factorial {
 
 	//Accumulator parameter allows to avoid poping information from stack.
 	//This technique is faster beacause, it returns directly the result without poping

@@ -11,7 +11,7 @@ public class App {
 	
 	public static void main(String[] args) {
 		
-		Algorithm algorithm = new Algorithm();
+		Euclide algorithm = new Euclide();
 		System.out.println( algorithm.gcdRecursive(30,100) );
 		
 	}
