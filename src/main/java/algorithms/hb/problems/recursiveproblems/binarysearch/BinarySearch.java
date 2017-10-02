@@ -21,6 +21,8 @@ public class BinarySearch {
 		return binarySearch(0, this.array.length - 1, item);
 	}
 
+	// Faster than linear search only if array is sorted
+	// If array is not sorted, binary search doesn't work
 	private int binarySearch(int startIndex, int endIndex, int item) {
 		if (endIndex < startIndex) {
 			System.out.println("No solution found..");
