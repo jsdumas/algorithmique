@@ -1,6 +1,7 @@
 package test.algorithms.practice.memo;
 
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.equalTo;
 
 import org.junit.Test;
 
@@ -12,11 +13,10 @@ public class FibTest {
 
 	@Test
 	public void test() {
-		assertThat(FIB.fibDP(10), equals(55));
-		// assert fibDP(10) == 55;
-		assert fibDP2(10) == 55;
+		assertThat(FIB.fibDP(10), equalTo(55L));
+		assertThat(FIB.fibDP2(10), equalTo(55L));
 		long start = System.currentTimeMillis();
-		System.out.println(fibMemo(80));
+		System.out.println(FIB.fibMemo(80));
 		System.out.println((System.currentTimeMillis() - start) + " ms");
 		// 42 2s
 		// 43 3s
