@@ -1,5 +1,10 @@
 package designpatterns.hf.behavioural.iterator.dinermerger;
 
+import designpatterns.hf.behavioural.iterator.dinermerger.menu.DinerMenu;
+import designpatterns.hf.behavioural.iterator.dinermerger.menu.MenuItem;
+import designpatterns.hf.behavioural.iterator.dinermerger.menu.PancakeHouseMenu;
+import designpatterns.hf.behavioural.iterator.dinermerger.pattern.Iterator;
+
 public class Waitress {
 	PancakeHouseMenu pancakeHouseMenu;
 	DinerMenu dinerMenu;

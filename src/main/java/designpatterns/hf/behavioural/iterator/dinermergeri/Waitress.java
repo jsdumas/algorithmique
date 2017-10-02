@@ -1,6 +1,9 @@
 package designpatterns.hf.behavioural.iterator.dinermergeri;
 
 import java.util.Iterator;
+
+import designpatterns.hf.behavioural.iterator.dinermergeri.menu.Menu;
+import designpatterns.hf.behavioural.iterator.dinermergeri.menu.MenuItem;
   
  
 public class Waitress {

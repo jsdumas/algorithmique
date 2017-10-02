@@ -1,6 +1,9 @@
 package designpatterns.hf.behavioural.iterator.dinermergercafe;
 
 import java.util.Iterator;
+
+import designpatterns.hf.behavioural.iterator.dinermergercafe.menu.Menu;
+import designpatterns.hf.behavioural.iterator.dinermergercafe.menu.MenuItem;
   
 public class Waitress {
 	Menu pancakeHouseMenu;
