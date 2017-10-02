@@ -2,46 +2,40 @@ package algorithms.hb.problems.recursiveproblems.binarysearch;
 
 public class BinarySearch {
 
-	private int[] array;
-	
-	public BinarySearch(int[] array){
+	private final int[] array;
+
+	public BinarySearch(int[] array) {
 		this.array = array;
 	}
-	
-	public int linearSearch(int item){
-		
-		for(int i=0;i<this.array.length;++i){
-			if( item == this.array[i] ){
+
+	public int linearSearch(int item) {
+		for (int i = 0; i < this.array.length; ++i) {
+			if (item == this.array[i]) {
 				return i;
 			}
 		}
-		
 		return -1;
 	}
-	
+
 	public int binarySearch(int item) {
-	    return binarySearch(0, this.array.length-1, item);
+		return binarySearch(0, this.array.length - 1, item);
 	}
 
 	private int binarySearch(int startIndex, int endIndex, int item) {
-	   
-	    if( endIndex < startIndex ) {
+		if (endIndex < startIndex) {
 			System.out.println("No solution found..");
-			return -1; 
+			return -1;
 		}
-	   
 		int middleIndex = (startIndex + endIndex) / 2;
-	    
-		if(endIndex < startIndex) {
-	        binarySearch(endIndex, startIndex, item);
-	    } 
-
-	    if( item == this.array[middleIndex] ) {
-	        return middleIndex;
-	    } else if( item < this.array[middleIndex] ) {
-	        return binarySearch( startIndex, middleIndex - 1, item );
-	    } else {
-	        return binarySearch( middleIndex + 1, endIndex, item );
-	    }
+		if (endIndex < startIndex) {
+			binarySearch(endIndex, startIndex, item);
+		}
+		if (item == this.array[middleIndex]) {
+			return middleIndex;
+		} else if (item < this.array[middleIndex]) {
+			return binarySearch(startIndex, middleIndex - 1, item);
+		} else {
+			return binarySearch(middleIndex + 1, endIndex, item);
+		}
 	}
 }
