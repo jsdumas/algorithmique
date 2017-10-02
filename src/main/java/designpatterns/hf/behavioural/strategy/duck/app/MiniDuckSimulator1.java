@@ -1,0 +1,22 @@
+package designpatterns.hf.behavioural.strategy.duck.app;
+
+import designpatterns.hf.behavioural.strategy.duck.behaviour.FlyRocketPowered;
+import designpatterns.hf.behavioural.strategy.duck.bird.Duck;
+import designpatterns.hf.behavioural.strategy.duck.bird.MallardDuck;
+import designpatterns.hf.behavioural.strategy.duck.bird.ModelDuck;
+
+public class MiniDuckSimulator1 {
+ 
+	public static void main(String[] args) {
+ 
+		Duck mallard = new MallardDuck();
+		mallard.performQuack();
+		mallard.performFly();
+   
+		Duck model = new ModelDuck();
+		model.performFly();
+		model.setFlyBehavior(new FlyRocketPowered());
+		model.performFly();
+
+	}
+}
