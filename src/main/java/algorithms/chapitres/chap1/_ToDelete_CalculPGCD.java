@@ -2,7 +2,7 @@ package algorithms.chapitres.chap1;
 
 import java.util.Scanner;
 
-public class CalculPGCD {
+public class _ToDelete_CalculPGCD {
 
 	public static void main(String[] args) {
 		int a, b, reste;

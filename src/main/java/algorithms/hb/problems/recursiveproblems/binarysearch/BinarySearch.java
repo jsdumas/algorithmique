@@ -23,6 +23,7 @@ public class BinarySearch {
 
 	// Faster than linear search only if array is sorted
 	// If array is not sorted, binary search doesn't work
+	// Binary search is faster than linear search because algo researches index in an array divided by 2 and so on
 	private int binarySearch(int startIndex, int endIndex, int item) {
 		if (endIndex < startIndex) {
 			System.out.println("No solution found..");

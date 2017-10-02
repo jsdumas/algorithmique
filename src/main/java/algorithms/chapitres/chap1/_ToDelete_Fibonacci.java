@@ -2,7 +2,7 @@ package algorithms.chapitres.chap1;
 
 import java.util.Scanner;
 
-public class Fibonacci {
+public class _ToDelete_Fibonacci {
 
 	public static void main(String[] args) {
 		long somme, terme, termePrécédent;
