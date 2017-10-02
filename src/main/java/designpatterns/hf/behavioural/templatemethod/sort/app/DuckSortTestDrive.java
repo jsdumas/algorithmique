@@ -1,25 +1,20 @@
-package designpatterns.hf.behavioural.templatemethod.sort;
+package designpatterns.hf.behavioural.templatemethod.sort.app;
 
-import java.util.ArrayList;
 import java.util.Arrays;
+
+import designpatterns.hf.behavioural.templatemethod.sort.Duck;
 
 public class DuckSortTestDrive {
 
 	public static void main(String[] args) {
-		Duck[] ducks = { 
-						new Duck("Daffy", 8), 
-						new Duck("Dewey", 2),
-						new Duck("Howard", 7),
-						new Duck("Louie", 2),
-						new Duck("Donald", 10), 
-						new Duck("Huey", 2)
-		 };
+		Duck[] ducks = { new Duck("Daffy", 8), new Duck("Dewey", 2), new Duck("Howard", 7), new Duck("Louie", 2), new Duck("Donald", 10),
+				new Duck("Huey", 2) };
 
 		System.out.println("Before sorting:");
 		display(ducks);
 
 		Arrays.sort(ducks);
- 
+
 		System.out.println("\nAfter sorting:");
 		display(ducks);
 	}

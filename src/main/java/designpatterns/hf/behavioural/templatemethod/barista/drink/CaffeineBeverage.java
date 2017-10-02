@@ -1,22 +1,22 @@
-package designpatterns.hf.behavioural.templatemethod.barista;
+package designpatterns.hf.behavioural.templatemethod.barista.drink;
 
 public abstract class CaffeineBeverage {
-  
-	final void prepareRecipe() {
+
+	public final void prepareRecipe() {
 		boilWater();
 		brew();
 		pourInCup();
 		addCondiments();
 	}
- 
+
 	abstract void brew();
-  
+
 	abstract void addCondiments();
- 
+
 	void boilWater() {
 		System.out.println("Boiling water");
 	}
-  
+
 	void pourInCup() {
 		System.out.println("Pouring into cup");
 	}

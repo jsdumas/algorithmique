@@ -1,4 +1,4 @@
-package designpatterns.hf.behavioural.templatemethod.barista;
+package designpatterns.hf.behavioural.templatemethod.barista.drink;
 
 public class Tea extends CaffeineBeverage {
 	public void brew() {

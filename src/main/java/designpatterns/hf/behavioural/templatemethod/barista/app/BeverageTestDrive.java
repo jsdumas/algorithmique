@@ -1,4 +1,9 @@
-package designpatterns.hf.behavioural.templatemethod.barista;
+package designpatterns.hf.behavioural.templatemethod.barista.app;
+
+import designpatterns.hf.behavioural.templatemethod.barista.drink.Coffee;
+import designpatterns.hf.behavioural.templatemethod.barista.drink.CoffeeWithHook;
+import designpatterns.hf.behavioural.templatemethod.barista.drink.Tea;
+import designpatterns.hf.behavioural.templatemethod.barista.drink.TeaWithHook;
 
 public class BeverageTestDrive {
 	public static void main(String[] args) {

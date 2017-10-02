@@ -1,4 +1,7 @@
-package designpatterns.hf.behavioural.templatemethod.simplebarista;
+package designpatterns.hf.behavioural.templatemethod.simplebarista.app;
+
+import designpatterns.hf.behavioural.templatemethod.simplebarista.drink.Coffee;
+import designpatterns.hf.behavioural.templatemethod.simplebarista.drink.Tea;
 
 public class Barista {
  
