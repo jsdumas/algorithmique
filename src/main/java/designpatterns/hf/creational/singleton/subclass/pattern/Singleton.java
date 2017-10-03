@@ -1,4 +1,4 @@
-package designpatterns.hf.creational.singleton.subclass;
+package designpatterns.hf.creational.singleton.subclass.pattern;
 
 public class Singleton {
 	protected static Singleton uniqueInstance;
