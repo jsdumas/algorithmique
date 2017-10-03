@@ -1,6 +1,9 @@
-package designpatterns.hf.structural.proxy.gumball;
+package designpatterns.hf.structural.proxy.gumball.app;
 
 import java.rmi.*;
+
+import designpatterns.hf.structural.proxy.gumball.pattern.GumballMachineRemote;
+import designpatterns.hf.structural.proxy.gumball.pattern.GumballMonitor;
  
 public class GumballMonitorTestDrive {
  

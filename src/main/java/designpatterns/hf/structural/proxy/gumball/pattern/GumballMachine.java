@@ -1,20 +1,25 @@
-package designpatterns.hf.structural.proxy.gumball;
+package designpatterns.hf.structural.proxy.gumball.pattern;
 
-import java.rmi.*;
-import java.rmi.server.*;
- 
-public class GumballMachine
-		extends UnicastRemoteObject implements GumballMachineRemote 
-{
+import java.rmi.RemoteException;
+import java.rmi.server.UnicastRemoteObject;
+
+import designpatterns.hf.structural.proxy.gumball.quarter.HasQuarterState;
+import designpatterns.hf.structural.proxy.gumball.quarter.NoQuarterState;
+import designpatterns.hf.structural.proxy.gumball.quarter.SoldOutState;
+import designpatterns.hf.structural.proxy.gumball.quarter.SoldState;
+import designpatterns.hf.structural.proxy.gumball.quarter.State;
+import designpatterns.hf.structural.proxy.gumball.quarter.WinnerState;
+
+public class GumballMachine extends UnicastRemoteObject implements GumballMachineRemote {
 	State soldOutState;
 	State noQuarterState;
 	State hasQuarterState;
 	State soldState;
 	State winnerState;
- 
+
 	State state = soldOutState;
 	int count = 0;
- 	String location;
+	String location;
 
 	public GumballMachine(String location, int numberGumballs) throws RemoteException {
 		soldOutState = new SoldOutState(this);
@@ -24,31 +29,30 @@ public class GumballMachine
 		winnerState = new WinnerState(this);
 
 		this.count = numberGumballs;
- 		if (numberGumballs > 0) {
+		if (numberGumballs > 0) {
 			state = noQuarterState;
-		} 
+		}
 		this.location = location;
 	}
- 
- 
+
 	public void insertQuarter() {
 		state.insertQuarter();
 	}
- 
+
 	public void ejectQuarter() {
 		state.ejectQuarter();
 	}
- 
+
 	public void turnCrank() {
 		state.turnCrank();
 		state.dispense();
 	}
 
-	void setState(State state) {
+	public void setState(State state) {
 		this.state = state;
 	}
- 
-	void releaseBall() {
+
+	public void releaseBall() {
 		System.out.println("A gumball comes rolling out the slot...");
 		if (count != 0) {
 			count = count - 1;
@@ -59,39 +63,43 @@ public class GumballMachine
 		this.count = count;
 		state = noQuarterState;
 	}
- 
+
+	@Override
 	public int getCount() {
 		return count;
 	}
- 
-    public State getState() {
-        return state;
-    }
- 
-    public String getLocation() {
-        return location;
-    }
-  
-    public State getSoldOutState() {
-        return soldOutState;
-    }
 
-    public State getNoQuarterState() {
-        return noQuarterState;
-    }
+	@Override
+	public State getState() {
+		return state;
+	}
 
-    public State getHasQuarterState() {
-        return hasQuarterState;
-    }
+	@Override
+	public String getLocation() {
+		return location;
+	}
 
-    public State getSoldState() {
-        return soldState;
-    }
+	public State getSoldOutState() {
+		return soldOutState;
+	}
 
-    public State getWinnerState() {
-        return winnerState;
-    }
- 
+	public State getNoQuarterState() {
+		return noQuarterState;
+	}
+
+	public State getHasQuarterState() {
+		return hasQuarterState;
+	}
+
+	public State getSoldState() {
+		return soldState;
+	}
+
+	public State getWinnerState() {
+		return winnerState;
+	}
+
+	@Override
 	public String toString() {
 		StringBuffer result = new StringBuffer();
 		result.append("\nMighty Gumball, Inc.");

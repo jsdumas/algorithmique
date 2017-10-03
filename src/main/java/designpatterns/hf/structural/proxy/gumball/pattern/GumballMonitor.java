@@ -1,4 +1,4 @@
-package designpatterns.hf.structural.proxy.gumball;
+package designpatterns.hf.structural.proxy.gumball.pattern;
 
 import java.rmi.*;
  

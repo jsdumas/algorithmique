@@ -1,4 +1,4 @@
-package designpatterns.hf.structural.proxy.gumball;
+package designpatterns.hf.structural.proxy.gumball.quarter;
 
 import java.io.*;
   

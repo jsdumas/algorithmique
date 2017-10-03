@@ -1,4 +1,6 @@
-package designpatterns.hf.structural.proxy.gumball;
+package designpatterns.hf.structural.proxy.gumball.quarter;
+
+import designpatterns.hf.structural.proxy.gumball.pattern.GumballMachine;
 
 public class SoldState implements State {
     transient GumballMachine gumballMachine;

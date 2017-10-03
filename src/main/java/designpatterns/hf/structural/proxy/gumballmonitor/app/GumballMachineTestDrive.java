@@ -1,4 +1,7 @@
-package designpatterns.hf.structural.proxy.gumballmonitor;
+package designpatterns.hf.structural.proxy.gumballmonitor.app;
+
+import designpatterns.hf.structural.proxy.gumballmonitor.pattern.GumballMachine;
+import designpatterns.hf.structural.proxy.gumballmonitor.pattern.GumballMonitor;
 
 public class GumballMachineTestDrive {
 

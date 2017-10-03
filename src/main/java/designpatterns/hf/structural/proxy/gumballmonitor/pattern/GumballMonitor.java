@@ -1,4 +1,4 @@
-package designpatterns.hf.structural.proxy.gumballmonitor;
+package designpatterns.hf.structural.proxy.gumballmonitor.pattern;
  
 public class GumballMonitor {
 	GumballMachine machine;

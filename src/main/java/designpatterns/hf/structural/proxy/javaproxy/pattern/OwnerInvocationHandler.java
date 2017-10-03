@@ -1,6 +1,8 @@
-package designpatterns.hf.structural.proxy.javaproxy;
+package designpatterns.hf.structural.proxy.javaproxy.pattern;
  
 import java.lang.reflect.*;
+
+import designpatterns.hf.structural.proxy.javaproxy.person.PersonBean;
  
 public class OwnerInvocationHandler implements InvocationHandler { 
 	PersonBean person;

@@ -13,7 +13,7 @@ public class TowerOfHanoi {
 		this.rodFrom.setPlates(plates);
 	}
 
-	// Exponential algorithm time
+	// Exponential time complexity --> O(c^n)
 	private void solveHanoiProblem(int plateNumber, Rod rodFrom, Rod middleRod, Rod rodTo) {
 		if (plateNumber == 1) {
 			System.out.println("Plate 1 from " + rodFrom.getPosition().getValue() + " to " + rodTo.getPosition().getValue());

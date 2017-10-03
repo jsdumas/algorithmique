@@ -1,6 +1,8 @@
-package designpatterns.hf.structural.proxy.gumball;
+package designpatterns.hf.structural.proxy.gumball.quarter;
 
 import java.util.Random;
+
+import designpatterns.hf.structural.proxy.gumball.pattern.GumballMachine;
 
 public class HasQuarterState implements State {
 	Random randomWinner = new Random(System.currentTimeMillis());

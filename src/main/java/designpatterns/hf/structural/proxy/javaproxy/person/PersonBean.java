@@ -1,4 +1,4 @@
-package designpatterns.hf.structural.proxy.javaproxy;
+package designpatterns.hf.structural.proxy.javaproxy.person;
 
 public interface PersonBean {
  

@@ -1,7 +1,12 @@
-package designpatterns.hf.structural.proxy.javaproxy;
+package designpatterns.hf.structural.proxy.javaproxy.app;
 
 import java.lang.reflect.*;
 import java.util.*;
+
+import designpatterns.hf.structural.proxy.javaproxy.pattern.NonOwnerInvocationHandler;
+import designpatterns.hf.structural.proxy.javaproxy.pattern.OwnerInvocationHandler;
+import designpatterns.hf.structural.proxy.javaproxy.person.PersonBean;
+import designpatterns.hf.structural.proxy.javaproxy.person.PersonBeanImpl;
 
 public class MatchMakingTestDrive {
 	Hashtable datingDB = new Hashtable();

@@ -1,4 +1,6 @@
-package designpatterns.hf.structural.proxy.gumballmonitor;
+package designpatterns.hf.structural.proxy.gumballmonitor.quarter;
+
+import designpatterns.hf.structural.proxy.gumballmonitor.pattern.GumballMachine;
 
 public class SoldState implements State {
     GumballMachine gumballMachine;

@@ -1,7 +1,9 @@
-package designpatterns.hf.structural.proxy.gumballmonitor;
+package designpatterns.hf.structural.proxy.gumball.quarter;
+
+import designpatterns.hf.structural.proxy.gumball.pattern.GumballMachine;
 
 public class WinnerState implements State {
-    GumballMachine gumballMachine;
+    transient GumballMachine gumballMachine;
  
     public WinnerState(GumballMachine gumballMachine) {
         this.gumballMachine = gumballMachine;
@@ -21,21 +23,17 @@ public class WinnerState implements State {
  
 	public void dispense() {
 		System.out.println("YOU'RE A WINNER! You get two gumballs for your quarter");
-		try {
+		gumballMachine.releaseBall();
+		if (gumballMachine.getCount() == 0) {
+			gumballMachine.setState(gumballMachine.getSoldOutState());
+		} else {
 			gumballMachine.releaseBall();
-			if (gumballMachine.getCount() == 0) {
-				gumballMachine.setState(gumballMachine.getSoldOutState());
+			if (gumballMachine.getCount() > 0) {
+				gumballMachine.setState(gumballMachine.getNoQuarterState());
 			} else {
-				gumballMachine.releaseBall();
-				if (gumballMachine.getCount() > 0) {
-					gumballMachine.setState(gumballMachine.getNoQuarterState());
-				} else {
-           		 	System.out.println("Oops, out of gumballs!");
-					gumballMachine.setState(gumballMachine.getSoldOutState());
-				}
+          		 	System.out.println("Oops, out of gumballs!");
+				gumballMachine.setState(gumballMachine.getSoldOutState());
 			}
-		} catch (Exception e) {
-			e.printStackTrace();
 		}
 	}
  
