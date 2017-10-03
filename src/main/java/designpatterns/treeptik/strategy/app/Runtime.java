@@ -1,4 +1,10 @@
-package designpatterns.treeptik.strategy;
+package designpatterns.treeptik.strategy.app;
+
+import designpatterns.treeptik.strategy.action.AttaquerDecorateur;
+import designpatterns.treeptik.strategy.character.Chevalier;
+import designpatterns.treeptik.strategy.character.Troll;
+import designpatterns.treeptik.strategy.weapon.Arc;
+import designpatterns.treeptik.strategy.weapon.Gourdin;
 
 public class Runtime {
 

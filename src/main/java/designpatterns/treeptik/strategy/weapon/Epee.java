@@ -1,4 +1,6 @@
-package designpatterns.treeptik.strategy;
+package designpatterns.treeptik.strategy.weapon;
+
+import designpatterns.treeptik.strategy.action.Attaquer;
 
 public class Epee implements Attaquer {
 

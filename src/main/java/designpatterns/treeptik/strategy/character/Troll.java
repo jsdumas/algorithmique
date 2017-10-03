@@ -1,4 +1,6 @@
-package designpatterns.treeptik.strategy;
+package designpatterns.treeptik.strategy.character;
+
+import designpatterns.treeptik.strategy.weapon.Gourdin;
 
 
 public class Troll extends Personnage {

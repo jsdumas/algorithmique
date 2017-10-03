@@ -1,4 +1,4 @@
-package designpatterns.treeptik.strategy;
+package designpatterns.treeptik.strategy.action;
 
 public class AttaquerDecorateur implements Attaquer {
 
