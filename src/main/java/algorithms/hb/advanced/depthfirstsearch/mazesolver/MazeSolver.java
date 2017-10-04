@@ -1,4 +1,4 @@
-package algorithms.hb.advanced.mazesolver;
+package algorithms.hb.advanced.depthfirstsearch.mazesolver;
 
 public class MazeSolver {
 	

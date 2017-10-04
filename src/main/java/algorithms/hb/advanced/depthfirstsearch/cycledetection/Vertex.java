@@ -1,4 +1,4 @@
-package algorithms.hb.advanced.cycledetection;
+package algorithms.hb.advanced.depthfirstsearch.cycledetection;
 
 import java.util.ArrayList;
 import java.util.List;

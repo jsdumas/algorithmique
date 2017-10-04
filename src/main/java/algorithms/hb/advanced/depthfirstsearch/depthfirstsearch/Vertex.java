@@ -1,4 +1,4 @@
-package algorithms.hb.advanced.depthfirstsearch;
+package algorithms.hb.advanced.depthfirstsearch.depthfirstsearch;
 import java.util.ArrayList;
 import java.util.List;
 
