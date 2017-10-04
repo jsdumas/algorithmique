@@ -1,10 +1,10 @@
-package designpatterns.treeptik.strategy.app;
+package designpatterns.hf.behavioural.strategy.training.app;
 
-import designpatterns.treeptik.strategy.action.AttaquerDecorateur;
-import designpatterns.treeptik.strategy.character.Chevalier;
-import designpatterns.treeptik.strategy.character.Troll;
-import designpatterns.treeptik.strategy.weapon.Arc;
-import designpatterns.treeptik.strategy.weapon.Gourdin;
+import designpatterns.hf.behavioural.strategy.training.action.AttaquerDecorateur;
+import designpatterns.hf.behavioural.strategy.training.character.Chevalier;
+import designpatterns.hf.behavioural.strategy.training.character.Troll;
+import designpatterns.hf.behavioural.strategy.training.weapon.Arc;
+import designpatterns.hf.behavioural.strategy.training.weapon.Gourdin;
 
 public class Runtime {
 

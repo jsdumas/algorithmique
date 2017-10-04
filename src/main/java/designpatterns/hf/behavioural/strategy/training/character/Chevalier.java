@@ -1,12 +1,12 @@
-package designpatterns.treeptik.strategy.character;
+package designpatterns.hf.behavioural.strategy.training.character;
 
-import designpatterns.treeptik.strategy.weapon.Gourdin;
+import designpatterns.hf.behavioural.strategy.training.weapon.Epee;
 
 
-public class Troll extends Personnage {
+public class Chevalier extends Personnage {
 
-	public Troll() {
-		super(new Gourdin());
+	public Chevalier() {
+		super(new Epee());
 		// TODO Auto-generated constructor stub
 	}
 

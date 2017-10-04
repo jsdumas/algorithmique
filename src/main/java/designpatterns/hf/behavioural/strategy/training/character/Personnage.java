@@ -1,6 +1,6 @@
-package designpatterns.treeptik.strategy.character;
+package designpatterns.hf.behavioural.strategy.training.character;
 
-import designpatterns.treeptik.strategy.action.Attaquer;
+import designpatterns.hf.behavioural.strategy.training.action.Attaquer;
 
 public abstract class Personnage implements Attaquer {
 

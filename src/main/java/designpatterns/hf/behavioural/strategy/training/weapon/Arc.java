@@ -1,6 +1,6 @@
-package designpatterns.treeptik.strategy.weapon;
+package designpatterns.hf.behavioural.strategy.training.weapon;
 
-import designpatterns.treeptik.strategy.action.Attaquer;
+import designpatterns.hf.behavioural.strategy.training.action.Attaquer;
 
 public class Arc implements Attaquer {
 

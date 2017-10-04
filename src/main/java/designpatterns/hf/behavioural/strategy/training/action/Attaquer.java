@@ -1,4 +1,4 @@
-package designpatterns.treeptik.strategy.action;
+package designpatterns.hf.behavioural.strategy.training.action;
 
 public interface Attaquer {
 
