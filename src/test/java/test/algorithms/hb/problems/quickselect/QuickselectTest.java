@@ -21,7 +21,7 @@ public class QuickselectTest {
 	}
 
 	@Test
-	public void shouldReturnDecreasingItemOfArray() {
+	public void shouldReturnDescendingItemOfArray() {
 		MatcherAssert.assertThat(Arrays.asList(QUICK_SELECT.getNums()), contains(789, 99, 5, 1));
 	}
 }
