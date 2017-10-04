@@ -1,4 +1,4 @@
-package designpatterns.treeptik.initobjet;
+package designpatterns.initobjet;
 
 public class Palladin extends Chevalier {
 
@@ -9,7 +9,6 @@ public class Palladin extends Chevalier {
 
 	@Override
 	public void avancer() {
-		// super.super.avancer();
 	}
 
 }

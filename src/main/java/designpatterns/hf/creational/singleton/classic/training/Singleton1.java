@@ -1,11 +1,10 @@
-package designpatterns.treeptik.singleton;
+package designpatterns.hf.creational.singleton.classic.training;
 
 public class Singleton1 {
 
 	private static Singleton1 instance = new Singleton1();
 
 	private Singleton1() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public void helloSingeton() {

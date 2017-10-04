@@ -3,7 +3,7 @@ package designpatterns.treeptik.runtime;
 import java.util.Iterator;
 import java.util.List;
 
-import designpatterns.treeptik.initobjet.Deplacer;
+import designpatterns.initobjet.Deplacer;
 import designpatterns.treeptik.proxy.FileDescription;
 
 public class Runtime {

@@ -1,4 +1,4 @@
-package designpatterns.treeptik.singleton;
+package designpatterns.hf.creational.singleton.classic.training;
 
 public class Singleton2 {
 
@@ -15,16 +15,13 @@ public class Singleton2 {
 	}
 
 	public static Singleton2 getInstance(String urlDatabse) {
-
 		if (instance == null) {
 			synchronized (Singleton2.urlDatabse) {
 				if (instance == null) {
 					instance = new Singleton2(urlDatabse);
 				}
-
 			}
 		}
-
 		return instance;
 	}
 

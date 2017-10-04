@@ -1,9 +1,9 @@
-package designpatterns.treeptik.initobjet.app;
+package designpatterns.initobjet.app;
 
-import designpatterns.treeptik.initobjet.Chevalier;
-import designpatterns.treeptik.initobjet.Deplacer;
-import designpatterns.treeptik.initobjet.Personnage;
-import designpatterns.treeptik.initobjet.Voiture;
+import designpatterns.initobjet.Chevalier;
+import designpatterns.initobjet.Deplacer;
+import designpatterns.initobjet.Personnage;
+import designpatterns.initobjet.Voiture;
 
 public class Runtime {
 
@@ -12,8 +12,9 @@ public class Runtime {
 	public static void main(String[] args) {
 
 		Personnage perso = new Personnage();
-		Deplacer voiture = new Voiture();
 		Chevalier chev1 = new Chevalier();
+		// reference ----> implementation
+		Deplacer voiture = new Voiture();
 
 		faireAvancer(perso);
 		faireAvancer(voiture);
@@ -24,7 +25,7 @@ public class Runtime {
 
 		if (voiture instanceof Voiture) {
 			// voiture = (Voiture)voiture;
-			System.out.println(((Voiture) voiture).getMarque());
+			System.out.println("Marque de la voiture " + ((Voiture) voiture).getMarque());
 		}
 
 	}

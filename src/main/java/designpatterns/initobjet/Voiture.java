@@ -1,4 +1,4 @@
-package designpatterns.treeptik.initobjet;
+package designpatterns.initobjet;
 
 import java.util.Date;
 

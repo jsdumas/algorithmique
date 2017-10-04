@@ -1,4 +1,4 @@
-package designpatterns.treeptik.initobjet;
+package designpatterns.initobjet;
 
 import java.io.Serializable;
 
@@ -9,7 +9,6 @@ public class Personnage implements Deplacer, Serializable {
 	private Integer nbVie;
 
 	public Personnage() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Personnage(String nom, Integer nbVie) {
@@ -20,13 +19,11 @@ public class Personnage implements Deplacer, Serializable {
 
 	@Override
 	public void avancer() {
-		// TODO Auto-generated method stub
 		System.out.println("Personnage avancer");
 	}
 
 	@Override
 	public void reculer() {
-		// TODO Auto-generated method stub
 		System.out.println("Personnage reculer");
 
 	}
