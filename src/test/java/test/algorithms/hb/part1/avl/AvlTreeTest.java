@@ -4,8 +4,8 @@ import static org.hamcrest.MatcherAssert.assertThat;
 
 import org.junit.Test;
 
-import algorithms.hb.part1.avl.AvlTree;
-import algorithms.hb.part1.avl.Tree;
+import algorithms.hb.part1.balancedtrees.avl.AvlTree;
+import algorithms.hb.part1.balancedtrees.avl.Tree;
 
 public class AvlTreeTest {
 
