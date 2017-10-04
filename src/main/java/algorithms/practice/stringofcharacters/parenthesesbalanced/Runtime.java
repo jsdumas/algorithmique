@@ -4,7 +4,7 @@ public class Runtime {
 
 	public static void main(String[] args) {
 		
-		Parenthese parenthese = new Parenthese();
+		Parenthesis parenthese = new Parenthesis();
 		
 		System.out.println(parenthese.isBalanced("[()()(){}]"));
 

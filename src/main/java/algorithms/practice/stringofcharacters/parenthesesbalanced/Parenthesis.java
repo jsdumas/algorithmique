@@ -1,37 +1,30 @@
 package algorithms.practice.stringofcharacters.parenthesesbalanced;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Stack;
 
-public class Parenthese {
+public class Parenthesis {
+	
+	private Stack<String> charStack;
+	private static final String BRACES ="{}";
+	private static final String BRACKETS ="[]";
+	private static final String PARENTHESES ="()";
 	
 	public boolean isBalanced(String isBalenced){
-		
-		Stack<String> charStack = new Stack<String>();
-		String braces ="{}";
-		String brackets ="[]";
-		String parentheses ="()";
-		
+		charStack = new Stack<String>();
 //		System.out.println(isBalenced.length());
-		
 		for(int i=0; i<isBalenced.length(); i++){
 			String current = isBalenced.substring(i, i+1);
 //			System.out.println("current avant if  "+current);
-			
 				if(current.equals("{") || current.equals("[") || current.equals("(")){
 					charStack.push(current);
 //					System.out.println("current "+current);
 				} else if(current.equals("}") || current.equals("]") || current.equals(")")){ {
-					
 					String couple = "";
 					if(!charStack.isEmpty()){
 						couple = charStack.peek()+current;
 					}
 //					System.out.println("couple "+couple);
-					
-					if(charStack.isEmpty() 
-							|| (!couple.equals(braces) && !couple.equals(brackets) && !couple.equals(parentheses) ) ){
+					if(charStack.isEmpty() || (!couple.equals(BRACES) && !couple.equals(BRACKETS) && !couple.equals(PARENTHESES) ) ){
 						return false;
 					} else {
 						charStack.pop();

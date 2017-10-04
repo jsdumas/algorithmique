@@ -4,12 +4,12 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
-import algorithms.practice.stringofcharacters.parenthesesbalanced.Parenthese;
+import algorithms.practice.stringofcharacters.parenthesesbalanced.Parenthesis;
 
-public class ParentheseTest {
+public class ParenthesisTest {
 	
-	private static final Parenthese PARENTHESE = new Parenthese();
-	private static final String BALANCED = "[()()(){}]";
+	private static final Parenthesis PARENTHESE = new Parenthesis();
+	private static final String BALANCED = "[()(())(){}]";
 	private static final String UNBALANCED = "[()((){}]";
 	
 	@Test
