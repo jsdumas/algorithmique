@@ -1,6 +1,8 @@
 package test.algorithms.practice.graph;
 
 import algorithms.practice.graph.AdjList;
+import algorithms.practice.graph.BFSAdjList;
+import algorithms.practice.graph.DFSAdjList;
 
 public class AdjListTest {
 
