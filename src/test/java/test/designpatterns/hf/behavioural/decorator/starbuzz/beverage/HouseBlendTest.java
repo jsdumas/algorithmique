@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import designpatterns.hf.behavioural.decorator.starbuzz.beverage.Beverage;
 import designpatterns.hf.behavioural.decorator.starbuzz.beverage.HouseBlend;
+import designpatterns.hf.behavioural.decorator.starbuzz.pattern.Mocha;
 
 public class HouseBlendTest {
 
@@ -28,5 +29,11 @@ public class HouseBlendTest {
 	public void shouldCostOneDollardAndThirtyfourCents() {
 		Beverage houseBlendExtra = new BeverageBuilder(HOUSE_BLEND).withSoy().withMocha().withWhip().build();
 		MatcherAssert.assertThat(houseBlendExtra.cost(), Matchers.equalTo(HOUSE_BLEND_EXTRA_PRICE));
+	}
+
+	@Test
+	public void shouldBeTypeOfHouseBlend() {
+		Beverage houseBlendExtra = new BeverageBuilder(HOUSE_BLEND).withMocha().build();
+		MatcherAssert.assertThat(houseBlendExtra instanceof Mocha, Matchers.is(true));
 	}
 }
