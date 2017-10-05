@@ -1,4 +1,4 @@
-package algorithms.hb.part1.tst;
+package algorithms.hb.part1.ternarysearchtree;
 
 public class Node {
 
