@@ -10,15 +10,23 @@ import designpatterns.hf.behavioural.decorator.starbuzz.beverage.HouseBlend;
 public class HouseBlendTest {
 
 	private static final Beverage HOUSE_BLEND = new HouseBlend();
+	private static final double HOUSE_BLEND_STANDARD_PRICE = 0.89;
+	private static final double HOUSE_BLEND_EXTRA_PRICE = 1.34;
 
 	@Test
 	public void shouldCostHeightyNineCents() {
-		MatcherAssert.assertThat(HOUSE_BLEND.cost(), Matchers.equalTo(0.89));
+		MatcherAssert.assertThat(HOUSE_BLEND.cost(), Matchers.equalTo(HOUSE_BLEND_STANDARD_PRICE));
+	}
+
+	@Test
+	public void shouldCostMoreThanHeightyNineCents() {
+		Beverage houseBlendExtra = new BeverageBuilder(HOUSE_BLEND).withSoy().build();
+		MatcherAssert.assertThat(houseBlendExtra.cost(), Matchers.greaterThan(HOUSE_BLEND_STANDARD_PRICE));
 	}
 
 	@Test
 	public void shouldCostOneDollardAndThirtyfourCents() {
-		Beverage houseBlendExtra = new HouseBlendBuilder(HOUSE_BLEND).withSoy().withMocha().withWhip().build();
-		MatcherAssert.assertThat(houseBlendExtra.cost(), Matchers.equalTo(1.34));
+		Beverage houseBlendExtra = new BeverageBuilder(HOUSE_BLEND).withSoy().withMocha().withWhip().build();
+		MatcherAssert.assertThat(houseBlendExtra.cost(), Matchers.equalTo(HOUSE_BLEND_EXTRA_PRICE));
 	}
 }

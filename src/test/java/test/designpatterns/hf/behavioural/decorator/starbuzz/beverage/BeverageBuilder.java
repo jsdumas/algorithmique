@@ -5,25 +5,25 @@ import designpatterns.hf.behavioural.decorator.starbuzz.pattern.Mocha;
 import designpatterns.hf.behavioural.decorator.starbuzz.pattern.Soy;
 import designpatterns.hf.behavioural.decorator.starbuzz.pattern.Whip;
 
-public class HouseBlendBuilder {
+public class BeverageBuilder {
 
 	private Beverage houseBlend;
 
-	public HouseBlendBuilder(Beverage houseBlend) {
+	public BeverageBuilder(Beverage houseBlend) {
 		this.houseBlend = houseBlend;
 	}
 
-	public HouseBlendBuilder withSoy() {
+	public BeverageBuilder withSoy() {
 		houseBlend = new Soy(houseBlend);
 		return this;
 	}
 
-	public HouseBlendBuilder withMocha() {
+	public BeverageBuilder withMocha() {
 		houseBlend = new Mocha(houseBlend);
 		return this;
 	}
 
-	public HouseBlendBuilder withWhip() {
+	public BeverageBuilder withWhip() {
 		houseBlend = new Whip(houseBlend);
 		return this;
 	}
