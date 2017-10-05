@@ -17,28 +17,28 @@ public class Quickselect {
 
 	private int partition(int indexFirst, int indexLast) {
 		int pivot = new Random().nextInt(indexLast - indexFirst + 1) + indexFirst;
-		swap(indexLast, pivot);
+		swapValueInArray(indexLast, pivot);
 		for (int i = indexFirst; i < indexLast; i++) {
 			if (nums[i] > nums[indexLast]) {
-				swap(i, indexFirst);
+				swapValueInArray(i, indexFirst);
 				indexFirst++;
 			}
 		}
-		swap(indexFirst, indexLast);
+		swapValueInArray(indexFirst, indexLast);
 		return indexFirst;
 	}
 
-	private int select(int indexFirst, int indexLast, int k) {
+	private int select(int indexFirst, int indexLast, int theNLargestNumber) {
 		int pivot = partition(indexFirst, indexLast);
-		if (pivot > k) {
-			return select(indexFirst, pivot - 1, k);
-		} else if (pivot < k) {
-			return select(pivot + 1, indexLast, k);
+		if (pivot > theNLargestNumber) {
+			return select(indexFirst, pivot - 1, theNLargestNumber);
+		} else if (pivot < theNLargestNumber) {
+			return select(pivot + 1, indexLast, theNLargestNumber);
 		}
-		return nums[k];
+		return nums[theNLargestNumber];
 	}
 
-	private void swap(int i, int j) {
+	private void swapValueInArray(int i, int j) {
 		int tmp = nums[i];
 		nums[i] = nums[j];
 		nums[j] = tmp;
