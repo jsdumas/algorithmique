@@ -1,13 +1,19 @@
 package designpatterns.hf.structural.adapter.ducks.bird;
 
 public class WildTurkey implements Turkey {
+
+	private static final String GLOBBLE = "Gobble gobble";
+	private static final String FLY = "I'm flying a short distance";
+
 	@Override
-	public void gobble() {
-		System.out.println("Gobble gobble");
+	public String gobble() {
+		System.out.println(GLOBBLE);
+		return GLOBBLE;
 	}
 
 	@Override
-	public void fly() {
-		System.out.println("I'm flying a short distance");
+	public String fly() {
+		System.out.println(FLY);
+		return FLY;
 	}
 }

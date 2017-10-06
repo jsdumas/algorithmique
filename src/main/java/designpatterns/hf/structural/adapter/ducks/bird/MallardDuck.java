@@ -1,13 +1,19 @@
 package designpatterns.hf.structural.adapter.ducks.bird;
 
 public class MallardDuck implements Duck {
+
+	private static final String QUACK = "Quack like a Mallard Duck.";
+	private static final String FLY = "I'm flying proudly like a Mallard Duck.";
+
 	@Override
-	public void quack() {
-		System.out.println("Quack");
+	public String quack() {
+		System.out.println(QUACK);
+		return QUACK;
 	}
 
 	@Override
-	public void fly() {
-		System.out.println("I'm flying");
+	public String fly() {
+		System.out.println(FLY);
+		return FLY;
 	}
 }

@@ -15,14 +15,15 @@ public class DuckAdapter implements Turkey {
 	}
 
 	@Override
-	public void gobble() {
-		duck.quack();
+	public String gobble() {
+		return duck.quack();
 	}
 
 	@Override
-	public void fly() {
+	public String fly() {
 		if (rand.nextInt(5) == 0) {
 			duck.fly();
 		}
+		return duck.fly();
 	}
 }

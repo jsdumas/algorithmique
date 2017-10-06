@@ -11,14 +11,16 @@ public class TurkeyAdapter implements Duck {
 	}
 
 	@Override
-	public void quack() {
+	public String quack() {
 		turkey.gobble();
+		return "";
 	}
 
 	@Override
-	public void fly() {
+	public String fly() {
 		for (int i = 0; i < 5; i++) {
 			turkey.fly();
 		}
+		return "";
 	}
 }
