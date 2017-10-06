@@ -6,7 +6,7 @@ package designpatterns.hf.behavioural.strategy.operation.pattern;
  * strategy object. The strategy object changes the executing algorithm of the context object.
  **/
 
-public interface Strategy {
+public interface OperationStrategy {
 	public int doOperation(int num1, int num2);
 
 }
