@@ -1,10 +1,10 @@
-package algorithms.game.tictactoe.game.play;
+package algorithms.game.tictactoe.play;
 
 import java.util.Random;
 
-import algorithms.game.tictactoe.game.elements.Board;
-import algorithms.game.tictactoe.game.elements.Point;
-import algorithms.game.tictactoe.game.elements.PointsAndScores;
+import algorithms.game.tictactoe.elements.Board;
+import algorithms.game.tictactoe.elements.Point;
+import algorithms.game.tictactoe.elements.PointsAndScores;
 
 public class TicTacToe {
 	public static void main(String[] args) {

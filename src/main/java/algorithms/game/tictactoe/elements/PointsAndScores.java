@@ -1,4 +1,4 @@
-package algorithms.game.tictactoe.game.elements;
+package algorithms.game.tictactoe.elements;
 
 public class PointsAndScores {
 	int score;
