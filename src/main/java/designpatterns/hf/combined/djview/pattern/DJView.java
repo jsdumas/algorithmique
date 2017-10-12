@@ -17,6 +17,11 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import designpatterns.hf.combined.djview.pattern.controller.ControllerInterface;
+import designpatterns.hf.combined.djview.pattern.model.BeatModelInterface;
+import designpatterns.hf.combined.djview.pattern.observer.BPMObserver;
+import designpatterns.hf.combined.djview.pattern.observer.BeatObserver;
+
 public class DJView implements ActionListener, BeatObserver, BPMObserver {
 	BeatModelInterface model;
 	ControllerInterface controller;

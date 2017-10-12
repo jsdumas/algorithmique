@@ -1,4 +1,4 @@
-package designpatterns.hf.combined.djview.pattern;
+package designpatterns.hf.combined.djview.pattern.controller;
 
 public interface ControllerInterface {
 	void start();

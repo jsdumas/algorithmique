@@ -1,4 +1,7 @@
-package designpatterns.hf.combined.djview.pattern;
+package designpatterns.hf.combined.djview.pattern.controller;
+
+import designpatterns.hf.combined.djview.pattern.DJView;
+import designpatterns.hf.combined.djview.pattern.model.BeatModelInterface;
 
 
 public class BeatController implements ControllerInterface {

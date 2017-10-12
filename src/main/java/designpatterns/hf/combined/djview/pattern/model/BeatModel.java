@@ -1,4 +1,4 @@
-package designpatterns.hf.combined.djview.pattern;
+package designpatterns.hf.combined.djview.pattern.model;
 
 import java.util.ArrayList;
 
@@ -10,6 +10,9 @@ import javax.sound.midi.Sequence;
 import javax.sound.midi.Sequencer;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
+
+import designpatterns.hf.combined.djview.pattern.observer.BPMObserver;
+import designpatterns.hf.combined.djview.pattern.observer.BeatObserver;
 
 public class BeatModel implements BeatModelInterface, MetaEventListener {
 	Sequencer sequencer;

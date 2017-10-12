@@ -1,7 +1,10 @@
-package designpatterns.hf.combined.djview.pattern;
+package designpatterns.hf.combined.djview.pattern.model;
 
 import java.util.ArrayList;
 import java.util.Random;
+
+import designpatterns.hf.combined.djview.pattern.observer.BPMObserver;
+import designpatterns.hf.combined.djview.pattern.observer.BeatObserver;
 
 public class HeartModel implements HeartModelInterface, Runnable {
 	ArrayList beatObservers = new ArrayList();

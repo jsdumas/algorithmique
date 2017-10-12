@@ -1,8 +1,8 @@
 package designpatterns.hf.combined.djview.app;
 
-import designpatterns.hf.combined.djview.pattern.ControllerInterface;
-import designpatterns.hf.combined.djview.pattern.HeartController;
-import designpatterns.hf.combined.djview.pattern.HeartModel;
+import designpatterns.hf.combined.djview.pattern.controller.ControllerInterface;
+import designpatterns.hf.combined.djview.pattern.controller.HeartController;
+import designpatterns.hf.combined.djview.pattern.model.HeartModel;
 
 public class HeartTestDrive {
 

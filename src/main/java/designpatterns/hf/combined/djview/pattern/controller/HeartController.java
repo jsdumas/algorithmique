@@ -1,4 +1,8 @@
-package designpatterns.hf.combined.djview.pattern;
+package designpatterns.hf.combined.djview.pattern.controller;
+
+import designpatterns.hf.combined.djview.pattern.DJView;
+import designpatterns.hf.combined.djview.pattern.model.HeartAdapter;
+import designpatterns.hf.combined.djview.pattern.model.HeartModelInterface;
 
 
 public class HeartController implements ControllerInterface {

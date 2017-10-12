@@ -1,9 +1,9 @@
 package designpatterns.hf.combined.djview.app;
 
-import designpatterns.hf.combined.djview.pattern.BeatController;
-import designpatterns.hf.combined.djview.pattern.BeatModel;
-import designpatterns.hf.combined.djview.pattern.BeatModelInterface;
-import designpatterns.hf.combined.djview.pattern.ControllerInterface;
+import designpatterns.hf.combined.djview.pattern.controller.BeatController;
+import designpatterns.hf.combined.djview.pattern.controller.ControllerInterface;
+import designpatterns.hf.combined.djview.pattern.model.BeatModel;
+import designpatterns.hf.combined.djview.pattern.model.BeatModelInterface;
 
 public class DJTestDrive {
 

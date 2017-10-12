@@ -1,4 +1,7 @@
-package designpatterns.hf.combined.djview.pattern;
+package designpatterns.hf.combined.djview.pattern.model;
+
+import designpatterns.hf.combined.djview.pattern.observer.BPMObserver;
+import designpatterns.hf.combined.djview.pattern.observer.BeatObserver;
 
 
 public class HeartAdapter implements BeatModelInterface {
