@@ -13,7 +13,7 @@ public class DuckAdapterTest {
 	private static final MallardDuck DUCK = new MallardDuck();
 	private static final Turkey TURKEY_ADAPTED_LIKE_A_DUCK = new DuckAdapter(DUCK);
 	private static final String DUCK_QUACK = "Quack like a Mallard Duck.";
-	private static final String FLY = "I'm flying proudly like a Mallard Duck.";
+	private static final String DUCK_FLY = "I'm flying proudly like a Mallard Duck.";
 
 	@Test
 	public void aTurkeyCanQuackLikeADuck() {
@@ -22,7 +22,7 @@ public class DuckAdapterTest {
 
 	@Test
 	public void aTurkeyCanFlyLikeADuck() {
-		MatcherAssert.assertThat(TURKEY_ADAPTED_LIKE_A_DUCK.fly(), Matchers.equalTo(FLY));
+		MatcherAssert.assertThat(TURKEY_ADAPTED_LIKE_A_DUCK.fly(), Matchers.equalTo(DUCK_FLY));
 	}
 
 }
