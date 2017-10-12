@@ -1,7 +1,5 @@
 package algorithms.hb.part1.ternarysearchtree.codingame;
 
-import algorithms.hb.part1.ternarysearchtree.codingame.Node;
-
 public class PhoneNumberTST {
 
 	private Node rootNode;
@@ -13,35 +11,27 @@ public class PhoneNumberTST {
 
 	public void put(String phoneNumber) {
 		String[] phoneNumberArray = phoneNumber.split("");
-		for (int i = 0; i < phoneNumberArray.length; i++) {
-			int value = Integer.parseInt(phoneNumberArray[i]);
-			rootNode = put(rootNode, value);
-		}
+		rootNode = put(rootNode, phoneNumberArray, 0);
 	}
 
-	private Node put(Node node, int value) {
-		if (node == null) {
-			node = new Node(value);
-		} else {
-			if(node.getValue()==value){
-				return node.getMiddleNode();
-			}
-			node.setMiddleNode(new Node(value));
+	private Node put(Node node, String[] phoneNumberArray, int index) {
+		int number = Integer.parseInt(phoneNumberArray[index]);
+		Node currentNode = node;
+		// Basic case
+		if (currentNode == null) {
+			currentNode = new Node(number);
+			count++;
 		}
-		count++;
-		return node;
-	}
-
-	@Override
-	public String toString() {
-		String res="";
-		while(rootNode.getMiddleNode()!=null){
-			res = res+rootNode.getValue();
-			rootNode = rootNode.getMiddleNode();
+		// While phone number is smaller than current node, it is put on the left side
+		if (number < currentNode.getValue()) {
+			currentNode.setLeftNode(put(currentNode.getLeftNode(), phoneNumberArray, index));
+			// While phone number is bigger than current node, it is put on the right side
+		} else if (number > currentNode.getValue()) {
+			currentNode.setRightNode(put(currentNode.getRightNode(), phoneNumberArray, index));
+			// If phone number is equal to current node, it is put on middle if this node is free
+		} else if (index < phoneNumberArray.length - 1) {
+			currentNode.setMiddleNode(put(currentNode.getMiddleNode(), phoneNumberArray, index + 1));
 		}
-		return "PhoneNumberTST [rootNode=" + res + "]";
+		return currentNode;
 	}
-	
-	
-
 }
