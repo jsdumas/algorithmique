@@ -1,4 +1,4 @@
-package algorithms.hb.part1.ternarysearchtree.codingame;
+package algorithms.codingame.telephonenumbers;
 
 public class PhoneNumberTST {
 

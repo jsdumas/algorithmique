@@ -1,6 +1,6 @@
-package test.algorithms.hb.part1.ternarysearchtree.codingame;
+package test.algorithms.codingame.telephonenumbers;
 
-import algorithms.hb.part1.ternarysearchtree.codingame.PhoneNumberTST;
+import algorithms.codingame.telephonenumbers.PhoneNumberTST;
 
 public class PhoneNumberTSTBuilder {
 	
