@@ -1,4 +1,4 @@
-package main.algorithms.codingame.teads;
+package algorithms.codingame.teads;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-public class TeadsBroadcasting {
+public class TeadsBroadcasting_old {
 
 	private final int size;
 	private final boolean[][] matrix;
@@ -18,7 +18,7 @@ public class TeadsBroadcasting {
 
 	private int hours;
 
-	public TeadsBroadcasting(int size) {
+	public TeadsBroadcasting_old(int size) {
 		this.size = size;
 		this.matrix = new boolean[size][size];
 		this.memoizeTable = new HashMap<>();
