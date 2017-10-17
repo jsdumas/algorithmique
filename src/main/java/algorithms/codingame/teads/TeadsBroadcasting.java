@@ -6,8 +6,9 @@ import java.util.List;
 public class TeadsBroadcasting {
 
 	private final List<Vertex> vertexList;
-
 	private final int size;
+	private int levelID;
+	
 
 	// private final int[][] memoizeTable;
 	// private final int broadcastingHour = 0;
@@ -28,29 +29,24 @@ public class TeadsBroadcasting {
 
 	public void broadcast() {
 		for (Vertex current : vertexList) {
-			if (current != null)
-				broadcast(current, 0);
+			if (current != null){
+				levelNumberSearch(current.getNeighbourList(), 1);
+				current.setBroadcastingHour(levelID);
+				levelID=0;
+			}
 		}
 	}
 
-	private void broadcast(Vertex vertex, int broadcastingHour) {
-		System.out.print(vertex.getVertexID() + "-");
-		for (Vertex neighbour : vertex.getNeighbourList()) {
-			if (!neighbour.isVisited()) {
-				neighbour.setVisited(true);
-				neighbour.setPredecessor(vertex);
-				// int x = vertex.getVertexID() - 1;
-				// int y = neighbour.getVertexID() - 1;
-				// memoizeTable[x][y] = memoizeTable[x][y] + 1;
-				// memoizeTable[y][x] = memoizeTable[y][x] + 1;
-				broadcast(neighbour, broadcastingHour);
-			}
+	private void levelNumberSearch(List<Vertex> vertexList, int vertexNumber) {
+		if(vertexNumber==size){
+			return;
 		}
-		if (!vertex.getNeighbourList().isEmpty() && !vertex.isLevelVisited()) {
-			broadcastingHour++;
-			vertex.setLevelVisited(true);
+		vertexNumber += vertexList.size();
+		levelID++;
+		for (Vertex neighbour : vertexList) {
+			neighbour.setLevelID(levelID);
+			levelNumberSearch(neighbour.getNeighbourList(), vertexNumber);
 		}
-		vertex.setBroadcastingHour(broadcastingHour);
 	}
 
 	public int getSize() {

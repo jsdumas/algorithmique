@@ -8,7 +8,7 @@ public class Vertex {
 	private final int vertexID;
 	private final List<Vertex> neighbourList;
 	private boolean visited;
-	private boolean levelVisited;
+	private int levelID;
 
 	private Vertex predecessor;
 	private int broadcastingHour;
@@ -53,13 +53,13 @@ public class Vertex {
 	public int getBroadcastingHour() {
 		return broadcastingHour;
 	}
-
-	public boolean isLevelVisited() {
-		return levelVisited;
+	
+	public int getLevelID() {
+		return levelID;
 	}
 
-	public void setLevelVisited(boolean levelVisited) {
-		this.levelVisited = levelVisited;
+	public void setLevelID(int levelID) {
+		this.levelID = levelID;
 	}
 
 }
