@@ -1,22 +1,27 @@
 package test.algorithms.codingame.teads;
 
-import algorithms.codingame.teads.TeadsBroadcasting_old;
+import algorithms.codingame.teads.TeadsBroadcasting;
 
 public class TeadsBroadcastingBuilder {
 
-	public final TeadsBroadcasting_old teadsBroadcasting_old;
+	public final TeadsBroadcasting teadsBroadcasting;
 
 	public TeadsBroadcastingBuilder(int size) {
-		this.teadsBroadcasting_old = new TeadsBroadcasting_old(size);
+		this.teadsBroadcasting = new TeadsBroadcasting(size);
 	}
 
 	public TeadsBroadcastingBuilder with(int vertexFrom, int vertexTo) {
-		this.teadsBroadcasting_old.addEdge(vertexFrom - 1, vertexTo - 1);
+		this.teadsBroadcasting.addNeighbour(vertexFrom, vertexTo);
 		return this;
 	}
 
-	public TeadsBroadcasting_old build() {
-		return this.teadsBroadcasting_old;
+	public TeadsBroadcastingBuilder withBroadcast() {
+		this.teadsBroadcasting.broadcast();
+		return this;
+	}
+
+	public TeadsBroadcasting build() {
+		return this.teadsBroadcasting;
 	}
 
 }
