@@ -26,6 +26,12 @@ public class TeadsBroadcastingTest {
 	}
 
 	@Test
+	public void vertexThreeShouldBroadcastInTwoHours() {
+		Vertex vertexThree = TEADS_BROADCASTING.getVertexList().get(2);
+		MatcherAssert.assertThat(vertexThree.getBroadcastingHour(), Matchers.equalTo(2));
+	}
+
+	@Test
 	public void shortestBroadcastingHourShouldBeOneHour() {
 		MatcherAssert.assertThat(TEADS_BROADCASTING.getShortestHourNumber(), Matchers.equalTo(1));
 	}
