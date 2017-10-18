@@ -6,19 +6,14 @@ import java.util.List;
 public class TeadsBroadcasting {
 
 	private final List<Vertex> vertexList;
-	// private final List<Vertex> vertexBroadcasted;
 	private final int size;
 	private int levelID;
-	private final boolean changeLevel;
 
 	public TeadsBroadcasting(int size) {
 		this.size = size;
 		this.vertexList = new ArrayList<Vertex>();
 		this.levelID = 0;
 		initVertexList();
-		changeLevel = false;
-		// this.vertexBroadcasted = new ArrayList<Vertex>();
-		// vertexBroadcasted.add(null);
 	}
 
 	private void initVertexList() {
@@ -62,6 +57,16 @@ public class TeadsBroadcasting {
 
 	public List<Vertex> getVertexList() {
 		return vertexList;
+	}
+
+	public int getShortestHourNumber() {
+		int hourNumber = Integer.MAX_VALUE;
+		for (Vertex current : vertexList) {
+			if (current != null && current.getBroadcastingHour() < hourNumber) {
+				hourNumber = current.getBroadcastingHour();
+			}
+		}
+		return hourNumber;
 	}
 
 }

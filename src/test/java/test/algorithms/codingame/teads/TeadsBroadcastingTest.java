@@ -9,7 +9,8 @@ import algorithms.codingame.teads.Vertex;
 
 public class TeadsBroadcastingTest {
 
-	private final TeadsBroadcasting TEADS_BROADCASTING = new TeadsBroadcastingBuilder(3).with(1, 2).with(2, 3).withBroadcast().build();
+	private static final TeadsBroadcasting TEADS_BROADCASTING = new TeadsBroadcastingBuilder(3).with(1, 2).with(2, 3).withBroadcast()
+			.build();
 
 	@Test
 	public void vertexOneShouldBroadcastInTwoHours() {
@@ -22,6 +23,11 @@ public class TeadsBroadcastingTest {
 	public void vertexTwoShouldBroadcastInOneHour() {
 		Vertex vertexTwo = TEADS_BROADCASTING.getVertexList().get(2);
 		MatcherAssert.assertThat(vertexTwo.getBroadcastingHour(), Matchers.equalTo(1));
+	}
+
+	@Test
+	public void shortestBroadcastingHourShouldBeOneHour() {
+		MatcherAssert.assertThat(TEADS_BROADCASTING.getShortestHourNumber(), Matchers.equalTo(1));
 	}
 
 }
