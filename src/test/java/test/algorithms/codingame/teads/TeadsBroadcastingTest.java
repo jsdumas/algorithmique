@@ -25,11 +25,11 @@ public class TeadsBroadcastingTest {
 
 	}
 
-	 @Test
-	 public void vertexTwoShouldBroadcastInOneHour() {
-	 initNeighbourList();
-	 Vertex vertexTwo = TEADS_BROADCASTING.getVertexList().get(2);
-	 MatcherAssert.assertThat(vertexTwo.getBroadcastingHour(), Matchers.equalTo(1));
-	 }
+	@Test
+	public void vertexTwoShouldBroadcastInOneHour() {
+		initNeighbourList();
+		Vertex vertexTwo = TEADS_BROADCASTING.getVertexList().get(2);
+		MatcherAssert.assertThat(vertexTwo.getBroadcastingHour(), Matchers.equalTo(1));
+	}
 
 }

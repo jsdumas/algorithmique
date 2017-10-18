@@ -6,18 +6,19 @@ import java.util.List;
 public class TeadsBroadcasting {
 
 	private final List<Vertex> vertexList;
+	// private final List<Vertex> vertexBroadcasted;
 	private final int size;
 	private int levelID;
-	
-
-	// private final int[][] memoizeTable;
-	// private final int broadcastingHour = 0;
+	private final boolean changeLevel;
 
 	public TeadsBroadcasting(int size) {
 		this.size = size;
 		this.vertexList = new ArrayList<Vertex>();
+		this.levelID = 0;
 		initVertexList();
-		// this.memoizeTable = new int[size][size];
+		changeLevel = false;
+		// this.vertexBroadcasted = new ArrayList<Vertex>();
+		// vertexBroadcasted.add(null);
 	}
 
 	private void initVertexList() {
@@ -29,23 +30,22 @@ public class TeadsBroadcasting {
 
 	public void broadcast() {
 		for (Vertex current : vertexList) {
-			if (current != null){
-				levelNumberSearch(current.getNeighbourList(), 1);
+			if (current != null) {
+				current.setLevelID(0);
+				levelNumberSearch(current);
 				current.setBroadcastingHour(levelID);
-				levelID=0;
+				levelID = 0;
 			}
 		}
 	}
 
-	private void levelNumberSearch(List<Vertex> vertexList, int vertexNumber) {
-		if(vertexNumber==size){
-			return;
+	private void levelNumberSearch(Vertex current) {
+		if (!current.getNeighbourList().isEmpty()) {
+			levelID = current.getLevelID() + 1;
 		}
-		vertexNumber += vertexList.size();
-		levelID++;
-		for (Vertex neighbour : vertexList) {
+		for (Vertex neighbour : current.getNeighbourList()) {
 			neighbour.setLevelID(levelID);
-			levelNumberSearch(neighbour.getNeighbourList(), vertexNumber);
+			levelNumberSearch(neighbour);
 		}
 	}
 
@@ -64,18 +64,4 @@ public class TeadsBroadcasting {
 		return vertexList;
 	}
 
-	// public int[][] getMemoizeTable() {
-	// return memoizeTable;
-	// }
-	//
-	// public int getBroadcastingHour(int vertexID) {
-	// int maxHour = Integer.MIN_VALUE;
-	// int[] hours = memoizeTable[vertexID];
-	// for (int i = 0; i < hours.length; i++) {
-	// if (hours[i] > maxHour) {
-	// maxHour = hours[i];
-	// }
-	// }
-	// return maxHour;
-	// }
 }
