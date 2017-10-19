@@ -1,77 +1,40 @@
 package algorithms.codingame.teads;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 public class TeadsBroadcasting {
 
-	private final List<Vertex> vertexList;
-	private final int size;
-	private int levelID;
-	private Vertex predecessor;
-	private int vertexVisited;
+	private Map<Integer, Vertex> graph;
 
-	public TeadsBroadcasting(int size) {
-		this.size = size;
-		this.vertexList = new ArrayList<Vertex>();
-		this.levelID = 0;
-		initVertexList();
+	public TeadsBroadcasting() {
+		this.graph = new HashMap<>();
 	}
 
-	private void initVertexList() {
-		vertexList.add(null);
-		for (int i = 1; i <= size; i++) {
-			vertexList.add(new Vertex(i));
-		}
-	}
-
-	public void broadcast() {
-		for (Vertex current : vertexList) {
-			if (current != null) {
-				current.setLevelID(0);
-				predecessor = null;
-				levelID = 0;
-				vertexVisited = 0;
-				levelNumberSearch(current);
-				current.setBroadcastingHour(levelID);
-			}
-		}
-	}
-
-	private void levelNumberSearch(Vertex current) {
-		for (Vertex neighbour : current.getNeighbourList()) {
-			neighbour.setPredecessor(current);
-			levelID = current.getLevelID() + 1;
-			neighbour.setLevelID(levelID);
-			if (neighbour != current.getPredecessor()) {
-				levelNumberSearch(neighbour);
-			}
-		}
-	}
-
-	public int getSize() {
-		return size;
-	}
-
-	public void addNeighbour(int idFrom, int idTo) {
-		Vertex from = vertexList.get(idFrom);
-		Vertex to = vertexList.get(idTo);
-		from.addNeighbour(to);
-		to.addNeighbour(from);
-	}
-
-	public List<Vertex> getVertexList() {
-		return vertexList;
+	public void initGraph(int idFrom, int idTo) {
+		Vertex vertexFrom = graph.computeIfAbsent(idFrom, key -> new Vertex(key));
+		Vertex vertexTo = graph.computeIfAbsent(idTo, key -> new Vertex(key));
+		vertexFrom.addAdjacentVertex(vertexTo);
+		vertexTo.addAdjacentVertex(vertexFrom);
 	}
 
 	public int getShortestHourNumber() {
-		int hourNumber = Integer.MAX_VALUE;
-		for (Vertex current : vertexList) {
-			if (current != null && current.getBroadcastingHour() < hourNumber) {
-				hourNumber = current.getBroadcastingHour();
-			}
-		}
-		return hourNumber;
+		int minimumHourBroadcasting = 0;
+		while (graph.size() > 1) {
+    		removeLeaves(graph);
+    		minimumHourBroadcasting++;
+    	}
+    	return minimumHourBroadcasting;
 	}
+	
+	 private static void removeLeaves(Map<Integer, Vertex> graph) {
+	    	Set<Vertex> leaves = graph.values().stream().filter(Vertex::isLeaf).collect(Collectors.toSet());
+	    	leaves.stream().forEach(leaf -> {
+	    		graph.remove(leaf.getId());
+	    		leaf.removeFromAdjacentVertices();
+			});
+	    }
 
 }

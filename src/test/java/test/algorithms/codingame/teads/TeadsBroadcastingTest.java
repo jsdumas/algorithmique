@@ -5,31 +5,10 @@ import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import algorithms.codingame.teads.TeadsBroadcasting;
-import algorithms.codingame.teads.Vertex;
 
 public class TeadsBroadcastingTest {
 
-	private static final TeadsBroadcasting TEADS_BROADCASTING = new TeadsBroadcastingBuilder(3).with(1, 2).with(2, 3).withBroadcast()
-			.build();
-
-	@Test
-	public void vertexOneShouldBroadcastInTwoHours() {
-		Vertex vertexOne = TEADS_BROADCASTING.getVertexList().get(1);
-		MatcherAssert.assertThat(vertexOne.getBroadcastingHour(), Matchers.equalTo(2));
-
-	}
-
-	@Test
-	public void vertexTwoShouldBroadcastInOneHour() {
-		Vertex vertexTwo = TEADS_BROADCASTING.getVertexList().get(2);
-		MatcherAssert.assertThat(vertexTwo.getBroadcastingHour(), Matchers.equalTo(1));
-	}
-
-	@Test
-	public void vertexThreeShouldBroadcastInTwoHours() {
-		Vertex vertexThree = TEADS_BROADCASTING.getVertexList().get(2);
-		MatcherAssert.assertThat(vertexThree.getBroadcastingHour(), Matchers.equalTo(2));
-	}
+	private static final TeadsBroadcasting TEADS_BROADCASTING = new TeadsBroadcastingBuilder().with(1, 2).with(2, 3).build();
 
 	@Test
 	public void shortestBroadcastingHourShouldBeOneHour() {

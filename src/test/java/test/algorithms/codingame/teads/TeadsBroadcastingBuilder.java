@@ -6,17 +6,12 @@ public class TeadsBroadcastingBuilder {
 
 	public final TeadsBroadcasting teadsBroadcasting;
 
-	public TeadsBroadcastingBuilder(int size) {
-		this.teadsBroadcasting = new TeadsBroadcasting(size);
+	public TeadsBroadcastingBuilder() {
+		this.teadsBroadcasting = new TeadsBroadcasting();
 	}
 
 	public TeadsBroadcastingBuilder with(int vertexFrom, int vertexTo) {
-		this.teadsBroadcasting.addNeighbour(vertexFrom, vertexTo);
-		return this;
-	}
-
-	public TeadsBroadcastingBuilder withBroadcast() {
-		this.teadsBroadcasting.broadcast();
+		this.teadsBroadcasting.initGraph(vertexFrom, vertexTo);
 		return this;
 	}
 
