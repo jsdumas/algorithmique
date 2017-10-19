@@ -8,6 +8,8 @@ public class TeadsBroadcasting {
 	private final List<Vertex> vertexList;
 	private final int size;
 	private int levelID;
+	private Vertex predecessor;
+	private int vertexVisited;
 
 	public TeadsBroadcasting(int size) {
 		this.size = size;
@@ -27,20 +29,23 @@ public class TeadsBroadcasting {
 		for (Vertex current : vertexList) {
 			if (current != null) {
 				current.setLevelID(0);
+				predecessor = null;
+				levelID = 0;
+				vertexVisited = 0;
 				levelNumberSearch(current);
 				current.setBroadcastingHour(levelID);
-				levelID = 0;
 			}
 		}
 	}
 
 	private void levelNumberSearch(Vertex current) {
-		if (!current.getNeighbourList().isEmpty()) {
-			levelID = current.getLevelID() + 1;
-		}
 		for (Vertex neighbour : current.getNeighbourList()) {
+			neighbour.setPredecessor(current);
+			levelID = current.getLevelID() + 1;
 			neighbour.setLevelID(levelID);
-			levelNumberSearch(neighbour);
+			if (neighbour != current.getPredecessor()) {
+				levelNumberSearch(neighbour);
+			}
 		}
 	}
 
@@ -52,7 +57,7 @@ public class TeadsBroadcasting {
 		Vertex from = vertexList.get(idFrom);
 		Vertex to = vertexList.get(idTo);
 		from.addNeighbour(to);
-		// to.addNeighbour(from);
+		to.addNeighbour(from);
 	}
 
 	public List<Vertex> getVertexList() {
