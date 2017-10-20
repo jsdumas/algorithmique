@@ -21,7 +21,7 @@ public class App {
 		profitOfItems[3] = 7;
 
 		Knapsack knapsack = new Knapsack(numOfItems, capacityOfKnapsack, weightOfItems, profitOfItems);
-		knapsack.solve();
-		knapsack.showResult();
+		knapsack.calculBestBenefit();
+		knapsack.showBestItemToTake();
 	}
 }
