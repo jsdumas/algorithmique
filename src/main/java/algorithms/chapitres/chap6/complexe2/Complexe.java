@@ -1,44 +1,44 @@
 package algorithms.chapitres.chap6.complexe2;
 
 public class Complexe {
-	double réel, imaginaire;
+	double reel, imaginaire;
 
-	public double getRéel() {
-		return réel;
+	public double getReel() {
+		return reel;
 	}
 
 	public double getImaginaire() {
 		return imaginaire;
 	}
 
-	public void setRéel(double réel) {
-		this.réel = réel;
+	public void setReel(double reel) {
+		this.reel = reel;
 	}
 
 	public void setImaginaire(double imaginaire) {
 		this.imaginaire = imaginaire;
 	}
 
-	public Complexe(double réel, double imaginaire) {
-		this.réel = réel;
+	public Complexe(double reel, double imaginaire) {
+		this.reel = reel;
 		this.imaginaire = imaginaire;
 	}
 
 	public double module() {
-		return Math.sqrt(réel * réel + imaginaire * imaginaire);
+		return Math.sqrt(reel * reel + imaginaire * imaginaire);
 	}
 
-	public void ajouteRéel(double argument) {
-		réel = réel + argument;
+	public void ajouteReel(double argument) {
+		reel = reel + argument;
 	}
 
-	public void multiplieRéel(double argument) {
-		réel = réel * argument;
+	public void multiplieReel(double argument) {
+		reel = reel * argument;
 		imaginaire = imaginaire * argument;
 	}
 
 	@Override
 	public String toString() {
-		return "partie réelle : " + réel + " partie imaginaire : " + imaginaire;
+		return "partie reelle : " + reel + " partie imaginaire : " + imaginaire;
 	}
 }

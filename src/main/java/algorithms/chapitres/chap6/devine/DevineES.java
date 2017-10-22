@@ -6,8 +6,8 @@ public class DevineES {
 	Scanner parser = new Scanner(System.in);
 	Devine2 nombreDevine;
 
-	public DevineES(NombreAléatoire nombreAléatoire) {
-		nombreDevine = new Devine2(nombreAléatoire);
+	public DevineES(NombreAleatoire nombreAleatoire) {
+		nombreDevine = new Devine2(nombreAleatoire);
 	}
 
 	public int session() {
@@ -23,7 +23,7 @@ public class DevineES {
 					break;
 				}
 				case 0: {
-					System.out.println("Vous avez trouvé le nombre !");
+					System.out.println("Vous avez trouve le nombre !");
 					break;
 				}
 				case 1: {

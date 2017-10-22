@@ -10,11 +10,11 @@ public class Vecteur {
 		tab = new int[taille];
 	}
 
-	public int getÉlément(int indice) {
+	public int getelement(int indice) {
 		return tab[indice];
 	}
 
-	public void setÉlément(int indice, int valeur) {
+	public void setelement(int indice, int valeur) {
 		tab[indice] = valeur;
 	}
 
@@ -29,7 +29,7 @@ public class Vecteur {
 		System.out.println();
 	}
 
-	public void remplisAléatoirement(int min, int max) {
+	public void remplisAleatoirement(int min, int max) {
 		for (int i = 0; i < tab.length; i++)
 			tab[i] = (int) (Math.random() * (max - min + 1)) + min;
 	}

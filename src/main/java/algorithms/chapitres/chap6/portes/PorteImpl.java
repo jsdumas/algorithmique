@@ -1,25 +1,25 @@
 package algorithms.chapitres.chap6.portes;
 
 public abstract class PorteImpl implements Porte {
-	boolean entrée1, entrée2;
+	boolean entree1, entree2;
 
 	@Override
-	public boolean getEntrée1() {
-		return entrée1;
+	public boolean getEntree1() {
+		return entree1;
 	}
 
 	@Override
-	public boolean getEntrée2() {
-		return entrée2;
+	public boolean getEntree2() {
+		return entree2;
 	}
 
 	@Override
-	public void setEntrée1(boolean valeur) {
-		entrée1 = valeur;
+	public void setEntree1(boolean valeur) {
+		entree1 = valeur;
 	}
 
 	@Override
-	public void setEntrée2(boolean valeur) {
-		entrée2 = valeur;
+	public void setEntree2(boolean valeur) {
+		entree2 = valeur;
 	}
 }

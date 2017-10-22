@@ -6,8 +6,8 @@ public class TestDevineNombre2 {
 		final int min = 1;
 		final int max = 120;
 		int nbrTentatives;
-		NombreAléatoire nbrAléatoire = new NombreAléatoire(min, max);
-		DevineNombre2 devineNombre = new DevineNombre2(nbrAléatoire);
+		NombreAleatoire nbrAleatoire = new NombreAleatoire(min, max);
+		DevineNombre2 devineNombre = new DevineNombre2(nbrAleatoire);
 		nbrTentatives = devineNombre.devine();
 		System.out.println("Nombre de tentatives = " + nbrTentatives);
 	}

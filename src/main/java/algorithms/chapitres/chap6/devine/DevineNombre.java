@@ -11,16 +11,16 @@ public class DevineNombre {
 		int borneInf = inf;
 		int borneSup = sup;
 		int nbrTentatives = 0;
-		int milieu, réponse;
+		int milieu, reponse;
 		do {
 			nbrTentatives++;
 			milieu = (borneInf + borneSup) / 2;
-			réponse = devineES.propose(milieu);
-			if (réponse == 1)
+			reponse = devineES.propose(milieu);
+			if (reponse == 1)
 				borneSup = milieu - 1;
-			else if (réponse == -1)
+			else if (reponse == -1)
 				borneInf = milieu + 1;
-		} while (réponse != 0);
+		} while (reponse != 0);
 		return nbrTentatives;
 	}
 }

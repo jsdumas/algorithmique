@@ -6,8 +6,8 @@ public class TestDevine {
 		final int min = 1;
 		final int max = 12;
 		int nbrTentatives;
-		NombreAléatoire nbrAléatoire = new NombreAléatoire(min, max);
-		Devine devine = new Devine(nbrAléatoire);
+		NombreAleatoire nbrAleatoire = new NombreAleatoire(min, max);
+		Devine devine = new Devine(nbrAleatoire);
 		nbrTentatives = devine.session();
 		System.out.println("Nombre de tentatives = " + nbrTentatives);
 	}

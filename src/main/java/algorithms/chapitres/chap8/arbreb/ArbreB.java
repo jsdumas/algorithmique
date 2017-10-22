@@ -9,17 +9,17 @@ public class ArbreB {
 		racine = new NoeudArbreB(ordre);
 	}
 
-	public void insère(int nouvelleClef, String donnée) {
-		Donnée nouvelleDonnée = new Donnée(nouvelleClef, donnée);
-		NoeudArbreB noeudDroitNouvelleDonnée = new NoeudArbreB(ordre);
-		nouvelleDonnée = racine.insère(nouvelleDonnée, noeudDroitNouvelleDonnée);
-		if (nouvelleDonnée == null)
+	public void insere(int nouvelleClef, String donnee) {
+		Donnee nouvelleDonnee = new Donnee(nouvelleClef, donnee);
+		NoeudArbreB noeudDroitNouvelleDonnee = new NoeudArbreB(ordre);
+		nouvelleDonnee = racine.insere(nouvelleDonnee, noeudDroitNouvelleDonnee);
+		if (nouvelleDonnee == null)
 			return;
 		NoeudArbreB nouvelleRacine = new NoeudArbreB(ordre);
-		nouvelleRacine.données[0] = nouvelleDonnée;
+		nouvelleRacine.donnees[0] = nouvelleDonnee;
 		nouvelleRacine.enfants[0] = racine;
-		nouvelleRacine.enfants[1] = noeudDroitNouvelleDonnée;
-		nouvelleRacine.nbrDonnées = 1;
+		nouvelleRacine.enfants[1] = noeudDroitNouvelleDonnee;
+		nouvelleRacine.nbrDonnees = 1;
 		racine = nouvelleRacine;
 	}
 
@@ -27,7 +27,7 @@ public class ArbreB {
 		racine.affiche(0);
 	}
 
-	public Donnée recherche(int clef) {
+	public Donnee recherche(int clef) {
 		return racine.recherche(clef);
 	}
 }

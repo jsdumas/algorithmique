@@ -10,12 +10,12 @@ public class Variance {
 		int i;
 		int somme;
 		double moyenne;
-		// déclaration pour le calcul de la variance et de l'écart type
-		int sommeDifférencesCarré;
-		double variance, écartType;
-		// déclaration du tableau
+		// declaration pour le calcul de la variance et de l'ecart type
+		int sommeDifferencesCarre;
+		double variance, ecartType;
+		// declaration du tableau
 		int[] tableau;
-		// création du tableau
+		// creation du tableau
 		tableau = new int[taille];
 		// lecture du tableau
 		for (i = 0; i < taille; i++) {
@@ -28,13 +28,13 @@ public class Variance {
 			somme += tableau[i];
 		moyenne = (double) somme / taille;
 		System.out.println("La moyenne vaut : " + moyenne);
-		// calcul et affichage de la variance et de l'écart type
-		sommeDifférencesCarré = 0;
+		// calcul et affichage de la variance et de l'ecart type
+		sommeDifferencesCarre = 0;
 		for (i = 0; i < taille; i++)
-			sommeDifférencesCarré += (tableau[i] - moyenne) * (tableau[i] - moyenne);
-		variance = (double) sommeDifférencesCarré / taille;
-		écartType = Math.sqrt(variance);
+			sommeDifferencesCarre += (tableau[i] - moyenne) * (tableau[i] - moyenne);
+		variance = (double) sommeDifferencesCarre / taille;
+		ecartType = Math.sqrt(variance);
 		System.out.println("La variance vaut : " + variance);
-		System.out.println("L'écart type vaut : " + écartType);
+		System.out.println("L'ecart type vaut : " + ecartType);
 	}
 }

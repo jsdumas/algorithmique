@@ -9,11 +9,11 @@ public class Ensemble {
 		ensemble = new int[tailleMaximaleEnsemble];
 	}
 
-	public boolean insére(int valeur) {
+	public boolean insere(int valeur) {
 		int j = 0;
 		while ((j < tailleEnsemble) && (ensemble[j] != valeur))
 			j++;
-		// insertion de la valeur si elle n'a pas été trouvée
+		// insertion de la valeur si elle n'a pas ete trouvee
 		if (j == tailleEnsemble) {
 			if (tailleEnsemble == ensemble.length)
 				return false;

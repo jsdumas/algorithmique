@@ -13,16 +13,16 @@ public class SommeMatricesModulaire {
 			}
 	}
 
-	public static int[][] ajouteMatriceCarrée(int[][] matrice1, int[][] matrice2, int taille) {
-		int[][] résultat = new int[taille][taille];
+	public static int[][] ajouteMatriceCarree(int[][] matrice1, int[][] matrice2, int taille) {
+		int[][] resultat = new int[taille][taille];
 		for (int i = 0; i < taille; i++) {
 			for (int j = 0; j < taille; j++)
-				résultat[i][j] = matrice1[i][j] + matrice2[i][j];
+				resultat[i][j] = matrice1[i][j] + matrice2[i][j];
 		}
-		return résultat;
+		return resultat;
 	}
 
-	public static void écrireMatrice(int[][] matrice) {
+	public static void ecrireMatrice(int[][] matrice) {
 		for (int i = 0; i < matrice.length; i++)
 			for (int j = 0; j < matrice[i].length; j++)
 				System.out.println("matrice[" + i + "][" + j + "] = " + matrice[i][j]);
@@ -30,18 +30,18 @@ public class SommeMatricesModulaire {
 
 	public static void main(String[] args) {
 		final int taille = 3;
-		// déclaration et création des matrices
+		// dÃ©claration et crÃ©ation des matrices
 		int matrice1[][] = new int[taille][taille];
 		int matrice2[][] = new int[taille][taille];
 		// lecture des matrices
-		System.out.println("Saisie de la première matrice");
+		System.out.println("Saisie de la premiÃ¨re matrice");
 		lireMatrice(matrice1);
-		System.out.println("Saisie de la deuxième matrice");
+		System.out.println("Saisie de la deuxiÃ¨me matrice");
 		lireMatrice(matrice2);
 		// addition des deux matrices
-		int[][] matrice3 = ajouteMatriceCarrée(matrice1, matrice2, taille);
-		// écriture de la matrice résultat
-		System.out.println("Affichage du résultat");
-		écrireMatrice(matrice3);
+		int[][] matrice3 = ajouteMatriceCarree(matrice1, matrice2, taille);
+		// Ã©criture de la matrice resultat
+		System.out.println("Affichage du resultat");
+		ecrireMatrice(matrice3);
 	}
 }

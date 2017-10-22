@@ -15,27 +15,27 @@ public class Entier {
 		this.valeur = valeur;
 	}
 
-	public String versChaîne() {
-		String résultat = "";
+	public String versChaine() {
+		String resultat = "";
 		int nombreChiffres = 0;
 		int copieValeur = Math.abs(valeur);
 		while (copieValeur != 0) {
 			if (nombreChiffres == 3) {
 				nombreChiffres = 0;
-				résultat = " " + résultat;
+				resultat = " " + resultat;
 			}
-			résultat = (char) (48 + copieValeur % 10) + résultat;
+			resultat = (char) (48 + copieValeur % 10) + resultat;
 			copieValeur = copieValeur / 10;
 			nombreChiffres++;
 		}
 		if (valeur < 0)
-			résultat = "-" + résultat;
+			resultat = "-" + resultat;
 		else if (valeur == 0)
-			résultat = "0";
-		return résultat;
+			resultat = "0";
+		return resultat;
 	}
 
-	public void depuisChaîne(String s) {
+	public void depuisChaine(String s) {
 		int valeurTemp, signe;
 		valeurTemp = 0;
 		signe = 1;
@@ -47,7 +47,7 @@ public class Entier {
 				else if ((c >= '0') && (c <= '9'))
 					valeurTemp = 10 * valeurTemp + c - 48;
 				else
-					return; // chaîne incorrecte
+					return; // chaÃ®ne incorrecte
 			}
 		}
 		valeur = valeurTemp * signe;

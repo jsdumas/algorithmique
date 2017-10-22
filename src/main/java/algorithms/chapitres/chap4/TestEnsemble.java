@@ -11,8 +11,8 @@ public class TestEnsemble {
 		do {
 			System.out.print("Entrez une valeur : ");
 			valeur = reader.nextInt();
-		} while (ensemble.insére(valeur));
-		System.out.print("Entrez la valeur à supprimer : ");
+		} while (ensemble.insere(valeur));
+		System.out.print("Entrez la valeur Ã  supprimer : ");
 		valeur = reader.nextInt();
 		if (ensemble.supprime(valeur))
 			System.out.println("La valeur faisait bien partie de l'ensemble.");

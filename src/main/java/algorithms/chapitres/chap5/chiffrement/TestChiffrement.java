@@ -6,13 +6,13 @@ public class TestChiffrement {
 
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
-		System.out.print("Entrez le texte à chiffrer : ");
+		System.out.print("Entrez le texte e chiffrer : ");
 		String texte = reader.nextLine();
-		TexteChiffré texteChiffré = new TexteChiffré(texte);
-		System.out.println("Texte avant chiffrage : " + texteChiffré.getTexte());
-		texteChiffré.chiffre();
-		System.out.println("Texte après un chiffrage : " + texteChiffré.getTexte());
-		texteChiffré.chiffre();
-		System.out.println("Texte après deux chiffrages : " + texteChiffré.getTexte());
+		TexteChiffre texteChiffre = new TexteChiffre(texte);
+		System.out.println("Texte avant chiffrage : " + texteChiffre.getTexte());
+		texteChiffre.chiffre();
+		System.out.println("Texte apres un chiffrage : " + texteChiffre.getTexte());
+		texteChiffre.chiffre();
+		System.out.println("Texte apres deux chiffrages : " + texteChiffre.getTexte());
 	}
 }

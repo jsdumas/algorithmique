@@ -1,13 +1,13 @@
 package algorithms.chapitres.chap6.portes;
 
 public interface Porte {
-	void setEntrée1(boolean valeur);
+	void setEntree1(boolean valeur);
 
-	void setEntrée2(boolean valeur);
+	void setEntree2(boolean valeur);
 
-	boolean getEntrée1();
+	boolean getEntree1();
 
-	boolean getEntrée2();
+	boolean getEntree2();
 
 	boolean getSortie();
 }

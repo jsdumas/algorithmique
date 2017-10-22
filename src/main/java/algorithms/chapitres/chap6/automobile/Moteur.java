@@ -10,10 +10,10 @@ public class Moteur {
 		roueDroite = new Roue("roue droite du " + nom);
 	}
 
-	public void démarre() {
-		System.out.println(nom + " a commencé à démarrer.");
+	public void demarre() {
+		System.out.println(nom + " a commence e demarrer.");
 		roueGauche.tourne();
 		roueDroite.tourne();
-		System.out.println(nom + " a terminé de démarrer.");
+		System.out.println(nom + " a termine de demarrer.");
 	}
 }

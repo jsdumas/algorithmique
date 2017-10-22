@@ -1,29 +1,29 @@
 package algorithms.chapitres.chap6.devine;
 
 public class Devine2 {
-	NombreAléatoire nombreAléatoire;
+	NombreAleatoire nombreAleatoire;
 	int nombreTentatives;
 
-	public Devine2(NombreAléatoire nombreAléatoire) {
-		this.nombreAléatoire = nombreAléatoire;
+	public Devine2(NombreAleatoire nombreAleatoire) {
+		this.nombreAleatoire = nombreAleatoire;
 	}
 
 	public int propose(int tentative) {
 		nombreTentatives++;
-		return nombreAléatoire.compare(tentative);
+		return nombreAleatoire.compare(tentative);
 	}
 
 	public void initialise() {
 		nombreTentatives = 0;
-		nombreAléatoire.reCalcule();
+		nombreAleatoire.reCalcule();
 	}
 
 	public int getBorneInf() {
-		return nombreAléatoire.getBorneInf();
+		return nombreAleatoire.getBorneInf();
 	}
 
 	public int getBorneSup() {
-		return nombreAléatoire.getBorneSup();
+		return nombreAleatoire.getBorneSup();
 	}
 
 	public int getNombreTentatives() {

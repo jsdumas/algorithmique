@@ -8,18 +8,18 @@ public class TestEnsembles {
 		Scanner reader = new Scanner(System.in);
 		int valeur;
 		InterfaceEnsemble ensemble;
-		System.out.print("Désirez-vous utiliser un ensemble normal(N) ou trié (T)");
-		String réponse = reader.next();
-		if (réponse.equals("T") || réponse.equals("t"))
-			ensemble = new EnsembleTrié(10);
+		System.out.print("Desirez-vous utiliser un ensemble normal(N) ou trie (T)");
+		String reponse = reader.next();
+		if (reponse.equals("T") || reponse.equals("t"))
+			ensemble = new EnsembleTrie(10);
 		else
 			ensemble = new Ensemble(10);
 
 		do {
 			System.out.print("Entrez une valeur : ");
 			valeur = reader.nextInt();
-		} while (ensemble.insére(valeur));
-		System.out.print("Entrez la valeur à supprimer : ");
+		} while (ensemble.insere(valeur));
+		System.out.print("Entrez la valeur e supprimer : ");
 		valeur = reader.nextInt();
 		if (ensemble.supprime(valeur))
 			System.out.println("La valeur faisait bien partie de l'ensemble.");

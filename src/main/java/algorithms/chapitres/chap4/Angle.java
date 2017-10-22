@@ -11,11 +11,11 @@ public class Angle {
 		this.valeur = valeur;
 	}
 
-	public double getValeurDegrés() {
+	public double getValeurDegres() {
 		return valeur * 180 / 200;
 	}
 
-	public void setValeurDegrés(double valeur) {
+	public void setValeurDegres(double valeur) {
 		this.valeur = valeur * 200 / 180;
 	}
 
