@@ -22,17 +22,17 @@ public class Knapsack {
 
 	public int calculBestBenefit() {
 		// time complexity: O(N*W)
-		for (int i = 1; i < numOfItems + 1; i++) {
-			for (int w = 1; w < capacityOfKnapsack + 1; w++) {
+		for (int itemId = 1; itemId < numOfItems + 1; itemId++) {
+			for (int weight = 1; weight < capacityOfKnapsack + 1; weight++) {
 
-				int notTakingItem = knapsackTable[i - 1][w]; // not taking item i
+				int notTakingItem = knapsackTable[itemId - 1][weight]; // not taking item i
 				int takingItem = 0;
 
-				if (weights[i] <= w) {
-					takingItem = values[i] + knapsackTable[i - 1][w - weights[i]];
+				if (weights[itemId] <= weight) {
+					takingItem = values[itemId] + knapsackTable[itemId - 1][weight - weights[itemId]];
 				}
 
-				knapsackTable[i][w] = Math.max(notTakingItem, takingItem);
+				knapsackTable[itemId][weight] = Math.max(notTakingItem, takingItem);
 			}
 		}
 		totalBenefit = knapsackTable[numOfItems][capacityOfKnapsack];
