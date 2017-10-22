@@ -9,21 +9,21 @@ public class OrdinateurDevine {
 		int borneInf = 0;
 		int borneSup = 100;
 		int milieu;
-		int réponse, nbrTentatives;
+		int reponse, nbrTentatives;
 
 		nbrTentatives = 0;
 		do {
 			nbrTentatives++;
 			milieu = (borneInf + borneSup) / 4 * 2;
 			System.out.println("je propose " + milieu);
-			System.out.println("Répondez -1 si le nombre proposé est trop petit");
-			System.out.print("1 s'il est trop grand, 0 pour gagné : ");
-			réponse = reader.nextInt();
-			if (réponse == 1)
+			System.out.println("Rï¿½pondez -1 si le nombre proposï¿½ est trop petit");
+			System.out.print("1 s'il est trop grand, 0 pour gagnï¿½ : ");
+			reponse = reader.nextInt();
+			if (reponse == 1)
 				borneSup = milieu - 2;
-			else if (réponse == -1)
+			else if (reponse == -1)
 				borneInf = milieu + 2;
-		} while (réponse != 0);
-		System.out.println("gagné en " + nbrTentatives + " coups");
+		} while (reponse != 0);
+		System.out.println("gagnï¿½ en " + nbrTentatives + " coups");
 	}
 }

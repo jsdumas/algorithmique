@@ -18,7 +18,7 @@ public class Pile {
 			return false;
 	}
 
-	public String dépile() {
+	public String depile() {
 		if (sommet > 0) {
 			sommet--;
 			return tableau[sommet];

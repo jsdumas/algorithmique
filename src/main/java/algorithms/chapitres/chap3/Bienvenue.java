@@ -1,7 +1,7 @@
 package algorithms.chapitres.chap3;
 
 public class Bienvenue {
-	public static void afficheBannière() {
+	public static void afficheBanniere() {
 		System.out.println("******************************************************");
 		System.out.println("**                                                  **");
 		System.out.println("**                     BIENVENUE                    **");
@@ -10,7 +10,7 @@ public class Bienvenue {
 	}
 
 	public static void main(String[] args) {
-		afficheBannière();
+		afficheBanniere();
 		// suite du programme
 	}
 }

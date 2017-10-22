@@ -6,19 +6,19 @@ public class LivretEpargne {
 
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
-		double montantInitial, intérêt, montantEpargné;
-		int nombreAnnées, i;
+		double montantInitial, interet, montantEpargne;
+		int nombreAnnees, i;
 		System.out.print("Entrez le montant initial : ");
 		montantInitial = reader.nextDouble();
-		System.out.print("Entrez le taux d'intérêt en pour cent : ");
-		intérêt = reader.nextDouble();
-		System.out.print("Entrez le nombre d'années : ");
-		nombreAnnées = reader.nextInt();
-		// calcul et affichage du montant épargné
-		montantEpargné = montantInitial;
-		for (i = 1; i <= nombreAnnées; i++) {
-			montantEpargné = montantEpargné * (1.0 + intérêt / 100);
-			System.out.println("Après la " + i + " année, le montant épargné est de : " + montantEpargné);
+		System.out.print("Entrez le taux d'intï¿½rï¿½t en pour cent : ");
+		interet = reader.nextDouble();
+		System.out.print("Entrez le nombre d'annï¿½es : ");
+		nombreAnnees = reader.nextInt();
+		// calcul et affichage du montant ï¿½pargnï¿½
+		montantEpargne = montantInitial;
+		for (i = 1; i <= nombreAnnees; i++) {
+			montantEpargne = montantEpargne * (1.0 + interet / 100);
+			System.out.println("Aprï¿½s la " + i + " annï¿½e, le montant ï¿½pargnï¿½ est de : " + montantEpargne);
 		}
 	}
 }

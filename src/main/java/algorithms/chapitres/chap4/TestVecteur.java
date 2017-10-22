@@ -13,7 +13,7 @@ public class TestVecteur {
 		Vecteur monVecteur = new Vecteur(taille);
 		monVecteur.lis();
 		monVecteur.affiche();
-		monVecteur.remplisAléatoirement(1, 20);
+		monVecteur.remplisAleatoirement(1, 20);
 		monVecteur.affiche();
 	}
 }

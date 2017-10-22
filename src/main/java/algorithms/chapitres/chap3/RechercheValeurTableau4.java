@@ -3,18 +3,18 @@ package algorithms.chapitres.chap3;
 import java.util.Scanner;
 
 public class RechercheValeurTableau4 {
-	// déclaration de la constante taille
+	// dÃ©claration de la constante taille
 	final static int taille = 10;
-	// déclaration et création du tableau
+	// dÃ©claration et crÃ©ation du tableau
 	static int[] tableau = new int[taille];
 
-	public static int généreNombreAléatoire(int borneInf, int borneSup) {
+	public static int genereNombreAleatoire(int borneInf, int borneSup) {
 		return (int) ((borneSup - borneInf + 1) * Math.random()) + borneInf;
 	}
 
-	public static void remplitTableauAléatoire(int[] t, int borneInf, int borneSup) {
+	public static void remplitTableauAleatoire(int[] t, int borneInf, int borneSup) {
 		for (int i = 0; i < t.length; i++)
-			t[i] = généreNombreAléatoire(borneInf, borneSup);
+			t[i] = genereNombreAleatoire(borneInf, borneSup);
 	}
 
 	public static void afficheTableau(boolean modeUneLigne) {
@@ -35,24 +35,24 @@ public class RechercheValeurTableau4 {
 		int i, valeur;
 		int choix;
 		// remplissage du tableau
-		remplitTableauAléatoire(tableau, 1, 10);
+		remplitTableauAleatoire(tableau, 1, 10);
 		// impression du tableau
 		System.out.println("Voulez-vous afficher le tableau");
 		System.out.println(" 1) sur une seule ligne");
-		System.out.println(" 2) en affichant un élément par ligne");
+		System.out.println(" 2) en affichant un Ã©lÃ©ment par ligne");
 		System.out.print(" choix : ");
 		choix = reader.nextInt();
 		afficheTableau(choix == 1);
 
-		System.out.print("Entrez la valeur à rechercher : ");
+		System.out.print("Entrez la valeur Ã  rechercher : ");
 		valeur = reader.nextInt();
 		// recherche dans le tableau
 		i = 0;
 		while ((i < taille) && (tableau[i] != valeur))
 			i++;
 		if (i < taille)
-			System.out.println("Valeur trouvée à l'indice : " + i);
+			System.out.println("Valeur trouvÃ©e Ã  l'indice : " + i);
 		else
-			System.out.println("Valeur non trouvée dans le tableau ");
+			System.out.println("Valeur non trouvÃ©e dans le tableau ");
 	}
 }

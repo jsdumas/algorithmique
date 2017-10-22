@@ -3,26 +3,26 @@ package algorithms.chapitres.chap6.devine;
 public class LienDevine {
 	Devine2 nombreDevine;
 
-	public LienDevine(NombreAléatoire nombreAléatoire) {
-		nombreDevine = new Devine2(nombreAléatoire);
+	public LienDevine(NombreAleatoire nombreAleatoire) {
+		nombreDevine = new Devine2(nombreAleatoire);
 	}
 
 	public int propose(int tentative) {
-		int résultat;
+		int resultat;
 		System.out.println("Tentative : " + tentative);
-		résultat = nombreDevine.propose(tentative);
-		switch (résultat) {
+		resultat = nombreDevine.propose(tentative);
+		switch (resultat) {
 			case -1:
-				System.out.println("Le nombre à deviner est supérieur à la tentative.");
+				System.out.println("Le nombre e deviner est superieur e la tentative.");
 				break;
 			case 0:
-				System.out.println("Nombre trouvé");
+				System.out.println("Nombre trouve");
 				break;
 			case 1:
-				System.out.println("Le nombre à deviner est inférieur à la tentative.");
+				System.out.println("Le nombre e deviner est inferieur e la tentative.");
 				break;
 		}
-		return résultat;
+		return resultat;
 	}
 
 	public void initialise() {

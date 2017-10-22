@@ -5,40 +5,40 @@ import java.util.Scanner;
 public class RechercheValeurTableauDeuxDim {
 
 	public static int[] rechercheValeurTableauDeuxDim(int valeur, int[][] tab) {
-		int[] résultat = new int[2];
+		int[] resultat = new int[2];
 		int i, j;
-		boolean trouvé;
+		boolean trouve;
 		i = 0;
-		j = 0; // valeur par défaut pour le compilateur Java
-		trouvé = false;
-		while ((i < tab.length) && (!trouvé)) {
+		j = 0; // valeur par dÃ©faut pour le compilateur Java
+		trouve = false;
+		while ((i < tab.length) && (!trouve)) {
 			j = 0;
-			while ((j < tab[i].length) && (!trouvé)) {
+			while ((j < tab[i].length) && (!trouve)) {
 				if (tab[i][j] == valeur)
-					trouvé = true;
+					trouve = true;
 				else
 					j++;
 			}
-			if (!trouvé)
+			if (!trouve)
 				i++;
 		}
-		if (trouvé) {
-			résultat[0] = i;
-			résultat[1] = j;
+		if (trouve) {
+			resultat[0] = i;
+			resultat[1] = j;
 		} else {
-			résultat[0] = -1;
-			résultat[1] = -1;
+			resultat[0] = -1;
+			resultat[1] = -1;
 		}
-		return résultat;
+		return resultat;
 	}
 
-	public static int généreNombreAléatoire(int borneInf, int borneSup) {
+	public static int genereNombreAleatoire(int borneInf, int borneSup) {
 		return (int) ((borneSup - borneInf + 1) * Math.random()) + borneInf;
 	}
 
-	public static void remplitTableauAléatoire(int t[], int borneInf, int borneSup) {
+	public static void remplitTableauAleatoire(int t[], int borneInf, int borneSup) {
 		for (int i = 0; i < t.length; i++)
-			t[i] = généreNombreAléatoire(borneInf, borneSup);
+			t[i] = genereNombreAleatoire(borneInf, borneSup);
 	}
 
 	public static void main(String[] args) {
@@ -46,23 +46,23 @@ public class RechercheValeurTableauDeuxDim {
 		final int taille1 = 5;
 		final int taille2 = 3;
 		int valeur;
-		int[] résultatRecherche;
-		// déclaration et initialisation du tableau
+		int[] resultatRecherche;
+		// dÃ©claration et initialisation du tableau
 		int[][] tableau = new int[taille1][taille2];
 		for (int i = 0; i < taille1; i++)
-			remplitTableauAléatoire(tableau[i], 1, 10);
+			remplitTableauAleatoire(tableau[i], 1, 10);
 		for (int i = 0; i < taille1; i++) {
 			for (int j = 0; j < taille2; j++)
 				System.out.print(tableau[i][j] + " ");
 			System.out.println();
 		}
-		System.out.print("Entrez la valeur à rechercher : ");
+		System.out.print("Entrez la valeur Ã  rechercher : ");
 		valeur = reader.nextInt();
 		// recherche dans le tableau
-		résultatRecherche = rechercheValeurTableauDeuxDim(valeur, tableau);
-		if (résultatRecherche[0] != -1)
-			System.out.println("Valeur trouvée aux indices : " + résultatRecherche[0] + ", " + résultatRecherche[1]);
+		resultatRecherche = rechercheValeurTableauDeuxDim(valeur, tableau);
+		if (resultatRecherche[0] != -1)
+			System.out.println("Valeur trouvee aux indices : " + resultatRecherche[0] + ", " + resultatRecherche[1]);
 		else
-			System.out.println("Valeur non trouvée dans le tableau ");
+			System.out.println("Valeur non trouvee dans le tableau ");
 	}
 }

@@ -7,10 +7,10 @@ public class Expression {
 	String token;
 
 	public int valeur() {
-		int résultat;
+		int resultat;
 		System.out.print("Entrez un nombre entier : ");
-		résultat = reader.nextInt();
-		return résultat;
+		resultat = reader.nextInt();
+		return resultat;
 	}
 
 	public void lireToken() {
@@ -19,41 +19,41 @@ public class Expression {
 
 	public int mult() {
 		int opA, opB;
-		String opérateur;
+		String operateur;
 		opA = valeur();
-		System.out.print("Entrez opérateur ou '=' : ");
+		System.out.print("Entrez operateur ou '=' : ");
 		lireToken();
-		opérateur = token;
-		while (opérateur.equals("*") || opérateur.equals("/")) {
+		operateur = token;
+		while (operateur.equals("*") || operateur.equals("/")) {
 			opB = valeur();
-			if (opérateur.equals("*"))
+			if (operateur.equals("*"))
 				opA = opA * opB;
 			else
 				opA = opA / opB;
-			System.out.print("Entrez opérateur ou '=' :  ");
+			System.out.print("Entrez operateur ou '=' :  ");
 			lireToken();
-			opérateur = token;
+			operateur = token;
 		}
 		return opA;
 	}
 
 	public int add() {
 		int opA, opB;
-		String opérateur;
+		String operateur;
 		opA = mult();
-		opérateur = token;
-		while (opérateur.equals("+") || opérateur.equals("-")) {
+		operateur = token;
+		while (operateur.equals("+") || operateur.equals("-")) {
 			opB = mult();
-			if (opérateur.equals("+"))
+			if (operateur.equals("+"))
 				opA = opA + opB;
 			else
 				opA = opA - opB;
-			opérateur = token;
+			operateur = token;
 		}
 		return opA;
 	}
 
-	public int évalue() {
+	public int evalue() {
 		return add();
 	}
 }

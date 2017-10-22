@@ -11,14 +11,14 @@ public class TestCalculatrice {
 	}
 
 	public static void main(String[] args) {
-		int réponse;
+		int reponse;
 		Calculatrice calc = new Calculatrice(0);
 		do {
 			System.out.println("La valeur de la calculatrice est : " + calc.getValeur());
 			System.out.print("1. ajouter 2. multiplier : ");
 			System.out.print("3. diviser un nombre 4. quitter : ");
-			réponse = reader.nextInt();
-			switch (réponse) {
+			reponse = reader.nextInt();
+			switch (reponse) {
 				case 1: {
 					calc.ajoute(lireArgument());
 					break;
@@ -32,6 +32,6 @@ public class TestCalculatrice {
 					break;
 				}
 			}
-		} while (réponse != 4);
+		} while (reponse != 4);
 	}
 }

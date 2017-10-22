@@ -3,12 +3,12 @@ package algorithms.chapitres.chap8.arbrebinaire;
 public class ArbreBinaire {
 	NoeudArbreBinaire racine;
 
-	public void insère(int nouvelleClef, String donnée) {
-		Donnée nouvelleDonnée = new Donnée(nouvelleClef, donnée);
+	public void insere(int nouvelleClef, String donnee) {
+		Donnee nouvelleDonnee = new Donnee(nouvelleClef, donnee);
 		if (racine == null)
-			racine = new NoeudArbreBinaire(nouvelleDonnée);
+			racine = new NoeudArbreBinaire(nouvelleDonnee);
 		else
-			racine.insère(nouvelleDonnée);
+			racine.insere(nouvelleDonnee);
 	}
 
 	public void affiche() {
@@ -16,7 +16,7 @@ public class ArbreBinaire {
 			racine.affiche(0);
 	}
 
-	public Donnée recherche(int clef) {
+	public Donnee recherche(int clef) {
 		if (racine != null)
 			return racine.recherche(clef);
 		else

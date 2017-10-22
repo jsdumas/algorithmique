@@ -8,28 +8,28 @@ public class TestTableHachage {
 		Scanner reader = new Scanner(System.in);
 		TableHachage table = new TableHachage();
 		int valeur;
-		table.insère(20, "20");
-		table.insère(50, "50");
-		table.insère(70, "70");
-		table.insère(90, "90");
+		table.insere(20, "20");
+		table.insere(50, "50");
+		table.insere(70, "70");
+		table.insere(90, "90");
 		table.affiche();
 		do {
-			System.out.print("Entrez une valeur à insérer (-100 pour terminer) : ");
+			System.out.print("Entrez une valeur e inserer (-100 pour terminer) : ");
 			valeur = reader.nextInt();
 			if (valeur != -100) {
-				table.insère(valeur, Integer.toString(valeur));
+				table.insere(valeur, Integer.toString(valeur));
 				table.affiche();
 			}
 		} while (valeur != -100);
 		do {
-			System.out.print("Entrez une clef à rechercher (-100 pour terminer) : ");
+			System.out.print("Entrez une clef e rechercher (-100 pour terminer) : ");
 			valeur = reader.nextInt();
 			if (valeur != -100) {
-				Donnée résultat = table.recherche(valeur);
-				if (résultat == null)
-					System.out.println("Clef non trouvée");
+				Donnee resultat = table.recherche(valeur);
+				if (resultat == null)
+					System.out.println("Clef non trouvee");
 				else
-					System.out.println("valeur : " + résultat.valeur);
+					System.out.println("valeur : " + resultat.valeur);
 			}
 		} while (valeur != -100);
 	}

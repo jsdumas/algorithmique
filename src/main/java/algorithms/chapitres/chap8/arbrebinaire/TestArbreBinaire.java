@@ -9,26 +9,26 @@ public class TestArbreBinaire {
 		ArbreBinaire arbre = new ArbreBinaire();
 		int valeur;
 		/*
-		 * arbre.insère(20,"20"); arbre.insère(50,"50"); arbre.insère(70,"70"); arbre.insère(90,"90");
+		 * arbre.insere(20,"20"); arbre.insere(50,"50"); arbre.insere(70,"70"); arbre.insere(90,"90");
 		 */
 		arbre.affiche();
 		do {
-			System.out.print("Entrez une valeur à insérer (-100 pour terminer) : ");
+			System.out.print("Entrez une valeur e inserer (-100 pour terminer) : ");
 			valeur = reader.nextInt();
 			if (valeur != -100) {
-				arbre.insère(valeur, Integer.toString(valeur));
+				arbre.insere(valeur, Integer.toString(valeur));
 				arbre.affiche();
 			}
 		} while (valeur != -100);
 		do {
-			System.out.print("Entrez une clef à rechercher (-100 pour terminer) : ");
+			System.out.print("Entrez une clef e rechercher (-100 pour terminer) : ");
 			valeur = reader.nextInt();
 			if (valeur != -100) {
-				Donnée résultat = arbre.recherche(valeur);
-				if (résultat == null)
-					System.out.println("Clef non trouvée");
+				Donnee resultat = arbre.recherche(valeur);
+				if (resultat == null)
+					System.out.println("Clef non trouvee");
 				else
-					System.out.println("valeur : " + résultat.valeur);
+					System.out.println("valeur : " + resultat.valeur);
 			}
 		} while (valeur != -100);
 	}

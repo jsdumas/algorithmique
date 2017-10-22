@@ -3,27 +3,27 @@ package algorithms.chapitres.chap4;
 import java.util.Scanner;
 
 public class Devine {
-	NombreAléatoire nombreAléatoire;
+	NombreAleatoire nombreAleatoire;
 	Scanner parser = new Scanner(System.in);
 
-	public Devine(NombreAléatoire nombreAléatoire) {
-		this.nombreAléatoire = nombreAléatoire;
+	public Devine(NombreAleatoire nombreAleatoire) {
+		this.nombreAleatoire = nombreAleatoire;
 	}
 
 	public int session() {
 		int tentative, resultat, nbrTentatives = 0;
 		do {
-			System.out.print("Proposez un nombre entier entre " + nombreAléatoire.getBorneInf() + " et " + nombreAléatoire.getBorneSup()
+			System.out.print("Proposez un nombre entier entre " + nombreAleatoire.getBorneInf() + " et " + nombreAleatoire.getBorneSup()
 					+ " : ");
 			tentative = parser.nextInt();
-			resultat = nombreAléatoire.compare(tentative);
+			resultat = nombreAleatoire.compare(tentative);
 			switch (resultat) {
 				case -1: {
 					System.out.println("Votre tentative est trop petite !");
 					break;
 				}
 				case 0: {
-					System.out.println("Vous avez trouvé le nombre !");
+					System.out.println("Vous avez trouve le nombre !");
 					break;
 				}
 				case 1: {

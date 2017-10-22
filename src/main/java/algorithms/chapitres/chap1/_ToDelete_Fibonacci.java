@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class _ToDelete_Fibonacci {
 
 	public static void main(String[] args) {
-		long somme, terme, termePrécédent;
+		long somme, terme, termePrecedent;
 		int n, i;
 		Scanner reader = new Scanner(System.in);
 		do {
@@ -15,18 +15,18 @@ public class _ToDelete_Fibonacci {
 		switch (n) {
 			case 1:
 			case 2: {
-				System.out.println("Le résultat vaut 1");
+				System.out.println("Le rï¿½sultat vaut 1");
 				break;
 			}
 			default: {
-				termePrécédent = 1;
+				termePrecedent = 1;
 				terme = 1;
 				for (i = 3; i <= n; i++) {
-					somme = terme + termePrécédent;
-					termePrécédent = terme;
+					somme = terme + termePrecedent;
+					termePrecedent = terme;
 					terme = somme;
 				}
-				System.out.println("Le résultat de la suite de Fibonacci pour" + n + " vaut : " + terme);
+				System.out.println("Le rï¿½sultat de la suite de Fibonacci pour" + n + " vaut : " + terme);
 			}
 		}
 	}

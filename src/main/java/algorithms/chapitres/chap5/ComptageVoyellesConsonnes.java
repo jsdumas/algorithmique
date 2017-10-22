@@ -6,21 +6,21 @@ public class ComptageVoyellesConsonnes {
 	static String voyelles = "aeiouyAEIOUY";
 
 	public static int compteVoyelles(String mot) {
-		int résultat = 0;
+		int resultat = 0;
 		for (int i = 0; i < mot.length(); i++)
 			if (voyelles.indexOf(mot.charAt(i)) != -1)
-				résultat++;
-		return résultat;
+				resultat++;
+		return resultat;
 	}
 
 	public static int compteConsonnes(String mot) {
-		int résultat = 0;
+		int resultat = 0;
 		for (int i = 0; i < mot.length(); i++) {
 			char c = mot.charAt(i);
 			if ((((c >= 'A') && (c <= 'Z')) || ((c >= 'a') && (c <= 'z'))) && (voyelles.indexOf(c) == -1))
-				résultat++;
+				resultat++;
 		}
-		return résultat;
+		return resultat;
 	}
 
 	public static void main(String[] args) {

@@ -5,25 +5,25 @@ import java.util.Scanner;
 public class CalculDivisionEuclidienne {
 
 	public static int[] divisionEuclidienne(int dividende, int diviseur) {
-		int[] résultat = new int[2];
-		résultat[0] = dividende / diviseur;
-		résultat[1] = dividende % diviseur;
-		return résultat;
+		int[] resultat = new int[2];
+		resultat[0] = dividende / diviseur;
+		resultat[1] = dividende % diviseur;
+		return resultat;
 	}
 
 	public static void main(String[] args) {
 		Scanner reader = new Scanner(System.in);
 		int dividende, diviseur;
-		int[] résultat;
+		int[] resultat;
 		// lecture du dividende et du diviseur
 		System.out.print("Entrez le dividende : ");
 		dividende = reader.nextInt();
 		System.out.print("Entrez le diviseur : ");
 		diviseur = reader.nextInt();
 		// calcul de la division
-		résultat = divisionEuclidienne(dividende, diviseur);
-		// affichage du résultat
-		System.out.println(" le quotient de la division de " + dividende + " par " + diviseur + " est " + résultat[0]);
-		System.out.println(" le reste de la division de " + dividende + " par " + diviseur + " est " + résultat[1]);
+		resultat = divisionEuclidienne(dividende, diviseur);
+		// affichage du resultat
+		System.out.println(" le quotient de la division de " + dividende + " par " + diviseur + " est " + resultat[0]);
+		System.out.println(" le reste de la division de " + dividende + " par " + diviseur + " est " + resultat[1]);
 	}
 }

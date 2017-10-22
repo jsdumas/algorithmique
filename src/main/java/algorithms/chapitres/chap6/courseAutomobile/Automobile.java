@@ -1,26 +1,26 @@
 package algorithms.chapitres.chap6.courseAutomobile;
 
 public class Automobile {
-	NombreAléatoireCourse nombreAléa;
-	int positionAprès, positionAvant, vitesseMax;
+	NombreAleatoireCourse nombreAlea;
+	int positionApres, positionAvant, vitesseMax;
 
-	public Automobile(int vitesseMax, NombreAléatoireCourse nombreAléa) {
+	public Automobile(int vitesseMax, NombreAleatoireCourse nombreAlea) {
 		this.vitesseMax = vitesseMax;
-		this.nombreAléa = nombreAléa;
+		this.nombreAlea = nombreAlea;
 		positionAvant = 0;
-		positionAprès = 0;
+		positionApres = 0;
 	}
 
 	public void avance() {
-		positionAvant = positionAprès;
-		positionAprès = positionAprès + nombreAléa.calcule(0, vitesseMax);
+		positionAvant = positionApres;
+		positionApres = positionApres + nombreAlea.calcule(0, vitesseMax);
 	}
 
 	public boolean aFranchiLigne(int positionLigne) {
-		return positionAprès > positionLigne;
+		return positionApres > positionLigne;
 	}
 
-	public boolean aDépassé(Automobile auto) {
-		return (positionAprès > auto.positionAprès) && (positionAvant <= auto.positionAvant);
+	public boolean aDepasse(Automobile auto) {
+		return (positionApres > auto.positionApres) && (positionAvant <= auto.positionAvant);
 	}
 }

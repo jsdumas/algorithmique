@@ -1,20 +1,20 @@
 package algorithms.chapitres.chap4;
 
 public class Fraction {
-	int numérateur, dénominateur;
+	int numerateur, denominateur;
 
-	public Fraction(int num, int dén) {
-		if ((num >= 0) && (dén > 0)) {
-			numérateur = num;
-			dénominateur = dén;
+	public Fraction(int num, int den) {
+		if ((num >= 0) && (den > 0)) {
+			numerateur = num;
+			denominateur = den;
 		} else {
-			numérateur = 0;
-			dénominateur = 1;
+			numerateur = 0;
+			denominateur = 1;
 		}
 	}
 
-	public double réel() {
-		return (double) numérateur / (double) dénominateur;
+	public double reel() {
+		return (double) numerateur / (double) denominateur;
 	}
 
 	public int pgcd(int a, int b) {
@@ -27,18 +27,18 @@ public class Fraction {
 		return b;
 	}
 
-	public void réduit() {
-		if (numérateur == 0)
+	public void reduit() {
+		if (numerateur == 0)
 			return;
-		int pgcdNumDén = pgcd(numérateur, dénominateur);
-		numérateur = numérateur / pgcdNumDén;
-		dénominateur = dénominateur / pgcdNumDén;
+		int pgcdNumDen = pgcd(numerateur, denominateur);
+		numerateur = numerateur / pgcdNumDen;
+		denominateur = denominateur / pgcdNumDen;
 	}
 
 	public Fraction addition(Fraction uneFraction) {
-		Fraction résultat = new Fraction(numérateur * uneFraction.dénominateur + uneFraction.numérateur * dénominateur, dénominateur
-				* uneFraction.dénominateur);
-		résultat.réduit();
-		return résultat;
+		Fraction resultat = new Fraction(numerateur * uneFraction.denominateur + uneFraction.numerateur * denominateur, denominateur
+				* uneFraction.denominateur);
+		resultat.reduit();
+		return resultat;
 	}
 }

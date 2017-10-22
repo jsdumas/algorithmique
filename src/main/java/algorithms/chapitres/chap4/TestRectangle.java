@@ -13,6 +13,6 @@ public class TestRectangle {
 		hauteur = reader.nextInt();
 		Rectangle rect = new Rectangle(largeur, hauteur);
 		System.out.println("Surface du rectangle : " + rect.surface());
-		System.out.println("Périmère du rectangle : " + rect.périmètre());
+		System.out.println("PÃ©rimetre du rectangle : " + rect.perimetre());
 	}
 }

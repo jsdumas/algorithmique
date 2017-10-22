@@ -1,51 +1,51 @@
 package algorithms.chapitres.chap4;
 
 public class Complexe2 {
-	double réel, imaginaire;
+	double reel, imaginaire;
 
-	public double getRéel() {
-		return réel;
+	public double getReel() {
+		return reel;
 	}
 
 	public double getImaginaire() {
 		return imaginaire;
 	}
 
-	public void setRéel(double réel) {
-		this.réel = réel;
+	public void setReel(double reel) {
+		this.reel = reel;
 	}
 
 	public void setImaginaire(double imaginaire) {
 		this.imaginaire = imaginaire;
 	}
 
-	public Complexe2(double réel, double imaginaire) {
-		this.réel = réel;
+	public Complexe2(double reel, double imaginaire) {
+		this.reel = reel;
 		this.imaginaire = imaginaire;
 	}
 
 	public double module() {
-		return Math.sqrt(réel * réel + imaginaire * imaginaire);
+		return Math.sqrt(reel * reel + imaginaire * imaginaire);
 	}
 
-	public void ajouteRéel(double argument) {
-		réel = réel + argument;
+	public void ajouteReel(double argument) {
+		reel = reel + argument;
 	}
 
-	public void multiplieRéel(double argument) {
-		réel = réel * argument;
+	public void multiplieReel(double argument) {
+		reel = reel * argument;
 		imaginaire = imaginaire * argument;
 	}
 
 	public void ajouteComplexe(Complexe2 argument) {
-		réel = réel + argument.getRéel();
+		reel = reel + argument.getReel();
 		imaginaire = imaginaire + argument.getImaginaire();
 	}
 
 	public void multiplieComplexe(Complexe2 argument) {
-		double tempRéel;
-		tempRéel = réel * argument.getRéel() - imaginaire * argument.getImaginaire();
-		imaginaire = réel * argument.getImaginaire() + imaginaire * argument.getRéel();
-		réel = tempRéel;
+		double tempReel;
+		tempReel = reel * argument.getReel() - imaginaire * argument.getImaginaire();
+		imaginaire = reel * argument.getImaginaire() + imaginaire * argument.getReel();
+		reel = tempReel;
 	}
 }

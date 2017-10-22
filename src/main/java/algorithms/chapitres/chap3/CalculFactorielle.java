@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class CalculFactorielle {
 
 	public static long factorielle(int n) {
-		long résultat;
-		résultat = 1;
+		long resultat;
+		resultat = 1;
 		for (int i = 2; i <= n; i++)
-			résultat = résultat * i;
-		return résultat;
+			resultat = resultat * i;
+		return resultat;
 	}
 
 	public static void main(String[] args) {

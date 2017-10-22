@@ -4,20 +4,20 @@ import java.util.Scanner;
 
 public class AdditionneurMultiplicateur {
 	static Scanner reader = new Scanner(System.in);
-	static String opérateur;
+	static String operateur;
 
 	public static int addMult(int dernValeur) {
 		System.out.print("Entrez un nombre ou '*' ou '+' : ");
 		String ligne = reader.next();
 		if ((ligne.equals("*")) || (ligne.equals("+"))) {
-			opérateur = ligne;
+			operateur = ligne;
 			return dernValeur;
 		}
-		int résultat = addMult(Integer.parseInt(ligne));
-		if (opérateur.equals("*"))
-			return résultat * dernValeur;
+		int resultat = addMult(Integer.parseInt(ligne));
+		if (operateur.equals("*"))
+			return resultat * dernValeur;
 		else
-			return résultat + dernValeur;
+			return resultat + dernValeur;
 	}
 
 	public static void main(String[] args) {

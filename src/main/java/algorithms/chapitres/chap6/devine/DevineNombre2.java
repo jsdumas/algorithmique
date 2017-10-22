@@ -2,26 +2,26 @@ package algorithms.chapitres.chap6.devine;
 
 public class DevineNombre2 {
 	LienDevine lien;
-	NombreAléatoire nbrAléatoire;
+	NombreAleatoire nbrAleatoire;
 
-	public DevineNombre2(NombreAléatoire nbrAléatoire) {
-		this.nbrAléatoire = nbrAléatoire;
-		this.lien = new LienDevine(nbrAléatoire);
+	public DevineNombre2(NombreAleatoire nbrAleatoire) {
+		this.nbrAleatoire = nbrAleatoire;
+		this.lien = new LienDevine(nbrAleatoire);
 	}
 
 	public int devine() {
-		int borneInf = nbrAléatoire.getBorneInf();
-		int borneSup = nbrAléatoire.getBorneSup();
-		int milieu, réponse;
+		int borneInf = nbrAleatoire.getBorneInf();
+		int borneSup = nbrAleatoire.getBorneSup();
+		int milieu, reponse;
 		lien.initialise();
 		do {
 			milieu = (borneInf + borneSup) / 2;
-			réponse = lien.propose(milieu);
-			if (réponse == 1)
+			reponse = lien.propose(milieu);
+			if (reponse == 1)
 				borneSup = milieu - 1;
-			else if (réponse == -1)
+			else if (reponse == -1)
 				borneInf = milieu + 1;
-		} while (réponse != 0);
+		} while (reponse != 0);
 		return lien.getNombreTentatives();
 	}
 }

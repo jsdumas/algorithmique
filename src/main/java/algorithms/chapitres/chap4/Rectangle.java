@@ -28,7 +28,7 @@ public class Rectangle {
 		return largeur * hauteur;
 	}
 
-	public int périmètre() {
+	public int perimetre() {
 		return (largeur + hauteur) * 2;
 	}
 }

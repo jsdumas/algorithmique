@@ -9,9 +9,9 @@ public class Automobile {
 		moteur = new Moteur("moteur de " + nom);
 	}
 
-	public void démarre() {
-		System.out.println(nom + " a commencé à démarrer.");
-		moteur.démarre();
-		System.out.println(nom + " a terminé de démarrer.");
+	public void demarre() {
+		System.out.println(nom + " a commence e demarrer.");
+		moteur.demarre();
+		System.out.println(nom + " a termine de demarrer.");
 	}
 }
