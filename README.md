@@ -16,25 +16,25 @@ Don't Repeat Yourself
 Keep it Stupid-Simple
 
 ### Law of Demeter
-On ne fait confiance qu'à ses amis, pas aux amis de ses amis.
+We trust only his friends, not the friends of his friends.
 
 ### MoSCcoW Method
 
 ### Polymorphism
 
 ### SOLID
-Single Responsibility Principle : une classe, une fonction ou une méthode doit avoir une et une seule responsabilité
+Single Responsibility Principle : a class, function or method must have one and only one responsibility
 
-Open/closed principle : une classe doit être ouverte à l'extension, mais fermée à la modification
+Open/closed principle : a class must be open to extension, but closed to modification
 
-Liskov substitution Principle : une instance de type T doit pouvoir être remplacée par une instance de type G, tel que G sous-type de T, sans que cela ne modifie la cohérence du programme
+Liskov substitution Principle : An instance of type T should be replaced by an instance of type G, such as G subtype of T, without modifying the coherence of the program
 
-Interface segregation principle : préférer plusieurs interfaces spécifiques pour chaque client plutôt qu'une seule interface générale
+Interface segregation principle : prefer multiple specific interfaces for each client rather than one general interface
 
 Dependency Inversion Principle
 
 ### YAGNI
-You Ain't Gonna Need It
+You ain't Gonna Need It
 
 
 ## Links
