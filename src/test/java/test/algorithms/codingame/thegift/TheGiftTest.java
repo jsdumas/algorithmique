@@ -8,16 +8,21 @@ import algorithms.codingame.thegift.TheGift;
 
 public class TheGiftTest {
 	
-	private int budget_1;
-	private int budget_2;
-	private int budget_3;
+	private static final String IMPOSSIBLE = "IMPOSSIBLE";
+	private static final int CONTRIBUTORS = 3;
 	private static final int GIFT_VALUE = 100;
-	private static final TheGift THE_GIFT = new TheGift(GIFT_VALUE);
+	private static final TheGift THE_GIFT = new TheGift(CONTRIBUTORS, GIFT_VALUE);
 	
 	private void initBudget(int budget_1, int budget_2, int budget_3) {
-		this.budget_1=budget_1;
-		this.budget_2=budget_2;
-		this.budget_3=budget_3;
+		this.THE_GIFT.initBudget(1, budget_1);
+		this.THE_GIFT.initBudget(2, budget_2);
+		this.THE_GIFT.initBudget(3, budget_3);
+	}
+	
+	@Test
+	public void shouldReturnImpossible() {
+		initBudget(3,42,30);
+		MatcherAssert.assertThat(THE_GIFT.shareBudget(), Matchers.equalTo(IMPOSSIBLE));
 	}
 
 	@Test
