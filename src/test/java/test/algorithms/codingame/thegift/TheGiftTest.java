@@ -14,9 +14,9 @@ public class TheGiftTest {
 	private static final TheGift THE_GIFT = new TheGift(CONTRIBUTORS, GIFT_VALUE);
 	
 	private void initBudget(int budget_1, int budget_2, int budget_3) {
-		this.THE_GIFT.initBudget(1, budget_1);
-		this.THE_GIFT.initBudget(2, budget_2);
-		this.THE_GIFT.initBudget(3, budget_3);
+		this.THE_GIFT.initBudget(0, budget_1);
+		this.THE_GIFT.initBudget(1, budget_2);
+		this.THE_GIFT.initBudget(2, budget_3);
 	}
 	
 	@Test
@@ -28,6 +28,6 @@ public class TheGiftTest {
 	@Test
 	public void shouldReturnThreeFourtyTwoAndFourtyFive() {
 		initBudget(3,42,100);
-		MatcherAssert.assertThat(THE_GIFT.calculateParticipation(), Matchers.contains(3,42,45));
+		MatcherAssert.assertThat(THE_GIFT.shareBudget(), Matchers.equalTo("3\n42\n55"));
 	}
 }
