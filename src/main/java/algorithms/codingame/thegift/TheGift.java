@@ -36,7 +36,7 @@ public class TheGift {
 
 	public String shareBudget() {
 		int totalBudget = 0;
-		for (int idContributor = 1; idContributor < contributors ; idContributor++) {
+		for (int idContributor = 0; idContributor < contributors ; idContributor++) {
 			totalBudget+=budgets[idContributor];
 		}
 		if(totalBudget<giftValue)	
