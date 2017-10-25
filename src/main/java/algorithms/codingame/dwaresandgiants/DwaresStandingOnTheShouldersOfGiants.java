@@ -16,7 +16,6 @@ public class DwaresStandingOnTheShouldersOfGiants {
 			if( !pers.isVisited() ){
 				currentInfluencerChainSize+=1;
 				pers.setVisited(true);
-				pers.setPredecessor(person);
 				if(pers.getHeirs().isEmpty()) {
 					if(longuestInfluencerChainSize<currentInfluencerChainSize) {
 						longuestInfluencerChainSize = currentInfluencerChainSize;

@@ -8,7 +8,6 @@ public class Person {
 	private final int id;
 	private List<Person> heirs;
 	private boolean visited;
-	private Person predecessor;
 
 	public Person(int id) {
 		this.id = id;
@@ -18,15 +17,6 @@ public class Person {
 	public void addHeir(Person person) {
 		this.heirs.add(person);
 	}
-
-	public Person getPredecessor() {
-		return predecessor;
-	}
-
-	public void setPredecessor(Person predecessor) {
-		this.predecessor = predecessor;
-	}
-
 
 	public int getId() {
 		return id;
