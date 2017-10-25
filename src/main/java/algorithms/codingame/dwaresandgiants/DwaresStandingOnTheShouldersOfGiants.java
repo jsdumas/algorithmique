@@ -2,10 +2,31 @@ package algorithms.codingame.dwaresandgiants;
 
 public class DwaresStandingOnTheShouldersOfGiants {
 
-	private Person person;
+	private int longuestInfluencerChainSize;
 
-	public DwaresStandingOnTheShouldersOfGiants(Person person) {
-		this.person = person;
+	
+	public int findTheLongestInfluenceInheritance(Person person){
+		longuestInfluencerChainSize=0;
+		findTheLongestInfluenceInheritance(person,1);
+		return longuestInfluencerChainSize;
 	}
+
+	private void findTheLongestInfluenceInheritance(Person person, int currentInfluencerChainSize) {
+		for( Person pers : person.getHeirs() ){
+			if( !pers.isVisited() ){
+				currentInfluencerChainSize+=1;
+				pers.setVisited(true);
+				pers.setPredecessor(person);
+				if(pers.getHeirs().isEmpty()) {
+					if(longuestInfluencerChainSize<currentInfluencerChainSize) {
+						longuestInfluencerChainSize = currentInfluencerChainSize;
+					}
+					currentInfluencerChainSize=1;
+					
+				} 				}
+				findTheLongestInfluenceInheritance(pers, currentInfluencerChainSize);
+		}
+	}
+
 
 }

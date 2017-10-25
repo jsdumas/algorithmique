@@ -6,17 +6,17 @@ import java.util.List;
 public class Person {
 	
 	private final int id;
-	private List<Person> influencerList;
+	private List<Person> heirs;
 	private boolean visited;
 	private Person predecessor;
 
 	public Person(int id) {
 		this.id = id;
-		this.influencerList = new ArrayList<>();
+		this.heirs = new ArrayList<>();
 	}
 
-	public void addNeighbour(Person person) {
-		this.influencerList.add(person);
+	public void addHeir(Person person) {
+		this.heirs.add(person);
 	}
 
 	public Person getPredecessor() {
@@ -40,8 +40,8 @@ public class Person {
 		this.visited = visited;
 	}
 
-	public List<Person> getInfluencerList() {
-		return influencerList;
+	public List<Person> getHeirs() {
+		return heirs;
 	}
 
 }
