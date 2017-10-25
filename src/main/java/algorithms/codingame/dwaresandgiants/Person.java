@@ -7,15 +7,22 @@ public class Person {
 	
 	private final int id;
 	private List<Person> heirs;
+	private List<Person> ancestors;
+
 	private boolean visited;
 
 	public Person(int id) {
 		this.id = id;
 		this.heirs = new ArrayList<>();
+		this.ancestors = new ArrayList<>();
 	}
 
 	public void addHeir(Person person) {
 		this.heirs.add(person);
+	}
+	
+	public void addAncestor(Person person) {
+		this.ancestors.add(person);
 	}
 
 	public int getId() {
@@ -32,6 +39,10 @@ public class Person {
 
 	public List<Person> getHeirs() {
 		return heirs;
+	}
+	
+	public List<Person> getAncestors() {
+		return ancestors;
 	}
 
 }

@@ -15,18 +15,25 @@ public class InfluencerBuilder {
 	}
 
 	private void initPersonDirectory(int influencerNumber) {
-		for(int i=1; i<influencerNumber+1; i++) {
+		for(int i=1; i<=influencerNumber; i++) {
 			personDirectory.put(i, new Person(i));
 		}
 	}
 
 	public InfluencerBuilder withInheritance(int idPredecessor, int idHeir) {
-		personDirectory.get(idPredecessor).addHeir(personDirectory.get(idHeir));
+		Person predecessor = personDirectory.get(idPredecessor);
+		Person heir = personDirectory.get(idHeir);
+		predecessor.addHeir(heir);
+		heir.addAncestor(predecessor);
 		return this;
 	}
 
 	public Person build() {
-		return personDirectory.get(1);
+		Person ancestor=personDirectory.get(1);
+		while(!ancestor.getAncestors().isEmpty()){
+			ancestor=ancestor.getAncestors().get(0);
+		}
+		return ancestor;
 	}
 
 }
