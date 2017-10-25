@@ -9,25 +9,20 @@ import algorithms.codingame.thegift.TheGift;
 public class TheGiftTest {
 	
 	private static final String IMPOSSIBLE = "IMPOSSIBLE";
-	private static final int CONTRIBUTORS = 3;
 	private static final int GIFT_VALUE = 100;
-	private static final TheGift THE_GIFT = new TheGift(CONTRIBUTORS, GIFT_VALUE);
+	private static final int[] CONTRIBUTORS_WITHOUT_BUDGET = {3,42,30};
+	private static final int[] CONTRIBUTORS_WITH_BUDGET = {3,42,100};
 	
-	private void initBudget(int budget_1, int budget_2, int budget_3) {
-		this.THE_GIFT.initBudget(0, budget_1);
-		this.THE_GIFT.initBudget(1, budget_2);
-		this.THE_GIFT.initBudget(2, budget_3);
-	}
 	
 	@Test
 	public void shouldReturnImpossible() {
-		initBudget(3,42,30);
-		MatcherAssert.assertThat(THE_GIFT.shareBudget(), Matchers.equalTo(IMPOSSIBLE));
+		TheGift theGift = new TheGift(CONTRIBUTORS_WITHOUT_BUDGET, GIFT_VALUE);
+		MatcherAssert.assertThat(theGift.shareBudget(), Matchers.equalTo(IMPOSSIBLE));
 	}
 
 	@Test
 	public void shouldReturnThreeFourtyTwoAndFourtyFive() {
-		initBudget(3,42,100);
-		MatcherAssert.assertThat(THE_GIFT.shareBudget(), Matchers.equalTo("3\n42\n55"));
+		TheGift theGift = new TheGift(CONTRIBUTORS_WITH_BUDGET, GIFT_VALUE);
+		MatcherAssert.assertThat(theGift.shareBudget(), Matchers.equalTo("3\n42\n55"));
 	}
 }

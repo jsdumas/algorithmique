@@ -5,26 +5,22 @@ import java.util.Arrays;
 public class TheGift {
 
 	private int giftValue;
-	private int[] budgets;
-	private int contributors;
+	private final int contributors;
+	private final int[] contributorsBudget;
 
-	public TheGift(int contributors, int giftValue) {
-		this.contributors = contributors;
-		this.budgets = new int[contributors];
-		this.budgets[0] = 0;
+	public TheGift(int[] contributorsBudget, int giftValue) {
+		this.contributors=contributorsBudget.length;
+		this.contributorsBudget = contributorsBudget;
 		this.giftValue = giftValue;
 	}
 
-	public void initBudget(int idContributor, int budget) {
-		budgets[idContributor] = budget;
-	}
 
 	private String calculateParticipation() {
 		String result="";
-		Arrays.sort(budgets);
+		Arrays.sort(contributorsBudget);
 		for (int contributorId = 0; contributorId < contributors; contributorId++) {
 			int sharing = giftValue /(contributors-contributorId);
-			Integer pay = Math.min(budgets[contributorId], sharing);
+			Integer pay = Math.min(contributorsBudget[contributorId], sharing);
 			result+=pay.toString();
 			if(contributorId!=contributors-1) {
 				result+="\n";
@@ -37,7 +33,7 @@ public class TheGift {
 	public String shareBudget() {
 		int totalBudget = 0;
 		for (int idContributor = 0; idContributor < contributors ; idContributor++) {
-			totalBudget+=budgets[idContributor];
+			totalBudget+=contributorsBudget[idContributor];
 		}
 		if(totalBudget<giftValue)	
 			return "IMPOSSIBLE";
