@@ -1,18 +1,18 @@
 package algorithms.codingame.bender;
 
-public class CharpObstacleState implements BenderState {
+public class CharpObstacleState implements CaseState {
 
 	@Override
-	public String getDirection() {
+	public Direction getDirection() {
 		if(true)
-			return Direction.SOUTH.getDirection();
+			return Direction.SOUTH;
 		if(true)
-			return Direction.EAST.getDirection();
+			return Direction.EAST;
 		if(true)
-			return Direction.NORTH.getDirection();
+			return Direction.NORTH;
 		if(true)
-			return Direction.WEST.getDirection();
-		return Direction.LOOP.getDirection();
+			return Direction.WEST;
+		return Direction.LOOP;
 	}
 
 }

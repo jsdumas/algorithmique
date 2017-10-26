@@ -1,11 +1,16 @@
 package algorithms.codingame.bender;
 
-public class StartState implements BenderState {
+public class StartState implements CaseState {
 
 
 	@Override
-	public String getDirection() {
-		return Direction.SOUTH.getDirection();
+	public Direction getDirection() {
+		return Direction.SOUTH;
+	}
+
+	@Override
+	public Case getNextCase(Case currentCase) {
+		return new Case(currentCase.getIdRow(),currentCase.getIdCol()+1);
 	}
 
 }

@@ -14,8 +14,4 @@ public enum Direction {
 		this.direction = direction;
 	}
 
-	public String getDirection() {
-		return direction;
-	}
-
 }

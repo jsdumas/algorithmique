@@ -2,28 +2,30 @@ package algorithms.codingame.bender;
 
 public class BenderMapBuilder {
 	
-	private final BenderMap benderMap;
+	private final char [][] map;
+	private Case startCase;
+	private Case suicideCase;
 
 	public BenderMapBuilder(int row, int col) {
-		benderMap= new BenderMap(row, col);
+		map = new char [row][col];
 	}
 
 	public BenderMapBuilder withLine(int idRow, String line) {
 		char[] lineToCharArray = line.toCharArray();
 		for(int i=0; i<lineToCharArray.length; i++) {
 			if(lineToCharArray[i]=='@') {
-				Case startCase = new Case(idRow, i);
+				startCase = new Case(idRow, i);
 			}
 			if(lineToCharArray[i]=='$') {
-				Case suicideCase = new Case(idRow, i);
+				suicideCase = new Case(idRow, i);
 			}
-			benderMap.getMap()[idRow][i]=lineToCharArray[i];
+			map[idRow][i]=lineToCharArray[i];
 		}
 		return this;
 	}
 
 	public BenderMap build() {
-		return benderMap;
+		return new BenderMap(map, startCase, suicideCase);
 	}
 
 }

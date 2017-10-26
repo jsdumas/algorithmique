@@ -12,7 +12,7 @@ import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import algorithms.codingame.bender.BenderMap;
-import algorithms.codingame.bender.BenderState;
+import algorithms.codingame.bender.CaseState;
 import algorithms.codingame.bender.CaseType;
 import algorithms.codingame.bender.Direction;
 import algorithms.codingame.bender.Feasible;
@@ -25,14 +25,14 @@ public class StateTest {
 	
 	@Test
 	public void shouldGetSouth() {
-		BenderState at = STATE_FACTORY.getState(START.getChar());
-		assertThat(at.getDirection(), equalTo(SOUTH.getDirection()));
+		CaseState at = STATE_FACTORY.getState(START.getChar());
+		assertThat(at.getDirection(), equalTo(SOUTH.directionToString()));
 	}
 	
 	@Test
 	public void shouldGetWest() {
-		BenderState charp = STATE_FACTORY.getState(CHARP_OBSTACLE.getChar());
-		assertThat(charp.getDirection(), equalTo(WEST.getDirection()));
+		CaseState charp = STATE_FACTORY.getState(CHARP_OBSTACLE.getChar());
+		assertThat(charp.getDirection(), equalTo(WEST.directionToString()));
 	}
 	
 //	@Test

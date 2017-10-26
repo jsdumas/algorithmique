@@ -2,49 +2,49 @@ package algorithms.codingame.bender;
 
 public class StateFactory {
 
-	public BenderState getState(char state) {
-		BenderState benderState;
+	public CaseState getState(char state) {
+		CaseState caseState;
 		switch (state) {
 			case '@':
-				benderState = new StartState();
+				caseState = new StartState();
 				break;
 			case ' ':
-				benderState=null;
+				caseState=null;
 				break;
 			case '#':
-				benderState = new CharpObstacleState();
+				caseState = new CharpObstacleState();
 				break;
 			case 'X':
-				benderState=null;
+				caseState=null;
 				break;
 			case 'S':
-				benderState=null;
+				caseState=null;
 				break;
 			case 'E':
-				benderState=null;
+				caseState=null;
 				break;
 			case 'N':
-				benderState=null;
+				caseState=null;
 				break;
 			case 'W':
-				benderState=null;
+				caseState=null;
 				break;
 			case 'I':
-				benderState=null;
+				caseState=null;
 				break;
 			case 'B':
-				benderState=null;
+				caseState=null;
 				break;
 			case 'T':
-				benderState=null;
+				caseState=null;
 				break;
 			case '$':
-				benderState=null;
+				caseState=null;
 				break;
 			default:
-				benderState=null;
+				caseState=null;
 		}
-		return benderState;
+		return caseState;
 	}
 
 }
