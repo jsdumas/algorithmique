@@ -10,7 +10,7 @@ public class StartState implements CaseState {
 
 	@Override
 	public Case getNextCase(Case currentCase) {
-		return new Case(currentCase.getIdRow(),currentCase.getIdCol()+1);
+		return new Case(currentCase.getIdRow()+1,currentCase.getIdCol());
 	}
 
 }

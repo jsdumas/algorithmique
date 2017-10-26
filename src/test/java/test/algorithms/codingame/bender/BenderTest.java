@@ -17,8 +17,8 @@ public class BenderTest {
 	private static final String LINE_1 = "#@#";
 	private static final String LINE_2 = "# #";
 	private static final String LINE_3 = "###";
-	private static final BenderMap CASE_START_AND_GET_SOUTH = new BenderMapBuilder(3,3).withLine(1, LINE_1).withLine(2, LINE_2).build();
-	private static final BenderMap CASE_START_AND_GET_LOOP = new BenderMapBuilder(3,3).withLine(1, LINE_1).withLine(2, LINE_3).build();
+	private static final BenderMap CASE_START_AND_GET_SOUTH = new BenderMapBuilder(3,3).withLine(0, LINE_1).withLine(1, LINE_2).build();
+	private static final BenderMap CASE_START_AND_GET_LOOP = new BenderMapBuilder(3,3).withLine(0, LINE_1).withLine(1, LINE_3).build();
 	
 	
 	@Test

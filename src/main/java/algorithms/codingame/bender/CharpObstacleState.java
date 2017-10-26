@@ -15,4 +15,10 @@ public class CharpObstacleState implements CaseState {
 		return Direction.LOOP;
 	}
 
+	@Override
+	public Case getNextCase(Case currentCase) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }
