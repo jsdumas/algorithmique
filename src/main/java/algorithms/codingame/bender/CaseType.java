@@ -1,0 +1,29 @@
+package algorithms.codingame.bender;
+
+public enum CaseType {
+	
+	START('@'),
+	EMPTY(' '),
+	CHARP_OBSTACLE('#'),
+	X_OBSTACLE('X'),
+	S_MODIFIER('S'),
+	E_MODIFIER('E'),
+	N_MODIFIER('N'),
+	W_MODIFIER('W'),
+	INVERSEUR('I'),
+	BIERE('B'),
+	TELEPORTER('T'),
+	SUICIDE('$');
+	
+	private char character;
+	
+	private CaseType(char character) {
+		this.character=character;
+	}
+
+	public char getChar() {
+		return character;
+	}
+	
+
+}
