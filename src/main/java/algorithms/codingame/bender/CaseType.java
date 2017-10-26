@@ -25,5 +25,12 @@ public enum CaseType {
 		return character;
 	}
 	
+	
+	 public static CaseType getCaseTypeForCharacter(final char character)   {
+	        for (CaseType caseType : CaseType.values())
+	            if (caseType.character == character)
+	                return caseType;
+	        return null;
+    }
 
 }

@@ -14,22 +14,30 @@ import algorithms.codingame.bender.Direction;
 
 public class BenderTest {
 	
-	private static final String LINE_1 = "#@#";
-	private static final String LINE_2 = "# #";
-	private static final String LINE_3 = "###";
-	private static final BenderMap CASE_START_AND_GET_SOUTH = new BenderMapBuilder(3,3).withLine(0, LINE_1).withLine(1, LINE_2).build();
-	private static final BenderMap CASE_START_AND_GET_LOOP = new BenderMapBuilder(3,3).withLine(0, LINE_1).withLine(1, LINE_3).build();
+	private static final String LINE_START = "#@#";
+	private static final String LINE_EMPTY = "# #";
+	private static final String LINE_CHARP = "###";
+	private static final String LINE_X = "XXX";
+	private static final BenderMap CASE_START_AND_GET_SOUTH = new BenderMapBuilder(3,3).withLine(0, LINE_CHARP).withLine(1, LINE_START).withLine(2, LINE_EMPTY).build();
+	private static final BenderMap CASE_START_AND_GET_LOOP_BECAUSE_OF_CHARP = new BenderMapBuilder(3,3).withLine(0, LINE_CHARP).withLine(1, LINE_START).withLine(2, LINE_CHARP).build();
+	private static final BenderMap CASE_START_AND_GET_LOOP_BECAUSE_OF_X = new BenderMapBuilder(3,3).withLine(0, LINE_CHARP).withLine(1, LINE_START).withLine(2, LINE_X).build();
 	
 	
 	@Test
-	public void shouldGetSouth() {
+	public void shouldGetSouthFromStart() {
 		Bender bender = new Bender(CASE_START_AND_GET_SOUTH);
 		assertThat(bender.walkTo(), equalTo(SOUTH.toString()));
 	}
 	
 	@Test
-	public void shouldGetLoop() {
-		Bender bender = new Bender(CASE_START_AND_GET_LOOP);
+	public void shouldGetLoopFromStartBecauseOfCharp() {
+		Bender bender = new Bender(CASE_START_AND_GET_LOOP_BECAUSE_OF_CHARP);
+		assertThat(bender.walkTo(), equalTo(LOOP.toString()));
+	}
+	
+	@Test
+	public void shouldGetLoopFromStartBecauseOfX() {
+		Bender bender = new Bender(CASE_START_AND_GET_LOOP_BECAUSE_OF_X);
 		assertThat(bender.walkTo(), equalTo(LOOP.toString()));
 	}
 

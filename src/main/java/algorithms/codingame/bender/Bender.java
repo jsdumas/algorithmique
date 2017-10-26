@@ -1,11 +1,17 @@
 package algorithms.codingame.bender;
 
+import static algorithms.codingame.bender.CaseType.CHARP_OBSTACLE;
+import static algorithms.codingame.bender.CaseType.EMPTY;
+import static algorithms.codingame.bender.CaseType.S_MODIFIER;
+import static algorithms.codingame.bender.CaseType.X_OBSTACLE;
+
 public class Bender {
 	
 	private static final StateFactory STATE_FACTORY = new StateFactory();
 	private final BenderMap benderMap;
 	private Case currentCase;
 	private Case nextCase;
+	private Direction nextDirection;
 	
 	
 	public Bender(BenderMap benderMap) {
@@ -15,23 +21,18 @@ public class Bender {
 	
 	
 	public String walkTo() {
-		char state = benderMap.getMap()[currentCase.getIdRow()][currentCase.getIdCol()];
+		char state = getState(currentCase);
 		CaseState caseState = STATE_FACTORY.getState(state);
-		nextCase = caseState.getNextCase(currentCase);
-		
-		if(isWalkable(nextCase)) {
-			return caseState.getDirection().toString();
-		}
-		
-		return Direction.LOOP.toString();
+		nextCase = caseState.getNextCase(currentCase, benderMap.getMap());
+		return caseState.getDirection().toString();
 	}
 
 
-	private boolean isWalkable(Case nextCase) {
-		char state = benderMap.getMap()[nextCase.getIdRow()][nextCase.getIdCol()];
-		if(state=='#' || state=='X')
-			return false;
-		return true;
+
+
+	private char getState(Case caseState) {
+		return benderMap.getMap()[caseState.getIdRow()][caseState.getIdCol()];
 	}
+
 
 }
