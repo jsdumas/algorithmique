@@ -15,24 +15,24 @@ public class StartState implements CaseState {
 
 	@Override
 	public Case getNextCase(CaseArea area) {
-		if(!getSouth(area).getCaseType().equals(CHARP_OBSTACLE) && !getSouth(area).getCaseType().equals(X_OBSTACLE)){
+		if(!getSouth(area).getCaseType().equals(CHARP_OBSTACLE) && !getSouth(area).getCaseType().equals(X_OBSTACLE) && getSouth(area)!=null){
 			direction = Direction.SOUTH;
 			return getSouth(area);
 		}
-		if(!getEast(area).getCaseType().equals(CHARP_OBSTACLE) && !getEast(area).getCaseType().equals(X_OBSTACLE)){
+		if(!getEast(area).getCaseType().equals(CHARP_OBSTACLE) && !getEast(area).getCaseType().equals(X_OBSTACLE) && getEast(area)!=null){
 			direction = Direction.EAST;
 			return getEast(area);
 		}
-		if(!getNorth(area).getCaseType().equals(CHARP_OBSTACLE) && !getNorth(area).getCaseType().equals(X_OBSTACLE)){
+		if(!getNorth(area).getCaseType().equals(CHARP_OBSTACLE) && !getNorth(area).getCaseType().equals(X_OBSTACLE) && getNorth(area)!=null){
 			direction = Direction.NORTH;
 			return getNorth(area);
 		}
-		if(!getWest(area).getCaseType().equals(CHARP_OBSTACLE) && !getWest(area).getCaseType().equals(X_OBSTACLE)){
+		if(!getWest(area).getCaseType().equals(CHARP_OBSTACLE) && !getWest(area).getCaseType().equals(X_OBSTACLE) && getWest(area)!=null){
 			direction = Direction.WEST;
 			return getWest(area);
 		}
 		direction =  Direction.LOOP;
-		return null;
+		return area.getCurrentCase();
 	}
 
 	private Case getWest(CaseArea area) {

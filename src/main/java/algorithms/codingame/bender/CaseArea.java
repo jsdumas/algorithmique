@@ -23,6 +23,9 @@ public class CaseArea {
 	}
 
 	private Case setCase(int idRow, int idCol) {
+		if(idRow>map[0].length-1 || idCol>map.length-1) {
+			return null;
+		}
 		return new Case(idRow, idCol, CaseType.getCaseTypeForCharacter(map[idRow][idCol]));
 	}
 
@@ -40,6 +43,10 @@ public class CaseArea {
 
 	public Case getWest() {
 		return west;
+	}
+
+	public Case getCurrentCase() {
+		return currentCase;
 	}
 
 }
