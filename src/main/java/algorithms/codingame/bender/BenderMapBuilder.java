@@ -14,10 +14,10 @@ public class BenderMapBuilder {
 		char[] lineToCharArray = line.toCharArray();
 		for(int i=0; i<lineToCharArray.length; i++) {
 			if(lineToCharArray[i]=='@') {
-				startCase = new Case(idRow, i);
+				startCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('@'));
 			}
 			if(lineToCharArray[i]=='$') {
-				suicideCase = new Case(idRow, i);
+				suicideCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('$'));
 			}
 			map[idRow][i]=lineToCharArray[i];
 		}

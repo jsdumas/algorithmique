@@ -12,7 +12,7 @@ public class StateFactory {
 				caseState=null;
 				break;
 			case '#':
-				caseState = new CharpObstacleState();
+				caseState = null;
 				break;
 			case 'X':
 				caseState=null;

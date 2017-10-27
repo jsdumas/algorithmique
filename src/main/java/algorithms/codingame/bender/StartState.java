@@ -14,41 +14,41 @@ public class StartState implements CaseState {
 	}
 
 	@Override
-	public Case getNextCase(Case currentCase, char[][] map) {
-		char state = map[currentCase.getIdRow()+1][currentCase.getIdCol()];
-		CaseType caseType = CaseType.getCaseTypeForCharacter(state);
-		
-		if(!caseType.equals(CHARP_OBSTACLE) && !caseType.equals(X_OBSTACLE)){
+	public Case getNextCase(CaseArea area) {
+		if(!getSouth(area).getCaseType().equals(CHARP_OBSTACLE) && !getSouth(area).getCaseType().equals(X_OBSTACLE)){
 			direction = Direction.SOUTH;
-			return new Case(currentCase.getIdRow()+1,currentCase.getIdCol());
+			return getSouth(area);
 		}
-		
-		state = map[currentCase.getIdRow()][currentCase.getIdCol()+1];
-		caseType = CaseType.getCaseTypeForCharacter(state);
-		
-		if(!caseType.equals(CHARP_OBSTACLE) && !caseType.equals(X_OBSTACLE)){
+		if(!getEast(area).getCaseType().equals(CHARP_OBSTACLE) && !getEast(area).getCaseType().equals(X_OBSTACLE)){
 			direction = Direction.EAST;
-			return new Case(currentCase.getIdRow(),currentCase.getIdCol()+1);
+			return getEast(area);
 		}
-		
-		state = map[currentCase.getIdRow()-1][currentCase.getIdCol()];
-		caseType = CaseType.getCaseTypeForCharacter(state);
-		
-		if(!caseType.equals(CHARP_OBSTACLE) && !caseType.equals(X_OBSTACLE)){
-			direction =  Direction.NORTH;
-			return new Case(currentCase.getIdRow()-1,currentCase.getIdCol());
+		if(!getNorth(area).getCaseType().equals(CHARP_OBSTACLE) && !getNorth(area).getCaseType().equals(X_OBSTACLE)){
+			direction = Direction.NORTH;
+			return getNorth(area);
 		}
-		
-		state = map[currentCase.getIdRow()][currentCase.getIdCol()-1];
-		caseType = CaseType.getCaseTypeForCharacter(state);
-		
-		if(!caseType.equals(CHARP_OBSTACLE) && !caseType.equals(X_OBSTACLE)){
-			direction =  Direction.WEST;
-			return new Case(currentCase.getIdRow(),currentCase.getIdCol()-1);
+		if(!getWest(area).getCaseType().equals(CHARP_OBSTACLE) && !getWest(area).getCaseType().equals(X_OBSTACLE)){
+			direction = Direction.WEST;
+			return getWest(area);
 		}
-		
 		direction =  Direction.LOOP;
 		return null;
+	}
+
+	private Case getWest(CaseArea area) {
+		return area.getWest();
+	}
+
+	private Case getNorth(CaseArea area) {
+		return area.getNorth();
+	}
+
+	private Case getEast(CaseArea area) {
+		return area.getEast();
+	}
+
+	private Case getSouth(CaseArea area) {
+		return area.getSouth();
 	}
 	
 

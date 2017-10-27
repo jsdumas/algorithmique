@@ -23,7 +23,8 @@ public class Bender {
 	public String walkTo() {
 		char state = getState(currentCase);
 		CaseState caseState = STATE_FACTORY.getState(state);
-		nextCase = caseState.getNextCase(currentCase, benderMap.getMap());
+		CaseArea area = new CaseArea(currentCase, benderMap.getMap());
+		nextCase = caseState.getNextCase(area);
 		return caseState.getDirection().toString();
 	}
 
