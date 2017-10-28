@@ -18,16 +18,16 @@ public class StateFactory {
 				caseState=null;
 				break;
 			case 'S':
-				caseState=null;
+				caseState = new SouthDirectionState();
 				break;
 			case 'E':
-				caseState=null;
+				caseState= new EastDirectionState();
 				break;
 			case 'N':
-				caseState=null;
+				caseState = new NorthDirectionState();
 				break;
 			case 'W':
-				caseState=null;
+				caseState = new WestDirectionState();
 				break;
 			case 'I':
 				caseState=null;

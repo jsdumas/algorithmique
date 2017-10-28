@@ -23,7 +23,7 @@ public class CaseArea {
 	}
 
 	private Case setCase(int idRow, int idCol) {
-		if(idRow>map[0].length-1 || idCol>map.length-1) {
+		if(idRow<0 || idRow>=map.length || idCol<0 || idCol>=map[0].length ) {
 			return null;
 		}
 		return new Case(idRow, idCol, CaseType.getCaseTypeForCharacter(map[idRow][idCol]));

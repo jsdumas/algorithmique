@@ -1,17 +1,15 @@
 package algorithms.codingame.bender;
 
-public class EastDirectionState implements CaseState {
+public class EastDirectionState extends NextDirection implements CaseState {
 
 	@Override
 	public Direction getDirection() {
-		// TODO Auto-generated method stub
-		return null;
+		return Direction.EAST;
 	}
 
 	@Override
 	public Case getNextCase(CaseArea area) {
-		// TODO Auto-generated method stub
-		return null;
+		return super.getEast(area);
 	}
 
 }

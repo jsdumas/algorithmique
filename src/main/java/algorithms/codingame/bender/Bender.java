@@ -1,50 +1,59 @@
 package algorithms.codingame.bender;
 
-import static algorithms.codingame.bender.CaseType.CHARP_OBSTACLE;
-import static algorithms.codingame.bender.CaseType.EMPTY;
 import static algorithms.codingame.bender.CaseType.SUICIDE;
-import static algorithms.codingame.bender.CaseType.S_MODIFIER;
-import static algorithms.codingame.bender.CaseType.X_OBSTACLE;
 import static algorithms.codingame.bender.Direction.LOOP;
 
 public class Bender {
 	
-	private static final StateFactory STATE_FACTORY = new StateFactory();
-	private static final StringBuffer STRING_BUFFER = new StringBuffer();
+	private final StateFactory stateFactory = new StateFactory();
+	private final StringBuffer stringBuffer = new StringBuffer();
 	private final BenderMap benderMap;
 	private Case currentCase;
-	private Direction nextDirection;
-	private String toPrint="";
+	private boolean isInverted;
 	
 	
 	public Bender(BenderMap benderMap) {
 		this.benderMap=benderMap;
 		this.currentCase=benderMap.getStartCase();
+		this.isInverted=false;
 	}
 	
 	
 	public void walkToSuicideCase() {
-		while(!currentCase.getCaseType().equals(SUICIDE) && !toPrint.equals(LOOP.toString())) {
+		while(currentCase!=null && !currentCase.getCaseType().equals(SUICIDE) && !stringBuffer.toString().equals(LOOP.toString())) {
 			CaseState currentCaseState = getCurrentCaseState();
 			CaseArea area = new CaseArea(currentCase, benderMap.getMap());
-			currentCase = currentCaseState.getNextCase(area);
+				currentCase = currentCaseState.getNextCase(area);
 			if(currentCaseState.getDirection().equals(LOOP)) {
-				toPrint=LOOP.toString();
+				stringBuffer.setLength(0);
+				stringBuffer.append(LOOP.toString());
 			} else {
-				STRING_BUFFER.append(currentCaseState.getDirection().toString());
-				toPrint=STRING_BUFFER.toString();
+				stringBuffer.append(currentCaseState.getDirection().toString());
+				if(currentCase!=null && !currentCase.getCaseType().equals(SUICIDE)){
+				stringBuffer.append("\n");
+				}
 			}
 		}
 	}
 
 	public String printDirection() {
-		return toPrint;
+		return stringBuffer.toString();
 	}
 
 
 	private CaseState getCurrentCaseState() {
 		char state = benderMap.getMap()[currentCase.getIdRow()][currentCase.getIdCol()];
-		return STATE_FACTORY.getState(state);
+		return stateFactory.getState(state);
+	}
+
+
+	public boolean isInverted() {
+		return isInverted;
+	}
+
+
+	public void setInverted(boolean isInverted) {
+		this.isInverted = isInverted;
 	}
 
 

@@ -1,21 +1,16 @@
 package algorithms.codingame.bender;
 
-public class SouthDirectionState implements CaseState {
+public class SouthDirectionState extends NextDirection implements CaseState {
 	
-	private Direction direction;
 
 	@Override
 	public Direction getDirection() {
-		return direction;
+		return Direction.SOUTH;
 	}
 
 	@Override
 	public Case getNextCase(CaseArea area) {
-		direction = Direction.SOUTH;
-		return getSouth(area);
+		return super.getSouth(area);
 	}
 
-	private Case getSouth(CaseArea area) {
-		return area.getSouth();
-	}
 }
