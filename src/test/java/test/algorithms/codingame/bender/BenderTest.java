@@ -25,7 +25,7 @@ public class BenderTest {
 	private static final String LINE_S = "SSS";
 	private static final String LINE_E = "EE$";
 	private static final String LINE_EEN = "EEN";
-	private static final String LINE_N = "NNN";
+	private static final String LINE_I = "$I#";
 	private static final String LINE_W = "$WW";
 	private static final Bender BENDER_WALK_TO_SOUTH_FROM_START = new BenderBuilder(2,3).withLine(0, LINE_START).withLine(1, LINE_DOLLAR).build();
 	private static final Bender BENDER_LOOP_WALK_BECAUSE_OF_CHARP = new BenderBuilder(3,3).withLine(0, LINE_CHARP).withLine(1, LINE_START).withLine(2, LINE_CHARP).build();
@@ -34,6 +34,7 @@ public class BenderTest {
 	private static final Bender BENDER_WALK_TO_EAST_FROM_E_MODIFIER = new BenderBuilder(2,3).withLine(0, LINE_START).withLine(1, LINE_E).build();
 	private static final Bender BENDER_WALK_TO_NORTH_FROM_N_MODIFIER = new BenderBuilder(2,3).withLine(0, LINE_START_END).withLine(1, LINE_EEN).build();
 	private static final Bender BENDER_WALK_TO_WEST_FROM_W_MODIFIER = new BenderBuilder(2,3).withLine(0, LINE_START).withLine(1, LINE_W).build();
+	private static final Bender BENDER_WALK_TO_WEST_FROM_INVERSOR = new BenderBuilder(3,3).withLine(0, LINE_START).withLine(1, LINE_I).withLine(2, LINE_CHARP).build();
 	
 	
 	@Test
@@ -69,6 +70,11 @@ public class BenderTest {
 	@Test
 	public void shouldGetWestFromWestModifier() {
 		assertThat(BENDER_WALK_TO_WEST_FROM_W_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+WEST.toString()));
+	}
+	
+	@Test
+	public void shouldGetWestFromInversor() {
+		assertThat(BENDER_WALK_TO_WEST_FROM_INVERSOR.printDirection(), equalTo(SOUTH.toString()+"\n"+WEST.toString()));
 	}
 
 }

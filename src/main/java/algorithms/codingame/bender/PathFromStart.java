@@ -1,10 +1,10 @@
 package algorithms.codingame.bender;
 
-public class PathFromStart extends NextCase implements PathFinder {
+public class PathFromStart implements PathFinder {
 
 	@Override
 	public Case getNextCase(CaseArea area) {
-		return super.getNextCase(area);
+		return area.getSouth();
 	}
 
 }

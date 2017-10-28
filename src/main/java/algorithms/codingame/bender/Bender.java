@@ -1,7 +1,9 @@
 package algorithms.codingame.bender;
 
+import static algorithms.codingame.bender.CaseType.CHARP_OBSTACLE;
 import static algorithms.codingame.bender.CaseType.INVERSOR;
 import static algorithms.codingame.bender.CaseType.SUICIDE;
+import static algorithms.codingame.bender.CaseType.X_OBSTACLE;
 import static algorithms.codingame.bender.Direction.LOOP;
 
 public class Bender {
@@ -11,12 +13,14 @@ public class Bender {
 	private final BenderMap benderMap;
 	private Case currentCase;
 	private boolean isInverted;
+	private PathPriority pathPriority;
 	
 	
 	public Bender(BenderMap benderMap) {
 		this.benderMap=benderMap;
 		this.currentCase=benderMap.getStartCase();
 		this.isInverted=false;
+		this.pathPriority = new PathPriority();
 	}
 	
 	
@@ -25,6 +29,13 @@ public class Bender {
 			PathFinder pathFinder = getPathFinder();
 			CaseArea area = new CaseArea(currentCase, benderMap.getMap());
 			currentCase = pathFinder.getNextCase(area);
+			if(!isCaseWalkable()){
+				if(isInverted){
+					currentCase = pathPriority.getNextCaseWithInvertedPriority(area);
+				} else {
+					currentCase = pathPriority.getNextCaseWithPriority(area);
+				}
+			}
 			if(currentCase.getDirection().equals(LOOP)) {
 				stringBuffer.setLength(0);
 				stringBuffer.append(LOOP.toString());
@@ -35,6 +46,11 @@ public class Bender {
 				}
 			}
 		}
+	}
+
+
+	private boolean isCaseWalkable() {
+		return currentCase!=null && !currentCase.getCaseType().equals(CHARP_OBSTACLE) && !currentCase.getCaseType().equals(X_OBSTACLE);
 	}
 
 
