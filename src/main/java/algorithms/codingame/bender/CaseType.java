@@ -10,8 +10,8 @@ public enum CaseType {
 	E_MODIFIER('E'),
 	N_MODIFIER('N'),
 	W_MODIFIER('W'),
-	INVERSEUR('I'),
-	BIERE('B'),
+	INVERSOR('I'),
+	BIER('B'),
 	TELEPORTER('T'),
 	SUICIDE('$');
 	

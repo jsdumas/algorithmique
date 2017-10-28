@@ -1,44 +1,57 @@
 package algorithms.codingame.bender;
 
+import static algorithms.codingame.bender.CaseType.BIER;
+import static algorithms.codingame.bender.CaseType.CHARP_OBSTACLE;
+import static algorithms.codingame.bender.CaseType.EMPTY;
+import static algorithms.codingame.bender.CaseType.E_MODIFIER;
+import static algorithms.codingame.bender.CaseType.INVERSOR;
+import static algorithms.codingame.bender.CaseType.N_MODIFIER;
+import static algorithms.codingame.bender.CaseType.START;
+import static algorithms.codingame.bender.CaseType.SUICIDE;
+import static algorithms.codingame.bender.CaseType.S_MODIFIER;
+import static algorithms.codingame.bender.CaseType.TELEPORTER;
+import static algorithms.codingame.bender.CaseType.W_MODIFIER;
+import static algorithms.codingame.bender.CaseType.X_OBSTACLE;
+
 public class StateFactory {
 
-	public CaseState getState(char state) {
+	public CaseState getState(CaseType caseType) {
 		CaseState caseState;
-		switch (state) {
-			case '@':
+		switch (caseType) {
+			case START:
 				caseState = new StartState();
 				break;
-			case ' ':
+			case EMPTY:
 				caseState=null;
 				break;
-			case '#':
+			case CHARP_OBSTACLE:
 				caseState = null;
 				break;
-			case 'X':
+			case X_OBSTACLE:
 				caseState=null;
 				break;
-			case 'S':
+			case S_MODIFIER:
 				caseState = new SouthDirectionState();
 				break;
-			case 'E':
+			case E_MODIFIER:
 				caseState= new EastDirectionState();
 				break;
-			case 'N':
+			case N_MODIFIER:
 				caseState = new NorthDirectionState();
 				break;
-			case 'W':
+			case W_MODIFIER:
 				caseState = new WestDirectionState();
 				break;
-			case 'I':
+			case INVERSOR:
+				caseState = new InversorDirectionState();
+				break;
+			case BIER:
 				caseState=null;
 				break;
-			case 'B':
+			case TELEPORTER:
 				caseState=null;
 				break;
-			case 'T':
-				caseState=null;
-				break;
-			case '$':
+			case SUICIDE:
 				caseState=null;
 				break;
 			default:

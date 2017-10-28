@@ -1,5 +1,6 @@
 package algorithms.codingame.bender;
 
+import static algorithms.codingame.bender.CaseType.INVERSOR;
 import static algorithms.codingame.bender.CaseType.SUICIDE;
 import static algorithms.codingame.bender.Direction.LOOP;
 
@@ -20,7 +21,7 @@ public class Bender {
 	
 	
 	public void walkToSuicideCase() {
-		while(currentCase!=null && !currentCase.getCaseType().equals(SUICIDE) && !stringBuffer.toString().equals(LOOP.toString())) {
+		while(benderIsOnTheRoad()) {
 			CaseState currentCaseState = getCurrentCaseState();
 			CaseArea area = new CaseArea(currentCase, benderMap.getMap());
 				currentCase = currentCaseState.getNextCase(area);
@@ -29,11 +30,16 @@ public class Bender {
 				stringBuffer.append(LOOP.toString());
 			} else {
 				stringBuffer.append(currentCaseState.getDirection().toString());
-				if(currentCase!=null && !currentCase.getCaseType().equals(SUICIDE)){
+				if(benderIsOnTheRoad()){
 				stringBuffer.append("\n");
 				}
 			}
 		}
+	}
+
+
+	private boolean benderIsOnTheRoad() {
+		return currentCase!=null && !currentCase.getCaseType().equals(SUICIDE) && !stringBuffer.toString().equals(LOOP.toString());
 	}
 
 	public String printDirection() {
@@ -42,8 +48,12 @@ public class Bender {
 
 
 	private CaseState getCurrentCaseState() {
-		char state = benderMap.getMap()[currentCase.getIdRow()][currentCase.getIdCol()];
-		return stateFactory.getState(state);
+		char type = benderMap.getMap()[currentCase.getIdRow()][currentCase.getIdCol()];
+		CaseType caseType = CaseType.getCaseTypeForCharacter(type);
+		if(caseType.equals(INVERSOR)){
+			isInverted=!isInverted;
+		}
+		return stateFactory.getState(caseType);
 	}
 
 
