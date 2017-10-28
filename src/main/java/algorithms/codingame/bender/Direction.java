@@ -6,7 +6,8 @@ public enum Direction {
 	EAST("EAST"),
 	NORTH("NORTH"),
 	WEST("WEST"),
-	LOOP("LOOP");
+	LOOP("LOOP"),
+	NONE("NONE");
 	
 	private String direction;
 

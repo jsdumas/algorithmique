@@ -1,5 +1,7 @@
 package algorithms.codingame.bender;
 
+import static algorithms.codingame.bender.Direction.NONE;
+
 public class BenderBuilder {
 	
 	private final char [][] map;
@@ -14,10 +16,10 @@ public class BenderBuilder {
 		char[] lineToCharArray = line.toCharArray();
 		for(int i=0; i<lineToCharArray.length; i++) {
 			if(lineToCharArray[i]=='@') {
-				startCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('@'));
+				startCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('@'), Direction.LOOP);
 			}
 			if(lineToCharArray[i]=='$') {
-				suicideCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('$'));
+				suicideCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('$'), Direction.LOOP);
 			}
 			map[idRow][i]=lineToCharArray[i];
 		}

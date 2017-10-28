@@ -2,14 +2,16 @@ package algorithms.codingame.bender;
 
 public class Case {
 
-	private int idRow;
-	private int idCol;
-	private CaseType caseType;
-
-	public Case(int idRow, int idCol, CaseType caseType) {
+	private final int idRow;
+	private final int idCol;
+	private final CaseType caseType;
+	private Direction direction;
+	
+	public Case(int idRow, int idCol, CaseType caseType, Direction direction) {
 		this.idRow = idRow;
 		this.idCol = idCol;
 		this.caseType = caseType;
+		this.direction = direction;
 	}
 
 	public int getIdRow() {
@@ -22,6 +24,10 @@ public class Case {
 
 	public CaseType getCaseType() {
 		return caseType;
+	}
+
+	public Direction getDirection() {
+		return direction;
 	}
 
 }

@@ -1,8 +1,7 @@
 package algorithms.codingame.bender;
 
-public interface CaseState {
+public interface PathFinder {
 	
-	public Direction getDirection();
 	public Case getNextCase(CaseArea area);
 
 }

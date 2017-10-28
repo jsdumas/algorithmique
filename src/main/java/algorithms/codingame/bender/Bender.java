@@ -6,7 +6,7 @@ import static algorithms.codingame.bender.Direction.LOOP;
 
 public class Bender {
 	
-	private final StateFactory stateFactory = new StateFactory();
+	private final PathFinderFactory pathFinderFactory = new PathFinderFactory();
 	private final StringBuffer stringBuffer = new StringBuffer();
 	private final BenderMap benderMap;
 	private Case currentCase;
@@ -22,14 +22,14 @@ public class Bender {
 	
 	public void walkToSuicideCase() {
 		while(benderIsOnTheRoad()) {
-			CaseState currentCaseState = getCurrentCaseState();
+			PathFinder pathFinder = getPathFinder();
 			CaseArea area = new CaseArea(currentCase, benderMap.getMap());
-				currentCase = currentCaseState.getNextCase(area);
-			if(currentCaseState.getDirection().equals(LOOP)) {
+			currentCase = pathFinder.getNextCase(area);
+			if(currentCase.getDirection().equals(LOOP)) {
 				stringBuffer.setLength(0);
 				stringBuffer.append(LOOP.toString());
 			} else {
-				stringBuffer.append(currentCaseState.getDirection().toString());
+				stringBuffer.append(currentCase.getDirection().toString());
 				if(benderIsOnTheRoad()){
 				stringBuffer.append("\n");
 				}
@@ -47,13 +47,13 @@ public class Bender {
 	}
 
 
-	private CaseState getCurrentCaseState() {
+	private PathFinder getPathFinder() {
 		char type = benderMap.getMap()[currentCase.getIdRow()][currentCase.getIdCol()];
 		CaseType caseType = CaseType.getCaseTypeForCharacter(type);
 		if(caseType.equals(INVERSOR)){
 			isInverted=!isInverted;
 		}
-		return stateFactory.getState(caseType);
+		return pathFinderFactory.getPathFinder(caseType);
 	}
 
 

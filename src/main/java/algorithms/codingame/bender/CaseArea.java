@@ -1,5 +1,10 @@
 package algorithms.codingame.bender;
 
+import static algorithms.codingame.bender.Direction.EAST;
+import static algorithms.codingame.bender.Direction.NORTH;
+import static algorithms.codingame.bender.Direction.SOUTH;
+import static algorithms.codingame.bender.Direction.WEST;
+
 public class CaseArea {
 
 	private final Case currentCase;
@@ -16,17 +21,17 @@ public class CaseArea {
 	}
 
 	private void setCases() {
-		south = setCase(currentCase.getIdRow()+1,currentCase.getIdCol());
-		east = setCase(currentCase.getIdRow(),currentCase.getIdCol()+1);
-		north = setCase(currentCase.getIdRow()-1,currentCase.getIdCol());
-		west = setCase(currentCase.getIdRow(),currentCase.getIdCol()-1);
+		south = setCase(currentCase.getIdRow()+1,currentCase.getIdCol(), SOUTH);
+		east = setCase(currentCase.getIdRow(),currentCase.getIdCol()+1, EAST);
+		north = setCase(currentCase.getIdRow()-1,currentCase.getIdCol(), NORTH);
+		west = setCase(currentCase.getIdRow(),currentCase.getIdCol()-1, WEST);
 	}
 
-	private Case setCase(int idRow, int idCol) {
+	private Case setCase(int idRow, int idCol, Direction comeFrom) {
 		if(idRow<0 || idRow>=map.length || idCol<0 || idCol>=map[0].length ) {
 			return null;
 		}
-		return new Case(idRow, idCol, CaseType.getCaseTypeForCharacter(map[idRow][idCol]));
+		return new Case(idRow, idCol, CaseType.getCaseTypeForCharacter(map[idRow][idCol]), comeFrom);
 	}
 
 	public Case getSouth() {
