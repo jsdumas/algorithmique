@@ -1,32 +1,32 @@
 package test.algorithms.codingame.bender;
 
+import static test.algorithms.codingame.bender.Line.CHARP_B_CHARP;
+import static test.algorithms.codingame.bender.Line.THREE_CHARPS;
+import static test.algorithms.codingame.bender.Line.THREE_ENDS;
+import static test.algorithms.codingame.bender.Line.E_E_END;
+import static test.algorithms.codingame.bender.Line.E_E_N;
+import static test.algorithms.codingame.bender.Line.END_I_CHARP;
+import static test.algorithms.codingame.bender.Line.THREE_S;
+import static test.algorithms.codingame.bender.Line.CHARP_START_CHARP;
+import static test.algorithms.codingame.bender.Line.CHARP_START_END;
+import static test.algorithms.codingame.bender.Line.END_W_W;
+import static test.algorithms.codingame.bender.Line.THREE_X;
+
 import algorithms.codingame.bender.Bender;
 import algorithms.codingame.bender.BenderBuilder;
 import algorithms.codingame.bender.MemorisePath;
 
 public class PathFinderFactory {
 	
-	private static final String LINE_START = "#@#";
-	private static final String LINE_START_END = "#@$";
-	private static final String LINE_CHARP = "###";
-	private static final String LINE_DOLLAR = "$$$";
-	private static final String LINE_X = "XXX";
-	private static final String LINE_S = "SSS";
-	private static final String LINE_E = "EE$";
-	private static final String LINE_EEN = "EEN";
-	private static final String LINE_I = "$I#";
-	private static final String LINE_W = "$WW";
-	private static final String LINE_B = "#B#";
-	private static final Bender BENDER_WALK_TO_SOUTH_FROM_START = new BenderBuilder(2,3).withLine(0, LINE_START).withLine(1, LINE_DOLLAR).build();
-	private static final Bender BENDER_LOOP_WALK_BECAUSE_OF_CHARP = new BenderBuilder(3,3).withLine(0, LINE_CHARP).withLine(1, LINE_START).withLine(2, LINE_CHARP).build();
-	private static final Bender BENDER_LOOP_WALK_BECAUSE_OF_X = new BenderBuilder(3,3).withLine(0, LINE_CHARP).withLine(1, LINE_START).withLine(2, LINE_X).build();
-	private static final Bender BENDER_WALK_TO_SOUTH_FROM_S_MODIFIER = new BenderBuilder(3,3).withLine(0, LINE_START).withLine(1, LINE_S).withLine(2, LINE_DOLLAR).build();
-	private static final Bender BENDER_WALK_TO_EAST_FROM_E_MODIFIER = new BenderBuilder(2,3).withLine(0, LINE_START).withLine(1, LINE_E).build();
-	private static final Bender BENDER_WALK_TO_NORTH_FROM_N_MODIFIER = new BenderBuilder(2,3).withLine(0, LINE_START_END).withLine(1, LINE_EEN).build();
-	private static final Bender BENDER_WALK_TO_WEST_FROM_W_MODIFIER = new BenderBuilder(2,3).withLine(0, LINE_START).withLine(1, LINE_W).build();
-	private static final Bender BENDER_WALK_TO_WEST_FROM_INVERSOR = new BenderBuilder(3,3).withLine(0, LINE_START).withLine(1, LINE_I).withLine(2, LINE_CHARP).build();
-	private static final Bender BENDER_WALK_TO_SOUTH_FROM_BIER = new BenderBuilder(5,3).withLine(0, LINE_CHARP).withLine(1, LINE_START).withLine(2, LINE_B).withLine(3, LINE_X).withLine(4, LINE_DOLLAR).build();
-	
+	private static final Bender BENDER_WALK_TO_SOUTH_FROM_START = new BenderBuilder(2,3).withLine(0, CHARP_START_CHARP.getLine()).withLine(1, THREE_ENDS.getLine()).build();
+	private static final Bender BENDER_LOOP_WALK_BECAUSE_OF_CHARP = new BenderBuilder(3,3).withLine(0, THREE_CHARPS.getLine()).withLine(1, CHARP_START_CHARP.getLine()).withLine(2, THREE_CHARPS.getLine()).build();
+	private static final Bender BENDER_LOOP_WALK_BECAUSE_OF_X = new BenderBuilder(3,3).withLine(0, THREE_CHARPS.getLine()).withLine(1, CHARP_START_CHARP.getLine()).withLine(2, THREE_X.getLine()).build();
+	private static final Bender BENDER_WALK_TO_SOUTH_FROM_S_MODIFIER = new BenderBuilder(3,3).withLine(0, CHARP_START_CHARP.getLine()).withLine(1, THREE_S.getLine()).withLine(2, THREE_ENDS.getLine()).build();
+	private static final Bender BENDER_WALK_TO_EAST_FROM_E_MODIFIER = new BenderBuilder(2,3).withLine(0, CHARP_START_CHARP.getLine()).withLine(1, E_E_END.getLine()).build();
+	private static final Bender BENDER_WALK_TO_NORTH_FROM_N_MODIFIER = new BenderBuilder(2,3).withLine(0, CHARP_START_END.getLine()).withLine(1, E_E_N.getLine()).build();
+	private static final Bender BENDER_WALK_TO_WEST_FROM_W_MODIFIER = new BenderBuilder(2,3).withLine(0, CHARP_START_CHARP.getLine()).withLine(1, END_W_W.getLine()).build();
+	private static final Bender BENDER_WALK_TO_WEST_FROM_INVERSOR = new BenderBuilder(3,3).withLine(0, CHARP_START_CHARP.getLine()).withLine(1, END_I_CHARP.getLine()).withLine(2, THREE_CHARPS.getLine()).build();
+	private static final Bender BENDER_WALK_TO_SOUTH_FROM_BIER = new BenderBuilder(5,3).withLine(0, THREE_CHARPS.getLine()).withLine(1, CHARP_START_CHARP.getLine()).withLine(2, CHARP_B_CHARP.getLine()).withLine(3, THREE_X.getLine()).withLine(4, THREE_ENDS.getLine()).build();
 	
 	
 	public MemorisePath getPath(Path path) {
