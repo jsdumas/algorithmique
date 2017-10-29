@@ -1,7 +1,5 @@
 package algorithms.codingame.bender;
 
-import static algorithms.codingame.bender.Direction.NONE;
-
 public class BenderBuilder {
 	
 	private final char [][] map;

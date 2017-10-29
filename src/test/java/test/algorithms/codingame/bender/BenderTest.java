@@ -36,7 +36,7 @@ public class BenderTest {
 	private static final Bender BENDER_WALK_TO_NORTH_FROM_N_MODIFIER = new BenderBuilder(2,3).withLine(0, LINE_START_END).withLine(1, LINE_EEN).build();
 	private static final Bender BENDER_WALK_TO_WEST_FROM_W_MODIFIER = new BenderBuilder(2,3).withLine(0, LINE_START).withLine(1, LINE_W).build();
 	private static final Bender BENDER_WALK_TO_WEST_FROM_INVERSOR = new BenderBuilder(3,3).withLine(0, LINE_START).withLine(1, LINE_I).withLine(2, LINE_CHARP).build();
-	private static final Bender BENDER_WALK_TO_SOUTH_FROM_BIER = new BenderBuilder(4,3).withLine(0, LINE_START).withLine(1, LINE_B).withLine(2, LINE_X).withLine(3, LINE_DOLLAR).build();
+	private static final Bender BENDER_WALK_TO_SOUTH_FROM_BIER = new BenderBuilder(5,3).withLine(0, LINE_CHARP).withLine(1, LINE_START).withLine(2, LINE_B).withLine(3, LINE_X).withLine(4, LINE_DOLLAR).build();
 	
 	
 	@Test
@@ -81,7 +81,7 @@ public class BenderTest {
 	
 	@Test
 	public void shouldGetSouthFromBier() {
-		assertThat(BENDER_WALK_TO_SOUTH_FROM_BIER.getMemorisePath().printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()));
+		assertThat(BENDER_WALK_TO_SOUTH_FROM_BIER.getMemorisePath().printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()+"\n"+SOUTH.toString()));
 	}
 
 }

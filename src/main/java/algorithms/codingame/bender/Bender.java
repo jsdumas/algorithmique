@@ -51,20 +51,7 @@ public class Bender {
 		return pathFinderFactory.getPathFinder(caseType);
 	}
 	
-	
-	public void walkToSuicideCase() {
-		while(isBenderOnTheRoad()) {
-			PathFinder pathFinder = getPathFinder();
-			CaseArea area = new CaseArea(currentCase, benderMap.getMap());
-			currentCase = pathFinder.getNextCase(area);
-			benderWalkToAnObstacle(area);
-			memorisePath.memorise(currentCase, isBenderOnTheRoad());
-		}
-	}
-
-
-
-	private void benderWalkToAnObstacle(CaseArea area) {
+	private void benderWalkOnObstacle(CaseArea area) {
 		if(isCaseWalkable()){
 			return;
 		}
@@ -77,6 +64,19 @@ public class Bender {
 			currentCase = pathPriority.getNextCaseWithPriority(area);
 		}
 	}
+	
+	
+	public void walkToSuicideCase() {
+		while(isBenderOnTheRoad()) {
+			PathFinder pathFinder = getPathFinder();
+			CaseArea area = new CaseArea(currentCase, benderMap.getMap());
+			currentCase = pathFinder.getNextCase(area);
+			benderWalkOnObstacle(area);
+			memorisePath.memorise(currentCase, isBenderOnTheRoad());
+		}
+	}
+
+	
 
 	public boolean isInverted() {
 		return isInverted;

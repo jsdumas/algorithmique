@@ -4,7 +4,7 @@ public class Case {
 
 	private final int idRow;
 	private final int idCol;
-	private final CaseType caseType;
+	private CaseType caseType;
 	private Direction direction;
 	
 	public Case(int idRow, int idCol, CaseType caseType, Direction direction) {
@@ -24,6 +24,10 @@ public class Case {
 
 	public CaseType getCaseType() {
 		return caseType;
+	}
+	
+	public void setEmptyCaseType() {
+		this.caseType=CaseType.EMPTY;
 	}
 
 	public Direction getDirection() {
