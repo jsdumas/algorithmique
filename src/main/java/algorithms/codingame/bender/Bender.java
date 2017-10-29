@@ -1,6 +1,8 @@
 package algorithms.codingame.bender;
 
+import static algorithms.codingame.bender.CaseType.BIER;
 import static algorithms.codingame.bender.CaseType.CHARP_OBSTACLE;
+import static algorithms.codingame.bender.CaseType.EMPTY;
 import static algorithms.codingame.bender.CaseType.INVERSOR;
 import static algorithms.codingame.bender.CaseType.SUICIDE;
 import static algorithms.codingame.bender.CaseType.X_OBSTACLE;
@@ -13,6 +15,7 @@ public class Bender {
 	private final BenderMap benderMap;
 	private Case currentCase;
 	private boolean isInverted;
+	private boolean isXBreaker;
 	private PathPriority pathPriority;
 	
 	
@@ -20,6 +23,7 @@ public class Bender {
 		this.benderMap=benderMap;
 		this.currentCase=benderMap.getStartCase();
 		this.isInverted=false;
+		this.isXBreaker=false;
 		this.pathPriority = new PathPriority();
 	}
 	
@@ -29,22 +33,36 @@ public class Bender {
 			PathFinder pathFinder = getPathFinder();
 			CaseArea area = new CaseArea(currentCase, benderMap.getMap());
 			currentCase = pathFinder.getNextCase(area);
-			if(!isCaseWalkable()){
-				if(isInverted){
-					currentCase = pathPriority.getNextCaseWithInvertedPriority(area);
-				} else {
-					currentCase = pathPriority.getNextCaseWithPriority(area);
-				}
+			benderWalkToAnObstacle(area);
+			memoriseDirection();
+		}
+	}
+
+
+	private void memoriseDirection() {
+		if(currentCase.getDirection().equals(LOOP)) {
+			stringBuffer.setLength(0);
+			stringBuffer.append(LOOP.toString());
+		} else {
+			stringBuffer.append(currentCase.getDirection().toString());
+			if(benderIsOnTheRoad()){
+			stringBuffer.append("\n");
 			}
-			if(currentCase.getDirection().equals(LOOP)) {
-				stringBuffer.setLength(0);
-				stringBuffer.append(LOOP.toString());
-			} else {
-				stringBuffer.append(currentCase.getDirection().toString());
-				if(benderIsOnTheRoad()){
-				stringBuffer.append("\n");
-				}
-			}
+		}
+	}
+
+
+	private void benderWalkToAnObstacle(CaseArea area) {
+		if(isCaseWalkable()){
+			return;
+		}
+		if(isXBreaker && currentCase.getCaseType().equals(X_OBSTACLE)){
+			benderMap.getMap()[currentCase.getIdRow()][currentCase.getIdCol()] = EMPTY.getChar();
+		}
+		else if(isInverted){
+			currentCase = pathPriority.getNextCaseWithInvertedPriority(area);
+		} else {
+			currentCase = pathPriority.getNextCaseWithPriority(area);
 		}
 	}
 
@@ -68,6 +86,9 @@ public class Bender {
 		CaseType caseType = CaseType.getCaseTypeForCharacter(type);
 		if(caseType.equals(INVERSOR)){
 			isInverted=!isInverted;
+		}
+		if(caseType.equals(BIER)){
+			isXBreaker=!isXBreaker;
 		}
 		return pathFinderFactory.getPathFinder(caseType);
 	}
