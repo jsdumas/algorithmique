@@ -5,10 +5,10 @@ public class BenderMap {
 	private final char[][] map;
 	private final Case startCase;
 	private final Case suicideCase;
-	private final Teletransporter teletransporter;
+	private final Teleporter teletransporter;
 
 
-	public BenderMap(char[][] map, Case startCase, Case suicideCase, Teletransporter teletransporter) {
+	public BenderMap(char[][] map, Case startCase, Case suicideCase, Teleporter teletransporter) {
 		this.map=map;
 		this.startCase=startCase;
 		this.suicideCase=suicideCase;
@@ -27,7 +27,7 @@ public class BenderMap {
 		return suicideCase;
 	}
 
-	public Teletransporter getTeletransporter() {
+	public Teleporter getTeletransporter() {
 		return teletransporter;
 	}
 

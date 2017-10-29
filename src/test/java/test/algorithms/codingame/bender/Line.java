@@ -12,7 +12,8 @@ public enum Line {
 	E_E_N("EEN"),
 	END_I_CHARP("$I#"),
 	END_W_W("$WW"),
-	CHARP_B_CHARP("#B#");
+	CHARP_B_CHARP("#B#"),
+	CHARP_T_CHARP("#T#");
 	
 	private String line;
 	

@@ -1,6 +1,6 @@
 package algorithms.codingame.bender;
 
-public class Teletransporter {
+public class Teleporter {
 	
 	private Case from;
 	private Case to;

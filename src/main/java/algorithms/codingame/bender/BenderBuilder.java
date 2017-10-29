@@ -5,11 +5,11 @@ public class BenderBuilder {
 	private final char [][] map;
 	private Case startCase;
 	private Case suicideCase;
-	private Teletransporter teletransporter;
+	private Teleporter teletransporter;
 
 	public BenderBuilder(int row, int col) {
 		map = new char [row][col];
-		teletransporter = new Teletransporter();
+		teletransporter = new Teleporter();
 	}
 
 	public BenderBuilder withLine(int idRow, String line) {
@@ -25,7 +25,7 @@ public class BenderBuilder {
 				if(teletransporter.getFrom()==null) {
 					teletransporter.setFrom(new Case(idRow, i, CaseType.getCaseTypeForCharacter('T'), Direction.LOOP));
 				}
-				if(teletransporter.getTo()==null) {
+				else if(teletransporter.getTo()==null) {
 					teletransporter.setTo(new Case(idRow, i, CaseType.getCaseTypeForCharacter('T'), Direction.LOOP));
 				}
 			}

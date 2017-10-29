@@ -14,6 +14,7 @@ import static test.algorithms.codingame.bender.Path.TO_NORTH_FROM_N_MODIFIER;
 import static test.algorithms.codingame.bender.Path.TO_SOUTH_FROM_BIER;
 import static test.algorithms.codingame.bender.Path.TO_SOUTH_FROM_START;
 import static test.algorithms.codingame.bender.Path.TO_SOUTH_FROM_S_MODIFIER;
+import static test.algorithms.codingame.bender.Path.TO_SOUTH_FROM_T;
 import static test.algorithms.codingame.bender.Path.TO_WEST_FROM_INVERSOR;
 import static test.algorithms.codingame.bender.Path.TO_WEST_FROM_W_MODIFIER;
 
@@ -33,6 +34,7 @@ public class PathFinderTest {
 	private static final MemorisePath PATH_TO_WEST_FROM_W_MODIFIER = PATH_FINDER_FACTORY.getPath(TO_WEST_FROM_W_MODIFIER);
 	private static final MemorisePath PATH_TO_WEST_FROM_INVERSOR = PATH_FINDER_FACTORY.getPath(TO_WEST_FROM_INVERSOR);
 	private static final MemorisePath PATH_TO_SOUTH_FROM_BIER = PATH_FINDER_FACTORY.getPath(TO_SOUTH_FROM_BIER);
+	private static final MemorisePath PATH_TO_SOUTH_FROM_T = PATH_FINDER_FACTORY.getPath(TO_SOUTH_FROM_T);
 	
 	
 	@Test
@@ -78,6 +80,11 @@ public class PathFinderTest {
 	@Test
 	public void shouldGetSouthFromBier() {
 		assertThat(PATH_TO_SOUTH_FROM_BIER.printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()+"\n"+SOUTH.toString()));
+	}
+	
+	@Test
+	public void shouldGetSouthFromTeleporter() {
+		assertThat(PATH_TO_SOUTH_FROM_T.printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()));
 	}
 
 }

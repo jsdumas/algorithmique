@@ -69,7 +69,7 @@ public class Bender {
 	public void walkToSuicideCase() {
 		while(isBenderOnTheRoad()) {
 			PathFinder pathFinder = getPathFinder();
-			CaseArea area = new CaseArea(currentCase, benderMap.getMap());
+			CaseArea area = new CaseArea(currentCase, benderMap);
 			currentCase = pathFinder.getNextCase(area);
 			benderWalkOnObstacle(area);
 			memorisePath.memorise(currentCase, isBenderOnTheRoad());

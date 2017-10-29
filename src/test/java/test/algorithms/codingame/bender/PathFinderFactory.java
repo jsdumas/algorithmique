@@ -9,6 +9,7 @@ import static test.algorithms.codingame.bender.Line.END_I_CHARP;
 import static test.algorithms.codingame.bender.Line.THREE_S;
 import static test.algorithms.codingame.bender.Line.CHARP_START_CHARP;
 import static test.algorithms.codingame.bender.Line.CHARP_START_END;
+import static test.algorithms.codingame.bender.Line.CHARP_T_CHARP;
 import static test.algorithms.codingame.bender.Line.END_W_W;
 import static test.algorithms.codingame.bender.Line.THREE_X;
 
@@ -27,6 +28,7 @@ public class PathFinderFactory {
 	private static final Bender BENDER_WALK_TO_WEST_FROM_W_MODIFIER = new BenderBuilder(2,3).withLine(0, CHARP_START_CHARP.getLine()).withLine(1, END_W_W.getLine()).build();
 	private static final Bender BENDER_WALK_TO_WEST_FROM_INVERSOR = new BenderBuilder(3,3).withLine(0, CHARP_START_CHARP.getLine()).withLine(1, END_I_CHARP.getLine()).withLine(2, THREE_CHARPS.getLine()).build();
 	private static final Bender BENDER_WALK_TO_SOUTH_FROM_BIER = new BenderBuilder(5,3).withLine(0, THREE_CHARPS.getLine()).withLine(1, CHARP_START_CHARP.getLine()).withLine(2, CHARP_B_CHARP.getLine()).withLine(3, THREE_X.getLine()).withLine(4, THREE_ENDS.getLine()).build();
+	private static final Bender BENDER_WALK_TO_SOUTH_FROM_T = new BenderBuilder(5,3).withLine(0, CHARP_START_CHARP.getLine()).withLine(1, CHARP_T_CHARP.getLine()).withLine(2, THREE_CHARPS.getLine()).withLine(3, CHARP_T_CHARP.getLine()).withLine(4, THREE_ENDS.getLine()).build();
 	
 	
 	public MemorisePath getPath(Path path) {
@@ -58,6 +60,9 @@ public class PathFinderFactory {
 			break;
 		case TO_SOUTH_FROM_BIER :
 			memorisePath = BENDER_WALK_TO_SOUTH_FROM_BIER.getMemorisePath();
+			break;
+		case TO_SOUTH_FROM_T :
+			memorisePath = BENDER_WALK_TO_SOUTH_FROM_T.getMemorisePath();
 			break;
 		default:
 			memorisePath = null;

@@ -13,10 +13,14 @@ public class CaseArea {
 	private Case east;
 	private Case north;
 	private Case west;
+	private Teleporter teleporter;
+	private BenderMap benderMap;
 
-	public CaseArea(Case currentCase, char[][] map) {
+	public CaseArea(Case currentCase, BenderMap benderMap) {
 		this.currentCase = currentCase;
-		this.map = map;
+		this.benderMap = benderMap;
+		this.map = benderMap.getMap();
+		this.teleporter = benderMap.getTeletransporter();
 		setCases();
 	}
 
@@ -52,6 +56,14 @@ public class CaseArea {
 
 	public Case getCurrentCase() {
 		return currentCase;
+	}
+
+	public Teleporter getTeleporter() {
+		return teleporter;
+	}
+
+	public BenderMap getBenderMap() {
+		return benderMap;
 	}
 
 }
