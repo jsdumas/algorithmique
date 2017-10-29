@@ -41,47 +41,47 @@ public class BenderTest {
 	
 	@Test
 	public void shouldGetSouthFromStart() {
-		assertThat(BENDER_WALK_TO_SOUTH_FROM_START.printDirection(), equalTo(SOUTH.toString()));
+		assertThat(BENDER_WALK_TO_SOUTH_FROM_START.getMemorisePath().printDirection(), equalTo(SOUTH.toString()));
 	}
 
 	@Test
 	public void shouldGetLoopFromStartBecauseOfCharp() {
-		assertThat(BENDER_LOOP_WALK_BECAUSE_OF_CHARP.printDirection(), equalTo(LOOP.toString()));
+		assertThat(BENDER_LOOP_WALK_BECAUSE_OF_CHARP.getMemorisePath().printDirection(), equalTo(LOOP.toString()));
 	}
 	
 	@Test
 	public void shouldGetLoopFromStartBecauseOfX() {
-		assertThat(BENDER_LOOP_WALK_BECAUSE_OF_X.printDirection(), equalTo(LOOP.toString()));
+		assertThat(BENDER_LOOP_WALK_BECAUSE_OF_X.getMemorisePath().printDirection(), equalTo(LOOP.toString()));
 	}
 	
 	@Test
 	public void shouldGetSouthFromSouthModifier() {
-		assertThat(BENDER_WALK_TO_SOUTH_FROM_S_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()));
+		assertThat(BENDER_WALK_TO_SOUTH_FROM_S_MODIFIER.getMemorisePath().printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()));
 	}
 	
 	@Test
 	public void shouldGetSouthFromEastModifier() {
-		assertThat(BENDER_WALK_TO_EAST_FROM_E_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+EAST.toString()));
+		assertThat(BENDER_WALK_TO_EAST_FROM_E_MODIFIER.getMemorisePath().printDirection(), equalTo(SOUTH.toString()+"\n"+EAST.toString()));
 	}
 	
 	@Test
 	public void shouldGetNorthFromNorthModifier() {
-		assertThat(BENDER_WALK_TO_NORTH_FROM_N_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+EAST.toString()+"\n"+NORTH.toString()));
+		assertThat(BENDER_WALK_TO_NORTH_FROM_N_MODIFIER.getMemorisePath().printDirection(), equalTo(SOUTH.toString()+"\n"+EAST.toString()+"\n"+NORTH.toString()));
 	}
 	
 	@Test
 	public void shouldGetWestFromWestModifier() {
-		assertThat(BENDER_WALK_TO_WEST_FROM_W_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+WEST.toString()));
+		assertThat(BENDER_WALK_TO_WEST_FROM_W_MODIFIER.getMemorisePath().printDirection(), equalTo(SOUTH.toString()+"\n"+WEST.toString()));
 	}
 	
 	@Test
 	public void shouldGetWestFromInversor() {
-		assertThat(BENDER_WALK_TO_WEST_FROM_INVERSOR.printDirection(), equalTo(SOUTH.toString()+"\n"+WEST.toString()));
+		assertThat(BENDER_WALK_TO_WEST_FROM_INVERSOR.getMemorisePath().printDirection(), equalTo(SOUTH.toString()+"\n"+WEST.toString()));
 	}
 	
 	@Test
 	public void shouldGetSouthFromBier() {
-		assertThat(BENDER_WALK_TO_SOUTH_FROM_BIER.printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()));
+		assertThat(BENDER_WALK_TO_SOUTH_FROM_BIER.getMemorisePath().printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()));
 	}
 
 }
