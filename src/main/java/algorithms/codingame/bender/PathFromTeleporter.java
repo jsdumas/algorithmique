@@ -1,7 +1,15 @@
 package algorithms.codingame.bender;
 
-public class PathFromTeleporter implements PathFinder {
+public class PathFromTeleporter extends PriorityPathFinder implements PathFinder {
 	
+	private boolean isInverted;
+	private boolean isXBreaker;
+
+	public PathFromTeleporter(boolean isInverted, boolean isXBreaker) {
+		this.isInverted = isInverted;
+		this.isXBreaker = isXBreaker;
+	}
+
 	@Override
 	public Case getNextCase(CaseArea area) {
 		Teleporter teleporter = area.getTeleporter();
@@ -11,7 +19,7 @@ public class PathFromTeleporter implements PathFinder {
 		} else {
 			areaToGet = new CaseArea(teleporter.getFrom(), area.getBenderMap());
 		}
-		return areaToGet.getSouth();
+		return super.getNextCase(areaToGet, isInverted, isXBreaker);
 	}
 
 }

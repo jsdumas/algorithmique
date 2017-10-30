@@ -33,7 +33,7 @@ public class PathFinderFactory {
 				caseState = new PathFromBier(isInverted, isXBreaker);
 				break;
 			case TELEPORTER:
-				caseState = new PathFromTeleporter();
+				caseState = new PathFromTeleporter(isInverted, isXBreaker);
 				break;
 			default:
 				caseState=null;
