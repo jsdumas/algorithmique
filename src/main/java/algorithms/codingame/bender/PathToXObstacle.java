@@ -1,15 +1,18 @@
 package algorithms.codingame.bender;
 
-public class PathToXObstacle implements PathFinder {
+public class PathToXObstacle extends PriorityPathFinder implements PathFinder {
+
+	private boolean isInverted;
+	private boolean isXBreaker;
+
+	public PathToXObstacle(boolean isInverted, boolean isXBreaker) {
+		this.isInverted = isInverted;
+		this.isXBreaker = isXBreaker;
+	}
 
 	@Override
 	public Case getNextCase(CaseArea area) {
-//		Case suicideCase = area.getSuicideCase();
-//		if(suicideCase!=null) {
-//			return suicideCase;
-//		}
-//		return area.getSouth();
-		return null;
+		return super.getNextCase(area, isInverted, isXBreaker);
 	}
 
 }

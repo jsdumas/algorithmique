@@ -29,7 +29,7 @@ public class PathFinderFactory {
 	private static final Bender BENDER_WALK_TO_WEST_FROM_INVERSOR = new BenderBuilder(3,3).withLine(0, CHARP_START_CHARP.getLine()).withLine(1, END_I_CHARP.getLine()).withLine(2, THREE_CHARPS.getLine()).build();
 	private static final Bender BENDER_WALK_TO_SOUTH_FROM_BIER = new BenderBuilder(5,3).withLine(0, THREE_CHARPS.getLine()).withLine(1, CHARP_START_CHARP.getLine()).withLine(2, CHARP_B_CHARP.getLine()).withLine(3, THREE_X.getLine()).withLine(4, THREE_ENDS.getLine()).build();
 	private static final Bender BENDER_WALK_TO_SOUTH_FROM_T = new BenderBuilder(5,3).withLine(0, CHARP_START_CHARP.getLine()).withLine(1, CHARP_T_CHARP.getLine()).withLine(2, THREE_CHARPS.getLine()).withLine(3, CHARP_T_CHARP.getLine()).withLine(4, THREE_ENDS.getLine()).build();
-	
+//	
 	
 	public MemorisePath getPath(Path path) {
 		MemorisePath memorisePath;

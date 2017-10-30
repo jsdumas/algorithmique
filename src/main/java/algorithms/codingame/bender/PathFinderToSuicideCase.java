@@ -11,8 +11,4 @@ public abstract class PathFinderToSuicideCase {
 		return area.getSouth();
 	}
 	
-	protected Direction getDirection(CaseArea area) {
-		return null;
-	}
-
 }

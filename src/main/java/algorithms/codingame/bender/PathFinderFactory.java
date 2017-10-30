@@ -2,17 +2,17 @@ package algorithms.codingame.bender;
 
 public class PathFinderFactory {
 
-	public PathFinder getPathFinder(CaseType caseType) {
+	public PathFinder getPathFinder(CaseType caseType, boolean isInverted, boolean isXBreaker) {
 		PathFinder caseState;
 		switch (caseType) {
 			case START:
 				caseState = new PathFromStart();
 				break;
 			case EMPTY:
-				caseState = new PathFromEmptyCase();
+				caseState = new PathFromEmptyCase(isInverted, isXBreaker);
 				break;
 			case X_OBSTACLE:
-				caseState = new PathToXObstacle();
+				caseState = new PathToXObstacle(isInverted, isXBreaker);
 				break;
 			case S_MODIFIER:
 				caseState = new PathFromSouth();
@@ -27,10 +27,10 @@ public class PathFinderFactory {
 				caseState = new PathFromWest();
 				break;
 			case INVERSOR:
-				caseState = new PathFromInversor();
+				caseState = new PathFromInversor(isInverted, isXBreaker);
 				break;
 			case BIER:
-				caseState = new PathFromBier();
+				caseState = new PathFromBier(isInverted, isXBreaker);
 				break;
 			case TELEPORTER:
 				caseState = new PathFromTeleporter();

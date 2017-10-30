@@ -48,7 +48,7 @@ public class Bender {
 		if(caseType.equals(BIER)){
 			isXBreaker=!isXBreaker;
 		}
-		return pathFinderFactory.getPathFinder(caseType);
+		return pathFinderFactory.getPathFinder(caseType, isInverted, isXBreaker);
 	}
 	
 	private void benderWalkOnObstacle(CaseArea area) {
@@ -59,9 +59,9 @@ public class Bender {
 			benderMap.getMap()[currentCase.getIdRow()][currentCase.getIdCol()] = EMPTY.getChar();
 		}
 		else if(isInverted){
-			currentCase = pathPriority.getNextCaseWithInvertedPriority(area);
+			currentCase = pathPriority.getNextCaseWithInvertedPriority(area, isXBreaker);
 		} else {
-			currentCase = pathPriority.getNextCaseWithPriority(area);
+			currentCase = pathPriority.getNextCaseWithPriority(area, isXBreaker);
 		}
 	}
 	
