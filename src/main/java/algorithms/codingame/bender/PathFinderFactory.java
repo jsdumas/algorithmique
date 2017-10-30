@@ -12,7 +12,7 @@ public class PathFinderFactory {
 				caseState = new PathFromEmptyCase(isInverted, isXBreaker);
 				break;
 			case X_OBSTACLE:
-				caseState = new PathToXObstacle(isInverted, isXBreaker);
+				caseState = new PathFromXObstacle(isInverted, isXBreaker);
 				break;
 			case S_MODIFIER:
 				caseState = new PathFromSouth();

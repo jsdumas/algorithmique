@@ -1,6 +1,5 @@
 package algorithms.codingame.bender;
 
-import static algorithms.codingame.bender.CaseType.SUICIDE;
 import static algorithms.codingame.bender.Direction.LOOP;
 
 public class MemorisePath {
