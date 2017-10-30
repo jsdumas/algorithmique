@@ -1,6 +1,6 @@
 package algorithms.codingame.bender;
 
-public class PathToEmptyCase implements PathFinder {
+public class PathFromEmptyCase implements PathFinder {
 
 	@Override
 	public Case getNextCase(CaseArea area) {

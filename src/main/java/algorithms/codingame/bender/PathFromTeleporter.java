@@ -1,6 +1,6 @@
 package algorithms.codingame.bender;
 
-public class PathToTeleporter implements PathFinder {
+public class PathFromTeleporter implements PathFinder {
 	
 	@Override
 	public Case getNextCase(CaseArea area) {

@@ -1,10 +1,10 @@
 package algorithms.codingame.bender;
 
-public class PathToEast implements PathFinder {
+public class PathFromWest implements PathFinder {
 
 	@Override
 	public Case getNextCase(CaseArea area) {
-		return area.getEast();
+		return area.getWest();
 	}
 
 }

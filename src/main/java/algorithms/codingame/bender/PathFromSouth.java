@@ -1,11 +1,10 @@
 package algorithms.codingame.bender;
 
-public class PathToInversor implements PathFinder {
-
-
+public class PathFromSouth implements PathFinder {
+	
 	@Override
 	public Case getNextCase(CaseArea area) {
-		return area.getWest();
+		return area.getSouth();
 	}
 
 }

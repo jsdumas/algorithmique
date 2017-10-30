@@ -9,37 +9,31 @@ public class PathFinderFactory {
 				caseState = new PathFromStart();
 				break;
 			case EMPTY:
-				caseState = new PathToEmptyCase();
-				break;
-			case CHARP_OBSTACLE:
-				caseState = new PathToCharpObstacle();
+				caseState = new PathFromEmptyCase();
 				break;
 			case X_OBSTACLE:
 				caseState = new PathToXObstacle();
 				break;
 			case S_MODIFIER:
-				caseState = new PathToSouth();
+				caseState = new PathFromSouth();
 				break;
 			case E_MODIFIER:
-				caseState= new PathToEast();
+				caseState= new PathFromEast();
 				break;
 			case N_MODIFIER:
-				caseState = new PathToNorth();
+				caseState = new PathFromNorth();
 				break;
 			case W_MODIFIER:
-				caseState = new PathToWest();
+				caseState = new PathFromWest();
 				break;
 			case INVERSOR:
-				caseState = new PathToInversor();
+				caseState = new PathFromInversor();
 				break;
 			case BIER:
-				caseState = new PathToBier();
+				caseState = new PathFromBier();
 				break;
 			case TELEPORTER:
-				caseState = new PathToTeleporter();
-				break;
-			case SUICIDE:
-				caseState = new PathToSuicideCase();
+				caseState = new PathFromTeleporter();
 				break;
 			default:
 				caseState=null;
