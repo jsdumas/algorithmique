@@ -1,7 +1,5 @@
 package algorithms.codingame.bender;
 
-import static algorithms.codingame.bender.CaseType.SUICIDE;
-import static algorithms.codingame.bender.Direction.LOOP;
 
 public class Bender {
 
@@ -16,7 +14,7 @@ public class Bender {
 	}
 
 	private boolean isBenderOnTheRoad() {
-		return currentCase != null && !currentCase.getCaseType().equals(SUICIDE) && !memorisePath.printDirection().equals(LOOP.toString());
+		return currentCase != null && !currentCase.getCaseType().equals(CaseType.SUICIDE) && !memorisePath.printDirection().equals(Direction.LOOP.toString());
 	}
 
 	public void walkToSuicideCase() {

@@ -33,7 +33,14 @@ public class PathPriority {
 	}
 	
 	private boolean isWalkableCase(Case nextCase) {
-		return nextCase!=null && !nextCase.getCaseType().equals(CaseType.CHARP_OBSTACLE) && isXBreaker;
+		if(nextCase!=null && nextCase.getCaseType().equals(CaseType.X_OBSTACLE)){
+			if(isXBreaker){
+				return true;
+			}else {
+				return false;
+			}
+		}
+		return nextCase!=null && !nextCase.getCaseType().equals(CaseType.CHARP_OBSTACLE);
 	}
 	
 	private Case getNextCaseWithPriority() {

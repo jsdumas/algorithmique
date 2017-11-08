@@ -1,9 +1,5 @@
 package algorithms.codingame.bender;
 
-import static algorithms.codingame.bender.Direction.EAST;
-import static algorithms.codingame.bender.Direction.NORTH;
-import static algorithms.codingame.bender.Direction.SOUTH;
-import static algorithms.codingame.bender.Direction.WEST;
 
 public class CaseArea {
 
@@ -19,10 +15,10 @@ public class CaseArea {
 		this.currentCase = currentCase;
 		this.map = map;
 		this.teletransporter = teletransporter;
-		south = setCase(currentCase.getIdRow() + 1, currentCase.getIdCol(), SOUTH, currentCase);
-		east = setCase(currentCase.getIdRow(), currentCase.getIdCol() + 1, EAST, currentCase);
-		north = setCase(currentCase.getIdRow() - 1, currentCase.getIdCol(), NORTH, currentCase);
-		west = setCase(currentCase.getIdRow(), currentCase.getIdCol() - 1, WEST, currentCase);
+		south = setCase(currentCase.getIdRow() + 1, currentCase.getIdCol(), Direction.SOUTH, currentCase);
+		east = setCase(currentCase.getIdRow(), currentCase.getIdCol() + 1, Direction.EAST, currentCase);
+		north = setCase(currentCase.getIdRow() - 1, currentCase.getIdCol(), Direction.NORTH, currentCase);
+		west = setCase(currentCase.getIdRow(), currentCase.getIdCol() - 1, Direction.WEST, currentCase);
 	}
 
 
