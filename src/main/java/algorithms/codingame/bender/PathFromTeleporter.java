@@ -5,7 +5,7 @@ public class PathFromTeleporter extends PriorityPathFinder implements PathFinder
 	private final boolean isInverted;
 	private final boolean isXBreaker;
 
-	public PathFromTeleporter(boolean isInverted, boolean isXBreaker) {
+	public PathFromTeleporter(CaseArea area, boolean isInverted, boolean isXBreaker) {
 		this.isInverted = isInverted;
 		this.isXBreaker = isXBreaker;
 	}

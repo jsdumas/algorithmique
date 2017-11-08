@@ -2,23 +2,23 @@ package algorithms.codingame.bender;
 
 public class PathFinderFactory {
 
-	public PathFinder getPathFinder(CaseType caseType, boolean isInverted, boolean isXBreaker) {
+	public PathFinder getPathFinder(CaseArea area, CaseType caseType, boolean isInverted, boolean isXBreaker) {
 		PathFinder caseState;
 		switch (caseType) {
 			case START:
 				caseState = new PathFromStart();
 				break;
 			case EMPTY:
-				caseState = new PathFromEmptyCase(isInverted, isXBreaker);
+				caseState = new PathFromEmptyCase(area, isInverted, isXBreaker);
 				break;
 			case X_OBSTACLE:
-				caseState = new PathFromXObstacle(isInverted, isXBreaker);
+				caseState = new PathFromXObstacle(area, isInverted, isXBreaker);
 				break;
 			case S_MODIFIER:
 				caseState = new PathFromSouth();
 				break;
 			case E_MODIFIER:
-				caseState= new PathFromEast();
+				caseState = new PathFromEast();
 				break;
 			case N_MODIFIER:
 				caseState = new PathFromNorth();
@@ -27,16 +27,16 @@ public class PathFinderFactory {
 				caseState = new PathFromWest();
 				break;
 			case INVERSOR:
-				caseState = new PathFromInversor(isInverted, isXBreaker);
+				caseState = new PathFromInversor(area, isInverted, isXBreaker);
 				break;
 			case BIER:
-				caseState = new PathFromBier(isInverted, isXBreaker);
+				caseState = new PathFromBier(area, isInverted, isXBreaker);
 				break;
 			case TELEPORTER:
-				caseState = new PathFromTeleporter(isInverted, isXBreaker);
+				caseState = new PathFromTeleporter(area, isInverted, isXBreaker);
 				break;
 			default:
-				caseState=null;
+				caseState = null;
 		}
 		return caseState;
 	}

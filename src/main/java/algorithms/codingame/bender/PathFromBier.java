@@ -1,11 +1,11 @@
 package algorithms.codingame.bender;
 
 public class PathFromBier extends PriorityPathFinder implements PathFinder {
-	
-	private boolean isInverted;
-	private boolean isXBreaker;
 
-	public PathFromBier(boolean isInverted, boolean isXBreaker) {
+	private final boolean isInverted;
+	private final boolean isXBreaker;
+
+	public PathFromBier(CaseArea area, boolean isInverted, boolean isXBreaker) {
 		this.isInverted = isInverted;
 		this.isXBreaker = isXBreaker;
 	}

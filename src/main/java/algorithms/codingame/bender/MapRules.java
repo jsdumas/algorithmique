@@ -21,15 +21,15 @@ public class MapRules {
 		this.isXBreaker = false;
 	}
 
-	private PathFinder getPathFinder() {
-		CaseType caseType = currentCase.getCaseType();
-		if (caseType.equals(INVERSOR)) {
+	private PathFinder getPathFinder(CaseArea area) {
+		CaseType currentCaseType = currentCase.getCaseType();
+		if (currentCaseType.equals(INVERSOR)) {
 			isInverted = !isInverted;
 		}
-		if (caseType.equals(BIER)) {
+		if (currentCaseType.equals(BIER)) {
 			isXBreaker = !isXBreaker;
 		}
-		return pathFinderFactory.getPathFinder(caseType, isInverted, isXBreaker);
+		return pathFinderFactory.getPathFinder(area, currentCaseType, isInverted, isXBreaker);
 	}
 
 	private boolean isCaseWalkable() {
@@ -59,8 +59,8 @@ public class MapRules {
 
 	public Case getNextCase(Case currentCase, char[][] map, Teleporter teletransporter) {
 		this.currentCase = currentCase;
-		PathFinder pathFinder = getPathFinder();
 		CaseArea area = new CaseArea(currentCase, map, teletransporter);
+		PathFinder pathFinder = getPathFinder(area);
 		benderWalkOnObstacle(map, area);
 		return pathFinder.getNextCase(area);
 	}

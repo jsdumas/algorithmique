@@ -2,10 +2,10 @@ package algorithms.codingame.bender;
 
 public class PathFromXObstacle extends PriorityPathFinder implements PathFinder {
 
-	private boolean isInverted;
-	private boolean isXBreaker;
+	private final boolean isInverted;
+	private final boolean isXBreaker;
 
-	public PathFromXObstacle(boolean isInverted, boolean isXBreaker) {
+	public PathFromXObstacle(CaseArea area, boolean isInverted, boolean isXBreaker) {
 		this.isInverted = isInverted;
 		this.isXBreaker = isXBreaker;
 	}
