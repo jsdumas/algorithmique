@@ -16,17 +16,17 @@ public class BenderBuilder {
 		char[] lineToCharArray = line.toCharArray();
 		for(int i=0; i<lineToCharArray.length; i++) {
 			if(lineToCharArray[i]=='@') {
-				startCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('@'), Direction.LOOP);
+				startCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('@'), Direction.LOOP, null);
 			}
 			if(lineToCharArray[i]=='$') {
-				suicideCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('$'), Direction.LOOP);
+				suicideCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('$'), Direction.LOOP, null);
 			}
 			if(lineToCharArray[i]=='T') {
 				if(teletransporter.getFrom()==null) {
-					teletransporter.setFrom(new Case(idRow, i, CaseType.getCaseTypeForCharacter('T'), Direction.LOOP));
+					teletransporter.setFrom(new Case(idRow, i, CaseType.getCaseTypeForCharacter('T'), Direction.LOOP, null));
 				}
 				else if(teletransporter.getTo()==null) {
-					teletransporter.setTo(new Case(idRow, i, CaseType.getCaseTypeForCharacter('T'), Direction.LOOP));
+					teletransporter.setTo(new Case(idRow, i, CaseType.getCaseTypeForCharacter('T'), Direction.LOOP, null));
 				}
 			}
 			map[idRow][i]=lineToCharArray[i];

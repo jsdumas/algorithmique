@@ -52,13 +52,12 @@ public class Bender {
 	}
 	
 	private void benderWalkOnObstacle(CaseArea area) {
-		if(isCaseWalkable()){
+		if(isCaseWalkable() || currentCase.getCaseType().equals(CHARP_OBSTACLE) && currentCase.getComeFrom().getCaseType().equals(CaseType.START)){
 			return;
 		}
 		if(isXBreaker && currentCase.getCaseType().equals(X_OBSTACLE)){
 			benderMap.getMap()[currentCase.getIdRow()][currentCase.getIdCol()] = EMPTY.getChar();
-		}
-		else if(isInverted){
+		} else if(isInverted){
 			currentCase = pathPriority.getNextCaseWithInvertedPriority(area, isXBreaker);
 		} else {
 			currentCase = pathPriority.getNextCaseWithPriority(area, isXBreaker);

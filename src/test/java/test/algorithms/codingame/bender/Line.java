@@ -2,18 +2,18 @@ package test.algorithms.codingame.bender;
 
 public enum Line {
 	
-	CHARP_START_CHARP("#@#"),
-	CHARP_START_END("#@$"),
-	THREE_CHARPS("###"),
-	THREE_ENDS("$$$"),
-	THREE_X("XXX"),
-	THREE_S("SSS"),
-	E_E_END("EE$"),
-	E_E_N("EEN"),
-	END_I_CHARP("$I#"),
-	END_W_W("$WW"),
-	CHARP_B_CHARP("#B#"),
-	CHARP_T_CHARP("#T#");
+	LINE_OF_CHARPS("######"),
+	LEFT_START("#@   #"),
+	LINE_OF_ENDS("#$$$$#"),
+	CHARP_START_END("#@$  #"),
+	THREE_X("#XXXX#"),
+	THREE_S("#SSSS#"),
+	E_E_END("#EEE$#"),
+	E_E_N("#EEEN#"),
+	END_I_CHARP("#$III#"),
+	END_W_W("#$WWW#"),
+	CHARP_B_CHARP("#BBBB#"),
+	CHARP_T_CHARP("#TTTT#");
 	
 	private String line;
 	

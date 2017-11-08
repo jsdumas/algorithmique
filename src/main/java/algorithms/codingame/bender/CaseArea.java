@@ -29,6 +29,11 @@ public class CaseArea {
 		east = setCase(currentCase.getIdRow(),currentCase.getIdCol()+1, EAST);
 		north = setCase(currentCase.getIdRow()-1,currentCase.getIdCol(), NORTH);
 		west = setCase(currentCase.getIdRow(),currentCase.getIdCol()-1, WEST);
+		if(currentCase.getCaseType().equals(CaseType.START)){
+			east = null;
+			north = null;
+			west = null;
+		}
 	}
 
 	public Case getSuicideCase() {
@@ -47,11 +52,11 @@ public class CaseArea {
 		return null;
 	}
 
-	private Case setCase(int idRow, int idCol, Direction comeFrom) {
+	private Case setCase(int idRow, int idCol, Direction direction) {
 		if(idRow<0 || idRow>=map.length || idCol<0 || idCol>=map[0].length ) {
 			return null;
 		}
-		return new Case(idRow, idCol, CaseType.getCaseTypeForCharacter(map[idRow][idCol]), comeFrom);
+		return new Case(idRow, idCol, CaseType.getCaseTypeForCharacter(map[idRow][idCol]), direction, currentCase);
 	}
 
 	public Case getSouth() {

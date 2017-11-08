@@ -6,12 +6,15 @@ public class Case {
 	private final int idCol;
 	private CaseType caseType;
 	private Direction direction;
+	private Case comeFrom;
 	
-	public Case(int idRow, int idCol, CaseType caseType, Direction direction) {
+	
+	public Case(int idRow, int idCol, CaseType caseType, Direction direction, Case comeFrom) {
 		this.idRow = idRow;
 		this.idCol = idCol;
 		this.caseType = caseType;
 		this.direction = direction;
+		this.comeFrom = comeFrom;
 	}
 
 	public int getIdRow() {
@@ -32,6 +35,10 @@ public class Case {
 
 	public Direction getDirection() {
 		return direction;
+	}
+	
+	public Case getComeFrom() {
+		return comeFrom;
 	}
 
 }
