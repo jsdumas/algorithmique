@@ -15,16 +15,16 @@ public class PathFinderFactory {
 				caseState = new PathFromXObstacle(area, isInverted, isXBreaker);
 				break;
 			case S_MODIFIER:
-				caseState = new PathFromSouth(area);
+				caseState = new PathFromSouth(area, isXBreaker);
 				break;
 			case E_MODIFIER:
-				caseState = new PathFromEast(area);
+				caseState = new PathFromEast(area, isXBreaker);
 				break;
 			case N_MODIFIER:
-				caseState = new PathFromNorth(area);
+				caseState = new PathFromNorth(area, isXBreaker);
 				break;
 			case W_MODIFIER:
-				caseState = new PathFromWest(area);
+				caseState = new PathFromWest(area, isXBreaker);
 				break;
 			case INVERSOR:
 				caseState = new PathFromInversor(area, isInverted, isXBreaker);

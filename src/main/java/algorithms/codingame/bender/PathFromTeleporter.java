@@ -1,6 +1,6 @@
 package algorithms.codingame.bender;
 
-public class PathFromTeleporter extends PriorityPathFinder implements PathFinder {
+public class PathFromTeleporter implements PathFinder {
 
 	private final boolean isInverted;
 	private final boolean isXBreaker;
@@ -22,7 +22,8 @@ public class PathFromTeleporter extends PriorityPathFinder implements PathFinder
 		} else {
 			areaToGet = new CaseArea(teleporter.getFrom(), area.getMap(), area.getTeletransporter());
 		}
-		return super.getNextCase(areaToGet, isInverted, isXBreaker);
+		PathPriority pathPriority = new PathPriority(areaToGet, isInverted, isXBreaker);
+		return pathPriority.getNextCase();
 	}
 
 }

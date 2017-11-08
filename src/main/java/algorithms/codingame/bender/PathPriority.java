@@ -1,64 +1,79 @@
 package algorithms.codingame.bender;
 
-import static algorithms.codingame.bender.CaseType.CHARP_OBSTACLE;
-import static algorithms.codingame.bender.CaseType.X_OBSTACLE;
 
 public class PathPriority {
 	
-	private Case getWest(CaseArea area) {
+	private final CaseArea area;
+	private final boolean isInverted;
+	private final boolean isXBreaker;
+	private final XBreaker xBreaker;
+
+
+	public PathPriority(CaseArea area, boolean isInverted, boolean isXBreaker) {
+		this.area = area;
+		this.isInverted = isInverted;
+		this.isXBreaker = isXBreaker;
+		this.xBreaker = new XBreaker(area, isXBreaker);
+	}
+
+	private Case getWest() {
 		return area.getWest();
 	}
 
-	private Case getNorth(CaseArea area) {
+	private Case getNorth() {
 		return area.getNorth();
 	}
 
-	private Case getEast(CaseArea area) {
+	private Case getEast() {
 		return area.getEast();
 	}
 
-	private Case getSouth(CaseArea area) {
+	private Case getSouth() {
 		return area.getSouth();
 	}
 	
-	private boolean isWalkableCase(Case nextCase, CaseType caseType, boolean isXBreaker) {
-		if(caseType.equals(X_OBSTACLE) && isXBreaker){
-			return true;
-		}
-		return nextCase!=null && !caseType.equals(CHARP_OBSTACLE) && !caseType.equals(X_OBSTACLE);
+	private boolean isWalkableCase(Case nextCase) {
+		return nextCase!=null && !nextCase.getCaseType().equals(CaseType.CHARP_OBSTACLE) && isXBreaker;
 	}
 	
-	public Case getNextCaseWithPriority(CaseArea area, boolean isXBreaker) {
-		if(isWalkableCase(getSouth(area), getSouth(area).getCaseType(), isXBreaker)){
-			return getSouth(area);
+	private Case getNextCaseWithPriority() {
+		if(isWalkableCase(getSouth())){
+			return xBreaker.getSouth();
 		}
-		if(isWalkableCase(getEast(area), getEast(area).getCaseType(), isXBreaker)){
-			return getEast(area);
+		if(isWalkableCase(getEast())){
+			return xBreaker.getEast();
 		}
-		if(isWalkableCase(getNorth(area), getNorth(area).getCaseType(), isXBreaker)){
-			return getNorth(area);
+		if(isWalkableCase(getNorth())){
+			return xBreaker.getNorth();
 		}
-		if(isWalkableCase(getWest(area), getWest(area).getCaseType(), isXBreaker)){
-			return getWest(area);
+		if(isWalkableCase(getWest())){
+			return xBreaker.getWest();
 		}
 		return area.getCurrentCase();
 	}
 
 
-	public Case getNextCaseWithInvertedPriority(CaseArea area, boolean isXBreaker) {
-		if(isWalkableCase(getWest(area), getWest(area).getCaseType(), isXBreaker)){
-			return getWest(area);
+	private Case getNextCaseWithInvertedPriority() {
+		if(isWalkableCase(getWest())){
+			return xBreaker.getWest();
 		}
-		if(isWalkableCase(getNorth(area), getNorth(area).getCaseType(), isXBreaker)){
-			return getNorth(area);
+		if(isWalkableCase(getNorth())){
+			return xBreaker.getNorth();
 		}
-		if(isWalkableCase(getEast(area), getEast(area).getCaseType(), isXBreaker)){
-			return getEast(area);
+		if(isWalkableCase(getEast())){
+			return xBreaker.getEast();
 		}
-		if(isWalkableCase(getSouth(area), getEast(area).getCaseType(), isXBreaker)){
-			return getSouth(area);
+		if(isWalkableCase(getSouth())){
+			return xBreaker.getSouth();
 		}
 		return area.getCurrentCase();
 
+	}
+	
+	public Case getNextCase(){
+		if(isInverted){
+			return getNextCaseWithInvertedPriority();
+		}
+		return getNextCaseWithPriority();
 	}
 }

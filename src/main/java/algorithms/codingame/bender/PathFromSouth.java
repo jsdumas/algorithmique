@@ -2,15 +2,15 @@ package algorithms.codingame.bender;
 
 public class PathFromSouth implements PathFinder {
 
-	private final CaseArea area;
+	private final XBreaker xBreaker;
 
-	public PathFromSouth(CaseArea area) {
-		this.area = area;
+	public PathFromSouth(CaseArea area, boolean isXBreaker) {
+		this.xBreaker = new XBreaker(area, isXBreaker);
 	}
 
 	@Override
 	public Case getNextCase() {
-		return area.getSouth();
+		return xBreaker.getSouth();
 	}
 
 }
