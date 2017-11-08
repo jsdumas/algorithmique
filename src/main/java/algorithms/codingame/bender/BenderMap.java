@@ -1,17 +1,16 @@
 package algorithms.codingame.bender;
 
 public class BenderMap {
-	
+
 	private final char[][] map;
 	private final Case startCase;
 	private final Case suicideCase;
 	private final Teleporter teletransporter;
 
-
 	public BenderMap(char[][] map, Case startCase, Case suicideCase, Teleporter teletransporter) {
-		this.map=map;
-		this.startCase=startCase;
-		this.suicideCase=suicideCase;
+		this.map = map;
+		this.startCase = startCase;
+		this.suicideCase = suicideCase;
 		this.teletransporter = teletransporter;
 	}
 
@@ -22,7 +21,7 @@ public class BenderMap {
 	public Case getStartCase() {
 		return startCase;
 	}
-	
+
 	public Case getSuicideCase() {
 		return suicideCase;
 	}

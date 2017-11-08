@@ -13,50 +13,43 @@ public class CaseArea {
 	private Case east;
 	private Case north;
 	private Case west;
-	private Teleporter teleporter;
-	private BenderMap benderMap;
+	private final Teleporter teletransporter;
 
-	public CaseArea(Case currentCase, BenderMap benderMap) {
+	public CaseArea(Case currentCase, char[][] map, Teleporter teletransporter) {
 		this.currentCase = currentCase;
-		this.benderMap = benderMap;
-		this.map = benderMap.getMap();
-		this.teleporter = benderMap.getTeletransporter();
+		this.map = map;
+		this.teletransporter = teletransporter;
 		setCases();
 	}
 
 	private void setCases() {
-		south = setCase(currentCase.getIdRow()+1,currentCase.getIdCol(), SOUTH);
-		east = setCase(currentCase.getIdRow(),currentCase.getIdCol()+1, EAST);
-		north = setCase(currentCase.getIdRow()-1,currentCase.getIdCol(), NORTH);
-		west = setCase(currentCase.getIdRow(),currentCase.getIdCol()-1, WEST);
-		if(currentCase.getCaseType().equals(CaseType.START)){
-			east = null;
-			north = null;
-			west = null;
-		}
+		south = setCase(currentCase.getIdRow() + 1, currentCase.getIdCol(), SOUTH);
+		east = setCase(currentCase.getIdRow(), currentCase.getIdCol() + 1, EAST);
+		north = setCase(currentCase.getIdRow() - 1, currentCase.getIdCol(), NORTH);
+		west = setCase(currentCase.getIdRow(), currentCase.getIdCol() - 1, WEST);
 	}
 
 	public Case getSuicideCase() {
-		if(south.getCaseType().equals(CaseType.SUICIDE)) {
+		if (south.getCaseType().equals(CaseType.SUICIDE)) {
 			return south;
 		}
-		if(east.getCaseType().equals(CaseType.SUICIDE)) {
+		if (east.getCaseType().equals(CaseType.SUICIDE)) {
 			return east;
 		}
-		if(north.getCaseType().equals(CaseType.SUICIDE)) {
+		if (north.getCaseType().equals(CaseType.SUICIDE)) {
 			return north;
 		}
-		if(west.getCaseType().equals(CaseType.SUICIDE)) {
+		if (west.getCaseType().equals(CaseType.SUICIDE)) {
 			return west;
 		}
 		return null;
 	}
 
-	private Case setCase(int idRow, int idCol, Direction direction) {
-		if(idRow<0 || idRow>=map.length || idCol<0 || idCol>=map[0].length ) {
+	private Case setCase(int idRow, int idCol, Direction comeFrom) {
+		if (idRow < 0 || idRow >= map.length || idCol < 0 || idCol >= map[0].length) {
 			return null;
 		}
-		return new Case(idRow, idCol, CaseType.getCaseTypeForCharacter(map[idRow][idCol]), direction, currentCase);
+		return new Case(idRow, idCol, CaseType.getCaseTypeForCharacter(map[idRow][idCol]), comeFrom);
 	}
 
 	public Case getSouth() {
@@ -79,12 +72,12 @@ public class CaseArea {
 		return currentCase;
 	}
 
-	public Teleporter getTeleporter() {
-		return teleporter;
+	public Teleporter getTeletransporter() {
+		return teletransporter;
 	}
 
-	public BenderMap getBenderMap() {
-		return benderMap;
+	public char[][] getMap() {
+		return map;
 	}
 
 }
