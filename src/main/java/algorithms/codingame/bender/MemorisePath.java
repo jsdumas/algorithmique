@@ -12,7 +12,7 @@ public class MemorisePath {
 	}
 
 	public void memorise(Case nextCase) {
-		if (nextCase.getDirection().equals(LOOP)) {
+		if (nextCase.getCaseType().equals(CaseType.CHARP_OBSTACLE) || nextCase.getCaseType().equals(CaseType.X_OBSTACLE)) {
 			stringBuffer.setLength(0);
 			stringBuffer.append(LOOP.toString());
 		} else {

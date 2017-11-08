@@ -46,45 +46,45 @@ public class PathFinderTest {
 	public void shouldGetLoopFromStartBecauseOfCharp() {
 		assertThat(PATH_IS_LOOP_BECAUSE_OF_CHARP.printDirection(), equalTo(LOOP.toString()));
 	}
-//	
-//	@Test
-//	public void shouldGetLoopFromStartBecauseOfX() {
-//		assertThat(PATH_IS_LOOP_BECAUSE_OF_X.printDirection(), equalTo(LOOP.toString()));
-//	}
-//	
-//	@Test
-//	public void shouldGetSouthFromSouthModifier() {
-//		assertThat(PATH_TO_SOUTH_FROM_S_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()));
-//	}
-//	
-//	@Test
-//	public void shouldGetSouthFromEastModifier() {
-//		assertThat(PATH_TO_EAST_FROM_E_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+EAST.toString()));
-//	}
-//	
-//	@Test
-//	public void shouldGetNorthFromNorthModifier() {
-//		assertThat(PATH_TO_NORTH_FROM_N_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+EAST.toString()+"\n"+NORTH.toString()));
-//	}
-//	
-//	@Test
-//	public void shouldGetWestFromWestModifier() {
-//		assertThat(PATH_TO_WEST_FROM_W_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+WEST.toString()));
-//	}
-//	
-//	@Test
-//	public void shouldGetWestFromInversor() {
-//		assertThat(PATH_TO_WEST_FROM_INVERSOR.printDirection(), equalTo(SOUTH.toString()+"\n"+WEST.toString()));
-//	}
-//	
-//	@Test
-//	public void shouldGetSouthFromBier() {
-//		assertThat(PATH_TO_SOUTH_FROM_BIER.printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()+"\n"+SOUTH.toString()));
-//	}
-//	
-//	@Test
-//	public void shouldGetSouthFromTeleporter() {
-//		assertThat(PATH_TO_SOUTH_FROM_T.printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()));
-//	}
+	
+	@Test
+	public void shouldGetLoopFromStartBecauseOfX() {
+		assertThat(PATH_IS_LOOP_BECAUSE_OF_X.printDirection(), equalTo(LOOP.toString()));
+	}
+	
+	@Test
+	public void shouldGetSouthFromSouthModifier() {
+		assertThat(PATH_TO_SOUTH_FROM_S_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()));
+	}
+	
+	@Test
+	public void shouldGetSouthFromEastModifier() {
+		assertThat(PATH_TO_EAST_FROM_E_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+EAST.toString()));
+	}
+	
+	@Test
+	public void shouldGetNorthFromNorthModifier() {
+		assertThat(PATH_TO_NORTH_FROM_N_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+EAST.toString()+"\n"+NORTH.toString()));
+	}
+	
+	@Test
+	public void shouldGetWestFromWestModifier() {
+		assertThat(PATH_TO_WEST_FROM_W_MODIFIER.printDirection(), equalTo(SOUTH.toString()+"\n"+WEST.toString()));
+	}
+	
+	@Test
+	public void shouldGetWestFromInversor() {
+		assertThat(PATH_TO_WEST_FROM_INVERSOR.printDirection(), equalTo(SOUTH.toString()+"\n"+WEST.toString()));
+	}
+	
+	@Test
+	public void shouldGetSouthFromBier() {
+		assertThat(PATH_TO_SOUTH_FROM_BIER.printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()+"\n"+SOUTH.toString()));
+	}
+	
+	@Test
+	public void shouldGetSouthFromTeleporter() {
+		assertThat(PATH_TO_SOUTH_FROM_T.printDirection(), equalTo(SOUTH.toString()+"\n"+SOUTH.toString()));
+	}
 
 }

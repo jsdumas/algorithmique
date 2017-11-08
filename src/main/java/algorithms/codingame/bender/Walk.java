@@ -11,7 +11,8 @@ public class Walk {
 	}
 
 	public Case toNextCase(Case currentCase) {
-		return mapRules.getNextCase(currentCase, benderMap.getMap(), benderMap.getTeletransporter());
+		CaseArea area = new CaseArea(currentCase, benderMap.getMap(), benderMap.getTeletransporter());
+		return mapRules.getNextCase(area);
 	}
 
 }

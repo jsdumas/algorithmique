@@ -19,7 +19,7 @@ public class Bender {
 		return currentCase != null && !currentCase.getCaseType().equals(SUICIDE) && !memorisePath.printDirection().equals(LOOP.toString());
 	}
 
-public void walkToSuicideCase() {
+	public void walkToSuicideCase() {
 		while (isBenderOnTheRoad()) {
 			Case nextCase = walk.toNextCase(currentCase);
 			memorisePath.memorise(nextCase);

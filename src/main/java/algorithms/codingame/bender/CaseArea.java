@@ -19,15 +19,12 @@ public class CaseArea {
 		this.currentCase = currentCase;
 		this.map = map;
 		this.teletransporter = teletransporter;
-		setCases();
+		south = setCase(currentCase.getIdRow() + 1, currentCase.getIdCol(), SOUTH, currentCase);
+		east = setCase(currentCase.getIdRow(), currentCase.getIdCol() + 1, EAST, currentCase);
+		north = setCase(currentCase.getIdRow() - 1, currentCase.getIdCol(), NORTH, currentCase);
+		west = setCase(currentCase.getIdRow(), currentCase.getIdCol() - 1, WEST, currentCase);
 	}
 
-	private void setCases() {
-		south = setCase(currentCase.getIdRow() + 1, currentCase.getIdCol(), SOUTH);
-		east = setCase(currentCase.getIdRow(), currentCase.getIdCol() + 1, EAST);
-		north = setCase(currentCase.getIdRow() - 1, currentCase.getIdCol(), NORTH);
-		west = setCase(currentCase.getIdRow(), currentCase.getIdCol() - 1, WEST);
-	}
 
 	public Case getSuicideCase() {
 		if (south.getCaseType().equals(CaseType.SUICIDE)) {
@@ -45,11 +42,11 @@ public class CaseArea {
 		return null;
 	}
 
-	private Case setCase(int idRow, int idCol, Direction comeFrom) {
+	private Case setCase(int idRow, int idCol, Direction comeFrom, Case currentCase) {
 		if (idRow < 0 || idRow >= map.length || idCol < 0 || idCol >= map[0].length) {
 			return null;
 		}
-		return new Case(idRow, idCol, CaseType.getCaseTypeForCharacter(map[idRow][idCol]), comeFrom);
+		return new Case(idRow, idCol, CaseType.getCaseTypeForCharacter(map[idRow][idCol]), comeFrom, currentCase);
 	}
 
 	public Case getSouth() {

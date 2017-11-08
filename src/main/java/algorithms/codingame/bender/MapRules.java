@@ -31,22 +31,6 @@ public class MapRules {
 		return pathFinderFactory.getPathFinder(area, currentCaseType, isInverted, isXBreaker);
 	}
 
-	private boolean isCaseWalkable() {
-		return currentCase != null && !currentCase.getCaseType().equals(CHARP_OBSTACLE) && !currentCase.getCaseType().equals(X_OBSTACLE);
-	}
-
-	private void benderWalkOnObstacle(char[][] map, CaseArea area) {
-		if (isCaseWalkable()) {
-			return;
-		}
-		if (isXBreaker && currentCase.getCaseType().equals(X_OBSTACLE)) {
-			map[currentCase.getIdRow()][currentCase.getIdCol()] = EMPTY.getChar();
-		} else if (isInverted) {
-			currentCase = pathPriority.getNextCaseWithInvertedPriority(area, isXBreaker);
-		} else {
-			currentCase = pathPriority.getNextCaseWithPriority(area, isXBreaker);
-		}
-	}
 
 	public boolean isInverted() {
 		return isInverted;
@@ -56,11 +40,14 @@ public class MapRules {
 		this.isInverted = isInverted;
 	}
 
-	public Case getNextCase(Case currentCase, char[][] map, Teleporter teletransporter) {
-		CaseArea area = new CaseArea(currentCase, map, teletransporter);
+	public Case getNextCase(CaseArea area) {
 		PathFinder pathFinder = getPathFinder(area);
-		// benderWalkOnObstacle(map, area);
-		return pathFinder.toNextCase(area);
+		Case nextCase = pathFinder.getNextCase();
+		if(nextCase.getCaseType().equals(CaseType.X_OBSTACLE) && isXBreaker){
+			area.getMap()[nextCase.getIdRow()][nextCase.getIdCol()] = EMPTY.getChar();
+			nextCase.setEmptyCaseType();
+		}
+		return nextCase;
 	}
 
 }
