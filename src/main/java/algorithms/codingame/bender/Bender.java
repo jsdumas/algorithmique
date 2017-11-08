@@ -22,7 +22,7 @@ public class Bender {
 	public void walkToSuicideCase() {
 		while (isBenderOnTheRoad()) {
 			Case nextCase = benderMap.getNextCase(currentCase);
-			memorisePath.memorise(nextCase, isBenderOnTheRoad());
+			memorisePath.memorise(nextCase);
 			currentCase = nextCase;
 		}
 	}
