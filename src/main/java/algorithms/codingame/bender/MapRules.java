@@ -12,7 +12,6 @@ public class MapRules {
 	private final PathPriority pathPriority;
 	private boolean isInverted;
 	private boolean isXBreaker;
-	private Case currentCase;
 
 	public MapRules() {
 		this.pathFinderFactory = new PathFinderFactory();
@@ -22,7 +21,7 @@ public class MapRules {
 	}
 
 	private PathFinder getPathFinder(CaseArea area) {
-		CaseType currentCaseType = currentCase.getCaseType();
+		CaseType currentCaseType = area.getCurrentCase().getCaseType();
 		if (currentCaseType.equals(INVERSOR)) {
 			isInverted = !isInverted;
 		}
@@ -58,11 +57,10 @@ public class MapRules {
 	}
 
 	public Case getNextCase(Case currentCase, char[][] map, Teleporter teletransporter) {
-		this.currentCase = currentCase;
 		CaseArea area = new CaseArea(currentCase, map, teletransporter);
 		PathFinder pathFinder = getPathFinder(area);
-		benderWalkOnObstacle(map, area);
-		return pathFinder.getNextCase(area);
+		// benderWalkOnObstacle(map, area);
+		return pathFinder.toNextCase(area);
 	}
 
 }

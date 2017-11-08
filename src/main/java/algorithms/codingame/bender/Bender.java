@@ -6,12 +6,12 @@ import static algorithms.codingame.bender.Direction.LOOP;
 public class Bender {
 
 	private final MemorisePath memorisePath;
-	private final BenderMap benderMap;
+	private final Walk walk;
 	private Case currentCase;
 
 	public Bender(BenderMap benderMap) {
 		this.memorisePath = new MemorisePath();
-		this.benderMap = benderMap;
+		this.walk = new Walk(benderMap);
 		this.currentCase = benderMap.getStartCase();
 	}
 
@@ -21,7 +21,7 @@ public class Bender {
 
 	public void walkToSuicideCase() {
 		while (isBenderOnTheRoad()) {
-			Case nextCase = benderMap.getNextCase(currentCase);
+			Case nextCase = walk.toNextCase(currentCase);
 			memorisePath.memorise(nextCase);
 			currentCase = nextCase;
 		}
