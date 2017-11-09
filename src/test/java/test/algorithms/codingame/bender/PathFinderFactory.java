@@ -8,6 +8,7 @@ import static test.algorithms.codingame.bender.Line.E_AND_ONE_NORTH_TWO_SPACES;
 import static test.algorithms.codingame.bender.Line.ONE_SPACE_AND_AT_AND_TWO_SPACES;
 import static test.algorithms.codingame.bender.Line.LINE_OF_S;
 import static test.algorithms.codingame.bender.Line.AT_AND_THREE_SPACES;
+import static test.algorithms.codingame.bender.Line.AT_TWO_SPACES_AND_DOLLARD;
 import static test.algorithms.codingame.bender.Line.DOLLARD_AND_ONE_I_AND_TWO_X;
 import static test.algorithms.codingame.bender.Line.AT_AND_DOLLARD;
 import static test.algorithms.codingame.bender.Line.ONE_T_AND_THREE_X;
@@ -30,6 +31,7 @@ public class PathFinderFactory {
 	private static final Bender BENDER_WALK_TO_WEST_FROM_INVERSOR = new BenderBuilder(3,6).withLine(0, ONE_SPACE_AND_AT_AND_TWO_SPACES.getLine()).withLine(1, DOLLARD_AND_ONE_I_AND_TWO_X.getLine()).withLine(2, LINE_OF_CHARPS.getLine()).build();
 	private static final Bender BENDER_WALK_TO_SOUTH_FROM_BIER = new BenderBuilder(5,6).withLine(0, LINE_OF_CHARPS.getLine()).withLine(1, AT_AND_THREE_SPACES.getLine()).withLine(2, LINE_OF_B.getLine()).withLine(3, LINE_OF_X.getLine()).withLine(4, LINE_OF_DOLLARDS.getLine()).build();
 	private static final Bender BENDER_WALK_TO_SOUTH_FROM_T = new BenderBuilder(5,6).withLine(0, AT_AND_THREE_SPACES.getLine()).withLine(1, ONE_T_AND_THREE_X.getLine()).withLine(2, LINE_OF_X.getLine()).withLine(3, ONE_T_AND_THREE_X.getLine()).withLine(4, LINE_OF_DOLLARDS.getLine()).build();
+	private static final Bender BENDER_WALK_TO_EAST_INLINE_FROM_START = new BenderBuilder(3,6).withLine(0, LINE_OF_CHARPS.getLine()).withLine(1, AT_TWO_SPACES_AND_DOLLARD.getLine()).withLine(2, LINE_OF_CHARPS.getLine()).build();
 //	
 	
 	public MemorisePath getPath(Path path) {
@@ -64,6 +66,9 @@ public class PathFinderFactory {
 			break;
 		case TO_SOUTH_FROM_T :
 			memorisePath = BENDER_WALK_TO_SOUTH_FROM_T.getMemorisePath();
+			break;
+		case TO_EAST_INLINE_FROM_START :
+			memorisePath = BENDER_WALK_TO_EAST_INLINE_FROM_START.getMemorisePath();
 			break;
 		default:
 			memorisePath = null;

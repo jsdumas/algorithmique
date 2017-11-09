@@ -14,7 +14,8 @@ public enum Line {
 	DOLLARD_AND_ONE_I_AND_TWO_X("#$IXX#"),
 	DOLLARD_AND_THREE_W("#$WWW#"),
 	LINE_OF_B("#BBBB#"),
-	ONE_T_AND_THREE_X("#TXXX#");
+	ONE_T_AND_THREE_X("#TXXX#"),
+	AT_TWO_SPACES_AND_DOLLARD("#@  $#");
 	
 	private String line;
 	
