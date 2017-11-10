@@ -6,7 +6,7 @@ public class PathFinderFactory {
 		PathFinder caseState;
 		switch (caseType) {
 			case START:
-				caseState = new PathFromStart(area);
+				caseState = new PathFromStart(area, isInverted, isXBreaker);
 				break;
 			case EMPTY:
 				caseState = new PathFromEmptyCase(area, isInverted, isXBreaker);

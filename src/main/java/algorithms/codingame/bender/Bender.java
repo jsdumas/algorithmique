@@ -1,6 +1,5 @@
 package algorithms.codingame.bender;
 
-
 public class Bender {
 
 	private final MemorisePath memorisePath;
@@ -14,7 +13,8 @@ public class Bender {
 	}
 
 	private boolean isBenderOnTheRoad() {
-		return currentCase != null && !currentCase.getCaseType().equals(CaseType.SUICIDE) && !memorisePath.printDirection().equals(Direction.LOOP.toString());
+		return currentCase != null && !currentCase.getCaseType().equals(CaseType.SUICIDE) && !memorisePath.printDirection().equals(
+				Direction.LOOP.toString());
 	}
 
 	public void walkToSuicideCase() {

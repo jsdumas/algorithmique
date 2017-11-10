@@ -1,6 +1,5 @@
 package algorithms.codingame.bender;
 
-
 public class MemorisePath {
 
 	private final StringBuffer stringBuffer;
@@ -15,7 +14,7 @@ public class MemorisePath {
 			stringBuffer.append(Direction.LOOP.toString());
 		} else {
 			stringBuffer.append(nextCase.getDirection().toString());
-			if (!nextCase.getCaseType().equals(CaseType.SUICIDE)) {
+			if (!nextCase.getCaseType().equals(CaseType.SUICIDE) && !nextCase.getDirection().equals(Direction.LOOP)) {
 				stringBuffer.append("\n");
 			}
 		}

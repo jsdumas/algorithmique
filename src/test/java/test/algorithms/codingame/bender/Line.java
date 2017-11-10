@@ -3,6 +3,8 @@ package test.algorithms.codingame.bender;
 public enum Line {
 	
 	LINE_OF_CHARPS("######"),
+	AT_AND_THREE_CHARPS("#@####"),
+	AT_AND_THREE_X("#@XXX#"),
 	AT_AND_THREE_SPACES("#@   #"),
 	ONE_SPACE_AND_AT_AND_TWO_SPACES("# @  #"),
 	AT_AND_DOLLARD("#@$  #"),

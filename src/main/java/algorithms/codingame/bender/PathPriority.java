@@ -1,13 +1,11 @@
 package algorithms.codingame.bender;
 
-
 public class PathPriority {
-	
+
 	private final CaseArea area;
 	private final boolean isInverted;
 	private final boolean isXBreaker;
 	private final XBreaker xBreaker;
-
 
 	public PathPriority(CaseArea area, boolean isInverted, boolean isXBreaker) {
 		this.area = area;
@@ -31,56 +29,64 @@ public class PathPriority {
 	private Case getSouth() {
 		return area.getSouth();
 	}
-	
+
 	private boolean isWalkableCase(Case nextCase) {
-		if(nextCase!=null && nextCase.getCaseType().equals(CaseType.X_OBSTACLE)){
-			if(isXBreaker){
+		if (nextCase != null && nextCase.getCaseType().equals(CaseType.X_OBSTACLE)) {
+			if (isXBreaker) {
 				return true;
-			}else {
+			} else {
 				return false;
 			}
 		}
-		return nextCase!=null && !nextCase.getCaseType().equals(CaseType.CHARP_OBSTACLE);
-	}
-	
-	private Case getNextCaseWithPriority() {
-		if(isWalkableCase(getSouth())){
-			return xBreaker.getSouth();
-		}
-		if(isWalkableCase(getEast())){
-			return xBreaker.getEast();
-		}
-		if(isWalkableCase(getNorth())){
-			return xBreaker.getNorth();
-		}
-		if(isWalkableCase(getWest())){
-			return xBreaker.getWest();
-		}
-		return area.getCurrentCase();
+		return nextCase != null && !nextCase.getCaseType().equals(CaseType.CHARP_OBSTACLE);
 	}
 
+	private Case getNextCaseWithPriority() {
+		if (isWalkableCase(getSouth())) {
+			return xBreaker.getSouth();
+		}
+		if (isWalkableCase(getEast())) {
+			return xBreaker.getEast();
+		}
+		if (isWalkableCase(getNorth())) {
+			return xBreaker.getNorth();
+		}
+		if (isWalkableCase(getWest())) {
+			return xBreaker.getWest();
+		}
+		area.getCurrentCase().setDirection(Direction.LOOP);
+		return area.getCurrentCase();
+	}
 
 	private Case getNextCaseWithInvertedPriority() {
-		if(isWalkableCase(getWest())){
+		if (isWalkableCase(getWest())) {
 			return xBreaker.getWest();
 		}
-		if(isWalkableCase(getNorth())){
+		if (isWalkableCase(getNorth())) {
 			return xBreaker.getNorth();
 		}
-		if(isWalkableCase(getEast())){
+		if (isWalkableCase(getEast())) {
 			return xBreaker.getEast();
 		}
-		if(isWalkableCase(getSouth())){
+		if (isWalkableCase(getSouth())) {
 			return xBreaker.getSouth();
 		}
+		area.getCurrentCase().setDirection(Direction.LOOP);
 		return area.getCurrentCase();
 
 	}
-	
-	public Case getNextCase(){
-		if(isInverted){
+
+	public Case getNextCase() {
+		if (isInverted) {
 			return getNextCaseWithInvertedPriority();
 		}
 		return getNextCaseWithPriority();
+	}
+
+	public Case getNextCaseFromStart() {
+		if (isWalkableCase(getSouth())) {
+			return getSouth();
+		}
+		return getNextCase();
 	}
 }

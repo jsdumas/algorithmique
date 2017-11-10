@@ -6,9 +6,8 @@ public class Case {
 	private final int idCol;
 	private CaseType caseType;
 	private Direction direction;
-	private Case comeFrom;
-	
-	
+	private final Case comeFrom;
+
 	public Case(int idRow, int idCol, CaseType caseType, Direction direction, Case comeFrom) {
 		this.idRow = idRow;
 		this.idCol = idCol;
@@ -28,17 +27,21 @@ public class Case {
 	public CaseType getCaseType() {
 		return caseType;
 	}
-	
+
 	public void setEmptyCaseType() {
-		this.caseType=CaseType.EMPTY;
+		this.caseType = CaseType.EMPTY;
 	}
 
 	public Direction getDirection() {
 		return direction;
 	}
-	
+
 	public Case getComeFrom() {
 		return comeFrom;
+	}
+
+	public void setDirection(Direction loop) {
+		direction = Direction.LOOP;
 	}
 
 }
