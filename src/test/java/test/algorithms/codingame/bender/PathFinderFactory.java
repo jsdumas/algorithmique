@@ -10,6 +10,8 @@ public class PathFinderFactory {
 
 	private static final Bender BENDER_WALK_TO_SOUTH_FROM_START = new BenderBuilder(2, 6).withLine(0, Line.AT_AND_THREE_SPACES.getLine())
 			.withLine(1, Line.LINE_OF_DOLLARDS.getLine()).build();
+	private static final Bender BENDER_WALK_TO_EAST_FROM_START = new BenderBuilder(3, 6).withLine(0, LINE_OF_CHARPS.getLine()).withLine(1,
+			Line.AT_AND_TWO_SPACES_AND_DOLLARD.getLine()).withLine(2, LINE_OF_CHARPS.getLine()).build();
 	private static final Bender BENDER_LOOP_WALK_BECAUSE_OF_CHARP = new BenderBuilder(3, 6).withLine(0, LINE_OF_CHARPS.getLine()).withLine(
 			1, Line.AT_AND_THREE_CHARPS.getLine()).withLine(2, LINE_OF_CHARPS.getLine()).build();
 	private static final Bender BENDER_LOOP_WALK_BECAUSE_OF_X = new BenderBuilder(3, 6).withLine(0, LINE_OF_CHARPS.getLine()).withLine(1,
@@ -40,6 +42,9 @@ public class PathFinderFactory {
 		switch (path) {
 			case TO_SOUTH_FROM_START:
 				memorisePath = BENDER_WALK_TO_SOUTH_FROM_START.getMemorisePath();
+				break;
+			case TO_EAST_FROM_START:
+				memorisePath = BENDER_WALK_TO_EAST_FROM_START.getMemorisePath();
 				break;
 			case LOOP_BECAUSE_OF_CHARP:
 				memorisePath = BENDER_LOOP_WALK_BECAUSE_OF_CHARP.getMemorisePath();

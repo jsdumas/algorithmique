@@ -6,6 +6,7 @@ public enum Line {
 	AT_AND_THREE_CHARPS("#@####"),
 	AT_AND_THREE_X("#@XXX#"),
 	AT_AND_THREE_SPACES("#@   #"),
+	AT_AND_TWO_SPACES_AND_DOLLARD("#@  $#"),
 	ONE_SPACE_AND_AT_AND_TWO_SPACES("# @  #"),
 	AT_AND_DOLLARD("#@$  #"),
 	LINE_OF_DOLLARDS("#$$$$#"),

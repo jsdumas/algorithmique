@@ -13,6 +13,7 @@ public class PathFinderTest {
 
 	private static final PathFinderFactory PATH_FINDER_FACTORY = new PathFinderFactory();
 	private static final MemorisePath PATH_TO_SOUTH_FROM_START = PATH_FINDER_FACTORY.getPath(Path.TO_SOUTH_FROM_START);
+	private static final MemorisePath PATH_TO_EAST_FROM_START = PATH_FINDER_FACTORY.getPath(Path.TO_EAST_FROM_START);
 	private static final MemorisePath PATH_IS_LOOP_BECAUSE_OF_CHARP = PATH_FINDER_FACTORY.getPath(Path.LOOP_BECAUSE_OF_CHARP);
 	private static final MemorisePath PATH_IS_LOOP_BECAUSE_OF_X = PATH_FINDER_FACTORY.getPath(Path.LOOP_BECAUSE_OF_X);
 	private static final MemorisePath PATH_TO_SOUTH_FROM_S_MODIFIER = PATH_FINDER_FACTORY.getPath(Path.TO_SOUTH_FROM_S_MODIFIER);
@@ -27,6 +28,12 @@ public class PathFinderTest {
 	@Test
 	public void whenBenderIsOnStartCaseThenHeShouldWalkToSouth() {
 		assertThat(PATH_TO_SOUTH_FROM_START.printDirection(), equalTo(Direction.SOUTH.toString()));
+	}
+
+	@Test
+	public void whenBenderIsOnStartAndSouthWestNorthCasesAreObstaclesThenHeShouldWalkToEAST() {
+		assertThat(PATH_TO_EAST_FROM_START.printDirection(), equalTo(Direction.EAST.toString() + "\n" + Direction.EAST.toString() + "\n"
+				+ Direction.EAST.toString()));
 	}
 
 	@Test
