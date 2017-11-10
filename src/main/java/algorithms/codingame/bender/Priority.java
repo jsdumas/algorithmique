@@ -15,10 +15,16 @@ public class Priority implements PathPriority {
 	}
 
 	private Case getNextCaseWithPriority() {
+		Case caseFromInitialDirection = walkableCase.getWalkableCase(area.getCaseFromInitialDirection());
+
 		Case south = walkableCase.getWalkableCase(area.getSouth());
 		Case east = walkableCase.getWalkableCase(area.getEast());
 		Case north = walkableCase.getWalkableCase(area.getNorth());
 		Case west = walkableCase.getWalkableCase(area.getWest());
+
+		if (caseFromInitialDirection != null) {
+			return xBreaker.getCaseFromInitialDirection(caseFromInitialDirection);
+		}
 
 		if (south != null) {
 			return xBreaker.getSouth();
@@ -38,12 +44,6 @@ public class Priority implements PathPriority {
 
 	@Override
 	public Case getNextCase() {
-		if (walkableCase.getWalkableCase(area.getCaseFromInitialDirection()) != null) {
-			if (isXBreaker) {
-
-			}
-			return area.getCaseFromInitialDirection();
-		}
 		return getNextCaseWithPriority();
 	}
 
