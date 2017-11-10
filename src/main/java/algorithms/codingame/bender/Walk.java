@@ -10,8 +10,8 @@ public class Walk {
 		this.mapRules = new MapRules();
 	}
 
-	public Case toNextCase(Case currentCase) {
-		CaseArea area = new CaseArea(currentCase, benderMap.getMap(), benderMap.getTeletransporter());
+	public Case toNextCase(Case currentCase, Direction direction) {
+		CaseArea area = new CaseArea(currentCase, benderMap.getMap(), benderMap.getTeletransporter(), direction);
 		return mapRules.getNextCase(area);
 	}
 

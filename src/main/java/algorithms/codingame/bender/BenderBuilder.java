@@ -1,35 +1,34 @@
 package algorithms.codingame.bender;
 
 public class BenderBuilder {
-	
-	private final char [][] map;
+
+	private final char[][] map;
 	private Case startCase;
 	private Case suicideCase;
-	private Teleporter teletransporter;
+	private final Teleporter teletransporter;
 
 	public BenderBuilder(int row, int col) {
-		map = new char [row][col];
+		map = new char[row][col];
 		teletransporter = new Teleporter();
 	}
 
 	public BenderBuilder withLine(int idRow, String line) {
 		char[] lineToCharArray = line.toCharArray();
-		for(int i=0; i<lineToCharArray.length; i++) {
-			if(lineToCharArray[i]=='@') {
-				startCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('@'), Direction.LOOP, null);
+		for (int i = 0; i < lineToCharArray.length; i++) {
+			if (lineToCharArray[i] == '@') {
+				startCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('@'), Direction.SOUTH, null);
 			}
-			if(lineToCharArray[i]=='$') {
+			if (lineToCharArray[i] == '$') {
 				suicideCase = new Case(idRow, i, CaseType.getCaseTypeForCharacter('$'), Direction.LOOP, null);
 			}
-			if(lineToCharArray[i]=='T') {
-				if(teletransporter.getFrom()==null) {
+			if (lineToCharArray[i] == 'T') {
+				if (teletransporter.getFrom() == null) {
 					teletransporter.setFrom(new Case(idRow, i, CaseType.getCaseTypeForCharacter('T'), Direction.LOOP, null));
-				}
-				else if(teletransporter.getTo()==null) {
+				} else if (teletransporter.getTo() == null) {
 					teletransporter.setTo(new Case(idRow, i, CaseType.getCaseTypeForCharacter('T'), Direction.LOOP, null));
 				}
 			}
-			map[idRow][i]=lineToCharArray[i];
+			map[idRow][i] = lineToCharArray[i];
 		}
 		return this;
 	}

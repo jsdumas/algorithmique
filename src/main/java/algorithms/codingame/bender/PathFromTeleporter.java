@@ -18,12 +18,12 @@ public class PathFromTeleporter implements PathFinder {
 		CaseArea areaToGet;
 		if (area.getCurrentCase().getIdRow() == teleporter.getFrom().getIdRow() && area.getCurrentCase().getIdCol() == teleporter.getFrom()
 				.getIdCol()) {
-			areaToGet = new CaseArea(teleporter.getTo(), area.getMap(), area.getTeletransporter());
+			areaToGet = new CaseArea(teleporter.getTo(), area.getMap(), area.getTeletransporter(), area.getDirection());
 		} else {
-			areaToGet = new CaseArea(teleporter.getFrom(), area.getMap(), area.getTeletransporter());
+			areaToGet = new CaseArea(teleporter.getFrom(), area.getMap(), area.getTeletransporter(), area.getDirection());
 		}
-		PathPriority pathPriority = new PathPriority(areaToGet, isInverted, isXBreaker);
-		return pathPriority.getNextCase();
+		PathPriority_old pathPriority_old = new PathPriority_old(areaToGet, isInverted, isXBreaker);
+		return pathPriority_old.getNextCase();
 	}
 
 }

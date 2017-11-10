@@ -5,11 +5,13 @@ public class Bender {
 	private final MemorisePath memorisePath;
 	private final Walk walk;
 	private Case currentCase;
+	private Direction direction;
 
 	public Bender(BenderMap benderMap) {
 		this.memorisePath = new MemorisePath();
 		this.walk = new Walk(benderMap);
 		this.currentCase = benderMap.getStartCase();
+		this.direction = Direction.SOUTH;
 	}
 
 	private boolean isBenderOnTheRoad() {
@@ -19,9 +21,10 @@ public class Bender {
 
 	public void walkToSuicideCase() {
 		while (isBenderOnTheRoad()) {
-			Case nextCase = walk.toNextCase(currentCase);
+			Case nextCase = walk.toNextCase(currentCase, direction);
 			memorisePath.memorise(nextCase);
 			currentCase = nextCase;
+			direction = nextCase.getDirection();
 		}
 	}
 
