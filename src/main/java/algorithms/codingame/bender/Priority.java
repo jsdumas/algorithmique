@@ -5,11 +5,9 @@ public class Priority implements PathPriority {
 	private final CaseArea area;
 	private final XBreaker xBreaker;
 	private final WalkableCase walkableCase;
-	private final boolean isXBreaker;
 
 	public Priority(CaseArea area, boolean isXBreaker) {
 		this.area = area;
-		this.isXBreaker = isXBreaker;
 		this.xBreaker = new XBreaker(area, isXBreaker);
 		this.walkableCase = new WalkableCase(isXBreaker);
 	}
