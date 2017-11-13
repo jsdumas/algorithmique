@@ -22,8 +22,8 @@ public class PathFromTeleporter implements PathFinder {
 		} else {
 			areaToGet = new CaseArea(teleporter.getFrom(), area.getMap(), area.getTeletransporter(), area.getDirection());
 		}
-		PathPriority_old pathPriority_old = new PathPriority_old(areaToGet, isInverted, isXBreaker);
-		return pathPriority_old.getNextCase();
+		NextCase nextCase = new NextCase(areaToGet, isInverted, isXBreaker);
+		return nextCase.getCase();
 	}
 
 }
