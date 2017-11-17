@@ -8,6 +8,8 @@ import algorithms.codingame.bender.MemorisePath;
 
 public class PathFinderFactory {
 
+	private static final Bender BENDER_LOOP_WALK_BECAUSE_OF_TIME_OUT = new BenderBuilder(3, 6).withLine(1, Line.LINE_OF_CHARPS.getLine())
+			.withLine(0, Line.AT_AND_THREE_SPACES.getLine()).withLine(1, Line.LINE_OF_CHARPS.getLine()).build();
 	private static final Bender BENDER_WALK_TO_SOUTH_FROM_START = new BenderBuilder(2, 6).withLine(0, Line.AT_AND_THREE_SPACES.getLine())
 			.withLine(1, Line.LINE_OF_DOLLARDS.getLine()).build();
 	private static final Bender BENDER_WALK_TO_EAST_FROM_START = new BenderBuilder(3, 6).withLine(0, LINE_OF_CHARPS.getLine()).withLine(1,
@@ -40,6 +42,9 @@ public class PathFinderFactory {
 	public MemorisePath getPath(Path path) {
 		MemorisePath memorisePath;
 		switch (path) {
+			case LOOP_BECAUSE_OF_TIME_OUT:
+				memorisePath = BENDER_LOOP_WALK_BECAUSE_OF_TIME_OUT.getMemorisePath();
+				break;
 			case TO_SOUTH_FROM_START:
 				memorisePath = BENDER_WALK_TO_SOUTH_FROM_START.getMemorisePath();
 				break;

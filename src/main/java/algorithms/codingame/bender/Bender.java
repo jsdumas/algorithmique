@@ -20,9 +20,10 @@ public class Bender {
 	}
 
 	public void walkToSuicideCase() {
+		Long timeOut = System.currentTimeMillis() + 1000;
 		while (isBenderOnTheRoad()) {
 			Case nextCase = walk.toNextCase(currentCase, direction);
-			memorisePath.memorise(nextCase);
+			memorisePath.memorise(nextCase, timeOut);
 			currentCase = nextCase;
 			direction = nextCase.getDirection();
 		}

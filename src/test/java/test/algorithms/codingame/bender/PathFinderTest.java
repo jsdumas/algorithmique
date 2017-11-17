@@ -12,6 +12,7 @@ import algorithms.codingame.bender.MemorisePath;
 public class PathFinderTest {
 
 	private static final PathFinderFactory PATH_FINDER_FACTORY = new PathFinderFactory();
+	private static final MemorisePath PATH_IS_LOOP_BECAUSE_OF_TIME_OUT = PATH_FINDER_FACTORY.getPath(Path.LOOP_BECAUSE_OF_TIME_OUT);
 	private static final MemorisePath PATH_TO_SOUTH_FROM_START = PATH_FINDER_FACTORY.getPath(Path.TO_SOUTH_FROM_START);
 	private static final MemorisePath PATH_TO_EAST_FROM_START = PATH_FINDER_FACTORY.getPath(Path.TO_EAST_FROM_START);
 	private static final MemorisePath PATH_IS_LOOP_BECAUSE_OF_CHARP = PATH_FINDER_FACTORY.getPath(Path.LOOP_BECAUSE_OF_CHARP);
@@ -24,6 +25,11 @@ public class PathFinderTest {
 	private static final MemorisePath PATH_TO_SOUTH_FROM_BIER = PATH_FINDER_FACTORY.getPath(Path.TO_SOUTH_FROM_BIER);
 	private static final MemorisePath PATH_TO_SOUTH_FROM_T = PATH_FINDER_FACTORY.getPath(Path.TO_SOUTH_FROM_T);
 	private static final MemorisePath PATH_TO_EAST_INLINE = PATH_FINDER_FACTORY.getPath(TO_EAST_INLINE_FROM_START);
+
+	@Test
+	public void whenBenderWalkMoreThenFiveSecondThenHeWalkOnLoop() {
+		assertThat(PATH_IS_LOOP_BECAUSE_OF_TIME_OUT.printDirection(), equalTo(Direction.LOOP.toString()));
+	}
 
 	@Test
 	public void whenBenderIsOnStartCaseThenHeShouldWalkToSouth() {
