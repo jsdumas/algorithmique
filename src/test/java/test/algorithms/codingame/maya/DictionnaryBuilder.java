@@ -6,21 +6,24 @@ public class DictionnaryBuilder {
 
 	private final int width;
 	private final int height;
-	private final MayaNumberDictionary mayaDictionary;
+	private String[] dialect;
+	private int id;
 
 	public DictionnaryBuilder(int width, int height) {
 		this.width = width;
 		this.height = height;
-		this.mayaDictionary = new MayaNumberDictionary(width, height);
+		this.dialect = new String[height];
+		this.id=0;
 	}
 
 	public DictionnaryBuilder with(Pattern pattern) {
-		mayaDictionary.setCode(pattern.getCode());
+		this.dialect[id] = (pattern.getCode());
+		id++;
 		return this;
 	}
 
 	public MayaNumberDictionary build() {
-		return mayaDictionary;
+		return new MayaNumberDictionary(width, height, dialect);
 	}
 
 }
