@@ -6,7 +6,7 @@ public abstract class MayaDictionaryInit {
 
 	protected static final int HEIGHT = 4;
 	protected static final int WIDTH = 4;
-	protected static final MayaNumberDictionary MAYA_DICTIONNARY = new DictionnaryBuilder(WIDTH, HEIGHT).with(Pattern.PATTERN_1).with(
-			Pattern.PATTERN_2).with(Pattern.PATTERN_3).with(Pattern.PATTERN_4).build();
+	protected static final MayaNumberDictionary MAYA_DICTIONNARY = new DictionnaryBuilder(WIDTH, HEIGHT).with(Dialect.PATTERN_1).with(
+			Dialect.PATTERN_2).with(Dialect.PATTERN_3).with(Dialect.PATTERN_4).build();
 
 }

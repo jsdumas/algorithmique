@@ -16,8 +16,8 @@ public class DictionnaryBuilder {
 		this.id=0;
 	}
 
-	public DictionnaryBuilder with(Pattern pattern) {
-		this.dialect[id] = (pattern.getCode());
+	public DictionnaryBuilder with(Dialect dialect) {
+		this.dialect[id] = (dialect.getCode());
 		id++;
 		return this;
 	}
