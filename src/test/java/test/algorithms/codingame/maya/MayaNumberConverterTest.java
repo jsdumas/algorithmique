@@ -13,7 +13,7 @@ public class MayaNumberConverterTest extends MayaDictionaryInit {
 	private static final int LINE_NUMBER = 4;
 	private static final Long ONE = 1L;
 	private static final MayaNumber MAYA_NUMBER = new MayaNumberBuilder(LINE_NUMBER).width(Number.LINE_1).width(Number.LINE_2).width(
-			Number.LINE_2).build();
+			Number.LINE_2).width(Number.LINE_2).build();
 	private static final MayaNumberConverter MAYA_NUMBER_CONVERTER = new MayaNumberConverter(MAYA_DICTIONNARY);
 
 	@Test

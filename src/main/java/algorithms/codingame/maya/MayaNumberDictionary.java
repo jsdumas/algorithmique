@@ -44,4 +44,8 @@ public class MayaNumberDictionary {
 		return dictionary;
 	}
 
+	public int getHeight() {
+		return height;
+	}
+
 }
