@@ -1,9 +1,7 @@
 package test.algorithms.codingame.maya;
 
-public class MayaNumberTest {
-	
+public class MayaNumberTest extends MayaDictionaryInit {
+
 	private static final int LINE_NUMBER = 4;
-	private static final int WIDTH = 4;
-	
 
 }
