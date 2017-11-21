@@ -6,39 +6,35 @@ import algorithms.codingame.maya.MayaNumberDictionary;
 
 public class MayaOperation {
 
-	private final MayaNumber firstNumber;
-	private final MayaNumber secondNumber;
+	private final Long fNumber;
+	private final Long sNumber;
 	private final MayaNumberConverter mayaNumberConverter;
 
 	public MayaOperation(MayaNumberDictionary mayaDictionnary, MayaNumber firstNumber, MayaNumber secondNumber) {
-		this.firstNumber = firstNumber;
-		this.secondNumber = secondNumber;
 		this.mayaNumberConverter = new MayaNumberConverter(mayaDictionnary);
+		this.fNumber = mayaNumberConverter.getMayaNumberTranslated(firstNumber);
+		;
+		this.sNumber = mayaNumberConverter.getMayaNumberTranslated(secondNumber);
 	}
 
 	public Long calcul(String operator) {
 		Long result = null;
-		Long fNumber = mayaNumberConverter.getMayaNumberTranslated(firstNumber);
-		Long sNumber = mayaNumberConverter.getMayaNumberTranslated(secondNumber);
-		
-		switch(operator){
-		case "+" :
-			result = fNumber + sNumber;
-			break;
-		case "-" :
-			result = fNumber - sNumber;
-			break;
-		case "/" :
-			result = fNumber / sNumber;
-			break;
-		case "*" :
-			result = fNumber * sNumber;
-			break;
-		
+		switch (operator) {
+			case "+":
+				result = fNumber + sNumber;
+				break;
+			case "-":
+				result = fNumber - sNumber;
+				break;
+			case "/":
+				result = fNumber / sNumber;
+				break;
+			case "*":
+				result = fNumber * sNumber;
+				break;
+
 		}
 		return result;
 	}
-	
-	
 
 }
