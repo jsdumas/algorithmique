@@ -5,6 +5,7 @@ import static algorithms.codingame.maya.MayaNumberDictionary.MAYA_NUMERIC_SYSTEM
 import java.util.LinkedList;
 import java.util.Map;
 import java.util.Queue;
+import java.util.Stack;
 
 public class MayaNumberConverter {
 
@@ -14,7 +15,19 @@ public class MayaNumberConverter {
 		this.mayaDictionnary = mayaDictionnary;
 	}
 
-	public Long getMayaNumberTranslated(MayaNumber mayaNumber) {
+	private Queue<String> splitMayaNumber(Queue<String> lines) {
+		Queue<String> mayaNumberSplited = new LinkedList<String>();
+		while (!lines.isEmpty()) {
+			StringBuilder stringBuilder = new StringBuilder();
+			for (int i = 0; i < mayaDictionnary.getHeight(); i++) {
+				stringBuilder.append(lines.poll());
+			}
+			mayaNumberSplited.add(stringBuilder.toString());
+		}
+		return mayaNumberSplited;
+	}
+
+	public Long mayaNumberToDecimal(MayaNumber mayaNumber) {
 		Queue<String> mayaNumberSplited = splitMayaNumber(mayaNumber.getLines());
 		int power = mayaNumberSplited.size() - 1;
 		Long result = 0L;
@@ -34,16 +47,25 @@ public class MayaNumberConverter {
 		return result;
 	}
 
-	private Queue<String> splitMayaNumber(Queue<String> lines) {
-		Queue<String> mayaNumberSplited = new LinkedList<String>();
-		while (!lines.isEmpty()) {
-			StringBuilder stringBuilder = new StringBuilder();
-			for (int i = 0; i < mayaDictionnary.getHeight(); i++) {
-				stringBuilder.append(lines.poll());
-			}
-			mayaNumberSplited.add(stringBuilder.toString());
+	public String decimalToMayaNumber(Long decimalNumber) {
+		Stack<String> mayaNumber = new Stack<String>();
+		Long currentNumber = decimalNumber;
+
+		while (currentNumber > 0) {
+			int remain = (int) (currentNumber % MayaNumberDictionary.MAYA_NUMERIC_SYSTEM);
+			currentNumber = currentNumber / MayaNumberDictionary.MAYA_NUMERIC_SYSTEM;
+			mayaNumber.push(mayaDictionnary.getMayaNumber(remain));
 		}
-		return mayaNumberSplited;
+
+		return joinMayaNumber(mayaNumber);
+	}
+
+	private String joinMayaNumber(Stack<String> mayaNumber) {
+		StringBuilder builder = new StringBuilder();
+		while (!mayaNumber.isEmpty()) {
+			builder.append(mayaNumber.pop());
+		}
+		return builder.toString();
 	}
 
 }

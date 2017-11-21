@@ -24,4 +24,12 @@ public class MayaNumber {
 	public int getLineNumber() {
 		return lineNumber;
 	}
+
+	public String getCode() {
+		StringBuilder builder = new StringBuilder();
+		for (String line : lines) {
+			builder.append(line);
+		}
+		return builder.toString();
+	}
 }

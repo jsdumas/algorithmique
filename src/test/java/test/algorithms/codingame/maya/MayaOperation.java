@@ -12,9 +12,9 @@ public class MayaOperation {
 
 	public MayaOperation(MayaNumberDictionary mayaDictionnary, MayaNumber firstNumber, MayaNumber secondNumber) {
 		this.mayaNumberConverter = new MayaNumberConverter(mayaDictionnary);
-		this.fNumber = mayaNumberConverter.getMayaNumberTranslated(firstNumber);
+		this.fNumber = mayaNumberConverter.mayaNumberToDecimal(firstNumber);
 		;
-		this.sNumber = mayaNumberConverter.getMayaNumberTranslated(secondNumber);
+		this.sNumber = mayaNumberConverter.mayaNumberToDecimal(secondNumber);
 	}
 
 	public Long calcul(String operator) {
