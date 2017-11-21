@@ -13,7 +13,7 @@ public class MayaNumberDictionaryTest extends MayaDictionaryInit {
 
 	@Test
 	public void keyZeroOfDictionnaryShouldReturnCodeZero() {
-		assertThat(MAYA_DICTIONNARY.getMayaNumber(0), equalTo(ZERO.getCode()));
+		assertThat(MAYA_DICTIONNARY.getMayaNumber(0), equalTo(Dialect.ZERO.getCode()));
 	}
 
 	@Test
