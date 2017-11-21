@@ -53,9 +53,13 @@ public class MayaNumberDictionary {
 		String res = "";
 		int startId = 0;
 		int endId = width;
-		for (int i = 0; i < height - 1; i++) {
-			res += number.substring(startId, endId) + "\n";
-			startId += endId;
+		for (int i = 0; i < height; i++) {
+			if (i == height - 1) {
+				res += number.substring(startId);
+			} else {
+				res += number.substring(startId, endId) + "\n";
+			}
+			startId += width;
 			endId += width;
 		}
 		return res;
