@@ -50,11 +50,15 @@ public class MayaNumberConverter {
 	public String decimalToMayaNumber(Long decimalNumber) {
 		Stack<String> mayaNumber = new Stack<String>();
 		Long currentNumber = decimalNumber;
-
-		while (currentNumber > 0) {
-			int remain = (int) (currentNumber % MayaNumberDictionary.MAYA_NUMERIC_SYSTEM);
-			currentNumber = currentNumber / MayaNumberDictionary.MAYA_NUMERIC_SYSTEM;
-			mayaNumber.push(mayaDictionnary.getMayaNumberSplited(remain));
+		
+		if(currentNumber.equals(0L)){
+			mayaNumber.push(mayaDictionnary.getMayaNumberSplited(0));
+		} else {
+			while (currentNumber > 0) {
+				int remain = (int) (currentNumber % MayaNumberDictionary.MAYA_NUMERIC_SYSTEM);
+				currentNumber = currentNumber / MayaNumberDictionary.MAYA_NUMERIC_SYSTEM;
+				mayaNumber.push(mayaDictionnary.getMayaNumberSplited(remain));
+			}
 		}
 
 		return joinMayaNumber(mayaNumber);
