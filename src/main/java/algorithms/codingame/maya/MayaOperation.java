@@ -1,8 +1,4 @@
-package test.algorithms.codingame.maya;
-
-import algorithms.codingame.maya.MayaNumber;
-import algorithms.codingame.maya.MayaNumberConverter;
-import algorithms.codingame.maya.MayaNumberDictionary;
+package algorithms.codingame.maya;
 
 public class MayaOperation {
 

@@ -54,7 +54,7 @@ public class MayaNumberConverter {
 		while (currentNumber > 0) {
 			int remain = (int) (currentNumber % MayaNumberDictionary.MAYA_NUMERIC_SYSTEM);
 			currentNumber = currentNumber / MayaNumberDictionary.MAYA_NUMERIC_SYSTEM;
-			mayaNumber.push(mayaDictionnary.getMayaNumber(remain));
+			mayaNumber.push(mayaDictionnary.getMayaNumberSplited(remain));
 		}
 
 		return joinMayaNumber(mayaNumber);
@@ -64,6 +64,9 @@ public class MayaNumberConverter {
 		StringBuilder builder = new StringBuilder();
 		while (!mayaNumber.isEmpty()) {
 			builder.append(mayaNumber.pop());
+			if (!mayaNumber.isEmpty()) {
+				builder.append("\n");
+			}
 		}
 		return builder.toString();
 	}

@@ -4,6 +4,8 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
+import algorithms.codingame.maya.MayaOperation;
+
 public class OperationTest extends MayaDictionaryInit {
 
 	private static final MayaOperation OPERATION = new MayaOperation(MAYA_DICTIONNARY, MAYA_NUMBER_TWELVE_ZERO_FIVE,

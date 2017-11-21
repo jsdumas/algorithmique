@@ -48,4 +48,17 @@ public class MayaNumberDictionary {
 		return height;
 	}
 
+	public String getMayaNumberSplited(int key) {
+		String number = getMayaNumber(key);
+		String res = "";
+		int startId = 0;
+		int endId = width;
+		for (int i = 0; i < height - 1; i++) {
+			res += number.substring(startId, endId) + "\n";
+			startId += endId;
+			endId += width;
+		}
+		return res;
+	}
+
 }

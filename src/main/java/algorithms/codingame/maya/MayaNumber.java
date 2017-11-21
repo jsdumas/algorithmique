@@ -29,6 +29,9 @@ public class MayaNumber {
 		StringBuilder builder = new StringBuilder();
 		for (String line : lines) {
 			builder.append(line);
+			if (lines.iterator().hasNext()) {
+				builder.append("\n");
+			}
 		}
 		return builder.toString();
 	}
