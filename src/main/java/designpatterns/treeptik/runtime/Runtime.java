@@ -3,7 +3,6 @@ package designpatterns.treeptik.runtime;
 import java.util.Iterator;
 import java.util.List;
 
-import designpatterns.initobjet.Deplacer;
 import designpatterns.treeptik.proxy.FileDescription;
 
 public class Runtime {
@@ -11,18 +10,6 @@ public class Runtime {
 	private static int size;
 
 	public static void main(String[] args) {
-
-		// TODO Auto-generated method stub
-		/*
-		 * Personnage perso = new Personnage(); Deplacer voiture = new Voiture(); Chevalier chev1 = new Chevalier();
-		 */
-		/*
-		 * faireAvancer(perso); faireAvancer(voiture); faireAvancer(chev1);
-		 */
-		/*
-		 * chev1.avancer(5); voiture.avancer(); ((Voiture)voiture).setMarque("test"); if(voiture instanceof Voiture) { voiture =
-		 * (Voiture)voiture; //System.out.println(voiture.getMarque()); }
-		 */
 
 		/* Singleton 2 */
 		/*
@@ -47,10 +34,6 @@ public class Runtime {
 		while (iterator.hasNext())
 			System.out.println(iterator.next());
 
-	}
-
-	public static void faireAvancer(Deplacer deplacer) {
-		deplacer.avancer();
 	}
 
 }
