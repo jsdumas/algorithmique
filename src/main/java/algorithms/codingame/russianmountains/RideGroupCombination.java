@@ -25,4 +25,10 @@ public class RideGroupCombination {
 		return allGroupsByRide.getNumber();
 	}
 
+	public Queue<GroupByRide> getAllGroupsByRide() {
+		Queue<GroupByRide> allRideGroups = new LinkedList<GroupByRide>();
+		allRideGroups.addAll(allGroupsByRide.getAllRideGroups());
+		return allRideGroups;
+	}
+
 }
