@@ -1,4 +1,4 @@
-package designpatterns.hf.behavioural.strategy.operation.pattern.operation;
+package designpatterns.hf.behavioural.strategy.operation.behaviour.operation;
 
 public class OperationSubstract implements OperationStrategy {
 

@@ -1,9 +1,9 @@
 package designpatterns.hf.behavioural.strategy.operation.app;
 
-import designpatterns.hf.behavioural.strategy.operation.pattern.OperationContext;
-import designpatterns.hf.behavioural.strategy.operation.pattern.operation.OperationAdd;
-import designpatterns.hf.behavioural.strategy.operation.pattern.operation.OperationMultiply;
-import designpatterns.hf.behavioural.strategy.operation.pattern.operation.OperationSubstract;
+import designpatterns.hf.behavioural.strategy.operation.behaviour.OperationContext;
+import designpatterns.hf.behavioural.strategy.operation.behaviour.operation.OperationAdd;
+import designpatterns.hf.behavioural.strategy.operation.behaviour.operation.OperationMultiply;
+import designpatterns.hf.behavioural.strategy.operation.behaviour.operation.OperationSubstract;
 
 public class OperationInjection {
 	public static void main(String[] args) {
