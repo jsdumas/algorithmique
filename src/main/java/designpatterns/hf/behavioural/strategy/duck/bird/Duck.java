@@ -1,7 +1,7 @@
 package designpatterns.hf.behavioural.strategy.duck.bird;
 
-import designpatterns.hf.behavioural.strategy.duck.behaviour.FlyBehavior;
-import designpatterns.hf.behavioural.strategy.duck.behaviour.QuackBehavior;
+import designpatterns.hf.behavioural.strategy.duck.behaviour.fly.FlyBehavior;
+import designpatterns.hf.behavioural.strategy.duck.behaviour.quack.QuackBehavior;
 
 public abstract class Duck {
 	// Behaviour are interfaces

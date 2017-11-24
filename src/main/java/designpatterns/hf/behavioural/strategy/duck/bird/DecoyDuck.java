@@ -1,7 +1,7 @@
 package designpatterns.hf.behavioural.strategy.duck.bird;
 
-import designpatterns.hf.behavioural.strategy.duck.behaviour.FlyNoWay;
-import designpatterns.hf.behavioural.strategy.duck.behaviour.MuteQuack;
+import designpatterns.hf.behavioural.strategy.duck.behaviour.fly.FlyNoWay;
+import designpatterns.hf.behavioural.strategy.duck.behaviour.quack.MuteQuack;
 
 public class DecoyDuck extends Duck {
 

@@ -1,4 +1,4 @@
-package designpatterns.hf.behavioural.strategy.duck.behaviour;
+package designpatterns.hf.behavioural.strategy.duck.behaviour.quack;
 
 public class Quack implements QuackBehavior {
 	public void quack() {

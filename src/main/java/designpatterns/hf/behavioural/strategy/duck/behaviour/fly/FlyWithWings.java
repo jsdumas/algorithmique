@@ -1,4 +1,4 @@
-package designpatterns.hf.behavioural.strategy.duck.behaviour;
+package designpatterns.hf.behavioural.strategy.duck.behaviour.fly;
 
 public class FlyWithWings implements FlyBehavior {
 	public void fly() {

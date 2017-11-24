@@ -1,7 +1,7 @@
 package designpatterns.hf.behavioural.strategy.duck.bird;
 
-import designpatterns.hf.behavioural.strategy.duck.behaviour.FlyWithWings;
-import designpatterns.hf.behavioural.strategy.duck.behaviour.Quack;
+import designpatterns.hf.behavioural.strategy.duck.behaviour.fly.FlyWithWings;
+import designpatterns.hf.behavioural.strategy.duck.behaviour.quack.Quack;
 
 public class MallardDuck extends Duck {
 
