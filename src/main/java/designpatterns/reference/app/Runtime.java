@@ -1,7 +1,9 @@
 package designpatterns.reference.app;
 
 import designpatterns.reference.Car;
+import designpatterns.reference.Knight;
 import designpatterns.reference.Movable;
+import designpatterns.reference.MovieCharacter;
 
 public class Runtime {
 
@@ -9,16 +11,16 @@ public class Runtime {
 
 	public static void main(String[] args) {
 
-		// Character perso = new Character();
-		// Knight chev1 = new Knight();
+		MovieCharacter perso = new MovieCharacter();
+		Knight chev1 = new Knight();
 		// reference ----> implementation
 		Movable voiture = new Car();
 
-		// faireAvancer(perso);
-		// faireAvancer(voiture);
-		// faireAvancer(chev1);
-		// chev1.avancer(5);
-		// voiture.moveForward();
+		faireAvancer(perso);
+		faireAvancer(voiture);
+		faireAvancer(chev1);
+		chev1.avancer(5);
+		voiture.moveForward();
 		((Car) voiture).setBrand("test");
 
 		if (voiture instanceof Car) {

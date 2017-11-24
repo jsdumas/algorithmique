@@ -5,7 +5,7 @@ import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import designpatterns.reference.Car;
-import designpatterns.reference.Character;
+import designpatterns.reference.MovieCharacter;
 import designpatterns.reference.Knight;
 import designpatterns.reference.Movable;
 import designpatterns.reference.Move;
@@ -13,7 +13,7 @@ import designpatterns.reference.Move;
 public class MoveTest {
 
 	private static final Move MOVE = new Move();
-	private static final Character CHAR = new Character();
+	private static final MovieCharacter CHAR = new MovieCharacter();
 	private static final String MAKE_CHARACTER_MOVE_FORWARD = "Make character move forward";
 	private static final String KNIGHT_MOVE_FORWARD = "Knight move forward";
 	private static final String CAR_MOVE_FORWARD = "Car move forward";

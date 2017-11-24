@@ -1,6 +1,6 @@
 package designpatterns.reference;
 
-public class Knight extends Character {
+public class Knight extends MovieCharacter {
 
 	private static final long serialVersionUID = 1L;
 	private static final String KNIGHT_MOVE_FORWARD = "Knight move forward";

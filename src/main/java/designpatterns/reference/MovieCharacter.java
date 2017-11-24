@@ -2,7 +2,7 @@ package designpatterns.reference;
 
 import java.io.Serializable;
 
-public class Character implements Movable, Serializable {
+public class MovieCharacter implements Movable, Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private static final String MAKE_CHARACTER_MOVE_FORWARD = "Make character move forward";
@@ -10,10 +10,10 @@ public class Character implements Movable, Serializable {
 	protected String name;
 	private Integer lifeNumber;
 
-	public Character() {
+	public MovieCharacter() {
 	}
 
-	public Character(String nom, Integer nbVie) {
+	public MovieCharacter(String nom, Integer nbVie) {
 		super();
 		this.name = nom;
 		this.lifeNumber = nbVie;
