@@ -2,18 +2,25 @@ package designpatterns.hf.behavioural.state.gumballstate.behaviour;
 
 public class GumballMachine {
 
+	// Different states that GumballMachine can have
 	State soldOutState;
 	State noQuarterState;
 	State hasQuarterState;
 	State soldState;
 
+	// Init state of the GumballMachine
 	State state = soldOutState;
 	int count = 0;
 
 	public GumballMachine(int numberGumballs) {
+		// Each state take GumballMachine as constructor parameter
+		// There are no more gumball in machine
 		soldOutState = new SoldOutState(this);
+		// No quarter
 		noQuarterState = new NoQuarterState(this);
+		// Quarter
 		hasQuarterState = new HasQuarterState(this);
+		// Gumball distribution
 		soldState = new SoldState(this);
 
 		this.count = numberGumballs;
