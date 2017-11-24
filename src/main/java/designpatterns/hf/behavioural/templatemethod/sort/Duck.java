@@ -1,24 +1,20 @@
 package designpatterns.hf.behavioural.templatemethod.sort;
 
 public class Duck implements Comparable {
-	String name;
-	int weight;
-  
+
+	private final String name;
+	private final int weight;
+
 	public Duck(String name, int weight) {
 		this.name = name;
 		this.weight = weight;
 	}
- 
-	public String toString() {
-		return name + " weighs " + weight;
-	}
- 
- 
-  
+
+	@Override
 	public int compareTo(Object object) {
- 
-		Duck otherDuck = (Duck)object;
-  
+
+		Duck otherDuck = (Duck) object;
+
 		if (this.weight < otherDuck.weight) {
 			return -1;
 		} else if (this.weight == otherDuck.weight) {
@@ -26,5 +22,10 @@ public class Duck implements Comparable {
 		} else { // this.weight > otherDuck.weight
 			return 1;
 		}
+	}
+
+	@Override
+	public String toString() {
+		return name + " weighs " + weight;
 	}
 }
