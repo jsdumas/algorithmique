@@ -1,5 +1,4 @@
-package designpatterns.hf.behavioural.strategy.operation.pattern;
-
+package designpatterns.hf.behavioural.strategy.operation.pattern.operation;
 
 public class OperationMultiply implements OperationStrategy {
 

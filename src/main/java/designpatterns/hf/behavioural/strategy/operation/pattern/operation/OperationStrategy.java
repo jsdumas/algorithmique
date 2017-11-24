@@ -1,4 +1,4 @@
-package designpatterns.hf.behavioural.strategy.operation.pattern;
+package designpatterns.hf.behavioural.strategy.operation.pattern.operation;
 
 /**
  * In Strategy pattern, a class behavior or its algorithm can be changed at run time. This type of design pattern comes under behavior

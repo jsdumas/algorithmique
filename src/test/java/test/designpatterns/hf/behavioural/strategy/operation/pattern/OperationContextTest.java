@@ -4,10 +4,10 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
-import designpatterns.hf.behavioural.strategy.operation.pattern.OperationAdd;
 import designpatterns.hf.behavioural.strategy.operation.pattern.OperationContext;
-import designpatterns.hf.behavioural.strategy.operation.pattern.OperationMultiply;
-import designpatterns.hf.behavioural.strategy.operation.pattern.OperationSubstract;
+import designpatterns.hf.behavioural.strategy.operation.pattern.operation.OperationAdd;
+import designpatterns.hf.behavioural.strategy.operation.pattern.operation.OperationMultiply;
+import designpatterns.hf.behavioural.strategy.operation.pattern.operation.OperationSubstract;
 
 public class OperationContextTest {
 

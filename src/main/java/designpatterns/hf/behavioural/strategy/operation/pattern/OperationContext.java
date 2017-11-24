@@ -1,5 +1,6 @@
 package designpatterns.hf.behavioural.strategy.operation.pattern;
 
+import designpatterns.hf.behavioural.strategy.operation.pattern.operation.OperationStrategy;
 
 public class OperationContext {
 	private final OperationStrategy operationStrategy;
