@@ -1,4 +1,4 @@
-package designpatterns.hf.behavioural.templatemethod.barista.drink;
+package designpatterns.hf.behavioural.templatemethod.barista.behaviour;
 
 public abstract class CaffeineBeverage {
 
@@ -9,9 +9,9 @@ public abstract class CaffeineBeverage {
 		addCondiments();
 	}
 
-	abstract void brew();
+	protected abstract void brew();
 
-	abstract void addCondiments();
+	protected abstract void addCondiments();
 
 	void boilWater() {
 		System.out.println("Boiling water");

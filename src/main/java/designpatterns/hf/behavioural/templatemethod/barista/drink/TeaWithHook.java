@@ -2,6 +2,8 @@ package designpatterns.hf.behavioural.templatemethod.barista.drink;
 
 import java.io.*;
 
+import designpatterns.hf.behavioural.templatemethod.barista.behaviour.CaffeineBeverageWithHook;
+
 public class TeaWithHook extends CaffeineBeverageWithHook {
  
 	public void brew() {
