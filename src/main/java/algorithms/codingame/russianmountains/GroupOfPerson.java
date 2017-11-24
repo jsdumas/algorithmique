@@ -2,13 +2,13 @@ package algorithms.codingame.russianmountains;
 
 public class GroupOfPerson {
 
-	private final int numberOfPerson;
+	private final long numberOfPerson;
 
-	public GroupOfPerson(int numberOfPerson) {
+	public GroupOfPerson(long numberOfPerson) {
 		this.numberOfPerson = numberOfPerson;
 	}
 
-	public int getNumberOfPerson() {
+	public long getNumberOfPerson() {
 		return numberOfPerson;
 	}
 
