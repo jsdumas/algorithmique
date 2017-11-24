@@ -8,20 +8,21 @@ public class RideGroupCombination {
 	private final Queue<GroupOfPerson> groupQueue;
 	private final AllGroupsByRide allGroupsByRide;
 
-	public RideGroupCombination(int maxPlaceNumber, Queue<GroupOfPerson> groupQueue) {
+	public RideGroupCombination(RussianMountains russianMountains) {
 		this.groupQueue = new LinkedList<GroupOfPerson>();
-		this.groupQueue.addAll(groupQueue);
-		this.allGroupsByRide = new AllGroupsByRide(maxPlaceNumber);
+		this.groupQueue.addAll(russianMountains.getGroupOfPerson());
+		this.allGroupsByRide = initAllGroupsByRide(russianMountains.getPlaceNumber());
 	}
 
-	public long getCombinationNumber() {
-		if (allGroupsByRide.getIsDefined()) {
-			return allGroupsByRide.getNumber();
-		}
+	private AllGroupsByRide initAllGroupsByRide(long placeNumber) {
+		AllGroupsByRide allGroupsByRide = new AllGroupsByRide(placeNumber);
 		while (!groupQueue.isEmpty()) {
 			allGroupsByRide.add(groupQueue.poll());
 		}
-		allGroupsByRide.setIsDefined(true);
+		return allGroupsByRide;
+	}
+
+	public long getCombinationNumber() {
 		return allGroupsByRide.getNumber();
 	}
 

@@ -6,20 +6,10 @@ public class AllGroupsByRide {
 
 	private final long maxPlaceNumber;
 	private final Stack<GroupByRide> allRideGroups;
-	private boolean isDefined;
 
 	public AllGroupsByRide(long maxPlaceNumber) {
 		this.maxPlaceNumber = maxPlaceNumber;
 		this.allRideGroups = new Stack<GroupByRide>();
-		this.isDefined = false;
-	}
-
-	public boolean getIsDefined() {
-		return isDefined;
-	}
-
-	public void setIsDefined(boolean isDefined) {
-		this.isDefined = isDefined;
 	}
 
 	public long getNumber() {
