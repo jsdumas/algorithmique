@@ -1,5 +1,4 @@
-package designpatterns.hf.behavioural.state.gumballstate.pattern;
-
+package designpatterns.hf.behavioural.state.gumballstate.behaviour;
 
 public class SoldState implements State {
 

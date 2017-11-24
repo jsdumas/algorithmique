@@ -1,4 +1,4 @@
-package designpatterns.hf.behavioural.state.gumballstate.pattern;
+package designpatterns.hf.behavioural.state.gumballstate.behaviour;
 
 public interface State {
  

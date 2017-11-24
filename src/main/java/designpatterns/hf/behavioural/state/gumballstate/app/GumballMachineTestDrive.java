@@ -1,6 +1,6 @@
 package designpatterns.hf.behavioural.state.gumballstate.app;
 
-import designpatterns.hf.behavioural.state.gumballstate.pattern.GumballMachine;
+import designpatterns.hf.behavioural.state.gumballstate.behaviour.GumballMachine;
 
 public class GumballMachineTestDrive {
 
