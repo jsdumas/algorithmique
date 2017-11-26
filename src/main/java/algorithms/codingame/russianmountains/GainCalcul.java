@@ -7,16 +7,16 @@ public class GainCalcul {
 
 	private static final int RIDE_PRICE_PERSON = 1;
 
-	private final RideGroupCombination rideGroupCombination;
-	private final Queue<GroupByRide> currentQueue;
+	private final RideGroupsCombination rideGroupCombination;
+	private final Queue<GroupsByRide> currentQueue;
 	private final long rideNumberByDay;
 
 	private final RussianMountains russianMountains;
 
 	public GainCalcul(RussianMountains russianMountains) {
 		this.russianMountains = russianMountains;
-		this.rideGroupCombination = new RideGroupCombination(russianMountains);
-		this.currentQueue = new LinkedList<GroupByRide>();
+		this.rideGroupCombination = new RideGroupsCombination(russianMountains);
+		this.currentQueue = new LinkedList<GroupsByRide>();
 		this.rideNumberByDay = russianMountains.getRideNumberByDay();
 	}
 
@@ -29,14 +29,14 @@ public class GainCalcul {
 		
 		long result = 0;
 		currentQueue.addAll(rideGroupCombination.getAllGroupsByRide());
-		Queue<GroupByRide> nextFile = new LinkedList<GroupByRide>();
+		Queue<GroupsByRide> nextFile = new LinkedList<GroupsByRide>();
 		
 		for (int i = 0; i < rideNumberByDay; i++) {
 				if (currentQueue.isEmpty()) {
 					currentQueue.addAll(nextFile);
-					nextFile = new LinkedList<GroupByRide>();
+					nextFile = new LinkedList<GroupsByRide>();
 				}
-				GroupByRide currentGroupRide = currentQueue.poll();
+				GroupsByRide currentGroupRide = currentQueue.poll();
 				nextFile.add(currentGroupRide);
 				result += RIDE_PRICE_PERSON * currentGroupRide.getPersonNumber();
 			}
