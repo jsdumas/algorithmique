@@ -12,9 +12,15 @@ public class GainCalculTest extends RussianMountainsInit {
 	}
 
 	@Test
-	public void whenThreeRideAreFinishedWhithFourGroupsOfThreeAndOneAndOneAndTwoPersonThenCalculOfGainIsSeven() {
-		MatcherAssert.assertThat(GAIN_CALCUL_FOR_THREE_RIDES_AND_SEVERAL_GROUPS_OF_SEVERAL_PERSONS.dailyGainOfRussianMountains(), Matchers
+	public void whenThreeRideAreFinishedWhithFourGroupsOfThreeAndOneAndOneAndTwoPersonsThenCalculOfGainIsSeven() {
+		MatcherAssert.assertThat(GAIN_CALCUL_FOR_THREE_RIDES_AND_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS.dailyGainOfRussianMountains(), Matchers
 				.is(SEVEN));
+	}
+	
+	@Test
+	public void whenThreeRideAreFinishedWhithFourGroupsOfTwoAndThreeAndFiveAndThreePersonsThenCalculOfGainIsFifteen() {
+		MatcherAssert.assertThat(GAIN_CALCUL_FOR_THREE_RIDES_AND_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS.dailyGainOfRussianMountains(), Matchers
+				.is(FIFTEEN));
 	}
 
 }

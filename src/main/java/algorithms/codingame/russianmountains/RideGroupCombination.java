@@ -10,7 +10,7 @@ public class RideGroupCombination {
 
 	public RideGroupCombination(RussianMountains russianMountains) {
 		this.groupQueue = new LinkedList<GroupOfPerson>();
-		this.groupQueue.addAll(russianMountains.getGroupOfPerson());
+		this.groupQueue.addAll(russianMountains.getRussianMountainsQueue().getGroupOfPerson());
 		this.allGroupsByRide = initAllGroupsByRide(russianMountains.getPlaceNumber());
 	}
 

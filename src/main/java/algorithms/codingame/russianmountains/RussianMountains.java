@@ -1,16 +1,15 @@
 package algorithms.codingame.russianmountains;
 
-import java.util.Queue;
-
 public class RussianMountains {
 
 	private final int placeNumber;
 	private final int rideNumberByDay;
-	private Queue<GroupOfPerson> groupOfPerson;
+	private final RussianMountainsQueue russianMountainsQueue;
 
-	public RussianMountains(int placeNumber, int rideNumberByDay) {
+	public RussianMountains(int placeNumber, int rideNumberByDay, RussianMountainsQueue russianMountainsQueue) {
 		this.placeNumber = placeNumber;
 		this.rideNumberByDay = rideNumberByDay;
+		this.russianMountainsQueue = russianMountainsQueue;
 	}
 
 	public int getPlaceNumber() {
@@ -21,12 +20,12 @@ public class RussianMountains {
 		return rideNumberByDay;
 	}
 
-	public void setGroupOfPerson(Queue<GroupOfPerson> groupOfPerson) {
-		this.groupOfPerson = groupOfPerson;
+	public RussianMountainsQueue getRussianMountainsQueue() {
+		return russianMountainsQueue;
 	}
-
-	public Queue<GroupOfPerson> getGroupOfPerson() {
-		return groupOfPerson;
+	
+	public boolean isPlaceNumberGreaterThanPeople(){
+		return placeNumber>russianMountainsQueue.getNumberOfPerson();
 	}
 
 }
