@@ -6,7 +6,7 @@ import java.util.Queue;
 public class GroupsByRide {
 
 	private final Queue<GroupOfPerson> groupOfPerson;
-	private int personNumber;
+	private long personNumber;
 
 	public GroupsByRide() {
 		this.groupOfPerson = new LinkedList<GroupOfPerson>();
@@ -19,7 +19,7 @@ public class GroupsByRide {
 		return null;
 	}
 
-	public int getPersonNumber() {
+	public long getPersonNumber() {
 		return personNumber;
 	}
 

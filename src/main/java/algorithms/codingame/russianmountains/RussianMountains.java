@@ -2,21 +2,21 @@ package algorithms.codingame.russianmountains;
 
 public class RussianMountains {
 
-	private final int placeNumber;
-	private final int rideNumberByDay;
+	private final long placeNumber;
+	private final long rideNumberByDay;
 	private final RussianMountainsQueue russianMountainsQueue;
 
-	public RussianMountains(int placeNumber, int rideNumberByDay, RussianMountainsQueue russianMountainsQueue) {
+	public RussianMountains(long placeNumber, long rideNumberByDay, RussianMountainsQueue russianMountainsQueue) {
 		this.placeNumber = placeNumber;
 		this.rideNumberByDay = rideNumberByDay;
 		this.russianMountainsQueue = russianMountainsQueue;
 	}
 
-	public int getPlaceNumber() {
+	public long getPlaceNumber() {
 		return placeNumber;
 	}
 
-	public int getRideNumberByDay() {
+	public long getRideNumberByDay() {
 		return rideNumberByDay;
 	}
 

@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class GainCalcul {
 
-	private static final int RIDE_PRICE_PERSON = 1;
+	private static final long RIDE_PRICE_PERSON = 1L;
 
 	private final RideGroupsCombination rideGroupCombination;
 	private final Queue<GroupsByRide> currentQueue;
@@ -31,7 +31,7 @@ public class GainCalcul {
 		currentQueue.addAll(rideGroupCombination.getAllGroupsByRide());
 		Queue<GroupsByRide> nextFile = new LinkedList<GroupsByRide>();
 		
-		for (int i = 0; i < rideNumberByDay; i++) {
+		for (long i = 0; i < rideNumberByDay; i++) {
 				if (currentQueue.isEmpty()) {
 					currentQueue.addAll(nextFile);
 					nextFile = new LinkedList<GroupsByRide>();
