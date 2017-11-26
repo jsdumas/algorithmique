@@ -24,7 +24,7 @@ public class GainCalcul {
 		
 		if(russianMountains.isPlaceNumberGreaterThanPeople()){
 			RussianMountainsQueue russianMountainsQueue = russianMountains.getRussianMountainsQueue();
-			return (RIDE_PRICE_PERSON * russianMountainsQueue.getNumberOfPerson())*rideNumberByDay;
+			return russianMountainsQueue.getNumberOfPerson()*rideNumberByDay;
 		} 
 		
 		long result = 0;
