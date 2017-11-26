@@ -1,7 +1,5 @@
 package test.algorithms.codingame.russianmountains;
 
-import java.util.Queue;
-
 import algorithms.codingame.russianmountains.GainCalcul;
 import algorithms.codingame.russianmountains.GroupOfPerson;
 import algorithms.codingame.russianmountains.RideGroupCombination;

@@ -2,11 +2,8 @@ package test.algorithms.codingame.maya;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.equalTo;
-import static test.algorithms.codingame.maya.MayaDictionaryInit.MAYA_DICTIONNARY;
 import static test.algorithms.codingame.maya.Dialect.NINE;
 import static test.algorithms.codingame.maya.Dialect.TWELVE;
-import static test.algorithms.codingame.maya.Dialect.ZERO;
-
 import org.junit.Test;
 
 public class MayaNumberDictionaryTest extends MayaDictionaryInit {
