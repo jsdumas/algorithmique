@@ -1,5 +1,6 @@
 package algorithms.codingame.russianmountains;
 
+import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -32,8 +33,15 @@ public class GroupsByRideInADay {
 	}
 
 	public void addSecondRideGroup(Queue<GroupOfPerson> nextGroupforASecondRide) {
+		Queue<GroupOfPerson> nextGroup = new LinkedList<GroupOfPerson>();
 		while(!nextGroupforASecondRide.isEmpty()) {
 			GroupOfPerson group = nextGroupforASecondRide.poll();
+			nextGroup.add(group);
+			if(nextGroupforASecondRide.isEmpty()) {
+				nextGroupforASecondRide.addAll(nextGroup);
+				nextGroup = new LinkedList<GroupOfPerson>();
+			}
+			
 			if(group.getNumberOfPerson()+allRideGroups.peek().getPersonNumber()>this.maxPlaceNumber) {
 				break;
 			}
