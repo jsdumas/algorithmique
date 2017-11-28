@@ -1,5 +1,4 @@
-package designpatterns.hf.creational.builder.pattern;
-
+package designpatterns.hf.creational.builder.meal;
 
 public abstract class ColdDrink implements Item {
 

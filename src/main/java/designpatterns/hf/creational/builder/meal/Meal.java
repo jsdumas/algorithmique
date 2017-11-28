@@ -1,4 +1,4 @@
-package designpatterns.hf.creational.builder.pattern;
+package designpatterns.hf.creational.builder.meal;
 
 import java.util.ArrayList;
 import java.util.List;

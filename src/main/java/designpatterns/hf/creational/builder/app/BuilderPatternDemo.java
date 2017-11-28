@@ -1,7 +1,7 @@
 package designpatterns.hf.creational.builder.app;
 
-import designpatterns.hf.creational.builder.pattern.Meal;
-import designpatterns.hf.creational.builder.pattern.MealBuilder;
+import designpatterns.hf.creational.builder.creation.MealBuilder;
+import designpatterns.hf.creational.builder.meal.Meal;
 
 public class BuilderPatternDemo {
 
