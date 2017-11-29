@@ -2,7 +2,7 @@ package test.algorithms.codingame.russianmountains;
 
 import algorithms.codingame.russianmountains.GainCalcul;
 import algorithms.codingame.russianmountains.GroupOfPerson;
-import algorithms.codingame.russianmountains.RideGroupsCombination;
+import algorithms.codingame.russianmountains.GroupsSortedForRides;
 import algorithms.codingame.russianmountains.RussianMountains;
 import algorithms.codingame.russianmountains.RussianMountainsQueue;
 
@@ -64,7 +64,7 @@ public abstract class RussianMountainsInit {
 	protected static final GainCalcul GAIN_CALCUL_FOR_NINE_MILLION_RIDES_AND_ONE_THOUSAND_GROUP = new GainCalcul(
 			RUSSIAN_MOUNTAINS_FOR_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS);
 
-	protected static final RideGroupsCombination RIDE_GROUP_COMBINATION = new RideGroupsCombination(
+	protected static final GroupsSortedForRides RIDE_GROUP_COMBINATION = new GroupsSortedForRides(
 			RUSSIAN_MOUNTAINS_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS);
 
 }

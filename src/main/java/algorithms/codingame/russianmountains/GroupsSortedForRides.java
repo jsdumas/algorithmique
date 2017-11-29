@@ -3,19 +3,19 @@ package algorithms.codingame.russianmountains;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class RideGroupsCombination {
+public class GroupsSortedForRides {
 
 	private final Queue<GroupOfPerson> groupQueue;
-	private final GroupsByRideInADay allGroupsByRide;
+	private final AllGroupsByRide allGroupsByRide;
 
-	public RideGroupsCombination(RussianMountains russianMountains) {
+	public GroupsSortedForRides(RussianMountains russianMountains) {
 		this.groupQueue = new LinkedList<GroupOfPerson>();
 		this.groupQueue.addAll(russianMountains.getRussianMountainsQueue().getGroupOfPerson());
 		this.allGroupsByRide = initAllGroupsByRide(russianMountains.getPlaceNumber());
 	}
 
-	private GroupsByRideInADay initAllGroupsByRide(long placeNumber) {
-		GroupsByRideInADay allGroupsByRide = new GroupsByRideInADay(placeNumber);
+	private AllGroupsByRide initAllGroupsByRide(long placeNumber) {
+		AllGroupsByRide allGroupsByRide = new AllGroupsByRide(placeNumber);
 		Queue<GroupOfPerson> nextGroupforASecondRide = new LinkedList<GroupOfPerson>();
 		while (!groupQueue.isEmpty()) {
 			GroupOfPerson group = groupQueue.poll();

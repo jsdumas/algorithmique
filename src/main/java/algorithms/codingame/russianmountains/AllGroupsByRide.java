@@ -4,12 +4,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class GroupsByRideInADay {
+public class AllGroupsByRide {
 
 	private final long maxPlaceNumber;
 	private final Stack<GroupsByRide> allRideGroups;
 
-	public GroupsByRideInADay(long maxPlaceNumber) {
+	public AllGroupsByRide(long maxPlaceNumber) {
 		this.maxPlaceNumber = maxPlaceNumber;
 		this.allRideGroups = new Stack<GroupsByRide>();
 	}
@@ -33,16 +33,17 @@ public class GroupsByRideInADay {
 	}
 
 	public void addSecondRideGroup(Queue<GroupOfPerson> nextGroupforASecondRide) {
+		Queue<GroupOfPerson> nextGroupDuplicated = new LinkedList<GroupOfPerson>();
+		nextGroupDuplicated.addAll(nextGroupforASecondRide);
 		Queue<GroupOfPerson> nextGroup = new LinkedList<GroupOfPerson>();
-		while(!nextGroupforASecondRide.isEmpty()) {
+		while (!nextGroupforASecondRide.isEmpty()) {
 			GroupOfPerson group = nextGroupforASecondRide.poll();
 			nextGroup.add(group);
-			if(nextGroupforASecondRide.isEmpty()) {
+			if (nextGroupforASecondRide.isEmpty()) {
 				nextGroupforASecondRide.addAll(nextGroup);
 				nextGroup = new LinkedList<GroupOfPerson>();
 			}
-			
-			if(group.getNumberOfPerson()+allRideGroups.peek().getPersonNumber()>this.maxPlaceNumber) {
+			if (group.getNumberOfPerson() + allRideGroups.peek().getPersonNumber() > this.maxPlaceNumber) {
 				break;
 			}
 			allRideGroups.peek().add(group);
