@@ -5,16 +5,16 @@ import java.util.Queue;
 
 public class GainCalcul {
 
-	private final GroupsSortedForRides rideGroupCombination;
-	private final Queue<GroupsByRide> currentQueue;
+	private final GroupsSortedForRides groupsSortedForRides;
+	private final Queue<GroupsByRide> allGroupsByRide;
 	private final long rideNumberByDay;
 
 	private final RussianMountains russianMountains;
 
 	public GainCalcul(RussianMountains russianMountains) {
 		this.russianMountains = russianMountains;
-		this.rideGroupCombination = new GroupsSortedForRides(russianMountains);
-		this.currentQueue = new LinkedList<GroupsByRide>();
+		this.groupsSortedForRides = new GroupsSortedForRides(russianMountains);
+		this.allGroupsByRide = new LinkedList<GroupsByRide>();
 		this.rideNumberByDay = russianMountains.getRideNumberByDay();
 	}
 
@@ -24,16 +24,16 @@ public class GainCalcul {
 			return russianMountainsQueue.getNumberOfPerson() * rideNumberByDay;
 		}
 		long result = 0;
-		currentQueue.addAll(rideGroupCombination.getAllGroupsByRide());
-		Queue<GroupsByRide> nextFile = new LinkedList<GroupsByRide>();
+		allGroupsByRide.addAll(groupsSortedForRides.getAllGroupsByRide());
+		Queue<GroupsByRide> allGroupsForAnotherRide = new LinkedList<GroupsByRide>();
 		for (long i = 0; i < rideNumberByDay; i++) {
-			if (currentQueue.isEmpty()) {
-				currentQueue.addAll(nextFile);
-				nextFile = new LinkedList<GroupsByRide>();
+			if (allGroupsByRide.isEmpty()) {
+				allGroupsByRide.addAll(allGroupsForAnotherRide);
+				allGroupsForAnotherRide = new LinkedList<GroupsByRide>();
 			}
-			GroupsByRide currentGroupRide = currentQueue.poll();
-			nextFile.add(currentGroupRide);
-			result += currentGroupRide.getPersonNumber();
+			GroupsByRide currentRiderGroup = allGroupsByRide.poll();
+			allGroupsForAnotherRide.add(currentRiderGroup);
+			result += currentRiderGroup.getNumberOfPersons();
 		}
 		return result;
 	}
