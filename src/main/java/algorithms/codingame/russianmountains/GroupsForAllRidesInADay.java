@@ -4,12 +4,12 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class AllGroupsByRide {
+public class GroupsForAllRidesInADay {
 
 	private final long maxPlaceNumber;
 	private final Stack<GroupsByRide> allRideGroups;
 
-	public AllGroupsByRide(long maxPlaceNumber) {
+	public GroupsForAllRidesInADay(long maxPlaceNumber) {
 		this.maxPlaceNumber = maxPlaceNumber;
 		this.allRideGroups = new Stack<GroupsByRide>();
 	}

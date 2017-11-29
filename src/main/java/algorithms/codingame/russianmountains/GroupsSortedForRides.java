@@ -6,16 +6,16 @@ import java.util.Queue;
 public class GroupsSortedForRides {
 
 	private final Queue<GroupOfPerson> groupQueue;
-	private final AllGroupsByRide allGroupsByRide;
+	private final GroupsForAllRidesInADay groupsForAllRidesInADay;
 
 	public GroupsSortedForRides(RussianMountains russianMountains) {
 		this.groupQueue = new LinkedList<GroupOfPerson>();
 		this.groupQueue.addAll(russianMountains.getRussianMountainsQueue().getGroupOfPerson());
-		this.allGroupsByRide = initAllGroupsByRide(russianMountains.getPlaceNumber());
+		this.groupsForAllRidesInADay = initAllGroupsByRide(russianMountains.getPlaceNumber());
 	}
 
-	private AllGroupsByRide initAllGroupsByRide(long placeNumber) {
-		AllGroupsByRide allGroupsByRide = new AllGroupsByRide(placeNumber);
+	private GroupsForAllRidesInADay initAllGroupsByRide(long placeNumber) {
+		GroupsForAllRidesInADay allGroupsByRide = new GroupsForAllRidesInADay(placeNumber);
 		Queue<GroupOfPerson> nextGroupforASecondRide = new LinkedList<GroupOfPerson>();
 		while (!groupQueue.isEmpty()) {
 			GroupOfPerson group = groupQueue.poll();
@@ -27,12 +27,12 @@ public class GroupsSortedForRides {
 	}
 
 	public long getCombinationNumber() {
-		return allGroupsByRide.getNumber();
+		return groupsForAllRidesInADay.getNumber();
 	}
 
 	public Queue<GroupsByRide> getAllGroupsByRide() {
 		Queue<GroupsByRide> allRideGroups = new LinkedList<GroupsByRide>();
-		allRideGroups.addAll(allGroupsByRide.getAllRideGroups());
+		allRideGroups.addAll(groupsForAllRidesInADay.getAllRideGroups());
 		return allRideGroups;
 	}
 
