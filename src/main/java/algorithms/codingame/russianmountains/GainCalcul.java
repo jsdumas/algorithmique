@@ -6,36 +6,29 @@ import java.util.Queue;
 public class GainCalcul {
 
 	private final GroupsSortedForRides groupsSortedForRides;
-	private final Queue<GroupsByRide> allGroupsByRide;
-	private final long rideNumberByDay;
-
+	private final long numberOfRidesByDay;
 	private final RussianMountains russianMountains;
+	private final Queue<GroupsByRide> allGroupsByRide;
+	private final long numberOfPersonsInRussianMountainsQueue;
 
 	public GainCalcul(RussianMountains russianMountains) {
 		this.russianMountains = russianMountains;
 		this.groupsSortedForRides = new GroupsSortedForRides(russianMountains);
-		this.allGroupsByRide = new LinkedList<GroupsByRide>();
-		this.rideNumberByDay = russianMountains.getRideNumberByDay();
+		new LinkedList<GroupsByRide>();
+		this.numberOfRidesByDay = russianMountains.getRideNumberByDay();
+		this.allGroupsByRide = this.groupsSortedForRides.getAllGroupsByRide();
+		this.numberOfPersonsInRussianMountainsQueue = russianMountains.getRussianMountainsQueue().getNumberOfPerson();
 	}
 
 	public long dailyGainOfRussianMountains() {
 		if (russianMountains.isPlaceNumberGreaterThanPeople()) {
-			RussianMountainsQueue russianMountainsQueue = russianMountains.getRussianMountainsQueue();
-			return russianMountainsQueue.getNumberOfPerson() * rideNumberByDay;
+			return numberOfPersonsInRussianMountainsQueue * numberOfRidesByDay;
 		}
-		long result = 0;
-		allGroupsByRide.addAll(groupsSortedForRides.getAllGroupsByRide());
-		Queue<GroupsByRide> allGroupsForAnotherRide = new LinkedList<GroupsByRide>();
-		for (long i = 0; i < rideNumberByDay; i++) {
-			if (allGroupsByRide.isEmpty()) {
-				allGroupsByRide.addAll(allGroupsForAnotherRide);
-				allGroupsForAnotherRide = new LinkedList<GroupsByRide>();
-			}
-			GroupsByRide currentRiderGroup = allGroupsByRide.poll();
-			allGroupsForAnotherRide.add(currentRiderGroup);
-			result += currentRiderGroup.getNumberOfPersons();
+		long numberOfRiders = 0;
+		for (GroupsByRide groups : allGroupsByRide) {
+			numberOfRiders += groups.getNumberOfPersons();
 		}
-		return result;
+		return numberOfRiders * (numberOfRidesByDay / allGroupsByRide.size());
 	}
 
 }
