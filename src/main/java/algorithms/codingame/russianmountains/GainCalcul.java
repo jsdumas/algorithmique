@@ -5,8 +5,6 @@ import java.util.Queue;
 
 public class GainCalcul {
 
-	private static final long RIDE_PRICE_PERSON = 1L;
-
 	private final RideGroupsCombination rideGroupCombination;
 	private final Queue<GroupsByRide> currentQueue;
 	private final long rideNumberByDay;
@@ -21,25 +19,25 @@ public class GainCalcul {
 	}
 
 	public long dailyGainOfRussianMountains() {
-		
-		if(russianMountains.isPlaceNumberGreaterThanPeople()){
+
+		if (russianMountains.isPlaceNumberGreaterThanPeople()) {
 			RussianMountainsQueue russianMountainsQueue = russianMountains.getRussianMountainsQueue();
-			return russianMountainsQueue.getNumberOfPerson()*rideNumberByDay;
-		} 
-		
+			return russianMountainsQueue.getNumberOfPerson() * rideNumberByDay;
+		}
+
 		long result = 0;
 		currentQueue.addAll(rideGroupCombination.getAllGroupsByRide());
 		Queue<GroupsByRide> nextFile = new LinkedList<GroupsByRide>();
-		
+
 		for (long i = 0; i < rideNumberByDay; i++) {
-				if (currentQueue.isEmpty()) {
-					currentQueue.addAll(nextFile);
-					nextFile = new LinkedList<GroupsByRide>();
-				}
-				GroupsByRide currentGroupRide = currentQueue.poll();
-				nextFile.add(currentGroupRide);
-				result += RIDE_PRICE_PERSON * currentGroupRide.getPersonNumber();
+			if (currentQueue.isEmpty()) {
+				currentQueue.addAll(nextFile);
+				nextFile = new LinkedList<GroupsByRide>();
 			}
+			GroupsByRide currentGroupRide = currentQueue.poll();
+			nextFile.add(currentGroupRide);
+			result += currentGroupRide.getPersonNumber();
+		}
 		return result;
 	}
 
