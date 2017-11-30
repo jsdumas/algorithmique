@@ -1,4 +1,4 @@
-package algorithms.codingame.russianmountains;
+package algorithms.codingame.rollercoaster;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -8,10 +8,10 @@ public class GroupsSortedForRides {
 	private final Queue<GroupOfPerson> groupQueue;
 	private final GroupsForAllRidesInADay groupsForAllRidesInADay;
 
-	public GroupsSortedForRides(RussianMountains russianMountains) {
+	public GroupsSortedForRides(RollerCoaster rollerCoaster) {
 		this.groupQueue = new LinkedList<GroupOfPerson>();
-		this.groupQueue.addAll(russianMountains.getRussianMountainsQueue().getGroupOfPerson());
-		this.groupsForAllRidesInADay = initAllGroupsByRide(russianMountains.getPlaceNumber());
+		this.groupQueue.addAll(rollerCoaster.getRussianMountainsQueue().getGroupOfPerson());
+		this.groupsForAllRidesInADay = initAllGroupsByRide(rollerCoaster.getPlaceNumber());
 	}
 
 	private GroupsForAllRidesInADay initAllGroupsByRide(long placeNumber) {

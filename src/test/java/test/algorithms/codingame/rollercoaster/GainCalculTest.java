@@ -1,11 +1,11 @@
-package test.algorithms.codingame.russianmountains;
+package test.algorithms.codingame.rollercoaster;
 
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
 /** @link GainCalcul **/
-public class GainCalculTest extends RussianMountainsInit {
+public class GainCalculTest extends RollerCoasterInit {
 
 	@Test
 	public void whenOneRideIsFinishedWhithOneGroupOfOnePersonThenCalculOfGainIsOne() {

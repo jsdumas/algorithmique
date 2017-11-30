@@ -1,12 +1,12 @@
-package test.algorithms.codingame.russianmountains;
+package test.algorithms.codingame.rollercoaster;
 
-import algorithms.codingame.russianmountains.GainCalcul;
-import algorithms.codingame.russianmountains.GroupOfPerson;
-import algorithms.codingame.russianmountains.GroupsSortedForRides;
-import algorithms.codingame.russianmountains.RussianMountains;
-import algorithms.codingame.russianmountains.RussianMountainsQueue;
+import algorithms.codingame.rollercoaster.Gain;
+import algorithms.codingame.rollercoaster.GroupOfPerson;
+import algorithms.codingame.rollercoaster.GroupsSortedForRides;
+import algorithms.codingame.rollercoaster.RollerCoaster;
+import algorithms.codingame.rollercoaster.RollerCoasterQueue;
 
-public abstract class RussianMountainsInit {
+public abstract class RollerCoasterInit {
 
 	private static final int MAX_PLACE_NUMBER_IS_ONE = 1;
 	private static final int MAX_PLACE_NUMBER_IS_THREE = 3;
@@ -27,24 +27,24 @@ public abstract class RussianMountainsInit {
 	private static final GroupOfPerson GROUP_OF_THREE_PERSONS = new GroupOfPerson(THREE_PERSONS);
 	private static final GroupOfPerson GROUP_OF_FIVE_PERSONS = new GroupOfPerson(FIVE_PERSONS);
 
-	private static final RussianMountainsQueue RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_GROUP_OF_ONE_PERSON = new RussianMountainsQueueBuilder().with(
+	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_GROUP_OF_ONE_PERSON = new RollerCoasterQueueBuilder().with(
 			GROUP_OF_ONE_PERSON).build();
-	private static final RussianMountainsQueue RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS = new RussianMountainsQueueBuilder()
+	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS = new RollerCoasterQueueBuilder()
 			.with(GROUP_OF_THREE_PERSONS).with(GROUP_OF_ONE_PERSON).with(GROUP_OF_ONE_PERSON).with(GROUP_OF_TWO_PERSONS).build();
-	private static final RussianMountainsQueue RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS = new RussianMountainsQueueBuilder()
+	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS = new RollerCoasterQueueBuilder()
 			.with(GROUP_OF_TWO_PERSONS).with(GROUP_OF_THREE_PERSONS).with(GROUP_OF_FIVE_PERSONS).with(GROUP_OF_THREE_PERSONS).build();
 
-	private static final RussianMountainsQueue RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS = new RussianMountainsQueueBuilder()
+	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS = new RollerCoasterQueueBuilder()
 			.withManyPeople().build();
 
-	private static final RussianMountains RUSSIAN_MOUNTAINS_FOR_ONE_GROUP_OF_ONE_PERSON = new RussianMountains(MAX_PLACE_NUMBER_IS_ONE,
+	private static final RollerCoaster RUSSIAN_MOUNTAINS_FOR_ONE_GROUP_OF_ONE_PERSON = new RollerCoaster(MAX_PLACE_NUMBER_IS_ONE,
 			RIDE_NUMBER_BY_DAY_IS_ONE, RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_GROUP_OF_ONE_PERSON);
-	private static final RussianMountains RUSSIAN_MOUNTAINS_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS = new RussianMountains(
+	private static final RollerCoaster RUSSIAN_MOUNTAINS_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS = new RollerCoaster(
 			MAX_PLACE_NUMBER_IS_THREE, RIDE_NUMBER_BY_DAY_IS_THREE, RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS);
-	private static final RussianMountains RUSSIAN_MOUNTAINS_FOR_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS = new RussianMountains(
+	private static final RollerCoaster RUSSIAN_MOUNTAINS_FOR_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS = new RollerCoaster(
 			MAX_PLACE_NUMBER_IS_FIVE, RIDE_NUMBER_BY_DAY_IS_THREE, RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS);
 
-	private static final RussianMountains RUSSIAN_MOUNTAINS_FOR_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS = new RussianMountains(
+	private static final RollerCoaster RUSSIAN_MOUNTAINS_FOR_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS = new RollerCoaster(
 			MAX_PLACE_NUMBER_TEN_MILLION, RIDE_NUMBER_BY_DAY_IS_NINE_MILLION,
 			RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS);
 
@@ -55,13 +55,13 @@ public abstract class RussianMountainsInit {
 
 	protected static final long COMBINATION_NUMBER_IS_THREE = 3L;
 
-	protected static final GainCalcul GAIN_CALCUL_FOR_ONE_RIDE_AND_ONE_GROUP_OF_ONE_PERSON = new GainCalcul(
+	protected static final Gain GAIN_CALCUL_FOR_ONE_RIDE_AND_ONE_GROUP_OF_ONE_PERSON = new Gain(
 			RUSSIAN_MOUNTAINS_FOR_ONE_GROUP_OF_ONE_PERSON);
-	protected static final GainCalcul GAIN_CALCUL_FOR_THREE_RIDES_AND_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS = new GainCalcul(
+	protected static final Gain GAIN_CALCUL_FOR_THREE_RIDES_AND_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS = new Gain(
 			RUSSIAN_MOUNTAINS_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS);
-	protected static final GainCalcul GAIN_CALCUL_FOR_THREE_RIDES_AND_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS = new GainCalcul(
+	protected static final Gain GAIN_CALCUL_FOR_THREE_RIDES_AND_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS = new Gain(
 			RUSSIAN_MOUNTAINS_FOR_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS);
-	protected static final GainCalcul GAIN_CALCUL_FOR_NINE_MILLION_RIDES_AND_ONE_THOUSAND_GROUP = new GainCalcul(
+	protected static final Gain GAIN_CALCUL_FOR_NINE_MILLION_RIDES_AND_ONE_THOUSAND_GROUP = new Gain(
 			RUSSIAN_MOUNTAINS_FOR_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS);
 
 	protected static final GroupsSortedForRides RIDE_GROUP_COMBINATION = new GroupsSortedForRides(

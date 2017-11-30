@@ -1,27 +1,27 @@
-package algorithms.codingame.russianmountains;
+package algorithms.codingame.rollercoaster;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class GainCalcul {
+public class Gain {
 
 	private final GroupsSortedForRides groupsSortedForRides;
 	private final long numberOfRidesByDay;
-	private final RussianMountains russianMountains;
+	private final RollerCoaster rollerCoaster;
 	private final Queue<GroupsByRide> allGroupsByRide;
 	private final long numberOfPersonsInRussianMountainsQueue;
 
-	public GainCalcul(RussianMountains russianMountains) {
-		this.russianMountains = russianMountains;
-		this.groupsSortedForRides = new GroupsSortedForRides(russianMountains);
+	public Gain(RollerCoaster rollerCoaster) {
+		this.rollerCoaster = rollerCoaster;
+		this.groupsSortedForRides = new GroupsSortedForRides(rollerCoaster);
 		new LinkedList<GroupsByRide>();
-		this.numberOfRidesByDay = russianMountains.getRideNumberByDay();
+		this.numberOfRidesByDay = rollerCoaster.getRideNumberByDay();
 		this.allGroupsByRide = this.groupsSortedForRides.getAllGroupsByRide();
-		this.numberOfPersonsInRussianMountainsQueue = russianMountains.getRussianMountainsQueue().getNumberOfPerson();
+		this.numberOfPersonsInRussianMountainsQueue = rollerCoaster.getRussianMountainsQueue().getNumberOfPerson();
 	}
 
 	public long dailyGainOfRussianMountains() {
-		if (russianMountains.isPlaceNumberGreaterThanPeople()) {
+		if (rollerCoaster.isPlaceNumberGreaterThanPeople()) {
 			return numberOfPersonsInRussianMountainsQueue * numberOfRidesByDay;
 		}
 		long numberOfRiders = 0;
