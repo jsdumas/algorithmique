@@ -1,9 +1,9 @@
-package test.algorithms.codingame.russianmountains;
+package test.algorithms.codingame.rollercoaster;
 
 import java.util.LinkedList;
 import java.util.Queue;
 
-import algorithms.codingame.russianmountains.GroupOfPerson;
+import algorithms.codingame.rollercoaster.GroupOfPerson;
 
 public class GroupQueueBuilder {
 
