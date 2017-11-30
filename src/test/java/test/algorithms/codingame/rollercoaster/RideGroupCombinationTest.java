@@ -1,10 +1,10 @@
-package test.algorithms.codingame.russianmountains;
+package test.algorithms.codingame.rollercoaster;
 
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
-public class RideGroupCombinationTest extends RussianMountainsInit {
+public class RideGroupCombinationTest extends RollerCoasterInit {
 
 	@Test
 	public void whenPlaceNumberIsThreeAndFourGroupsWithThreeOneOneAndTwoPersonsThenItShouldReturnThreeCombination() {
@@ -13,7 +13,7 @@ public class RideGroupCombinationTest extends RussianMountainsInit {
 
 	@Test
 	public void whenTheFirstGroupGetRideThenThereAreThreePersons() {
-		MatcherAssert.assertThat(RIDE_GROUP_COMBINATION.getAllGroupsByRide().peek().getPersonNumber(), Matchers.is(THREE_PERSONS));
+		MatcherAssert.assertThat(RIDE_GROUP_COMBINATION.getAllGroupsByRide().peek().getNumberOfPersons(), Matchers.is(THREE_PERSONS));
 	}
 
 }
