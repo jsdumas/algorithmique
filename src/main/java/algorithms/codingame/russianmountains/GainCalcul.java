@@ -5,42 +5,30 @@ import java.util.Queue;
 
 public class GainCalcul {
 
-	private static final long RIDE_PRICE_PERSON = 1L;
-
-	private final RideGroupsCombination rideGroupCombination;
-	private final Queue<GroupsByRide> currentQueue;
-	private final long rideNumberByDay;
-
+	private final GroupsSortedForRides groupsSortedForRides;
+	private final long numberOfRidesByDay;
 	private final RussianMountains russianMountains;
+	private final Queue<GroupsByRide> allGroupsByRide;
+	private final long numberOfPersonsInRussianMountainsQueue;
 
 	public GainCalcul(RussianMountains russianMountains) {
 		this.russianMountains = russianMountains;
-		this.rideGroupCombination = new RideGroupsCombination(russianMountains);
-		this.currentQueue = new LinkedList<GroupsByRide>();
-		this.rideNumberByDay = russianMountains.getRideNumberByDay();
+		this.groupsSortedForRides = new GroupsSortedForRides(russianMountains);
+		new LinkedList<GroupsByRide>();
+		this.numberOfRidesByDay = russianMountains.getRideNumberByDay();
+		this.allGroupsByRide = this.groupsSortedForRides.getAllGroupsByRide();
+		this.numberOfPersonsInRussianMountainsQueue = russianMountains.getRussianMountainsQueue().getNumberOfPerson();
 	}
 
 	public long dailyGainOfRussianMountains() {
-		
-		if(russianMountains.isPlaceNumberGreaterThanPeople()){
-			RussianMountainsQueue russianMountainsQueue = russianMountains.getRussianMountainsQueue();
-			return russianMountainsQueue.getNumberOfPerson()*rideNumberByDay;
-		} 
-		
-		long result = 0;
-		currentQueue.addAll(rideGroupCombination.getAllGroupsByRide());
-		Queue<GroupsByRide> nextFile = new LinkedList<GroupsByRide>();
-		
-		for (long i = 0; i < rideNumberByDay; i++) {
-				if (currentQueue.isEmpty()) {
-					currentQueue.addAll(nextFile);
-					nextFile = new LinkedList<GroupsByRide>();
-				}
-				GroupsByRide currentGroupRide = currentQueue.poll();
-				nextFile.add(currentGroupRide);
-				result += RIDE_PRICE_PERSON * currentGroupRide.getPersonNumber();
-			}
-		return result;
+		if (russianMountains.isPlaceNumberGreaterThanPeople()) {
+			return numberOfPersonsInRussianMountainsQueue * numberOfRidesByDay;
+		}
+		long numberOfRiders = 0;
+		for (GroupsByRide groups : allGroupsByRide) {
+			numberOfRiders += groups.getNumberOfPersons();
+		}
+		return numberOfRiders * (numberOfRidesByDay / allGroupsByRide.size());
 	}
 
 }

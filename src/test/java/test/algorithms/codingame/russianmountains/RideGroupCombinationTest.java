@@ -13,7 +13,7 @@ public class RideGroupCombinationTest extends RussianMountainsInit {
 
 	@Test
 	public void whenTheFirstGroupGetRideThenThereAreThreePersons() {
-		MatcherAssert.assertThat(RIDE_GROUP_COMBINATION.getAllGroupsByRide().peek().getPersonNumber(), Matchers.is(THREE_PERSONS));
+		MatcherAssert.assertThat(RIDE_GROUP_COMBINATION.getAllGroupsByRide().peek().getNumberOfPersons(), Matchers.is(THREE_PERSONS));
 	}
 
 }

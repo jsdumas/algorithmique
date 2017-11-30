@@ -3,19 +3,19 @@ package algorithms.codingame.russianmountains;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class RideGroupsCombination {
+public class GroupsSortedForRides {
 
 	private final Queue<GroupOfPerson> groupQueue;
-	private final GroupsByRideInADay allGroupsByRide;
+	private final GroupsForAllRidesInADay groupsForAllRidesInADay;
 
-	public RideGroupsCombination(RussianMountains russianMountains) {
+	public GroupsSortedForRides(RussianMountains russianMountains) {
 		this.groupQueue = new LinkedList<GroupOfPerson>();
 		this.groupQueue.addAll(russianMountains.getRussianMountainsQueue().getGroupOfPerson());
-		this.allGroupsByRide = initAllGroupsByRide(russianMountains.getPlaceNumber());
+		this.groupsForAllRidesInADay = initAllGroupsByRide(russianMountains.getPlaceNumber());
 	}
 
-	private GroupsByRideInADay initAllGroupsByRide(long placeNumber) {
-		GroupsByRideInADay allGroupsByRide = new GroupsByRideInADay(placeNumber);
+	private GroupsForAllRidesInADay initAllGroupsByRide(long placeNumber) {
+		GroupsForAllRidesInADay allGroupsByRide = new GroupsForAllRidesInADay(placeNumber);
 		Queue<GroupOfPerson> nextGroupforASecondRide = new LinkedList<GroupOfPerson>();
 		while (!groupQueue.isEmpty()) {
 			GroupOfPerson group = groupQueue.poll();
@@ -27,12 +27,12 @@ public class RideGroupsCombination {
 	}
 
 	public long getCombinationNumber() {
-		return allGroupsByRide.getNumber();
+		return groupsForAllRidesInADay.getNumber();
 	}
 
 	public Queue<GroupsByRide> getAllGroupsByRide() {
 		Queue<GroupsByRide> allRideGroups = new LinkedList<GroupsByRide>();
-		allRideGroups.addAll(allGroupsByRide.getAllRideGroups());
+		allRideGroups.addAll(groupsForAllRidesInADay.getAllRideGroups());
 		return allRideGroups;
 	}
 
