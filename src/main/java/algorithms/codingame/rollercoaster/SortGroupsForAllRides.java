@@ -5,25 +5,28 @@ import java.util.Queue;
 
 public class SortGroupsForAllRides {
 
-	private final Queue<GroupOfPerson> rollerCoasterWaitingQueue;
-	private final long placeNumber;
+	private RollerCoaster rollerCoaster;
+	private GroupsForAllRidesInADay groupsForAllRidesInADay;
 
 	public SortGroupsForAllRides(RollerCoaster rollerCoaster) {
-		this.rollerCoasterWaitingQueue = new LinkedList<GroupOfPerson>();
-		this.rollerCoasterWaitingQueue.addAll(rollerCoaster.getWaitingQueue().getGroupOfPerson());
-		this.placeNumber = rollerCoaster.getPlaceNumberForARide();
+		this.rollerCoaster = rollerCoaster;
+		this.groupsForAllRidesInADay = new GroupsForAllRidesInADay(rollerCoaster.getPlaceNumberForARide());
 	}
 
+
 	public GroupsForAllRidesInADay getGroupsForAllRidesInADay() {
-		GroupsForAllRidesInADay allGroupsByRide = new GroupsForAllRidesInADay(placeNumber);
-		Queue<GroupOfPerson> nextGroupforASecondRide = new LinkedList<GroupOfPerson>();
-		while (!rollerCoasterWaitingQueue.isEmpty()) {
-			GroupOfPerson group = rollerCoasterWaitingQueue.poll();
-			allGroupsByRide.add(group);
-			nextGroupforASecondRide.add(group);
+		Queue<GroupOfPerson> waitingGroupForThisRide = new LinkedList<GroupOfPerson>();
+		waitingGroupForThisRide.addAll(rollerCoaster.getWaitingQueue().getWaitingGroupsOfPersons());
+		Queue<GroupOfPerson> waitingGroupForNextRide = new LinkedList<GroupOfPerson>();
+		for(long i=0; i<rollerCoaster.getRideNumberByDay(); i++){
+			if(waitingGroupForThisRide.isEmpty()){
+				waitingGroupForThisRide.addAll(waitingGroupForNextRide); 
+				waitingGroupForNextRide = new LinkedList<GroupOfPerson>();
+			}
+			GroupOfPerson nextGroupForARide = waitingGroupForThisRide.poll();
+			groupsForAllRidesInADay.addGroupOfRiders(nextGroupForARide);
 		}
-		allGroupsByRide.addSecondRideGroup(nextGroupforASecondRide);
-		return allGroupsByRide;
+		return groupsForAllRidesInADay;
 	}
 
 }

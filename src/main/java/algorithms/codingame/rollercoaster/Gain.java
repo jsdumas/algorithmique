@@ -1,5 +1,6 @@
 package algorithms.codingame.rollercoaster;
 
+/** @link GainTest **/
 public class Gain {
 
 	private final RollerCoaster rollerCoaster;
@@ -8,7 +9,7 @@ public class Gain {
 		this.rollerCoaster = rollerCoaster;
 	}
 
-	public long dailyGainOfRussianMountains() {
+	public long dailyGainOfRollerCoaster() {
 		if (rollerCoaster.isPlaceNumberGreaterThanPeople()) {
 			RollerCoasterQueue rollerCoasterQueue = rollerCoaster.getWaitingQueue();
 			return rollerCoasterQueue.getNumberOfPerson() * rollerCoaster.getRideNumberByDay();
