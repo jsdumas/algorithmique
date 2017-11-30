@@ -2,7 +2,7 @@ package test.algorithms.codingame.rollercoaster;
 
 import algorithms.codingame.rollercoaster.Gain;
 import algorithms.codingame.rollercoaster.GroupOfPerson;
-import algorithms.codingame.rollercoaster.GroupsSortedForRides;
+import algorithms.codingame.rollercoaster.SortGroupsForAllRides;
 import algorithms.codingame.rollercoaster.RollerCoaster;
 import algorithms.codingame.rollercoaster.RollerCoasterQueue;
 
@@ -64,7 +64,7 @@ public abstract class RollerCoasterInit {
 	protected static final Gain GAIN_CALCUL_FOR_NINE_MILLION_RIDES_AND_ONE_THOUSAND_GROUP = new Gain(
 			RUSSIAN_MOUNTAINS_FOR_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS);
 
-	protected static final GroupsSortedForRides RIDE_GROUP_COMBINATION = new GroupsSortedForRides(
+	protected static final SortGroupsForAllRides RIDE_GROUP_COMBINATION = new SortGroupsForAllRides(
 			RUSSIAN_MOUNTAINS_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS);
 
 }

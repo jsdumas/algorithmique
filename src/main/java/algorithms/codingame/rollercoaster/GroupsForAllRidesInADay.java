@@ -8,10 +8,12 @@ public class GroupsForAllRidesInADay {
 
 	private final long maxPlaceNumber;
 	private final Stack<GroupsByRide> allRideGroups;
+	private final long numberOfPassengersInADay;
 
 	public GroupsForAllRidesInADay(long maxPlaceNumber) {
 		this.maxPlaceNumber = maxPlaceNumber;
 		this.allRideGroups = new Stack<GroupsByRide>();
+		this.numberOfPassengersInADay = 0;
 	}
 
 	public long getNumber() {
@@ -48,6 +50,10 @@ public class GroupsForAllRidesInADay {
 			}
 			allRideGroups.peek().add(group);
 		}
+	}
+
+	public long getAllpassengersInADay() {
+		return numberOfPassengersInADay;
 	}
 
 }
