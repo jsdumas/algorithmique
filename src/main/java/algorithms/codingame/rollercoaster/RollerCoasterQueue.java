@@ -5,20 +5,22 @@ import java.util.Queue;
 
 public class RollerCoasterQueue {
 
-	private final Queue<GroupOfPerson> waitingGroupsOfPersons;
+	private static final long ZERO = 0;
+	private final Queue<GroupOfRiders> waitingGroupsOfPersons;
 	private long numberOfPerson;
+	private GroupOfRiders nextGroupForARide;
 
 	public RollerCoasterQueue() {
-		this.waitingGroupsOfPersons = new LinkedList<GroupOfPerson>();
-		this.numberOfPerson = 0L;
+		this.waitingGroupsOfPersons = new LinkedList<GroupOfRiders>();
+		this.numberOfPerson = ZERO;
 	}
 
-	public void addGroup(GroupOfPerson groupOfPerson) {
-		this.numberOfPerson += groupOfPerson.getNumberOfPerson();
-		this.waitingGroupsOfPersons.add(groupOfPerson);
+	public void addGroup(GroupOfRiders groupOfRiders) {
+		this.numberOfPerson += groupOfRiders.getNumberOfRiders();
+		this.waitingGroupsOfPersons.add(groupOfRiders);
 	}
 
-	public Queue<GroupOfPerson> getWaitingGroupsOfPersons() {
+	public Queue<GroupOfRiders> getWaitingGroupsOfPersons() {
 		return waitingGroupsOfPersons;
 	}
 
@@ -27,7 +29,22 @@ public class RollerCoasterQueue {
 	}
 
 	public boolean canNextGroupGetIn(int currentCapacity, long placeNumberForARide) {
-		return currentCapacity + waitingGroupsOfPersons.peek().getNumberOfPerson() <= placeNumberForARide;
+		return currentCapacity + waitingGroupsOfPersons.peek().getNumberOfRiders() <= placeNumberForARide;
+	}
+
+	public boolean areAllWaitingGroupsPassed() {
+		GroupOfRiders nextGroupOfPerson = waitingGroupsOfPersons.peek();
+		return nextGroupOfPerson.getId() == ZERO;
+	}
+
+	public long getNumberOfNextRiders() {
+		nextGroupForARide = waitingGroupsOfPersons.poll();
+		waitingGroupsOfPersons.add(nextGroupForARide);
+		return nextGroupForARide.getNumberOfRiders();
+	}
+
+	public long getNextGroupForARideId() {
+		return nextGroupForARide.getId();
 	}
 
 }

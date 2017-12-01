@@ -26,8 +26,8 @@ public class GroupsForRideSerial {
 		return groupsForRideSerial.isEmpty();
 	}
 
-	public void addNewGroupOfRiders(GroupOfPerson nextGroupForARide) {
-		numberOfPassengersInADay += nextGroupForARide.getNumberOfPerson();
+	public void addNewGroupOfRiders(GroupOfRiders nextGroupForARide) {
+		numberOfPassengersInADay += nextGroupForARide.getNumberOfRiders();
 		GroupsByRide groupByRide = new GroupsByRide();
 		groupByRide.add(nextGroupForARide);
 		groupsForRideSerial.add(groupByRide);
@@ -37,8 +37,8 @@ public class GroupsForRideSerial {
 		return groupsForRideSerial.peek().getNumberOfPassengers();
 	}
 
-	public void addToCurrentGroupOfRiders(GroupOfPerson nextGroupForARide) {
-		numberOfPassengersInADay += nextGroupForARide.getNumberOfPerson();
+	public void addToCurrentGroupOfRiders(GroupOfRiders nextGroupForARide) {
+		numberOfPassengersInADay += nextGroupForARide.getNumberOfRiders();
 		GroupsByRide currentGroupsByRide = groupsForRideSerial.pop();
 		currentGroupsByRide.add(nextGroupForARide);
 		groupsForRideSerial.add(currentGroupsByRide);

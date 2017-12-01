@@ -5,17 +5,17 @@ import java.util.Queue;
 
 public class GroupsByRide {
 
-	private final Queue<GroupOfPerson> groupOfPerson;
+	private final Queue<GroupOfRiders> groupOfRiders;
 	private long personNumber;
 
 	public GroupsByRide() {
-		this.groupOfPerson = new LinkedList<GroupOfPerson>();
+		this.groupOfRiders = new LinkedList<GroupOfRiders>();
 		this.personNumber = 0;
 	}
 
-	public GroupsByRide add(GroupOfPerson group) {
-		groupOfPerson.add(group);
-		personNumber += group.getNumberOfPerson();
+	public GroupsByRide add(GroupOfRiders group) {
+		groupOfRiders.add(group);
+		personNumber += group.getNumberOfRiders();
 		return null;
 	}
 
@@ -23,8 +23,8 @@ public class GroupsByRide {
 		return personNumber;
 	}
 
-	public Queue<GroupOfPerson> getGroupOfPerson() {
-		return groupOfPerson;
+	public Queue<GroupOfRiders> getGroupOfPerson() {
+		return groupOfRiders;
 	}
 
 }

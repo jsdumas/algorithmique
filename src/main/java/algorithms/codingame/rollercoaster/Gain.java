@@ -3,6 +3,7 @@ package algorithms.codingame.rollercoaster;
 /** @link GainTest **/
 public class Gain {
 
+	private static final long ZERO = 0;
 	private final RollerCoaster rollerCoaster;
 
 	public Gain(RollerCoaster rollerCoaster) {
@@ -11,26 +12,18 @@ public class Gain {
 
 	public long dailyGainOfRollerCoaster() {
 		RollerCoasterQueue rollerCoasterQueue = rollerCoaster.getWaitingQueue();
-		long numberOfWaitingGroups = rollerCoasterQueue.getWaitingGroupsOfPersons().size();
-		int queueStartId = 0;
 		long gain = 0;
 		for (long i = 0; i < rollerCoaster.getRideNumberByDay(); i++) {
-			int currentCapacity = 0;
-			int currentGroupId = queueStartId;
+			int currentRideCapacity = 0;
+			long currentGroupId = ZERO;
 			boolean allWaitingGroupsArePassed = false;
-			while (rollerCoasterQueue.canNextGroupGetIn(currentCapacity, rollerCoaster.getPlaceNumberForARide()) //
-					&& !(allWaitingGroupsArePassed && currentGroupId == queueStartId)) {
-
-				GroupOfPerson nextGroupForARide = rollerCoasterQueue.getWaitingGroupsOfPersons().poll();
-				currentCapacity += nextGroupForARide.getNumberOfPerson();
-				rollerCoasterQueue.getWaitingGroupsOfPersons().add(nextGroupForARide);
-				if (++currentGroupId == numberOfWaitingGroups) {
-					currentGroupId = 0;
-					allWaitingGroupsArePassed = true;
-				}
+			while (rollerCoasterQueue.canNextGroupGetIn(currentRideCapacity, rollerCoaster.getPlaceNumberForARide()) //
+					&& !(allWaitingGroupsArePassed && currentGroupId == ZERO)) {
+				currentRideCapacity += rollerCoasterQueue.getNumberOfNextRiders();
+				allWaitingGroupsArePassed = rollerCoasterQueue.areAllWaitingGroupsPassed();
+				currentGroupId = rollerCoasterQueue.getNextGroupForARideId();
 			}
-			queueStartId = currentGroupId;
-			gain += currentCapacity;
+			gain += currentRideCapacity;
 		}
 		return gain;
 	}
