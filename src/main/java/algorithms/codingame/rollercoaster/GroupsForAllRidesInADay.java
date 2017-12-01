@@ -33,4 +33,24 @@ public class GroupsForAllRidesInADay {
 		return numberOfPassengersInADay;
 	}
 
+	public boolean isEmpty() {
+		return allRideGroups.isEmpty();
+	}
+
+	public void addNewGroupOfRiders(GroupOfPerson nextGroupForARide) {
+		numberOfPassengersInADay += nextGroupForARide.getNumberOfPerson();
+		GroupsByRide groupByRide = new GroupsByRide();
+		groupByRide.add(nextGroupForARide);
+		allRideGroups.add(groupByRide);
+	}
+
+	public long getLastPassengers() {
+		return allRideGroups.peek().getNumberOfPersons();
+	}
+
+	public void addToCurrentGroupOfRiders(GroupOfPerson nextGroupForARide) {
+		numberOfPassengersInADay += nextGroupForARide.getNumberOfPerson();
+		allRideGroups.peek().add(nextGroupForARide);
+	}
+
 }
