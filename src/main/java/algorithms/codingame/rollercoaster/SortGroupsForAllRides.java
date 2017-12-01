@@ -6,34 +6,39 @@ import java.util.LinkedList;
 public class SortGroupsForAllRides {
 
 	private final RollerCoaster rollerCoaster;
-	private final GroupsForAllRidesInADay groupsForAllRidesInADay;
+	private final GroupsForRideSerial groupsForRideSerial;
 
 	public SortGroupsForAllRides(RollerCoaster rollerCoaster) {
 		this.rollerCoaster = rollerCoaster;
-		this.groupsForAllRidesInADay = new GroupsForAllRidesInADay(rollerCoaster.getPlaceNumberForARide());
+		this.groupsForRideSerial = new GroupsForRideSerial(rollerCoaster.getPlaceNumberForARide());
 	}
 
-	public GroupsForAllRidesInADay getGroupsForAllRidesInADay() {
+	public GroupsForRideSerial getGroupsForAllRidesInADay() {
 		Deque<GroupOfPerson> waitingGroupForThisRide = new LinkedList<GroupOfPerson>();
 		waitingGroupForThisRide.addAll(rollerCoaster.getWaitingQueue().getWaitingGroupsOfPersons());
+		GroupOfPerson firstGroup = rollerCoaster.getWaitingQueue().getWaitingGroupsOfPersons().peek();
+
 		for (long i = 0; i < rollerCoaster.getRideNumberByDay(); i++) {
-			if (groupsForAllRidesInADay.isEmpty() || (groupsForAllRidesInADay.getLastPassengers() + waitingGroupForThisRide.peek()
+			if (firstGroup == waitingGroupForThisRide.peek() && i != 0) {
+				break;
+			}
+			if (groupsForRideSerial.isEmpty() || (groupsForRideSerial.getLastPassengers() + waitingGroupForThisRide.peek()
 					.getNumberOfPerson() > rollerCoaster.getPlaceNumberForARide())) {
 				GroupOfPerson nextGroupForARide = waitingGroupForThisRide.poll();
-				groupsForAllRidesInADay.addNewGroupOfRiders(nextGroupForARide);
+				groupsForRideSerial.addNewGroupOfRiders(nextGroupForARide);
 				waitingGroupForThisRide.add(nextGroupForARide);
 			}
 			while (true) {
-				if (groupsForAllRidesInADay.getLastPassengers() + waitingGroupForThisRide.peek().getNumberOfPerson() > rollerCoaster
+				if (groupsForRideSerial.getLastPassengers() + waitingGroupForThisRide.peek().getNumberOfPerson() > rollerCoaster
 						.getPlaceNumberForARide()) {
 					break;
 				}
 				GroupOfPerson nextGroupForARide = waitingGroupForThisRide.poll();
-				groupsForAllRidesInADay.addToCurrentGroupOfRiders(nextGroupForARide);
+				groupsForRideSerial.addToCurrentGroupOfRiders(nextGroupForARide);
 				waitingGroupForThisRide.add(nextGroupForARide);
 			}
 		}
-		return groupsForAllRidesInADay;
+		return groupsForRideSerial;
 	}
 
 }
