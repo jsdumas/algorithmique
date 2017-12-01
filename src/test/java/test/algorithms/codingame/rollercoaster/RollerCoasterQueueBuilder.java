@@ -32,8 +32,10 @@ public class RollerCoasterQueueBuilder {
 			bufferedReader = new BufferedReader(new FileReader(FILE_NAME));
 			String currentLine;
 			try {
+				int idGroup = 0;
 				while ((currentLine = bufferedReader.readLine()) != null) {
-					rollerCoasterQueue.addGroup(new GroupOfPerson(Long.parseLong(currentLine)));
+					rollerCoasterQueue.addGroup(new GroupOfPerson(idGroup, Long.parseLong(currentLine)));
+					idGroup++;
 				}
 			} catch (NumberFormatException | IOException e) {
 				System.out.println("withManyPeople " + e);

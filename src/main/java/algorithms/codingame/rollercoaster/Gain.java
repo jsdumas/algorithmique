@@ -13,35 +13,30 @@ public class Gain {
 	}
 
 	public long dailyGainOfRollerCoaster() {
-		if (rollerCoaster.isPlaceNumberGreaterThanPeople()) {
-			RollerCoasterQueue rollerCoasterQueue = rollerCoaster.getWaitingQueue();
-			return rollerCoasterQueue.getNumberOfPerson() * rollerCoaster.getRideNumberByDay();
-		}
-		SortGroupsForAllRides sortGroupsForAllRides = new SortGroupsForAllRides(rollerCoaster);
-		GroupsForRideSerial groupsForRideSerial = sortGroupsForAllRides.getGroupsForAllRidesInADay();
-		Queue<GroupsByRide> groups = new LinkedList<GroupsByRide>();
-		groups.addAll(groupsForRideSerial.getGroupsForRideSerial());
+		Queue<GroupOfPerson> waitingGroupForThisRide = new LinkedList<GroupOfPerson>();
+		waitingGroupForThisRide.addAll(rollerCoaster.getWaitingQueue().getWaitingGroupsOfPersons());
+		long numberOfWaitingGroups = waitingGroupForThisRide.size();
+		int queueStartId = 0;
+		long gain = 0;
+		for (long i = 0; i < rollerCoaster.getRideNumberByDay(); i++) {
+			int currentCapacity = 0;
+			int currentGroupId = queueStartId;
+			boolean allWaitingGroupsArePassed = false;
+			while (currentCapacity + waitingGroupForThisRide.peek().getNumberOfPerson() <= rollerCoaster.getPlaceNumberForARide() //
+					&& !(allWaitingGroupsArePassed && currentGroupId == queueStartId)) {
 
-		long result = 0;
-
-		long ridesNumberByDay = rollerCoaster.getRideNumberByDay();
-		long countRides = 0;
-		while (true) {
-			if (countRides + groupsForRideSerial.getNumberOfGroups() > ridesNumberByDay) {
-				GroupsByRide groupsByRide = groups.poll();
-				countRides++;
-				groups.add(groupsByRide);
-				result += groupsByRide.getNumberOfPassengers();
-			} else {
-				countRides += groupsForRideSerial.getNumberOfGroups();
-				result += groupsForRideSerial.getAllpassengers();
+				GroupOfPerson nextGroupForARide = waitingGroupForThisRide.poll();
+				currentCapacity += nextGroupForARide.getNumberOfPerson();
+				waitingGroupForThisRide.add(nextGroupForARide);
+				if (++currentGroupId == numberOfWaitingGroups) {
+					currentGroupId = 0;
+					allWaitingGroupsArePassed = true;
+				}
 			}
-			if (countRides == ridesNumberByDay) {
-				break;
-			}
+			queueStartId = currentGroupId;
+			gain += currentCapacity;
 		}
-
-		return result;
+		return gain;
 	}
 
 }

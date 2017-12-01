@@ -2,7 +2,6 @@ package test.algorithms.codingame.rollercoaster;
 
 import algorithms.codingame.rollercoaster.Gain;
 import algorithms.codingame.rollercoaster.GroupOfPerson;
-import algorithms.codingame.rollercoaster.SortGroupsForAllRides;
 import algorithms.codingame.rollercoaster.RollerCoaster;
 import algorithms.codingame.rollercoaster.RollerCoasterQueue;
 
@@ -22,17 +21,26 @@ public abstract class RollerCoasterInit {
 	protected static final int THREE_PERSONS = 3;
 	protected static final int FIVE_PERSONS = 5;
 
-	private static final GroupOfPerson GROUP_OF_ONE_PERSON = new GroupOfPerson(ONE_PERSON);
-	private static final GroupOfPerson GROUP_OF_TWO_PERSONS = new GroupOfPerson(TWO_PERSONS);
-	private static final GroupOfPerson GROUP_OF_THREE_PERSONS = new GroupOfPerson(THREE_PERSONS);
-	private static final GroupOfPerson GROUP_OF_FIVE_PERSONS = new GroupOfPerson(FIVE_PERSONS);
+	private static final int ID_ONE = 0;
+	private static final int ID_TWO = 1;
+	private static final int ID_THREE = 2;
+	private static final int ID_FOR = 3;
 
-	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_GROUP_OF_ONE_PERSON = new RollerCoasterQueueBuilder().with(
-			GROUP_OF_ONE_PERSON).build();
+	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_GROUP_OF_ONE_PERSON = new RollerCoasterQueueBuilder()//
+			.with(new GroupOfPerson(ID_ONE, ONE_PERSON))//
+			.build();
 	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS = new RollerCoasterQueueBuilder()
-			.with(GROUP_OF_THREE_PERSONS).with(GROUP_OF_ONE_PERSON).with(GROUP_OF_ONE_PERSON).with(GROUP_OF_TWO_PERSONS).build();
+			.with(new GroupOfPerson(ID_ONE, THREE_PERSONS))//
+			.with(new GroupOfPerson(ID_TWO, ONE_PERSON))//
+			.with(new GroupOfPerson(ID_THREE, ONE_PERSON))//
+			.with(new GroupOfPerson(ID_FOR, TWO_PERSONS))//
+			.build();
 	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS = new RollerCoasterQueueBuilder()
-			.with(GROUP_OF_TWO_PERSONS).with(GROUP_OF_THREE_PERSONS).with(GROUP_OF_FIVE_PERSONS).with(GROUP_OF_THREE_PERSONS).build();
+			.with(new GroupOfPerson(ID_ONE, TWO_PERSONS))//
+			.with(new GroupOfPerson(ID_TWO, THREE_PERSONS))//
+			.with(new GroupOfPerson(ID_THREE, FIVE_PERSONS))//
+			.with(new GroupOfPerson(ID_FOR, THREE_PERSONS))//
+			.build();
 
 	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS = new RollerCoasterQueueBuilder()
 			.withManyPeople().build();
@@ -63,8 +71,5 @@ public abstract class RollerCoasterInit {
 			RUSSIAN_MOUNTAINS_FOR_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS);
 	protected static final Gain GAIN_CALCUL_FOR_NINE_MILLION_RIDES_AND_ONE_THOUSAND_GROUP = new Gain(
 			RUSSIAN_MOUNTAINS_FOR_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS);
-
-	protected static final SortGroupsForAllRides RIDE_GROUP_COMBINATION = new SortGroupsForAllRides(
-			RUSSIAN_MOUNTAINS_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS);
 
 }

@@ -23,9 +23,5 @@ public class RollerCoaster {
 	public RollerCoasterQueue getWaitingQueue() {
 		return rollerCoasterWaitingQueue;
 	}
-	
-	public boolean isPlaceNumberGreaterThanPeople(){
-		return placeNumberForARide>rollerCoasterWaitingQueue.getNumberOfPerson();
-	}
 
 }
