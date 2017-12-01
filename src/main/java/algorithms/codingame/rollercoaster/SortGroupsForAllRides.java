@@ -1,7 +1,7 @@
 package algorithms.codingame.rollercoaster;
 
+import java.util.Deque;
 import java.util.LinkedList;
-import java.util.Queue;
 
 public class SortGroupsForAllRides {
 
@@ -14,29 +14,23 @@ public class SortGroupsForAllRides {
 	}
 
 	public GroupsForAllRidesInADay getGroupsForAllRidesInADay() {
-		Queue<GroupOfPerson> waitingGroupForThisRide = new LinkedList<GroupOfPerson>();
+		Deque<GroupOfPerson> waitingGroupForThisRide = new LinkedList<GroupOfPerson>();
 		waitingGroupForThisRide.addAll(rollerCoaster.getWaitingQueue().getWaitingGroupsOfPersons());
-		Queue<GroupOfPerson> waitingGroupForNextRide = new LinkedList<GroupOfPerson>();
 		for (long i = 0; i < rollerCoaster.getRideNumberByDay(); i++) {
-			if (waitingGroupForThisRide.isEmpty()) {
-				waitingGroupForThisRide.addAll(waitingGroupForNextRide);
-				waitingGroupForNextRide = new LinkedList<GroupOfPerson>();
-			}
-			if (groupsForAllRidesInADay.isEmpty()) {
+			if (groupsForAllRidesInADay.isEmpty() || (groupsForAllRidesInADay.getLastPassengers() + waitingGroupForThisRide.peek()
+					.getNumberOfPerson() > rollerCoaster.getPlaceNumberForARide())) {
 				GroupOfPerson nextGroupForARide = waitingGroupForThisRide.poll();
 				groupsForAllRidesInADay.addNewGroupOfRiders(nextGroupForARide);
+				waitingGroupForThisRide.add(nextGroupForARide);
 			}
 			while (true) {
-				if (waitingGroupForThisRide.isEmpty()) {
-					break;
-				}
-				if (groupsForAllRidesInADay.getLastPassengers() + waitingGroupForThisRide.peek().getNumberOfPerson() < rollerCoaster
+				if (groupsForAllRidesInADay.getLastPassengers() + waitingGroupForThisRide.peek().getNumberOfPerson() > rollerCoaster
 						.getPlaceNumberForARide()) {
-					GroupOfPerson nextGroupForARide = waitingGroupForThisRide.poll();
-					groupsForAllRidesInADay.addToCurrentGroupOfRiders(nextGroupForARide);
-				} else {
 					break;
 				}
+				GroupOfPerson nextGroupForARide = waitingGroupForThisRide.poll();
+				groupsForAllRidesInADay.addToCurrentGroupOfRiders(nextGroupForARide);
+				waitingGroupForThisRide.add(nextGroupForARide);
 			}
 		}
 		return groupsForAllRidesInADay;

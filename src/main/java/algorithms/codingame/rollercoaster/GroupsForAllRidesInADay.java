@@ -18,17 +18,6 @@ public class GroupsForAllRidesInADay {
 		return allRideGroups.size();
 	}
 
-	public void addGroupOfRiders(GroupOfPerson group) {
-		if (allRideGroups.isEmpty() || (allRideGroups.peek().getNumberOfPersons() + group.getNumberOfPerson() > this.maxPlaceNumber)) {
-			GroupsByRide groupByRide = new GroupsByRide();
-			groupByRide.add(group);
-			allRideGroups.add(groupByRide);
-		} else {
-			allRideGroups.peek().add(group);
-		}
-		numberOfPassengersInADay += group.getNumberOfPerson();
-	}
-
 	public long getAllpassengersInADay() {
 		return numberOfPassengersInADay;
 	}
@@ -50,7 +39,9 @@ public class GroupsForAllRidesInADay {
 
 	public void addToCurrentGroupOfRiders(GroupOfPerson nextGroupForARide) {
 		numberOfPassengersInADay += nextGroupForARide.getNumberOfPerson();
-		allRideGroups.peek().add(nextGroupForARide);
+		GroupsByRide currentGroupsByRide = allRideGroups.pop();
+		currentGroupsByRide.add(nextGroupForARide);
+		allRideGroups.add(currentGroupsByRide);
 	}
 
 }
