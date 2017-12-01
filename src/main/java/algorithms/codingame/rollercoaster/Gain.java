@@ -1,8 +1,5 @@
 package algorithms.codingame.rollercoaster;
 
-import java.util.LinkedList;
-import java.util.Queue;
-
 /** @link GainTest **/
 public class Gain {
 
@@ -13,21 +10,20 @@ public class Gain {
 	}
 
 	public long dailyGainOfRollerCoaster() {
-		Queue<GroupOfPerson> waitingGroupForThisRide = new LinkedList<GroupOfPerson>();
-		waitingGroupForThisRide.addAll(rollerCoaster.getWaitingQueue().getWaitingGroupsOfPersons());
-		long numberOfWaitingGroups = waitingGroupForThisRide.size();
+		RollerCoasterQueue rollerCoasterQueue = rollerCoaster.getWaitingQueue();
+		long numberOfWaitingGroups = rollerCoasterQueue.getWaitingGroupsOfPersons().size();
 		int queueStartId = 0;
 		long gain = 0;
 		for (long i = 0; i < rollerCoaster.getRideNumberByDay(); i++) {
 			int currentCapacity = 0;
 			int currentGroupId = queueStartId;
 			boolean allWaitingGroupsArePassed = false;
-			while (currentCapacity + waitingGroupForThisRide.peek().getNumberOfPerson() <= rollerCoaster.getPlaceNumberForARide() //
+			while (rollerCoasterQueue.canNextGroupGetIn(currentCapacity, rollerCoaster.getPlaceNumberForARide()) //
 					&& !(allWaitingGroupsArePassed && currentGroupId == queueStartId)) {
 
-				GroupOfPerson nextGroupForARide = waitingGroupForThisRide.poll();
+				GroupOfPerson nextGroupForARide = rollerCoasterQueue.getWaitingGroupsOfPersons().poll();
 				currentCapacity += nextGroupForARide.getNumberOfPerson();
-				waitingGroupForThisRide.add(nextGroupForARide);
+				rollerCoasterQueue.getWaitingGroupsOfPersons().add(nextGroupForARide);
 				if (++currentGroupId == numberOfWaitingGroups) {
 					currentGroupId = 0;
 					allWaitingGroupsArePassed = true;

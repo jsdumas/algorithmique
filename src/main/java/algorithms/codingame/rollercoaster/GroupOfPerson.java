@@ -2,8 +2,8 @@ package algorithms.codingame.rollercoaster;
 
 public class GroupOfPerson {
 
-	private final long numberOfPerson;
 	private final long id;
+	private final long numberOfPerson;
 
 	public GroupOfPerson(long id, long numberOfPerson) {
 		this.id = id;
