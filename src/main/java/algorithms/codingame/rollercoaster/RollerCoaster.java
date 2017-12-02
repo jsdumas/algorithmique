@@ -2,18 +2,18 @@ package algorithms.codingame.rollercoaster;
 
 public class RollerCoaster {
 
-	private final long placeNumberForARide;
+	private final long rideCapacity;
 	private final long rideNumberByDay;
 	private final RollerCoasterQueue rollerCoasterWaitingQueue;
 
 	public RollerCoaster(long placeNumber, long rideNumberByDay, RollerCoasterQueue rollerCoasterQueue) {
-		this.placeNumberForARide = placeNumber;
+		this.rideCapacity = placeNumber;
 		this.rideNumberByDay = rideNumberByDay;
 		this.rollerCoasterWaitingQueue = rollerCoasterQueue;
 	}
 
 	public long getPlaceNumberForARide() {
-		return placeNumberForARide;
+		return rideCapacity;
 	}
 
 	public long getRideNumberByDay() {
@@ -24,8 +24,8 @@ public class RollerCoaster {
 		return rollerCoasterWaitingQueue;
 	}
 	
-	public long getNumberOfRidersOfNextGroup(){
-		return rollerCoasterWaitingQueue.getNumberOfRidersOfNextGroup();
+	public boolean areEnoughPlacesForNextGroup(long busyPlace){
+		return busyPlace + rollerCoasterWaitingQueue.getNumberOfRidersOfNextGroup() <= rideCapacity;
 	}
-
+	
 }

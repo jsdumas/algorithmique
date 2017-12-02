@@ -39,8 +39,8 @@ public class RollerCoasterQueue {
 		return nextGroupForARide.getNumberOfRiders();
 	}
 
-	public long getNextGroupForARideId() {
-		return nextGroupForARide.getId();
+	public boolean isTheFirstGroupOfRiders() {
+		return nextGroupForARide.getId() == ZERO;
 	}
 
 	public long getNumberOfRidersOfNextGroup() {
