@@ -28,10 +28,6 @@ public class RollerCoasterQueue {
 		return numberOfPerson;
 	}
 
-	public boolean canNextGroupGetIn(int currentCapacity, long placeNumberForARide) {
-		return currentCapacity + waitingGroupsOfPersons.peek().getNumberOfRiders() <= placeNumberForARide;
-	}
-
 	public boolean areAllWaitingGroupsPassed() {
 		GroupOfRiders nextGroupOfPerson = waitingGroupsOfPersons.peek();
 		return nextGroupOfPerson.getId() == ZERO;
@@ -45,6 +41,10 @@ public class RollerCoasterQueue {
 
 	public long getNextGroupForARideId() {
 		return nextGroupForARide.getId();
+	}
+
+	public long getNumberOfRidersOfNextGroup() {
+		return waitingGroupsOfPersons.peek().getNumberOfRiders();
 	}
 
 }

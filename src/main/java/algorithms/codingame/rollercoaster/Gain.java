@@ -14,16 +14,16 @@ public class Gain {
 		RollerCoasterQueue rollerCoasterQueue = rollerCoaster.getWaitingQueue();
 		long gain = 0;
 		for (long i = 0; i < rollerCoaster.getRideNumberByDay(); i++) {
-			int currentRideCapacity = 0;
 			long currentGroupId = ZERO;
 			boolean allWaitingGroupsArePassed = false;
-			while (rollerCoasterQueue.canNextGroupGetIn(currentRideCapacity, rollerCoaster.getPlaceNumberForARide()) //
+			Ride ride = new Ride(rollerCoaster.getPlaceNumberForARide());
+			while (ride.canNextGroupGetIn(rollerCoaster.getNumberOfRidersOfNextGroup()) //
 					&& !(allWaitingGroupsArePassed && currentGroupId == ZERO)) {
-				currentRideCapacity += rollerCoasterQueue.getNumberOfNextRiders();
+				ride.addBusyPaces(rollerCoasterQueue.getNumberOfNextRiders());
 				allWaitingGroupsArePassed = rollerCoasterQueue.areAllWaitingGroupsPassed();
 				currentGroupId = rollerCoasterQueue.getNextGroupForARideId();
 			}
-			gain += currentRideCapacity;
+			gain += ride.getBusyPlaces();
 		}
 		return gain;
 	}

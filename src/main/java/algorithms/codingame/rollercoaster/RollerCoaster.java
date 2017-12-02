@@ -23,5 +23,9 @@ public class RollerCoaster {
 	public RollerCoasterQueue getWaitingQueue() {
 		return rollerCoasterWaitingQueue;
 	}
+	
+	public long getNumberOfRidersOfNextGroup(){
+		return rollerCoasterWaitingQueue.getNumberOfRidersOfNextGroup();
+	}
 
 }
