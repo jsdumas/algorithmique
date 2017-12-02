@@ -5,20 +5,20 @@ import java.util.Queue;
 
 public class GroupsSortedForRides {
 
-	private final Queue<GroupOfPerson> groupQueue;
+	private final Queue<GroupOfRiders> groupQueue;
 	private final GroupsForAllRidesInADay groupsForAllRidesInADay;
 
-	public GroupsSortedForRides(RussianMountains russianMountains) {
-		this.groupQueue = new LinkedList<GroupOfPerson>();
+	public GroupsSortedForRides(RollerCoaster russianMountains) {
+		this.groupQueue = new LinkedList<GroupOfRiders>();
 		this.groupQueue.addAll(russianMountains.getRussianMountainsQueue().getGroupOfPerson());
 		this.groupsForAllRidesInADay = initAllGroupsByRide(russianMountains.getPlaceNumber());
 	}
 
 	private GroupsForAllRidesInADay initAllGroupsByRide(long placeNumber) {
 		GroupsForAllRidesInADay allGroupsByRide = new GroupsForAllRidesInADay(placeNumber);
-		Queue<GroupOfPerson> nextGroupforASecondRide = new LinkedList<GroupOfPerson>();
+		Queue<GroupOfRiders> nextGroupforASecondRide = new LinkedList<GroupOfRiders>();
 		while (!groupQueue.isEmpty()) {
-			GroupOfPerson group = groupQueue.poll();
+			GroupOfRiders group = groupQueue.poll();
 			allGroupsByRide.add(group);
 			nextGroupforASecondRide.add(group);
 		}

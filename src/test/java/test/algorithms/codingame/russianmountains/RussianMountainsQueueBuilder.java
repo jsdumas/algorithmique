@@ -5,24 +5,24 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import algorithms.codingame.russianmountains.GroupOfPerson;
-import algorithms.codingame.russianmountains.RussianMountainsQueue;
+import algorithms.codingame.russianmountains.GroupOfRiders;
+import algorithms.codingame.russianmountains.RollerCoasterQueue;
 
 public class RussianMountainsQueueBuilder {
 
 	private static final String FILE_NAME = "src/test/resources/groups_of_many_people.txt";
-	private final RussianMountainsQueue russianMountainsQueue;
+	private final RollerCoasterQueue russianMountainsQueue;
 
 	public RussianMountainsQueueBuilder() {
-		this.russianMountainsQueue = new RussianMountainsQueue();
+		this.russianMountainsQueue = new RollerCoasterQueue();
 	}
 
-	public RussianMountainsQueueBuilder with(GroupOfPerson groupQueue) {
+	public RussianMountainsQueueBuilder with(GroupOfRiders groupQueue) {
 		russianMountainsQueue.addGroup(groupQueue);
 		return this;
 	}
 
-	public RussianMountainsQueue build() {
+	public RollerCoasterQueue build() {
 		return russianMountainsQueue;
 	}
 
@@ -33,7 +33,7 @@ public class RussianMountainsQueueBuilder {
 			String currentLine;
 			try {
 				while ((currentLine = bufferedReader.readLine()) != null) {
-					russianMountainsQueue.addGroup(new GroupOfPerson(Long.parseLong(currentLine)));
+					russianMountainsQueue.addGroup(new GroupOfRiders(Long.parseLong(currentLine)));
 				}
 			} catch (NumberFormatException | IOException e) {
 				System.out.println("withManyPeople " + e);

@@ -1,12 +1,12 @@
 package algorithms.codingame.russianmountains;
 
-public class RussianMountains {
+public class RollerCoaster {
 
 	private final long placeNumber;
 	private final long rideNumberByDay;
-	private final RussianMountainsQueue russianMountainsQueue;
+	private final RollerCoasterQueue russianMountainsQueue;
 
-	public RussianMountains(long placeNumber, long rideNumberByDay, RussianMountainsQueue russianMountainsQueue) {
+	public RollerCoaster(long placeNumber, long rideNumberByDay, RollerCoasterQueue russianMountainsQueue) {
 		this.placeNumber = placeNumber;
 		this.rideNumberByDay = rideNumberByDay;
 		this.russianMountainsQueue = russianMountainsQueue;
@@ -20,7 +20,7 @@ public class RussianMountains {
 		return rideNumberByDay;
 	}
 
-	public RussianMountainsQueue getRussianMountainsQueue() {
+	public RollerCoasterQueue getRussianMountainsQueue() {
 		return russianMountainsQueue;
 	}
 	

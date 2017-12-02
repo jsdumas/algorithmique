@@ -3,22 +3,22 @@ package algorithms.codingame.russianmountains;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class RussianMountainsQueue {
+public class RollerCoasterQueue {
 	
-	private final Queue<GroupOfPerson> groupOfPersonQueue;
+	private final Queue<GroupOfRiders> groupOfPersonQueue;
 	private long numberOfPerson;
 	
-	public RussianMountainsQueue() {
-		this.groupOfPersonQueue = new LinkedList<GroupOfPerson>();
+	public RollerCoasterQueue() {
+		this.groupOfPersonQueue = new LinkedList<GroupOfRiders>();
 		this.numberOfPerson=0L;
 	}
 	
-	public void addGroup(GroupOfPerson groupOfPerson) {
+	public void addGroup(GroupOfRiders groupOfPerson) {
 		this.numberOfPerson += groupOfPerson.getNumberOfPerson();
 		this.groupOfPersonQueue.add(groupOfPerson);
 	}
 
-	public Queue<GroupOfPerson> getGroupOfPerson() {
+	public Queue<GroupOfRiders> getGroupOfPerson() {
 		return groupOfPersonQueue;
 	}
 

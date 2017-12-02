@@ -18,7 +18,7 @@ public class GroupsForAllRidesInADay {
 		return allRideGroups.size();
 	}
 
-	public void add(GroupOfPerson group) {
+	public void add(GroupOfRiders group) {
 		if (allRideGroups.isEmpty() || (allRideGroups.peek().getNumberOfPersons() + group.getNumberOfPerson() > this.maxPlaceNumber)) {
 			GroupsByRide groupByRide = new GroupsByRide();
 			groupByRide.add(group);
@@ -32,16 +32,16 @@ public class GroupsForAllRidesInADay {
 		return allRideGroups;
 	}
 
-	public void addSecondRideGroup(Queue<GroupOfPerson> nextGroupforASecondRide) {
-		Queue<GroupOfPerson> nextGroupDuplicated = new LinkedList<GroupOfPerson>();
+	public void addSecondRideGroup(Queue<GroupOfRiders> nextGroupforASecondRide) {
+		Queue<GroupOfRiders> nextGroupDuplicated = new LinkedList<GroupOfRiders>();
 		nextGroupDuplicated.addAll(nextGroupforASecondRide);
-		Queue<GroupOfPerson> nextGroup = new LinkedList<GroupOfPerson>();
+		Queue<GroupOfRiders> nextGroup = new LinkedList<GroupOfRiders>();
 		while (!nextGroupforASecondRide.isEmpty()) {
-			GroupOfPerson group = nextGroupforASecondRide.poll();
+			GroupOfRiders group = nextGroupforASecondRide.poll();
 			nextGroup.add(group);
 			if (nextGroupforASecondRide.isEmpty()) {
 				nextGroupforASecondRide.addAll(nextGroup);
-				nextGroup = new LinkedList<GroupOfPerson>();
+				nextGroup = new LinkedList<GroupOfRiders>();
 			}
 			if (group.getNumberOfPerson() + allRideGroups.peek().getNumberOfPersons() > this.maxPlaceNumber) {
 				break;
