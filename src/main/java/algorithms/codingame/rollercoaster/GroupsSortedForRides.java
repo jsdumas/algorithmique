@@ -30,8 +30,8 @@ public class GroupsSortedForRides {
 		return groupsForAllRidesInADay.getNumber();
 	}
 
-	public Queue<GroupsByRide> getAllGroupsByRide() {
-		Queue<GroupsByRide> allRideGroups = new LinkedList<GroupsByRide>();
+	public Queue<Ride> getAllGroupsByRide() {
+		Queue<Ride> allRideGroups = new LinkedList<Ride>();
 		allRideGroups.addAll(groupsForAllRidesInADay.getAllRideGroups());
 		return allRideGroups;
 	}

@@ -8,7 +8,7 @@ public class Gain {
 	private final GroupsSortedForRides groupsSortedForRides;
 	private final long numberOfRidesByDay;
 	private final RollerCoaster rollerCoaster;
-	private final Queue<GroupsByRide> allGroupsByRide;
+	private final Queue<Ride> allGroupsByRide;
 	private final long numberOfRidersInRollerCoaster;
 
 	public Gain(RollerCoaster rollerCoaster) {
@@ -24,7 +24,7 @@ public class Gain {
 			return numberOfRidersInRollerCoaster * numberOfRidesByDay;
 		}
 		long numberOfRiders = 0;
-		for (GroupsByRide groups : allGroupsByRide) {
+		for (Ride groups : allGroupsByRide) {
 			numberOfRiders += groups.getNumberOfRiders();
 		}
 		return numberOfRiders * (numberOfRidesByDay / allGroupsByRide.size());

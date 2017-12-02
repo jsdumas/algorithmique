@@ -7,11 +7,11 @@ import java.util.Stack;
 public class GroupsForAllRidesInADay {
 
 	private final long maxPlaceNumber;
-	private final Stack<GroupsByRide> allRideGroups;
+	private final Stack<Ride> allRideGroups;
 
 	public GroupsForAllRidesInADay(long maxPlaceNumber) {
 		this.maxPlaceNumber = maxPlaceNumber;
-		this.allRideGroups = new Stack<GroupsByRide>();
+		this.allRideGroups = new Stack<Ride>();
 	}
 
 	public long getNumber() {
@@ -20,7 +20,7 @@ public class GroupsForAllRidesInADay {
 
 	public void add(GroupOfRiders group) {
 		if (allRideGroups.isEmpty() || (allRideGroups.peek().getNumberOfRiders() + group.getNumberOfPerson() > this.maxPlaceNumber)) {
-			GroupsByRide groupByRide = new GroupsByRide();
+			Ride groupByRide = new Ride();
 			groupByRide.add(group);
 			allRideGroups.add(groupByRide);
 		} else {
@@ -28,7 +28,7 @@ public class GroupsForAllRidesInADay {
 		}
 	}
 
-	public Stack<GroupsByRide> getAllRideGroups() {
+	public Stack<Ride> getAllRideGroups() {
 		return allRideGroups;
 	}
 

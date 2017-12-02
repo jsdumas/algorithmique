@@ -4,12 +4,12 @@ public class RollerCoaster {
 
 	private final long placeNumber;
 	private final long rideNumberByDay;
-	private final RollerCoasterQueue russianMountainsQueue;
+	private final RollerCoasterQueue rollerCoasterQueue;
 
-	public RollerCoaster(long placeNumber, long rideNumberByDay, RollerCoasterQueue russianMountainsQueue) {
+	public RollerCoaster(long placeNumber, long rideNumberByDay, RollerCoasterQueue rollerCoasterQueue) {
 		this.placeNumber = placeNumber;
 		this.rideNumberByDay = rideNumberByDay;
-		this.russianMountainsQueue = russianMountainsQueue;
+		this.rollerCoasterQueue = rollerCoasterQueue;
 	}
 
 	public long getPlaceNumber() {
@@ -21,11 +21,11 @@ public class RollerCoaster {
 	}
 
 	public RollerCoasterQueue getRussianMountainsQueue() {
-		return russianMountainsQueue;
+		return rollerCoasterQueue;
 	}
 	
 	public boolean isPlaceNumberGreaterThanPeople(){
-		return placeNumber>russianMountainsQueue.getNumberOfPerson();
+		return placeNumber>rollerCoasterQueue.getNumberOfPerson();
 	}
 
 }
