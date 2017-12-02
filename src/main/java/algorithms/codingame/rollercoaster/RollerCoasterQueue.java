@@ -18,7 +18,7 @@ public class RollerCoasterQueue {
 		this.groupOfPersonQueue.add(groupOfPerson);
 	}
 
-	public Queue<GroupOfRiders> getGroupOfPerson() {
+	public Queue<GroupOfRiders> getGroupsOfRiders() {
 		return groupOfPersonQueue;
 	}
 

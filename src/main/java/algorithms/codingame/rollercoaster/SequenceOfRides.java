@@ -8,14 +8,14 @@ public class SequenceOfRides {
 	private final Queue<GroupOfRiders> groupOfRidersQueue;
 	private final GroupsForAllRidesInADay groupsForAllRidesInADay;
 
-	public SequenceOfRides(RollerCoaster rollerCoaster) {
+	public SequenceOfRides(long rollerCoasterCapacity, Queue<GroupOfRiders> groupsOfRidersQueue) {
 		this.groupOfRidersQueue = new LinkedList<GroupOfRiders>();
-		this.groupOfRidersQueue.addAll(rollerCoaster.getRussianMountainsQueue().getGroupOfPerson());
-		this.groupsForAllRidesInADay = initAllGroupsByRide(rollerCoaster.getPlaceNumber());
+		this.groupOfRidersQueue.addAll(groupsOfRidersQueue);
+		this.groupsForAllRidesInADay = initAllGroupsByRide(rollerCoasterCapacity);
 	}
 
-	private GroupsForAllRidesInADay initAllGroupsByRide(long placeNumber) {
-		GroupsForAllRidesInADay allGroupsByRide = new GroupsForAllRidesInADay(placeNumber);
+	private GroupsForAllRidesInADay initAllGroupsByRide(long rollerCoasterCapacity) {
+		GroupsForAllRidesInADay allGroupsByRide = new GroupsForAllRidesInADay(rollerCoasterCapacity);
 		Queue<GroupOfRiders> nextGroupforASecondRide = new LinkedList<GroupOfRiders>();
 		while (!groupOfRidersQueue.isEmpty()) {
 			GroupOfRiders group = groupOfRidersQueue.poll();
