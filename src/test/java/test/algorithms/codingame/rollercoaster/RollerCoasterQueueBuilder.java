@@ -1,12 +1,12 @@
-package test.algorithms.codingame.russianmountains;
+package test.algorithms.codingame.rollercoaster;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import algorithms.codingame.russianmountains.GroupOfRiders;
-import algorithms.codingame.russianmountains.RollerCoasterQueue;
+import algorithms.codingame.rollercoaster.GroupOfRiders;
+import algorithms.codingame.rollercoaster.RollerCoasterQueue;
 
 public class RollerCoasterQueueBuilder {
 

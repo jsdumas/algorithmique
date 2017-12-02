@@ -1,4 +1,4 @@
-package algorithms.codingame.russianmountains;
+package algorithms.codingame.rollercoaster;
 
 public class RollerCoaster {
 

@@ -1,4 +1,4 @@
-package algorithms.codingame.russianmountains;
+package algorithms.codingame.rollercoaster;
 
 import java.util.LinkedList;
 import java.util.Queue;

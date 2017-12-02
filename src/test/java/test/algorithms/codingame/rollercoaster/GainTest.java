@@ -1,4 +1,4 @@
-package test.algorithms.codingame.russianmountains;
+package test.algorithms.codingame.rollercoaster;
 
 import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
