@@ -6,27 +6,28 @@ public class Ride {
 	private final RollerCoasterQueue rollerCoasterQueue;
 	private long busyPlace;
 	private RollerCoaster rollerCoaster;
-	private boolean isTheFirstGroupReadyForAnotherRide;
+	private boolean isTheNextGroupTheFirstOfNextWaitingGroups;
 
 	public Ride(RollerCoaster rollerCoaster) {
 		this.rollerCoaster = rollerCoaster;
 		rollerCoaster.getPlaceNumberForARide();
 		this.busyPlace = ZERO;
 		this.rollerCoasterQueue = rollerCoaster.getWaitingQueue();
-		this.isTheFirstGroupReadyForAnotherRide = false;
+		this.isTheNextGroupTheFirstOfNextWaitingGroups = false;
 	}
 
 	public boolean canNextGroupGetOnBoard() {
 		return  rollerCoaster.areEnoughPlacesForNextGroup(busyPlace)
-				&& !(isTheFirstGroupReadyForAnotherRide && rollerCoasterQueue.isTheFirstGroupOfRiders());
+				&& !(isTheNextGroupTheFirstOfNextWaitingGroups && rollerCoasterQueue.isTheLastGroupOnBoardTheFirstOfNextWaitingGroups());
 	}
 
 	public long boardingRiders() {
 		while (canNextGroupGetOnBoard()) {
 			busyPlace += rollerCoasterQueue.getNumberOfNextRiders();
-			isTheFirstGroupReadyForAnotherRide = rollerCoasterQueue.areAllWaitingGroupsPassed();
+			isTheNextGroupTheFirstOfNextWaitingGroups = rollerCoasterQueue.isTheNextGroupTheFirstOfNextWaitingGroups();
 		}
 		return busyPlace;
 	}
 
 }
+

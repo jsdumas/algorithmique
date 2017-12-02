@@ -6,45 +6,45 @@ import java.util.Queue;
 public class RollerCoasterQueue {
 
 	private static final long ZERO = 0;
-	private final Queue<GroupOfRiders> waitingGroupsOfPersons;
+	private final Queue<GroupOfRiders> waitingGroupsOfRiders;
 	private long numberOfPerson;
 	private GroupOfRiders nextGroupForARide;
 
 	public RollerCoasterQueue() {
-		this.waitingGroupsOfPersons = new LinkedList<GroupOfRiders>();
+		this.waitingGroupsOfRiders = new LinkedList<GroupOfRiders>();
 		this.numberOfPerson = ZERO;
 	}
 
 	public void addGroup(GroupOfRiders groupOfRiders) {
 		this.numberOfPerson += groupOfRiders.getNumberOfRiders();
-		this.waitingGroupsOfPersons.add(groupOfRiders);
+		this.waitingGroupsOfRiders.add(groupOfRiders);
 	}
 
 	public Queue<GroupOfRiders> getWaitingGroupsOfPersons() {
-		return waitingGroupsOfPersons;
+		return waitingGroupsOfRiders;
 	}
 
 	public long getNumberOfPerson() {
 		return numberOfPerson;
 	}
 
-	public boolean areAllWaitingGroupsPassed() {
-		GroupOfRiders nextGroupOfPerson = waitingGroupsOfPersons.peek();
-		return nextGroupOfPerson.getId() == ZERO;
+	public boolean isTheNextGroupTheFirstOfNextWaitingGroups() {
+		GroupOfRiders nextGroupOfRiders = waitingGroupsOfRiders.peek();
+		return nextGroupOfRiders.getId() == ZERO;
 	}
 
 	public long getNumberOfNextRiders() {
-		nextGroupForARide = waitingGroupsOfPersons.poll();
-		waitingGroupsOfPersons.add(nextGroupForARide);
+		nextGroupForARide = waitingGroupsOfRiders.poll();
+		waitingGroupsOfRiders.add(nextGroupForARide);
 		return nextGroupForARide.getNumberOfRiders();
 	}
 
-	public boolean isTheFirstGroupOfRiders() {
+	public boolean isTheLastGroupOnBoardTheFirstOfNextWaitingGroups() {
 		return nextGroupForARide.getId() == ZERO;
 	}
 
 	public long getNumberOfRidersOfNextGroup() {
-		return waitingGroupsOfPersons.peek().getNumberOfRiders();
+		return waitingGroupsOfRiders.peek().getNumberOfRiders();
 	}
 
 }
