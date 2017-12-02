@@ -2,7 +2,7 @@ package test.algorithms.codingame.rollercoaster;
 
 import algorithms.codingame.rollercoaster.Gain;
 import algorithms.codingame.rollercoaster.GroupOfRiders;
-import algorithms.codingame.rollercoaster.GroupsSortedForRides;
+import algorithms.codingame.rollercoaster.SequenceOfRides;
 import algorithms.codingame.rollercoaster.RollerCoaster;
 import algorithms.codingame.rollercoaster.RollerCoasterQueue;
 

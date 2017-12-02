@@ -1,5 +1,7 @@
 package algorithms.codingame.rollercoaster;
 
+import java.util.Queue;
+
 public class RollerCoaster {
 
 	private final long placeNumber;
@@ -24,8 +26,22 @@ public class RollerCoaster {
 		return rollerCoasterQueue;
 	}
 	
-	public boolean isPlaceNumberGreaterThanPeople(){
+	public boolean isPlaceNumberGreaterThanRiders(){
 		return placeNumber>rollerCoasterQueue.getNumberOfPerson();
+	}
+
+	public long gainWhenPlaceAreGreaterThanRiders() {
+		return rollerCoasterQueue.getNumberOfPerson() * rideNumberByDay;
+	}
+
+	public long gainWhenRidersPlaceAreGreaterThanRPlace() {
+		SequenceOfRides sequenceOfRides = new SequenceOfRides(this);
+		long numberOfRiders = 0;
+		Queue<Ride> sequenceOfRidesQueue = sequenceOfRides.getSequence();
+		for (Ride ride : sequenceOfRidesQueue) {
+			numberOfRiders += ride.getNumberOfRiders();
+		}
+		return numberOfRiders * (rideNumberByDay / sequenceOfRidesQueue.size());
 	}
 
 }

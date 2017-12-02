@@ -8,6 +8,7 @@ public class Ride {
 	private final Queue<GroupOfRiders> groupOfRiders;
 	private long numberOfRiders;
 
+
 	public Ride() {
 		this.groupOfRiders = new LinkedList<GroupOfRiders>();
 		this.numberOfRiders = 0;
