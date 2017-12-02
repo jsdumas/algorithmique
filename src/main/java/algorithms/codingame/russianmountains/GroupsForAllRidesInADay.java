@@ -19,7 +19,7 @@ public class GroupsForAllRidesInADay {
 	}
 
 	public void add(GroupOfRiders group) {
-		if (allRideGroups.isEmpty() || (allRideGroups.peek().getNumberOfPersons() + group.getNumberOfPerson() > this.maxPlaceNumber)) {
+		if (allRideGroups.isEmpty() || (allRideGroups.peek().getNumberOfRiders() + group.getNumberOfPerson() > this.maxPlaceNumber)) {
 			GroupsByRide groupByRide = new GroupsByRide();
 			groupByRide.add(group);
 			allRideGroups.add(groupByRide);
@@ -43,7 +43,7 @@ public class GroupsForAllRidesInADay {
 				nextGroupforASecondRide.addAll(nextGroup);
 				nextGroup = new LinkedList<GroupOfRiders>();
 			}
-			if (group.getNumberOfPerson() + allRideGroups.peek().getNumberOfPersons() > this.maxPlaceNumber) {
+			if (group.getNumberOfPerson() + allRideGroups.peek().getNumberOfRiders() > this.maxPlaceNumber) {
 				break;
 			}
 			allRideGroups.peek().add(group);

@@ -8,32 +8,34 @@ import java.io.IOException;
 import algorithms.codingame.russianmountains.GroupOfRiders;
 import algorithms.codingame.russianmountains.RollerCoasterQueue;
 
-public class RussianMountainsQueueBuilder {
+public class RollerCoasterQueueBuilder {
 
 	private static final String FILE_NAME = "src/test/resources/groups_of_many_people.txt";
-	private final RollerCoasterQueue russianMountainsQueue;
+	private final RollerCoasterQueue rollerCoasterQueue;
 
-	public RussianMountainsQueueBuilder() {
-		this.russianMountainsQueue = new RollerCoasterQueue();
+	public RollerCoasterQueueBuilder() {
+		this.rollerCoasterQueue = new RollerCoasterQueue();
 	}
 
-	public RussianMountainsQueueBuilder with(GroupOfRiders groupQueue) {
-		russianMountainsQueue.addGroup(groupQueue);
+	public RollerCoasterQueueBuilder with(GroupOfRiders groupQueue) {
+		rollerCoasterQueue.addGroup(groupQueue);
 		return this;
 	}
 
 	public RollerCoasterQueue build() {
-		return russianMountainsQueue;
+		return rollerCoasterQueue;
 	}
 
-	public RussianMountainsQueueBuilder withManyPeople() {
+	public RollerCoasterQueueBuilder withManyPeople() {
 		BufferedReader bufferedReader;
 		try {
 			bufferedReader = new BufferedReader(new FileReader(FILE_NAME));
 			String currentLine;
 			try {
+				int idGroup = 0;
 				while ((currentLine = bufferedReader.readLine()) != null) {
-					russianMountainsQueue.addGroup(new GroupOfRiders(Long.parseLong(currentLine)));
+					rollerCoasterQueue.addGroup(new GroupOfRiders(idGroup, Long.parseLong(currentLine)));
+					idGroup++;
 				}
 			} catch (NumberFormatException | IOException e) {
 				System.out.println("withManyPeople " + e);

@@ -4,8 +4,8 @@ import org.hamcrest.MatcherAssert;
 import org.hamcrest.Matchers;
 import org.junit.Test;
 
-/** @link GainCalcul **/
-public class GainCalculTest extends RussianMountainsInit {
+/** @link Gain **/
+public class GainTest extends RollerCoasterInit {
 
 	@Test
 	public void whenOneRideIsFinishedWhithOneGroupOfOnePersonThenCalculOfGainIsOne() {

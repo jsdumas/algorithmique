@@ -19,7 +19,7 @@ public class GroupsByRide {
 		return null;
 	}
 
-	public long getNumberOfPersons() {
+	public long getNumberOfRiders() {
 		return personNumber;
 	}
 

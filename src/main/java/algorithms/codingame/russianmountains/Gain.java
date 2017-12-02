@@ -1,32 +1,31 @@
 package algorithms.codingame.russianmountains;
 
-import java.util.LinkedList;
 import java.util.Queue;
 
+/** @link GainTest **/
 public class Gain {
 
 	private final GroupsSortedForRides groupsSortedForRides;
 	private final long numberOfRidesByDay;
-	private final RollerCoaster russianMountains;
+	private final RollerCoaster rollerCoaster;
 	private final Queue<GroupsByRide> allGroupsByRide;
-	private final long numberOfPersonsInRussianMountainsQueue;
+	private final long numberOfRidersInRollerCoaster;
 
-	public Gain(RollerCoaster russianMountains) {
-		this.russianMountains = russianMountains;
-		this.groupsSortedForRides = new GroupsSortedForRides(russianMountains);
-		new LinkedList<GroupsByRide>();
-		this.numberOfRidesByDay = russianMountains.getRideNumberByDay();
+	public Gain(RollerCoaster rollerCoaster) {
+		this.rollerCoaster = rollerCoaster;
+		this.groupsSortedForRides = new GroupsSortedForRides(rollerCoaster);
+		this.numberOfRidesByDay = rollerCoaster.getRideNumberByDay();
 		this.allGroupsByRide = this.groupsSortedForRides.getAllGroupsByRide();
-		this.numberOfPersonsInRussianMountainsQueue = russianMountains.getRussianMountainsQueue().getNumberOfPerson();
+		this.numberOfRidersInRollerCoaster = rollerCoaster.getRussianMountainsQueue().getNumberOfPerson();
 	}
 
 	public long dailyGainOfRussianMountains() {
-		if (russianMountains.isPlaceNumberGreaterThanPeople()) {
-			return numberOfPersonsInRussianMountainsQueue * numberOfRidesByDay;
+		if (rollerCoaster.isPlaceNumberGreaterThanPeople()) {
+			return numberOfRidersInRollerCoaster * numberOfRidesByDay;
 		}
 		long numberOfRiders = 0;
 		for (GroupsByRide groups : allGroupsByRide) {
-			numberOfRiders += groups.getNumberOfPersons();
+			numberOfRiders += groups.getNumberOfRiders();
 		}
 		return numberOfRiders * (numberOfRidesByDay / allGroupsByRide.size());
 	}
