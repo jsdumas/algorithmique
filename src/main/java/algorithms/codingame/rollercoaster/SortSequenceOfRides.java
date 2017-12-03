@@ -15,10 +15,10 @@ public class SortSequenceOfRides {
 	public SequenceOfRides getSequence(long rollerCoasterCapacity, long numberOfRidesByDay) {
 		SequenceOfRides sequenceOfRides = new SequenceOfRides(rollerCoasterCapacity);
 		while (true) {
-			GroupOfRiders groupOfRiders = waitingGroupsOfRidersQueue.poll();
-			if(sequenceOfRides.isSequenceFinished(groupOfRiders)){
+			if(sequenceOfRides.isSequenceFinished(waitingGroupsOfRidersQueue.peek())){
 				break;
 			}
+			GroupOfRiders groupOfRiders = waitingGroupsOfRidersQueue.poll();
 			sequenceOfRides.add(groupOfRiders);
 			waitingGroupsOfRidersQueue.add(groupOfRiders);
 		}
