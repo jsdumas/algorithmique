@@ -31,9 +31,9 @@ public class RollerCoaster {
 		if (isPlaceNumberGreaterThanRiders()) {
 			return rollerCoasterQueue.getNumberOfPerson() * rideNumberByDay;
 		}
-		SequenceOfRides sequenceOfRides = new SequenceOfRides(capacity, rollerCoasterQueue.getGroupsOfRiders());
+		SequenceOfRides sequenceOfRides = new SequenceOfRides(rollerCoasterQueue.getGroupsOfRiders());
+		Queue<Ride> sequenceOfRidesQueue = sequenceOfRides.getSequence(capacity);
 		long numberOfRiders = 0;
-		Queue<Ride> sequenceOfRidesQueue = sequenceOfRides.getSequence();
 		for (Ride ride : sequenceOfRidesQueue) {
 			numberOfRiders += ride.getNumberOfRiders();
 		}
