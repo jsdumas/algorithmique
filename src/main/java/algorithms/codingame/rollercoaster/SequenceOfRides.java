@@ -17,12 +17,12 @@ public class SequenceOfRides {
 		this.rideMap = new HashMap<GroupOfRiders, Ride>();
 	}
 	
-	public boolean canNextGroupGetOnBoard(GroupOfRiders group){
+	public boolean canGroupGetOnBoardNow(GroupOfRiders group){
 		return sequenceOfRides.peek().getNumberOfRiders() + group.getNumberOfRiders() <= this.rideCapacity;
 	}
 
 	public void add(GroupOfRiders group) {
-		if (sequenceOfRides.isEmpty() || !canNextGroupGetOnBoard(group)) {
+		if (sequenceOfRides.isEmpty() || !canGroupGetOnBoardNow(group)) {
 			Ride ride = new Ride();
 			ride.add(group);
 			sequenceOfRides.add(ride);
@@ -34,23 +34,22 @@ public class SequenceOfRides {
 	}
 	
 	public boolean isSequenceFinished(GroupOfRiders group){
-		return rideMap.containsKey(group) && !canNextGroupGetOnBoard(group);
+		return rideMap.containsKey(group) && !canGroupGetOnBoardNow(group);
 	}
 
 
 	public long dailyGain(long numberOfRidesByDay, RollerCoasterQueue rollerCoasterQueue) {
-		long gainOfTheDay =  0;
 		
 		if (rideCapacity>rollerCoasterQueue.getNumberOfRiders()) {
 			return rollerCoasterQueue.getNumberOfRiders() * numberOfRidesByDay;
 		}
 		
-		
-		gainOfTheDay = gainOfSequence * (numberOfRidesByDay / sequenceOfRides.size());
+		long gainOfTheDay = gainOfSequence * (numberOfRidesByDay / sequenceOfRides.size());
 		long rest = numberOfRidesByDay % sequenceOfRides.size();
 		if(rest==0){
 			return gainOfTheDay;
 		}
+		
 		long count = 0;
 		for(Ride ride : sequenceOfRides){
 			if(count==rest){
