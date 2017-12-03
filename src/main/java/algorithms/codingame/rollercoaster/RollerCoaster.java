@@ -15,7 +15,7 @@ public class RollerCoaster {
 	public long dailyGain() {
 		SortSequenceOfRides sortSequenceOfRides = new SortSequenceOfRides(rollerCoasterQueue.getGroupsOfRiders());
 		SequenceOfRides sequenceOfRides = sortSequenceOfRides.getSequence(capacity, numberOfRidesByDay);
-		return sequenceOfRides.dailyGain(numberOfRidesByDay); 
+		return sequenceOfRides.dailyGain(numberOfRidesByDay, rollerCoasterQueue); 
 		
 	}
 

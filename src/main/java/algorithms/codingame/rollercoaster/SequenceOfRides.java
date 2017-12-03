@@ -38,8 +38,15 @@ public class SequenceOfRides {
 	}
 
 
-	public long dailyGain(long numberOfRidesByDay) {
-		long gainOfTheDay =  gainOfSequence * (numberOfRidesByDay / sequenceOfRides.size());
+	public long dailyGain(long numberOfRidesByDay, RollerCoasterQueue rollerCoasterQueue) {
+		long gainOfTheDay =  0;
+		
+		if (rideCapacity>rollerCoasterQueue.getNumberOfRiders()) {
+			return rollerCoasterQueue.getNumberOfRiders() * numberOfRidesByDay;
+		}
+		
+		
+		gainOfTheDay = gainOfSequence * (numberOfRidesByDay / sequenceOfRides.size());
 		long rest = numberOfRidesByDay % sequenceOfRides.size();
 		if(rest==0){
 			return gainOfTheDay;
