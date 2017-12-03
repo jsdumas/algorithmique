@@ -14,14 +14,13 @@ public class Ride {
 		this.numberOfRiders = 0;
 	}
 
-	public Ride add(GroupOfRiders group) {
+	public void add(GroupOfRiders group) {
 		groupOfRiders.add(group);
 		numberOfRiders += group.getNumberOfRiders();
-		return null;
 	}
 
 	public long getNumberOfRiders() {
 		return numberOfRiders;
 	}
-
+	
 }
