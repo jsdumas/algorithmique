@@ -16,7 +16,7 @@ public class Ride {
 
 	public Ride add(GroupOfRiders group) {
 		groupOfRiders.add(group);
-		numberOfRiders += group.getNumberOfPerson();
+		numberOfRiders += group.getNumberOfRiders();
 		return null;
 	}
 

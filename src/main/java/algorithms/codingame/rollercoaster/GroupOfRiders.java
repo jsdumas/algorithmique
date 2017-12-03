@@ -10,7 +10,7 @@ public class GroupOfRiders {
 		this.numberOfRiders = numberOfRiders;
 	}
 
-	public long getNumberOfPerson() {
+	public long getNumberOfRiders() {
 		return numberOfRiders;
 	}
 	
