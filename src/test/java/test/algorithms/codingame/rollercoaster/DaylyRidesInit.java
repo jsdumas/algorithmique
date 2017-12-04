@@ -1,11 +1,11 @@
 package test.algorithms.codingame.rollercoaster;
 
+import algorithms.codingame.rollercoaster.DaylyRides;
 import algorithms.codingame.rollercoaster.GroupOfRiders;
-import algorithms.codingame.rollercoaster.SortSequenceOfRides;
 import algorithms.codingame.rollercoaster.RollerCoaster;
 import algorithms.codingame.rollercoaster.RollerCoasterQueue;
 
-public abstract class RollerCoasterInit {
+public abstract class DaylyRidesInit {
 
 	private static final int MAX_PLACE_NUMBER_IS_ONE = 1;
 	private static final int MAX_PLACE_NUMBER_IS_THREE = 3;
@@ -26,15 +26,23 @@ public abstract class RollerCoasterInit {
 	private static final int ID_THREE = 2;
 	private static final int ID_FOR = 3;
 
+	protected static final long ONE = 1;
+	protected static final long SEVEN = 7;
+	protected static final long FIFTEEN = 15;
+	protected static final long BIG_GAIN = 89744892565569L;
+
+	// Roller Coaster Queue Init
 	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_GROUP_OF_ONE_PERSON = new RollerCoasterQueueBuilder()//
 			.with(new GroupOfRiders(ID_ONE, ONE_PERSON))//
 			.build();
+
 	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS = new RollerCoasterQueueBuilder()
 			.with(new GroupOfRiders(ID_ONE, THREE_PERSONS))//
 			.with(new GroupOfRiders(ID_TWO, ONE_PERSON))//
 			.with(new GroupOfRiders(ID_THREE, ONE_PERSON))//
 			.with(new GroupOfRiders(ID_FOR, TWO_PERSONS))//
 			.build();
+
 	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS = new RollerCoasterQueueBuilder()
 			.with(new GroupOfRiders(ID_ONE, TWO_PERSONS))//
 			.with(new GroupOfRiders(ID_TWO, THREE_PERSONS))//
@@ -45,21 +53,32 @@ public abstract class RollerCoasterInit {
 	private static final RollerCoasterQueue RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS = new RollerCoasterQueueBuilder()
 			.withManyPeople().build();
 
-	protected static final RollerCoaster ROLLER_COASTER_FOR_ONE_GROUP_OF_ONE_PERSON = new RollerCoaster(MAX_PLACE_NUMBER_IS_ONE,
-			RIDE_NUMBER_BY_DAY_IS_ONE, RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_GROUP_OF_ONE_PERSON);
-	protected static final RollerCoaster ROLLER_COASTER_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS = new RollerCoaster(
-			MAX_PLACE_NUMBER_IS_THREE, RIDE_NUMBER_BY_DAY_IS_THREE, RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS);
-	protected static final RollerCoaster ROLLER_COASTER_FOR_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS = new RollerCoaster(
-			MAX_PLACE_NUMBER_IS_FIVE, RIDE_NUMBER_BY_DAY_IS_THREE, RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS);
-	protected static final RollerCoaster ROLLER_COASTER_FOR_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS = new RollerCoaster(
-			MAX_PLACE_NUMBER_TEN_MILLION, RIDE_NUMBER_BY_DAY_IS_NINE_MILLION,
-			RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS);
+	// Roller Coaster Init
+	protected static final RollerCoaster ROLLER_COASTER_FOR_ONE_GROUP_OF_ONE_PERSON //
+			= new RollerCoaster(MAX_PLACE_NUMBER_IS_ONE, RIDE_NUMBER_BY_DAY_IS_ONE, RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_GROUP_OF_ONE_PERSON);
 
-	protected static final long ONE = 1;
-	protected static final long SEVEN = 7;
-	protected static final long FIFTEEN = 15;
-	protected static final long BIG_GAIN = 89744892565569L;
+	protected static final RollerCoaster ROLLER_COASTER_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS //
+			= new RollerCoaster(MAX_PLACE_NUMBER_IS_THREE, RIDE_NUMBER_BY_DAY_IS_THREE,
+					RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS);
 
-	protected static final long COMBINATION_NUMBER_IS_THREE = 3L;
+	protected static final RollerCoaster ROLLER_COASTER_FOR_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS //
+			= new RollerCoaster(MAX_PLACE_NUMBER_IS_FIVE, RIDE_NUMBER_BY_DAY_IS_THREE,
+					RUSSIAN_MOUNTAINS_QUEUE_OF_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS);
 
+	protected static final RollerCoaster ROLLER_COASTER_FOR_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS //
+			= new RollerCoaster(MAX_PLACE_NUMBER_TEN_MILLION, RIDE_NUMBER_BY_DAY_IS_NINE_MILLION,
+					RUSSIAN_MOUNTAINS_QUEUE_OF_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS);
+
+	// Dayly Rides Init
+	protected static final DaylyRides DAYLY_RIDES_WITH_ONE_GROUP_OF_ONE_PERSON //
+			= new DaylyRides(ROLLER_COASTER_FOR_ONE_GROUP_OF_ONE_PERSON);
+
+	protected static final DaylyRides DAYLY_RIDES_WITH_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS //
+			= new DaylyRides(ROLLER_COASTER_FOR_FOUR_GROUPS_OF_THREE_ONE_ONE_TWO_PERSONS);
+
+	protected static final DaylyRides DAYLY_RIDES_WITH_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS //
+			= new DaylyRides(ROLLER_COASTER_FOR_FOUR_GROUPS_OF_TWO_THREE_FIVE_THREE_PERSONS);
+
+	protected static final DaylyRides DAYLY_RIDES_WITH_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS //
+			= new DaylyRides(ROLLER_COASTER_FOR_ONE_THOUSAND_GROUPS_OF_MANY_PERSONS);
 }

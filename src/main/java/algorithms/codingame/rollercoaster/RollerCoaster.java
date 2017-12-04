@@ -12,11 +12,16 @@ public class RollerCoaster {
 		this.rollerCoasterQueue = rollerCoasterQueue;
 	}
 
-	public long dailyGain() {
-		SortSequenceOfRides sortSequenceOfRides = new SortSequenceOfRides(rollerCoasterQueue.getGroupsOfRiders());
-		SequenceOfRides sequenceOfRides = sortSequenceOfRides.getSequence(capacity, numberOfRidesByDay);
-		return sequenceOfRides.dailyGain(numberOfRidesByDay, rollerCoasterQueue); 
-		
+	public long getCapacity() {
+		return capacity;
+	}
+
+	public long getNumberOfRidesByDay() {
+		return numberOfRidesByDay;
+	}
+
+	public RollerCoasterQueue getRollerCoasterQueue() {
+		return rollerCoasterQueue;
 	}
 
 }
