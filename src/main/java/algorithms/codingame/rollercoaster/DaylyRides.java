@@ -6,18 +6,17 @@ import java.util.Queue;
 /** @link RollerCoasterTest **/
 public class DaylyRides {
 
-	private final Queue<GroupOfRiders> waitingGroupsOfRidersQueue;
 	private final RollerCoasterQueue rollerCoasterQueue;
 	private final RollerCoaster rollerCoaster;
 
 	public DaylyRides(RollerCoaster rollerCoaster) {
 		this.rollerCoaster = rollerCoaster;
 		this.rollerCoasterQueue = rollerCoaster.getRollerCoasterQueue();
-		this.waitingGroupsOfRidersQueue = new LinkedList<GroupOfRiders>();
-		this.waitingGroupsOfRidersQueue.addAll(rollerCoasterQueue.getGroupsOfRiders());
 	}
 
 	private SequenceOfRides sortSequences() {
+		Queue<GroupOfRiders> waitingGroupsOfRidersQueue = new LinkedList<GroupOfRiders>();
+		waitingGroupsOfRidersQueue.addAll(rollerCoasterQueue.getGroupsOfRiders());
 		SequenceOfRides sequenceOfRides = new SequenceOfRides(rollerCoaster.getCapacity());
 		while (true) {
 			if (sequenceOfRides.isSequenceFinished(waitingGroupsOfRidersQueue.peek())) {
