@@ -1,6 +1,5 @@
 package algorithms.codingame.rollercoaster;
 
-import java.util.Deque;
 import java.util.HashMap;
 import java.util.Stack;
 
@@ -13,6 +12,7 @@ public class SequenceOfRides {
 	private long gainOfSequence;
 	private long currentSequenceId;
 	private long numberOfRidersForASecondRide;
+	private long numberOfGroupsForASecondRide;
 
 	public SequenceOfRides(long maxPlaceNumber) {
 		this.rideCapacity = maxPlaceNumber;
@@ -20,6 +20,7 @@ public class SequenceOfRides {
 		this.gainOfSequence = 0;
 		this.rideMap = new HashMap<Long, Ride>();
 		this.numberOfRidersForASecondRide = ZERO;
+		this.numberOfGroupsForASecondRide = ZERO;
 	}
 
 	public boolean canGroupGetOnBoardNow(GroupOfRiders group) {
@@ -45,52 +46,57 @@ public class SequenceOfRides {
 			return false;
 		}
 		// All riders get in the same Ride
-		if (sequenceOfRides.size() == 1 && group.getId() == ZERO) {
+		if (currentSequenceId == ZERO && group.getId() == ZERO) {
 			return true;
 		}
 		boolean canGroupGetOnBoardNow = canGroupGetOnBoardNow(group);
-		// The first group rides again but can't
-		if (sequenceOfRides.size() > 1 && group.getId() == ZERO && !canGroupGetOnBoardNow) {
+		// First group rides again but can't
+		if (currentSequenceId != ZERO && group.getId() == ZERO && !canGroupGetOnBoardNow) {
 			return true;
 		}
 		Ride ride = rideMap.get(currentSequenceId);
-		// is a second ride possible
-		if ((ride.getGroupOfRidersMap().containsKey(ZERO) || group.getId() == ZERO) && currentSequenceId != ZERO) {
+		// When a second ride possible
+		if (currentSequenceId != ZERO && (ride.getGroupOfRidersMap().containsKey(ZERO) || group.getId() == ZERO)) {
 			if (canGroupGetOnBoardNow) {
 				numberOfRidersForASecondRide += group.getNumberOfRiders();
+				numberOfGroupsForASecondRide++;
 				return false;
 			}
 			return true;
 		}
-
-		// if (group.getId() >= ZERO && currentSequenceId != ZERO) {
-		// return !canGroupGetOnBoardNow;
-		// }
-
-		return !(group.getId() > ZERO);
+		
+		return false;//!(group.getId() >= ZERO);
 	}
 
 	public long dailyGain(long numberOfRidesByDay, RollerCoasterQueue rollerCoasterQueue) {
 
-		if (rideCapacity > rollerCoasterQueue.getNumberOfRiders()) {
-			return rollerCoasterQueue.getNumberOfRiders() * numberOfRidesByDay;
+//		if (rideCapacity > rollerCoasterQueue.getNumberOfRiders()) {
+//			return rollerCoasterQueue.getNumberOfRiders() * numberOfRidesByDay;
+//		}
+		
+		long sequenceSize=0;
+		if(sequenceOfRides.peek().getGroupOfRiders().size() == numberOfGroupsForASecondRide){
+			sequenceSize = sequenceOfRides.size()-1;
+		} else {
+			sequenceSize = sequenceOfRides.size();
 		}
 
-		long gainOfTheDay = gainOfSequence * (numberOfRidesByDay / sequenceOfRides.size());
-		long rest = numberOfRidesByDay % sequenceOfRides.size();
-		if (rest == 0) {
-			return gainOfTheDay;
-		}
+		long numberOfRidesByDayDividedBySequences = numberOfRidesByDay / sequenceSize;
+//		long gainOfTheDay = (gainOfSequence - numberOfRidersForASecondRide) * (numberOfRidesByDayDividedBySequences);
+//		long rest = numberOfRidesByDay % sequenceSize;
+//		if (rest == 0) {
+//			return gainOfTheDay + numberOfRidersForASecondRide * numberOfRidesByDayDividedBySequences;
+//		}
 
-		long count = 0;
-		for (Ride ride : sequenceOfRides) {
-			if (count == rest) {
-				break;
-			}
-			gainOfTheDay += ride.getNumberOfRiders();
-			count++;
-		}
-		return gainOfTheDay;
+//		long count = 0;
+//		for (Ride ride : sequenceOfRides) {
+//			if (count == rest) {
+//				break;
+//			}
+//			gainOfTheDay += ride.getNumberOfRiders();
+//			count++;
+//		}
+		return ((gainOfSequence - numberOfRidersForASecondRide) * (numberOfRidesByDayDividedBySequences)) + (numberOfRidersForASecondRide * numberOfRidesByDayDividedBySequences);
 	}
 
 }

@@ -3,7 +3,7 @@ package algorithms.codingame.rollercoaster;
 import java.util.LinkedList;
 import java.util.Queue;
 
-/** @link RollerCoasterTest **/
+/** @link DaylyRidesTest **/
 public class DaylyRides {
 
 	private final RollerCoasterQueue rollerCoasterQueue;
