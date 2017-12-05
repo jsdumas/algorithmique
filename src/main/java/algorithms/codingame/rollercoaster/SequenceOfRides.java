@@ -13,6 +13,7 @@ public class SequenceOfRides {
 	private long currentSequenceId;
 	private long numberOfRidersForASecondRide;
 	private long numberOfGroupsForASecondRide;
+	private long numberOfGroups;
 
 	public SequenceOfRides(long maxPlaceNumber) {
 		this.rideCapacity = maxPlaceNumber;
@@ -21,6 +22,7 @@ public class SequenceOfRides {
 		this.rideMap = new HashMap<Long, Ride>();
 		this.numberOfRidersForASecondRide = ZERO;
 		this.numberOfGroupsForASecondRide = ZERO;
+		this.numberOfGroups = ZERO;
 	}
 
 	public boolean canGroupGetOnBoardNow(GroupOfRiders group) {
@@ -38,6 +40,7 @@ public class SequenceOfRides {
 			sequenceOfRides.peek().add(group);
 		}
 		gainOfSequence += group.getNumberOfRiders();
+		numberOfGroups++;
 	}
 
 	public boolean isSequenceFinished(GroupOfRiders group) {
@@ -70,15 +73,10 @@ public class SequenceOfRides {
 
 	public long dailyGain(long numberOfRidesByDay, RollerCoasterQueue rollerCoasterQueue) {
 
-		long sequenceSize = 0;
-		// if (sequenceOfRides.peek().getGroupOfRiders().size() == numberOfGroupsForASecondRide) {
-		// sequenceSize = sequenceOfRides.size() - 1;
-		// } else {
-		sequenceSize = sequenceOfRides.size();
-		// }
-
-		long numberOfRidesByDayDividedBySequences = numberOfRidesByDay / sequenceSize;
-		return ((gainOfSequence - numberOfRidersForASecondRide) * (numberOfRidesByDayDividedBySequences)) + (numberOfRidersForASecondRide);
+		long nb = numberOfGroups;
+		long numberOfRidesByDayDividedBySequences = numberOfRidesByDay / sequenceOfRides.size();
+		return (gainOfSequence - numberOfRidersForASecondRide) * (numberOfRidesByDayDividedBySequences) //
+				+ (numberOfRidersForASecondRide * numberOfRidesByDayDividedBySequences);
 	}
 
 }
