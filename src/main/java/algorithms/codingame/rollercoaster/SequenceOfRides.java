@@ -64,39 +64,21 @@ public class SequenceOfRides {
 			}
 			return true;
 		}
-		
-		return false;//!(group.getId() >= ZERO);
+
+		return false;
 	}
 
 	public long dailyGain(long numberOfRidesByDay, RollerCoasterQueue rollerCoasterQueue) {
 
-//		if (rideCapacity > rollerCoasterQueue.getNumberOfRiders()) {
-//			return rollerCoasterQueue.getNumberOfRiders() * numberOfRidesByDay;
-//		}
-		
-		long sequenceSize=0;
-		if(sequenceOfRides.peek().getGroupOfRiders().size() == numberOfGroupsForASecondRide){
-			sequenceSize = sequenceOfRides.size()-1;
-		} else {
-			sequenceSize = sequenceOfRides.size();
-		}
+		long sequenceSize = 0;
+		// if (sequenceOfRides.peek().getGroupOfRiders().size() == numberOfGroupsForASecondRide) {
+		// sequenceSize = sequenceOfRides.size() - 1;
+		// } else {
+		sequenceSize = sequenceOfRides.size();
+		// }
 
 		long numberOfRidesByDayDividedBySequences = numberOfRidesByDay / sequenceSize;
-//		long gainOfTheDay = (gainOfSequence - numberOfRidersForASecondRide) * (numberOfRidesByDayDividedBySequences);
-//		long rest = numberOfRidesByDay % sequenceSize;
-//		if (rest == 0) {
-//			return gainOfTheDay + numberOfRidersForASecondRide * numberOfRidesByDayDividedBySequences;
-//		}
-
-//		long count = 0;
-//		for (Ride ride : sequenceOfRides) {
-//			if (count == rest) {
-//				break;
-//			}
-//			gainOfTheDay += ride.getNumberOfRiders();
-//			count++;
-//		}
-		return ((gainOfSequence - numberOfRidersForASecondRide) * (numberOfRidesByDayDividedBySequences)) + (numberOfRidersForASecondRide * numberOfRidesByDayDividedBySequences);
+		return ((gainOfSequence - numberOfRidersForASecondRide) * (numberOfRidesByDayDividedBySequences)) + (numberOfRidersForASecondRide);
 	}
 
 }
