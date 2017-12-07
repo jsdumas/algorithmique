@@ -17,7 +17,7 @@ public class RidesCombination {
 				waitingGroupsOfRidersQueue.add(group);
 				ride.add(group);
 			}
-			while (canGroupGetOnBoardNow(capacity, currentRide, waitingGroupsOfRidersQueue.peek())) {
+			while (canGroupGetOnBoardNow(capacity, ride, waitingGroupsOfRidersQueue.peek())) {
 				GroupOfRiders group = waitingGroupsOfRidersQueue.poll();
 				currentRide.add(group);
 				ride.add(group);
@@ -29,8 +29,8 @@ public class RidesCombination {
 		return new RidesPossible(rideMap);
 	}
 
-	public boolean canGroupGetOnBoardNow(long capacity, Queue<GroupOfRiders> currentRide, GroupOfRiders group) {
-		return currentRide.peek().getNumberOfRiders() + group.getNumberOfRiders() <= capacity;
+	public boolean canGroupGetOnBoardNow(long capacity, Ride ride, GroupOfRiders group) {
+		return ride.getNumberOfRiders() + group.getNumberOfRiders() <= capacity;
 	}
 
 }
