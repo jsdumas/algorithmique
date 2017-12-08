@@ -2,30 +2,26 @@ package algorithms.codingame.rollercoaster;
 
 public class RollerCoaster {
 
-	private final long placeNumber;
-	private final long rideNumberByDay;
+	private final long capacity;
+	private final long numberOfRidesByDay;
 	private final RollerCoasterQueue rollerCoasterQueue;
 
-	public RollerCoaster(long placeNumber, long rideNumberByDay, RollerCoasterQueue rollerCoasterQueue) {
-		this.placeNumber = placeNumber;
-		this.rideNumberByDay = rideNumberByDay;
+	public RollerCoaster(long placeNumber, long numberOfRidesByDay, RollerCoasterQueue rollerCoasterQueue) {
+		this.capacity = placeNumber;
+		this.numberOfRidesByDay = numberOfRidesByDay;
 		this.rollerCoasterQueue = rollerCoasterQueue;
 	}
 
-	public long getPlaceNumber() {
-		return placeNumber;
+	public long getCapacity() {
+		return capacity;
 	}
 
-	public long getRideNumberByDay() {
-		return rideNumberByDay;
+	public long getNumberOfRidesByDay() {
+		return numberOfRidesByDay;
 	}
 
-	public RollerCoasterQueue getRussianMountainsQueue() {
+	public RollerCoasterQueue getRollerCoasterQueue() {
 		return rollerCoasterQueue;
-	}
-	
-	public boolean isPlaceNumberGreaterThanPeople(){
-		return placeNumber>rollerCoasterQueue.getNumberOfPerson();
 	}
 
 }

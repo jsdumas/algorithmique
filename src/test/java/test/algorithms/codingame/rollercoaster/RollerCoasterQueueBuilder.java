@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
-import algorithms.codingame.rollercoaster.GroupOfPerson;
+import algorithms.codingame.rollercoaster.GroupOfRiders;
 import algorithms.codingame.rollercoaster.RollerCoasterQueue;
 
 public class RollerCoasterQueueBuilder {
@@ -17,7 +17,7 @@ public class RollerCoasterQueueBuilder {
 		this.rollerCoasterQueue = new RollerCoasterQueue();
 	}
 
-	public RollerCoasterQueueBuilder with(GroupOfPerson groupQueue) {
+	public RollerCoasterQueueBuilder with(GroupOfRiders groupQueue) {
 		rollerCoasterQueue.addGroup(groupQueue);
 		return this;
 	}
@@ -32,8 +32,10 @@ public class RollerCoasterQueueBuilder {
 			bufferedReader = new BufferedReader(new FileReader(FILE_NAME));
 			String currentLine;
 			try {
+				int idGroup = 0;
 				while ((currentLine = bufferedReader.readLine()) != null) {
-					rollerCoasterQueue.addGroup(new GroupOfPerson(Long.parseLong(currentLine)));
+					rollerCoasterQueue.addGroup(new GroupOfRiders(idGroup, Long.parseLong(currentLine)));
+					idGroup++;
 				}
 			} catch (NumberFormatException | IOException e) {
 				System.out.println("withManyPeople " + e);
