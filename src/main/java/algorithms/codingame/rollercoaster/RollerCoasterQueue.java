@@ -6,15 +6,15 @@ import java.util.Queue;
 public class RollerCoasterQueue {
 	
 	private final Queue<GroupOfRiders> waitingGroupsOfRiders;
-	private long numberOfRiders;
+	private int numberOfRiders;
 	
 	public RollerCoasterQueue() {
 		this.waitingGroupsOfRiders = new LinkedList<GroupOfRiders>();
-		this.numberOfRiders=0L;
+		this.numberOfRiders=0;
 	}
 	
 	public void addGroup(GroupOfRiders groupOfRiders) {
-		this.numberOfRiders += groupOfRiders.getNumberOfRiders();
+		this.numberOfRiders+=groupOfRiders.getNumberOfRiders();
 		this.waitingGroupsOfRiders.add(groupOfRiders);
 	}
 
@@ -22,7 +22,7 @@ public class RollerCoasterQueue {
 		return waitingGroupsOfRiders;
 	}
 
-	public long getNumberOfRiders() {
+	public int getNumberOfRiders() {
 		return numberOfRiders;
 	}
 	

@@ -8,7 +8,6 @@ public class Ride {
 
 	private final Queue<GroupOfRiders> groupOfRiders;
 	private final HashMap<Long, GroupOfRiders> groupOfRidersMap;
-	private final long id;
 
 	private long numberOfRiders;
 
@@ -16,7 +15,6 @@ public class Ride {
 		this.groupOfRiders = new LinkedList<GroupOfRiders>();
 		this.groupOfRidersMap = new HashMap<Long, GroupOfRiders>();
 		this.numberOfRiders = 0;
-		this.id = id;
 	}
 
 	public void add(GroupOfRiders group) {
@@ -29,16 +27,12 @@ public class Ride {
 		return numberOfRiders;
 	}
 
-	public HashMap<Long, GroupOfRiders> getGroupOfRidersMap() {
-		return groupOfRidersMap;
-	}
-
-	public Queue<GroupOfRiders> getGroupOfRiders() {
-		return groupOfRiders;
-	}
-
 	public int getNumberOfGroups() {
 		return groupOfRiders.size();
+	}
+
+	public boolean isEmpty() {
+		return groupOfRiders.isEmpty();
 	}
 
 }
